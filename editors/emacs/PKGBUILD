@@ -1,0 +1,68 @@
+# $Id$
+# Maintainer: Juergen Hoetzel <juergen@archlinux.org>
+# Contributor: Renchi Raju <renchi@green.tam.uiuc.edu>
+# Liao Haohui: Prefer GTK2 and not GTK3
+
+pkgname=emacs
+pkgver=24.2
+pkgrel=3
+pkgdesc="The extensible, customizable, self-documenting real-time display editor"
+arch=('i686' 'x86_64')
+url="http://www.gnu.org/software/emacs/emacs.html"
+license=('GPL3')
+#depends=('librsvg' 'gpm' 'giflib' 'libxpm' 'libotf' 'm17n-lib' 'gtk3' 'hicolor-icon-theme' 'gconf' 'desktop-file-utils' 'alsa-lib' 'imagemagick')
+### Disable DBUS & Gsettings
+#depends=('icu>=49' 'icu<50' 'librsvg' 'gpm' 'giflib' 'libxpm' 'libotf' 'm17n-lib=1.6.3' 'gtk2' 'hicolor-icon-theme' 'desktop-file-utils' 'alsa-lib' 'imagemagick=6.8.0.3')
+depends=('icu' 'librsvg' 'gpm' 'giflib' 'libxpm' 'libotf=0.9.13' 'm17n-lib=1.6.4' 'gtk2' 'hicolor-icon-theme' 'desktop-file-utils' 'alsa-lib' 'imagemagick')
+required_by=(
+    "auctex",
+    "bbdb",
+    "bigloo (optional)",
+    "cedet",
+    "ecb",
+    "emacs-apel",
+    "emacs-muse",
+    "emacs-php-mode",
+    "emacs-pkgbuild-mode",
+    "emacs-python-mode",
+    "emacs-w3m",
+    "emacs-w3m-cvs",
+    "emms",
+    "flim",
+    "semi",
+    "supercollider (optional)",
+    "wanderlust",
+)
+install=emacs.install
+source=(ftp://ftp.gnu.org/gnu/emacs/$pkgname-$pkgver.tar.bz2{,.sig})
+md5sums=('1676803a50e8adc817fdaaebb9234f14' 'ca1766337f419ef827dd96d1ff78f158')
+
+
+build() {
+  cd "$srcdir"/$pkgname-$pkgver
+#    --localstatedir=/var --with-x-toolkit=gtk3 --with-xft \
+  ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
+    --localstatedir=/var --with-x-toolkit=gtk --with-xft \
+     --without-gconf --without-gsettings --without-dbus
+# http://comments.gmane.org/gmane.emacs.devel/152003
+  make
+  # Emacs startup getting much slower!!!
+}
+
+package() {
+  cd "$srcdir"/$pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+
+  # remove conflict with ctags package
+  mv "$pkgdir"/usr/bin/{ctags,ctags.emacs}
+  mv "$pkgdir"/usr/share/man/man1/{ctags.1.gz,ctags.emacs.1}
+  # fix all the 777 perms on directories
+  find "$pkgdir"/usr/share/emacs/$_majorver -type d -exec chmod 755 {} \;
+  # fix user/root permissions on usr/share files
+  find "$pkgdir"/usr/share/emacs/$_majorver -exec chown root:root {} \;
+  # fix perms on /var/games
+  chmod 775 "$pkgdir"/var/games
+  chmod 775 "$pkgdir"/var/games/emacs
+  chmod 664 "$pkgdir"/var/games/emacs/*
+  chown -R root:games "$pkgdir"/var/games
+}
