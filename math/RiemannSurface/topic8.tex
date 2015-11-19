@@ -1,0 +1,1051 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{xypic}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\setcounter{topic}{8}
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: The Torus}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+%%% page 249
+Our use of the classification theorem in proving Theorem~7.4 of the
+previous topic is rather disappointing.  For we have applied the
+classification theorem in the compact case only, and the proof of this
+case occupies half page, whereas the proof of the other two cases
+requires eleven more pages.  Essentially all that has been used in
+Theorem~6.12 of Topic 6 and its corollary.  In this topic we shall
+get to use the full force of the classification theorem in discovering
+what all the ``analytic'' tori are.  I.e. we shall ``classify'' the
+analytic tori.
+
+At first glance, it perhaps seems that the classification theorem, 
+which is addressed to simply connected surfaces, could not be used on
+tori, which are manifestly not simply connected.  In any case, the
+utility of the classification theorem would be minute if it had no
+application to anything but simply connected surfaces.  Indeed, the
+theorem states essentially that simply connected Riemann surfaces are
+trivial in a certain sense.
+
+%%% page 250
+One of the primary applications of the classification theorem is to
+the \emph{universal covering surface} of an arbitrary connected
+Riemann surface.  The universal covering surface is a connected
+Hausdorff space, and can be made into a Riemann surface in a natural
+way, as we shall see in Lemma~\ref{lem:1}.  Also, it is simply
+connected, so the classification theorem applies.  Once we know that
+the universal covering surface is analytically equivalent to the
+sphere, plane, or disk, then standard topological methods can be
+invoked to obtain analytic information about the original surface.
+Actually, in the case of a torus the universal covering surface is
+obviously the plane, topologically; the ``covering map'' is also
+rather obvious; and as a result in this topic not even the definitions
+of the concepts mentioned in this paragraph will be given.  But the
+topologically alert reader will know the general setting of what
+follows.
+
+\begin{defn}
+  \label{def:1}
+  If $T$ and $S$ are topological spaces and $f : T \to S$, then $f$ is
+  a \emph{local homeomorphism} if for every point $p \in T$ there
+  exist a neighbourhood $U$ of $p$ and a neighbourhood $V$ of $f(p)$
+  such that $f$ is a homeomorphism of $U$ onto $V$.
+\end{defn}
+
+\begin{lem}
+  \label{lem:1}
+  Let $T$ be a Hausdorff topological space and $S$ a Riemann surface.
+  Let $f : T \to S$ be a local homeomorphism.  Then there exists a
+  unique complete analytic atlas on $T$ such that $f$ is an analytic
+  function from the Riemann surface $T$ to $S$.
+\end{lem}
+
+\begin{mdframed}
+  \textbf{Proof}:
+  First we prove uniqueness, so we suppose first that $T$ is a Riemann
+  surface.  If $p \in T$, there exist a neighbourhood $U$ of $p$ and
+  a neighbourhood $V$ of $f(p)$ such that $f : U \to V$ is a
+  homeomorphism and $V$ is the domain of an analytic chart $\varphi :
+  V \to \varphi(V)$ on $S$.  Let $f_1$ be the restriction of $f$ to
+  $U$.  Then since $f$ is analytic, $f_1$ is an analytic equivalence
+  of $U$ onto $V$, so $\varphi \circ f_1$ must be an analytic chart on
+  $U$.  Knowing an analytic chart in a neighbourhood of each point of
+  $T$ implies that we know the complete analytic atlas for $T$, so the
+  uniqueness follows.
+
+  Conversely, we use the above procedure to \emph{define} charts
+  $\varphi \circ f_1$ on $T$.  We now show these charts form an
+  analytic atlas.  If we have another choice, $\widetilde{U},
+  \widetilde{V}, \widetilde{\varphi}$, and $\widetilde{f}_1$ (the
+  restriction of $f$ to $\widetilde{U}$), then where the composition
+  is defined we have
+  $$
+  \widetilde{\varphi} \circ \widetilde{f}_1 \circ
+  (\varphi \circ f_1)^{-1}
+  = \widetilde{\varphi} \circ \widetilde{f}_1 \circ
+  f_1^{-1} \circ \varphi^{-1} 
+  = \widetilde{\varphi} \circ \varphi^{-1}
+  $$
+  since $\widetilde{f}_1 \circ f_1^{-1}$ = identity (we might have to
+  decrease the size of everything to achieve this).  Since $S$ is a
+  Riemann surface, $\widetilde{\varphi} \circ \varphi^{-1}$ is
+  holomorphic, and thus we have an analytic atlas for $T$.  We have to
+  show that $f$ is now analytic, but this is clear.  For, \textbf{on
+    $U$} we have
+  $$
+  f = f_1 = \varphi^{-1} \circ (\varphi \circ f_1),
+  $$
+  %%% page 252
+  and this is a composition of two analytic functions.  Thus, $f$ is
+  analytic in a neighbourhood of any point of $T$.
+\end{mdframed}
+
+\begin{lem}
+  \label{lem:2}
+  Let $T$ and $S$ be Riemann surfaces and $f : T \to S$ an analytic
+  local homeomorphism.  Let $T_1$ be a Riemann surface and $g : T_1
+  \to T$ a continuous function such that $f \circ g$ is analytic.
+  Then $g$ is analytic.
+  $$
+  \xymatrix{
+    T_1 \ar[r]^g \ar[dr]_{f\circ g} & T \ar[d]^f\\
+    & S
+    }
+  $$
+\end{lem}
+
+\begin{mdframed}
+  \textbf{Proof}:
+  Given $p \in T_1$, there exist neighbourhoods $U_1$ of $p$, $U$ of
+  $g(p)$, and  $V$ of $f(g(p))$ such that $g : U_1 \to U$ and $f : U
+  \to V$ is an analytic equivalence.  Then \textbf{on $U_1$} we have
+  $$
+  g = f_1^{-1} \circ (f \circ g),
+  $$
+  where $f_1$ is the restriction of $f$ to $U$.  Thus, $g$ is
+  analytic.
+\end{mdframed}
+
+\medskip
+Now that the preliminaries are finished, we are ready to discuss
+tori.  The situation is this: $S$ is a Riemann surface which is
+homeomorphism to a \emph{torus}.
+%%% page 253
+The problem is to discover what kind of analytic atlas $S$ can have.
+What we shall do is prove that $S$ is analytically equivalent to $\CCC
+/ \Omega$ mentioned in Topic 2.  The problem is essentially to find
+the complex numbers $w_1$ and $w_2$ such that $\Omega = \{ n_1 w_1 +
+n_2 w_2 ~:~ n_1, n_2 \in \ZZ\}$.
+
+To start with, it is convenient to choose a \emph{topological}
+representation of $S$ as $\CCC / \Omega$ for some $\Omega$ which we
+can pick arbitrarily.  Thus, choose arbitrary complex $\rho_1$ and
+$\rho_2$ whose ratio is not real.  Then we suppose that $S$ is the set
+of all cosets $[z] = \{z + n_1 \rho_1 + n_2 \rho_2 ~:~ n_1, n_2 \in
+\ZZ\}$, and $S$ is made into a Hausdorff space in the way described in
+Topic 2.  We thus have a concrete representation of $S$ as a
+topological space, but the analytic atlas for $S$ is unknown.  In
+particular, it is probably not the analytic atlas described there,
+unless we happened to choose $\rho_1$ and $\rho_2$ correctly.  We
+reiterate that we are going to prove it \textbf{is} such an analytic
+atlas with the proper choice of $\rho_1$ and $\rho_2$.
+
+Now we are ready to apply Lemma~\ref{lem:1} and \ref{lem:2}.  First,
+let $\CCC$ be the complex plane as a topological space \emph{without}
+the usual complete analytic atlas and let
+$$
+\pi : \CCC \to S
+$$
+be the natural mapping defined by $\pi(z) = [z]$.  Clearly, $\pi$ is a
+local homeomorphism, so Lemma~\ref{lem:1} shows there is a
+%%% page 254
+unique way to make $\CCC$ a Riemann surface such that $\pi$ is
+analytic.  Let $\CCC^*$ denote this Riemann surface; $\CCC^*$ is
+homeomorphic but not necessarily analytically equivalent to $\CCC$ as
+we usually consider it as a Riemann surface.
+
+There are obvious translations on $\CCC^*$.  For example, let
+$$
+t_1 ~:~ \CCC^* \to \CCC^*
+$$
+be defined by
+$$
+t_1(z) = z + \rho_1.
+$$
+Then since $\pi(z + \rho_1) = [z + \rho_1] = [z] = \pi(z)$, we have
+$$
+\pi \circ t_1 = \pi.
+$$
+Or, we have a commutative diagram.
+$$
+\xymatrix{
+  \CCC^* \ar[r]^{t_1} \ar[dr]^\pi & \CCC^* \ar[d]^\pi\\
+  & S
+}
+$$
+By Lemma~\ref{lem:2}, $t_1$ is analytic.  Likewise, $t_2$ is analytic,
+where $t_2(z) = z + \rho_2$.  Two obvious facts about these
+translations are that $t_1$ and $t_2$ commute:
+$$
+t_1 \circ t_2 = t_2 \circ t_1,
+$$
+and that $t_1$ and $t_2$ generate an Abelian group: if $n_1$ and $n_2$
+are any integers, the mapping
+%%% page 255
+$$
+t_1^{n_1} \circ t_2^{n_2}
+$$
+which stands for $n_1$-fold composition of $t_1$ composed with
+$n_2$-fold composition of $t_2$, is just the mapping
+$$
+z \mapsto z + n_1 \rho_1 + n_2 \rho_2.
+$$
+
+Now we apply the classification theorem to $\CCC^*$, which is simply
+connected, connected and \textbf{not} compact.  Thus, $\CCC^*$ is
+analytically equivalent to $\CCC$ or the dis unit disk $\Delta$.  In
+spite of appearances, it does not seem obvious that $\CCC^*$ is
+equivalent to $\CCC$ and not $\Delta$, which is indeed the case.  It
+is clear that this question must be faced.  Let $? = \CCC$ or $\Delta$
+as the case may be, and let $f$ be the analytic equivalence:
+$$
+f : ? \to \CCC^*
+$$
+
+Using $t_1$ and $t_2$, we now define corresponding mappings of ? to
+itself:
+$$
+\begin{aligned}
+  A_1 &= f^{-1} \circ t_1 \circ f,\\
+  A_2 &= f^{-1} \circ t_2 \circ f.
+\end{aligned}
+$$
+Then the properties of $t_1$ and $t_2$ are obviously reflected in
+$A_1$ and $A_2$: $A_1$ and $A_2$ are analytic maps of ? onto ?, they
+are both one-to-one, they commute, for
+%%% page 256
+$$
+\begin{aligned}
+  A_1 \circ A_2 
+  &= (f^{-1} \circ t_1 \circ f) \circ (f^{-1} \circ t_2 \circ f)\\
+  &= f^{-1} \circ t_1 \circ t_2 \circ f\\
+  &= f^{-1} \circ t_2 \circ t_1 \circ f  = A_2 \circ A_1,
+\end{aligned}
+$$
+and they generate an Abelian group, with the formula
+$$
+A_1^{n_1} \circ A_2^{n_2} = f^{-1} \circ t_1^{n_1} \circ t_2^{n_2} \circ f.
+$$
+Now we remark that the only analytic equivalences of $\Delta$ on
+$\Delta$ or of $\CCC$ onto $\CCC$ are \emph{M\"obius}
+transformations.  Thus $A_1$ and $A_2$ are both M\"obius
+transformations.
+
+It turns out the thing relevant to our discussion is the \emph{fixed
+  point} structure of $A_1$ and $A_2$.  Suppose now that $A$ is a
+M\"obius transformation of the form
+$$
+A(z) = \frac{az+b}{cz+d},\quad ad-bc \ne 0.
+$$
+A point $z \in \widehat{\CCC}$ is a fixed point of $A$ if $A(z) = z$.
+That is,
+$$
+\frac{az+b}{cz+d} = z.
+$$
+Observe that $\infty$ is a fixed point if and only if $c = 0$.  If
+$c\ne 0$, the above equation can be written
+$$
+az + b = cz^2 + dz,
+$$
+a quadratic equation for $z$, which has either two roots or one root.
+Thus, every M\"obius $A$ has one or two fixed points in
+$\widehat{\CCC}$ (note that if $c = 0$, we can write $A(z) = az + b$,
+and the $A$ has two fixed points if and only if $a \ne 1$).
+
+%%% page 257
+Now if $A$ is M\"obius and an equivalence of $\Delta$ onto $\Delta$,
+and if $z$ is a fixed point of $A$, then the \emph{conjugate} of $z$
+with respect to $\p \Delta$ is also a fixed point of $A$.  For suppose
+$w$ is the conjugate of $z$ (that is, $w = 1/\overline{z}$).  Then a
+property of $A(\p \Delta)$.  But $A(z) = z$ and $A(\p \Delta) = \p
+\Delta$, so we see that $z$ and $A(w)$ are conjugate with respect to
+$\p \Delta$.  Thus, $A(w) = w$. 
+
+It is obvious that $t_1$ has no fixed points in $\CCC^*$.  Thus,
+\emph{$A_1$ has no fixed points in ?}.  If $? = \CCC$, we must have
+therefore
+$$
+A_1(z) = z + w_1,
+$$
+and likewise
+$$
+A_2(z) = z + w_2.
+$$
+Here $w_1$ and $w_2$ are nonzero complex numbers.
+
+If $? = \Delta$, then if $A_1$ has only one fixed point, it must be on
+$\p \Delta$.  This follows since $A_1$ has \emph{no} fixed points
+\emph{in $\Delta$} and since the conjugate with respect to $\p \Delta$
+of a fixed point of $A_1$ is also a fixed point of $A_1$.  Likewise,
+if $A_1$ has two fixed points, they both lie on $\p \Delta$.
+
+\textbf{Proof that $? = \CCC$}.  Suppose the contrary, that $? =
+\Delta$.  There are two cases to consider.  Suppose first that $A_1$
+has two fixed points, $\alpha$ and $\beta$.  Then
+$$
+A_1(A_2(\alpha)) = A_2(A_1(\alpha)) = A_2(\alpha),
+$$
+so $A_2(\alpha)$ is a fixed point of $A_1$.  Likewise, $A_2(\beta)$ is
+a fixed point of $A_1$.  So either $A_2(\alpha) = \alpha$ and
+$A_2(\beta) = \beta$, or $A_2(\alpha) = \beta$ and $A_2(\beta) =
+\alpha$.  Now define the M\"obius transformation
+$$
+m(z) = \frac{z-\alpha}{z-\beta}.
+$$
+Then the transformation
+$$
+m \circ A_1 \circ m^{-1}
+$$
+maps 0 to 0 and $\infty$ to $\infty$, and thus is multiplication by a
+complex number $a_1$.  Since $m(\p \Delta)$ is a straight line through
+0, it follows that $m(\Delta)$ is a half plane bounded by a straight
+line through 0.  And the mapping $z \mapsto a_1 z$ maps this half
+plane onto itself.  Thus, $a_1$ is a positive real number.  That is,
+$$
+m \circ A_1 \circ m^{-1}(z) = a_1 z, \quad 0 < a_1 < \infty.
+$$
+
+If we have $A_2(\alpha) = \alpha$ and $A_2(\beta) = \beta$, the also
+$$
+m \circ A_2 \circ m^{-1}(z) = a_2 z, \quad 0 < a_2 < \infty.
+$$
+On the other hand, if $A_2(\alpha) = \beta$ and $A_2(\beta) = \alpha$,
+then $m \circ A_2 \circ m^{-1}$ maps 0 to $\infty$ and $\infty$ to 0.
+Thus, for some nonzero complex $b$,
+$$
+m \circ A_2 \circ m^{-1}(z) = \frac{b}{z}.
+$$
+Then it follows that
+$$
+(m \circ A_2 \circ m^{-1}) \circ (m \circ A_2 \circ m^{-1})(z)
+= \frac{b}{b/z} = z,
+$$
+so that also
+$$
+A_2 \circ A_2 = \text{identity}.
+$$
+But then also $t_2 \circ t_2$ = identity, a contradiction since $t_2
+\circ t_2$ is translation by $2\rho_2$.  Therefore, we conclude that
+$$
+m \circ A_j \circ m^{-1}(z) = a_j z, \quad j = 1,2.
+$$
+Now we need a lemma.
+
+\begin{lem}
+  \label{lem:3}
+  Let $x,y \in \RR$.  Then there exist integers $m_k$, $n_k$ such that
+  for each $k$, $m_k$ and $n_k$ are not both zero, and
+  $$
+  \lim_{k\to \infty} (m_k x + n_k y) = 0.
+  $$
+\end{lem}
+
+\begin{myproof}
+  We can obviously assume $x$ and $y$ are not both zero and that
+  $\frac{x}{y} = \xi$ is irrational.  Let $N$ be any positive
+  integer.  For $1 \le j \le N+1$ there exists a unique integer
+  $\ell_j$ such that
+  $$
+  0 < j\xi - \ell_j < 1.
+  $$
+  Among the $N$ intervals $(0, \frac{1}{N})$, $(\frac{1}{N},
+  \frac{2}{N})$, $\cdots$, $(\frac{N-1}{N}, 1)$ there must be one
+  which contains two of the numbers $j \xi = \ell_j$, say for $j_1$
+  and $j_2$.  Then
+  $$
+  |(j_1 \xi - \ell_{j_1}) - (j_2 \xi - \ell_{j_2})| < \frac{1}{N}.
+  $$
+\end{myproof}
+
+Now we apply this lemma to the real numbers $\log(a_1)$ and
+$\log(a_2)$ to obtain $m_k \log(a_1) + m_k\log(a_2) \to 0$.
+Exponentiating, $a_1^{m_k} a_2^{n_k} \to 1$.  Thus, for each $z$ we
+have
+$$
+m \circ A_1^{m_k} \circ A_2^{n_k} \circ m^{-1} (z) \to z.
+$$
+Therefore, since $m$ and $m^{-1}$ are continuous,
+$$
+A_1^{m_k} \circ A_2^{n_k}(z) \to z
+$$
+for each $z$, and thus
+$$
+t_1^{m_k} \circ t_2^{n_k}(z) \to z
+$$
+for each $z$.  This says $z + m_k\rho_1 + n_k \rho_2 \to z$, and thus
+$m_k \rho_1 + n_k \rho_2 \to 0$.  This contradict the fact that
+$\rho_1$ and $\rho_2$ have a nonreal ratio.
+
+%%% page 261
+The only other case is the case in which $A_1$ and $A_2$ each have
+only one fixed point.  Suppose $A_1(\alpha) = \alpha$. $A_2(\alpha)$
+is a fixed point of $A_1$, so $A_2(\alpha) = \alpha$.  Let $m$ be the
+M\"obius transformation
+$$
+m(z) = \frac{e^{i\theta}}{z-\alpha}.
+$$
+The $m(\alpha) = \infty$ and $m(\p \Delta)$ is a straight line.  We
+choose $\theta$ to force this straight line to be parallel to the real
+axis.  Then $m \circ A_1 \circ m^{-1}$ maps $\infty$ to $\infty$ and
+has no other fixed point, so
+$$
+m \circ A_1 \circ m^{-1}(z) = z + a_1.
+$$
+Since $m \circ A \circ m^{-1}$ maps the associated half plane onto
+itself, $a_1 \in \RR$.  Likewise,
+$$
+m \circ A_2 \circ m^{-1}(z) = z + a_2, \quad a_2 \in \RR.
+$$
+By Lemma~\ref{lem:3}, there exist integers $m_k$ and $n_k$ such that
+$m_k a_1 + n_k a_2 \to 0$.  Therefore, as in the argument above we
+obtain $m_k \rho_1 + n_k \rho_2 \to 0$, a contradiction.
+
+Thus, we have now completely contradicted the assumption that $? =
+\Delta$.  The only other possibility must hold.  Thus, $\boxed{? =
+  \CCC}$.
+
+Now we know that $A_j(z) = z + w_j$, $j=1,2$. Exactly as in the above
+discussion, it follows that $w_1$ and $w_2$ have a nonreal ratio.
+Thus, if we define $\Omega = \{n_1 w_1 + n_2 w_2 ~:~ n_1, n_2 \in
+\ZZ\}$, we have a Riemann surface $\CCC/\Omega$ (as defined in Topic
+2).
+
+%%% page 262
+Consider the diagram
+$$
+\xymatrix{
+ \CCC^* \ar[d]_\pi & \CCC \ar[l]_f \ar[d]^{\pi_1} \\
+ S & \CCC/\Omega \ar[l]_F
+}
+$$
+where the map $\pi_1$ is $z \mapsto z + \Omega$.  What we want to do
+is obtain an analytic function $F$ from $\CCC/\Omega$ to $S$.  First,
+we can \textbf{define} a function $F$ by
+$$
+F(z + \Omega) = \pi \circ f(z).
+$$
+This makes sense, for if $z + \Omega = z' + \Omega$, then $z = z' +
+n_1 w_1 + n_2 w_2$ for some integers $n_1$ and $n_2$, and thus
+$$
+\begin{aligned}
+  \pi \circ f(z) &= \pi \circ f(z' + n_1 w_1 + n_2 w_2)\\
+  &= \pi \circ f(A_1^{n_1} \circ A_2^{n_2}(z'))\\
+  &= \pi \circ t_1^{n_1} \circ t_2^{n_2} (f(z')) = \pi \circ f(z').
+\end{aligned}
+$$
+Thus, $F$ is uniquely defined such that $F \circ \pi_1 = \pi \circ
+f$.  Since $\pi_1$ is locally an analytic equivalence, we have $F =
+\pi \circ f \circ \pi_1^{-1}$ \emph{locally} and thus $F$ is
+analytic.  Since $\pi$ and $f$ surjections, so is $F \circ \pi_1$ and
+thus so is $F$.  Finally, $F$ is one-to-one.  For, suppose $F(z +
+\Omega) = F(z' + \Omega)$.  Then $\pi \circ f(z) = \pi \circ f(z')$,
+so that there exist integers $n_1$ and $n_2$ such that
+$$
+f(z) = f(z') + n_1 \rho_1 + n_2 \rho_2 = t_1^{n_1} \circ t_2^{n_2}
+\circ f(z').
+$$
+%%% page 263
+Thus
+$$
+z = f^{-1} \circ t_1^{n_1} \circ t_2^{n_2} \circ f(z')
+= A_1^{n_1} \circ A_2^{n_2} (z')
+= z' + n_1 w_1 + n_2 w_2.
+$$
+Thus, $z + \Omega = z' + \Omega$, proving $F$ is one-to-one.
+
+We shall now formally state a theorem which includes the above
+discussion.  We need to recall Definition~5.10 of Topic 5.
+
+\begin{thm}
+  \label{thm:1}
+  Let $S$ be a compact, connected Riemann surface.  Then the following
+  conditions are equivalent.
+  \begin{enumerate}
+  \item $S$ is analytically equivalent to the Riemann surface of a
+    polynomial
+    $$
+    w^2 - 4(z-e_1)(z-e_2)(z-e_3),
+    $$
+    where $e_1, e_2, e_3$ are distinct complex numbers.
+  \item $S$ is analytically equivalent to the Riemann surface of a
+    polynomial
+    $$
+    w^2 - (z-a_1)(z-a_2)(z-a_3)(z-a_4),
+    $$
+    where $a_1, a_2, a_3, a_4$ are distinct complex numbers.
+  \item $S$ is homeomorphic to a torus.
+  \item $S$ is analytically equivalent to a torus of the form $\CCC /
+    \Omega$.
+  \end{enumerate}
+\end{thm}
+
+%%% page 264
+\begin{mdframed}
+  \textbf{Proof}: \underline{$1 \Rightarrow 2$}: This is simple
+  algebra.  We can assume $S \subset \overline{M}$ \textbf{is} the
+  Riemann surface of the polynomial 1.  Let $\alpha \in \CCC$, $\alpha
+  \ne e_1$ or $e_2$ or $e_3$.  Define
+  $$
+  f = \frac{1}{\pi - \alpha},
+  $$
+  where $\pi$ and $v$ are the functions on $\overline{M}$ discussed in
+  Topic 4, restricted to $S$.  Thus,
+  $$
+  \begin{aligned}
+    v^2 &= 4(\pi-e_1)(\pi-e_2)(\pi-e_3);\\
+    f^4 v^2 &= 4f(f(\pi - \alpha) + (\alpha + e_1)f)
+    (f(\pi - \alpha) + (\alpha + e_2)f)
+    (f(\pi - \alpha) + (\alpha + e_3)f)\\
+    &= 4f(1 + (\alpha-e_1)f)(1 + (\alpha-e_2)f)(1 + (\alpha-e_3)f)\\
+    &= 4(\alpha-e_1)(\alpha-e_2)(\alpha-e_3)
+    f(f-\frac{1}{e_1-\alpha})(f-\frac{1}{e_2-\alpha})
+    (f-\frac{1}{e_3-\alpha}).
+  \end{aligned}
+  $$
+  Choose a complex number $\beta = \sqrt{4(\alpha-e_1)(\alpha-e_2)
+    (\alpha-e_3)}$ and let
+  $$
+  g = \frac{f^2 v}{\beta}.
+  $$
+  Thus,
+  $$
+  g^2 = f(f-\frac{1}{e_1-\alpha})(f-\frac{1}{e_2-\alpha})
+  (f-\frac{1}{e_3-\alpha}).
+  $$
+  Now $f$ and $g$ are meromorphic on $S$ and $f$ takes every value 2
+  times, since the same is true of $\pi$.  Now consider the diagram
+  from Topic 6
+  %%% page 265
+  $$
+  \xymatrix {
+    S \ar[rr]^{\Phi} \ar[dr]_{f,g} && \overline{M} \ar[dl]^{\pi, v}\\
+    & \widehat{\CCC} \times \widehat{\CCC}
+  }
+  $$
+  The polynomial equation satisfied by $f$ and $g$ is easily seen to
+  be irreducible and it is of degree 2 in $g$.  Therefore, Theorem~6.5
+  of Topic 6 implies $\Phi$ is an analytic equivalence.  This
+  proves $1 \Rightarrow 2$.
+
+
+  \underline{$2 \Rightarrow 3$}:
+  This follows trivially from the cutting and gluing process described
+  in Topic 1.  Also, it follows from the Riemann-Hurwitz formula.  In
+  this case $V = 4$ and $n = 2$, so that $g = 1$.
+
+  \underline{$3 \Rightarrow 4$}:
+  This is the content of the discussion preceding this problem.
+
+  \underline{$4 \Rightarrow 1$}:
+  Now we have to do some work.  In fact, we need to introduce some
+  rather classical and famous concepts of the theory of elliptic
+  functions.  Suppose that $w_1, w_2 \in \CCC$ have nonreal ration and
+  define as usual $\Omega = \{n_1 w_1 + n_2 w_2 ~:~ n_1, n_2 \in
+  \ZZ\}$.   Define
+  $$
+  \wp(z) = \frac{1}{z^2} + \sum_{\substack{\zeta \in \Omega\\ \zeta
+      \ne 0}}(\frac{1}{(z-\zeta)^2} - \frac{1}{\zeta^2}).
+  $$
+  We must first prove this series converges.  If $K$ is a compact
+  subset of $\CCC - \Omega$, then for any $z \in K$
+  %%% page 266
+  $$
+  \left| \frac{1}{(z-\zeta)^2} - \frac{1}{\zeta^2} \right|
+    = \frac{|-z^2 + 2z\zeta|}{|(z-\zeta)^2\zeta^2|}
+    \le c |\zeta|^{-3}.
+  $$
+  We now check that the series of constants
+  $$
+  \sum_{\substack{\zeta \in \Omega\\ \zeta \ne 0}} |\zeta|^{-3}
+  $$
+  converges.  Since $w_1$ and $w_2$ have nonreal ratio, it follows
+  that for any $\theta \in [0, 2\pi]$, $w_1 \cos \theta + w_2 \sin
+  \theta \ne 0$.  Since this is a continuous function of $\theta$,
+  there exists a positive constant $\delta$ such that
+  $$
+  |w_1 \cos \theta + w_2 \sin \theta|
+  \ge \delta, \quad 0 \le \theta \le 2\pi.
+  $$
+  Multiplying both sides of this inequality by a positive number, we
+  obtain
+  $$
+  |x w_1 + y w_2| \ge \delta\sqrt{x^2 + y^2},\quad x,y\in \RR.
+  $$
+  Therefore, summing on squares in $\RR^2$, we obtain
+  $$
+  \begin{aligned}
+    \sum_{\substack{\zeta \in \Omega\\ \zeta \ne 0}} |\zeta|^{-3} 
+    &\le \delta^{-3} \sum_{\substack{n_1,n_2\text{ not }\\\text{both
+          zero}}} (n_1^2 + n_2^2)^{-3/2}\\
+    &= \delta^{-3} \sum_{k=1}^{\infty} \sum_{\max(|n_1|,|n_2|)=k}
+    (n_1^2 + n_2^2)^{-3/2}\\
+    &\le \delta^{-3} \sum_{k=1}^{\infty} 4(2k+1)k^{-3} < \infty.
+  \end{aligned}
+  $$
+  %%% page 267
+  Therefore, the series defining $\wp$ converges uniformly on any
+  compact subset of $\CCC - \Omega$, and one sees likewise that for
+  any lattice point $\zeta_0$, the series for $\wp(z) -
+ze  \frac{1}{(z-\zeta_0)^2}$ converges uniformly on any compact subset
+  of $\CCC - (\Omega - \{\zeta_0\})$.  Therefore, $\wp$ is meromorphic
+  on $\CCC$ and has poles of order 2 at each $\zeta \in \Omega$.  The
+  function $\wp$ is called the \emph{Weierstrass pe-function}.
+
+  The first remark to be made is that $\wp$ is an \emph{even}
+  function.  For,
+  $$
+  \wp(-z) = \frac{1}{z^2} + \sum_{\substack{\zeta \in \Omega\\ \zeta
+      \ne 0}} (\frac{1}{(-z-\zeta)^2} - \frac{1}{\zeta^2}).
+  $$
+  Replacing the ``dummy'' $\zeta$ by $-\zeta$, we therefore obtain
+  $$
+  \wp(-z) = \frac{1}{z^2} + \sum_{\substack{\zeta \in \Omega\\ \zeta
+      \ne 0}} (\frac{1}{(z-\zeta)^2} - \frac{1}{\zeta^2}) = \wp(z).
+  $$
+  Next we compute $\wp'$; since the series for $\wp$ converges
+  uniformly locally, this can be done formally:
+  $$
+  \wp'(z) = \frac{-2}{z^3}\sum_{\substack{\zeta \in \Omega\\ \zeta
+      \ne 0}} \frac{-2}{(z-\zeta)^3}
+  = -2 \sum_{\zeta \in \Omega} \frac{1}{(z-\zeta)^3}.
+  $$
+  Thus, if $\zeta_0 \in \Omega$,
+  $$
+  \wp'(z + \zeta_0) = - \sum_{\zeta \in \Omega} \frac{1}{(z+\zeta_0 -
+    \zeta)^3} = -2 \sum_{\zeta\in \Omega} \frac{1}{(z-\zeta)^3} =
+  \wp'(z),
+  $$
+  %%% page 268
+  where we have replaced the ``dummy'' $\zeta$ by $\zeta + \zeta_0$.
+  This implies that
+  $$
+  \wp(z + w_1) - \wp(z) \equiv \text{constant}.
+  $$
+  We evaluate this constant by setting $\ds z = -\frac{w_1}{2}$.
+  Since $\wp$ is even,
+  $$
+  \wp(\frac{w_1}{2}) - \wp(-\frac{w_1}{2}) = 0,
+  $$
+  and thus the constant is zero.  Therefore, using the same argument
+  for $w_2$,
+  $$
+  \wp(z + w_1) = \wp(z),\quad
+  \wp(z + w_2) = \wp(z).
+  $$
+
+  These relations imply that we can regard $\wp$ as a meromorphic
+  function on $\CCC/\Omega$, whose value at $z + \Omega$ is just
+  $\wp(z)$.  To keep track of the notation, let $\wp_0$ be this
+  function:
+  $$
+  \wp_0(z + \Omega) = \wp(z).
+  $$
+  Then since $\wp$ has double poles at the points in $\Omega$ and no
+  other points, we see that $\wp_0$ has a double pole at $0 + \Omega$
+  and no other pole.  Since $\CCC / \Omega$ is a compact Riemann 
+  %%% page 269
+  surface, $\wp_0$ takes every value 2 times.
+
+  Likewise, if we define
+  $$
+  \wp_0'(z + \Omega) = \wp'(z),
+  $$
+  then \emph{$\wp_0'$ takes every value 3 times}, since $\wp'$ has
+  triple poles at the points of $\Omega$.  We shall be interested in
+  particular in the zeros of $\wp'$.  If $\zeta_0 \in \Omega$ but
+  $\frac{1}{2} \zeta_0 \notin \Omega$, then since $\wp'$ is
+  \emph{odd}, being the derivative of an even function,
+  $$
+  \wp'(\frac{1}{2}\zeta_0) 
+  = \wp'(\frac{1}{2}\zeta_0 - \zeta_0)
+  = \wp'(-\frac{1}{2}\zeta_0)
+  = - \wp'(\frac{1}{2}\zeta_0).
+  $$
+  Since $\frac{1}{2}\zeta_0 \notin \Omega$, $\wp'(\frac{1}{2}\zeta_0)
+  \notin \infty$, and thus $\wp'(\frac{1}{2}\zeta_0) = 0$.  Thus,
+  $$
+  \wp_0'(\frac{1}{2}w_1 + \Omega) = 0,
+  \wp_0'(\frac{1}{2}w_2 + \Omega) = 0,
+  \wp_0'(\frac{1}{2}w_1 + \frac{1}{2}w_2 + \Omega) = 0.
+  $$
+  Now define
+  $$
+  \wp_0(\frac{1}{2}w_1 + \Omega) = e_1,
+  \wp_0(\frac{1}{2}w_2 + \Omega) = e_2,
+  \wp_0(\frac{1}{2}w_1 + \frac{1}{2}w_2 + \Omega) = e_3.
+  $$
+
+  Since $\wp_0'$ takes every value 3 times, we have found all of its
+  zeros.  And these must therefore also be simple zeros of $\wp_0'$.
+  Also, we see that $\wp_0$ takes the value $e_1$ 2 times at
+  $\frac{1}{2}w_1 + \Omega$ (a zero of $\wp_0'$) and likewise for
+  $e_2$ and $e_3$.  In particular, $e_1, e_2, e_3$ are distinct.
+
+  Now consider the meromorphic function
+  $$
+  \frac{\wp_0'^2}{(\wp_0-e_1)(\wp_0-e_2)(\wp_0-e_3)}
+  $$
+  on $\CCC/\Omega$.  The numerator and denominator have poles only at
+  $0 + \Omega$, and near there we have the Laurent development
+  $$
+  \frac{(-\frac{2}{z^3} + \cdots)^2}{(\frac{1}{z^2} + \cdots)^3}
+  = \frac{\frac{4}{z^6} + \cdots}{\frac{1}{z^6} + \cdots}
+  = 4 + \cdots.
+  $$
+  Thus, the function has no pole at $0 + \Omega$, and in fact is equal
+  to 4 at $0 + \Omega$.  The only other possibilities for poles are at
+  $\frac{w_1}{2} + \Omega$, $\frac{w_2}{2} + \Omega$, and
+  $\frac{w_1}{2} + \frac{w_2}{2} + \Omega$.  But at these points the
+  numerator has zeros of order 2.  Thus, the function has no pole at
+  all, and is thus constant.  Therefore,
+  $$
+  \wp_0'^2 = 4(\wp_0 - e_1)(\wp_0 - e_2)(\wp_0 - e_3).
+  $$
+  This is the classical differential equation for $\wp$.
+
+  Consider the diagram
+  $$
+  \xymatrix {
+    S \ar[rr]^{\Phi} \ar[dr]_{\wp,\wp'} && T \ar[dl]^{\pi, v}\\
+    & \widehat{\CCC} \times \widehat{\CCC}
+  }
+  $$
+  %%% page 271
+  Since $\wp_0$ takes every value 2 times and the algebraic equation
+  relating $\wp_0$ and $\wp_0'$ has degree 2 in $\wp_0'$ and is
+  irreducible, Theorem~6.5 of Topic 6 implies $\Phi$ is an
+  analytic equivalence.  And $T$ is the Riemann surface of $w^2 -
+  4(z-e_1)(z-e_2)(z-e_3)$.
+\end{mdframed}
+
+Even among the tori $\CCC/\Omega$ there are lots of equivalences.  We
+now treat this problem.
+
+\begin{thm}
+  \label{thm:2}
+  Two tori $\CCC / \Omega$ and $\CCC / \widetilde{\Omega}$ are
+  analytically equivalent if and only if there exists a nonzero
+  complex $a$ such that
+  $$
+  \widetilde{\Omega} = a \Omega.
+  $$
+\end{thm}
+
+\begin{mdframed}
+  \textbf{Proof}: If $\widetilde{\Omega} = a\Omega$, then we can
+  define a mapping $\CCC / \Omega \to \CCC / \widetilde{\Omega}$ by
+  the formula $z + \Omega \mapsto az + \widetilde{\Omega}$, and this is
+  easily seen to be an analytic equivalence.
+
+  Conversely, suppose $F : \CCC / \Omega \to \CCC /
+  \widetilde{\Omega}$ is an analytic equivalence.  If $F(0 + \Omega) =
+  \alpha + \widetilde{\Omega}$, then let
+  $$
+  t : \CCC / \widetilde{\Omega} \to \CCC / \widetilde{\Omega}
+  $$
+  be defined by
+  $$
+  t(z + \widetilde{\Omega}) = z - \alpha + \widetilde{\Omega}.
+  $$
+  Then $t$ is an analytic equivalence and
+  $$
+  t \circ F(0 + \Omega) = t(\alpha + \widetilde{\Omega}) 
+  = 0 + \widetilde{\Omega}.
+  $$
+  %%% page 272
+  By considering $t \circ F$ instead of $F$, we see that there is no
+  loss of generality in assuming
+  $$
+  F(0 + \Omega) = 0 + \widetilde{\Omega}.
+  $$
+
+  Given $z_0 \in \CCC$ choose arbitrarily $w_0 \in \CCC$ such that
+  $$
+  F(z_0 + \Omega) = w_0 + \widetilde{\Omega}.
+  $$
+  Let $\pi : \CCC \to \CCC / \Omega$ and $\widetilde{\pi} : \CCC
+  \to \CCC / \widetilde{\Omega}$ be the canonical mappings and choose
+  a neighbourhood $\widetilde{U}$ of $w_0$ such that $\widetilde{\pi}$
+  is one-to-one on $\widetilde{U}$.  Then for $z$ near $z_0$ consider
+  the mapping
+  $$
+  g_{w_0}(z) = \widetilde{\pi}^{-1}(F(z + \Omega)).
+  $$
+  This is a holomorphic function in a neighbourhood of $z$ and if we
+  choose a different $w_0'$ such that $F(z_0 + \Omega) = w_0' +
+  \widetilde{\Omega}$, then $w_0' = w_0 + \widetilde{\zeta}_0$, where
+  $\widetilde{\zeta}_0 \in \widetilde{\Omega}$, and the associated
+  $\widetilde{\pi}^{-1}$ is thus equal to the original
+  $\widetilde{\pi}^{-1} + \widetilde{\zeta}_0$.  Thus,
+  $$
+  g_{w_0'}(z) = g_{w_0}(z) + \widetilde{\zeta}_0.
+  $$
+  It follows that
+  $$
+  \frac{d}{dz}g_{w_0}(z)
+  $$
+  is well defined near $z_0$ in the sense that it is independent of
+  the choice $w_0$.  Thus, we can define a function $h$ on $\CCC$ by
+  the formula
+  $$
+  h(z) = \frac{d}{dz} g_{w_0}(z),\quad z \text{ near } z_0.
+  $$
+  %%% page 273
+  Then $h$ is holomorphic on $\CCC$ and since for $z_0' = z_0 +
+  \zeta_0$, $\zeta_0 \in \Omega$, we can take $w_0$ to be the same and
+  thus for $z$ near $z_0'$
+  $$
+  g_{w_0}(z) = \widetilde{\pi}^{-1}(F(z + \Omega))
+  = \widetilde{\pi}^{-1}(F(z - \zeta_0 \Omega))
+  = g_{w_0}(z - \zeta_0),
+  $$
+  it follows that $h(z) = h(z - \zeta_0)$ for $z$ near $z_0'$.  Hence,
+  $h(z_0') = h(z_0' - \zeta_0) = h(z_0)$, so $h$ represents a
+  meromorphic function on $\CCC / \Omega$.  But $h$ is holomorphic and
+  thus constant, say $h \equiv a$.
+
+  Therefore, following the above notation we have
+  $$
+  g_{w_0}(z) = az + b
+  $$
+  for $z$ near $z_0$.  Applying $\widetilde{\pi}$ to both sides we
+  obtain
+  $$
+  F(z + \Omega) = az + b + \widetilde{\Omega} \text{ for } z \text{
+    near } z_0.
+  $$
+  Here $b$ is a constant which can depend on $z_0$.  By a connectivity
+  argument it is easy to see that the constants $b$ which can appear
+  here must differ from each other only by elements of
+  $\widetilde{\Omega}$.  Since $F(0 + \Omega) = 0 +
+  \widetilde{\Omega}$, the $b$ associated with $z_0 = 0$ must itself
+  belong to $\widetilde{\Omega}$.  Therefore, we have proved
+  $$
+  F(z + \Omega) = az + \widetilde{\Omega}.
+  $$
+  %%% page 274
+  This much has been done assuming only that $F$ is analytic and not
+  necessarily one-to-one.
+
+  If we assume that $F : \CCC / \Omega \to \CCC / \widetilde{\Omega}$
+  is one-to-one and onto, then since $F(0 + \Omega) = 0 +
+  \widetilde{\Omega}$, we have
+  $$
+  z + \Omega = 0 + \Omega
+  \Leftrightarrow F(z + \Omega) = F(0 + \Omega)
+  \Leftrightarrow az + \widetilde{\Omega} = 0 + \widetilde{\Omega}.
+  $$
+  That is,
+  $$
+  z \in \Omega \Leftrightarrow az \in \widetilde{\Omega}.
+  $$
+  But this means that $\widetilde{\Omega} = a\Omega$.
+\end{mdframed}
+
+Of course, we can describe the relation $\widetilde{\Omega} = a\Omega$
+algebraically rather than geometrically.  If
+$$
+\Omega = \{n_1 w_1 + n_2 w_2 ~:~ n_1, n_2 \in \ZZ\},\quad
+\widetilde{\Omega} = \{n_1 \widetilde{w}_1 + n_2 \widetilde{w}_2 
+~:~ n_1, n_2 \in \ZZ\},
+$$
+then we have
+$$
+aw_1 = n_{11} \widetilde{w}_1 + n_{12} \widetilde{w}_2,\quad
+aw_2 = n_{21} \widetilde{w}_1 + n_{22} \widetilde{w}_2,
+$$
+for certain integers $n_{jk}$.  Also,
+$$
+\widetilde{w}_1 = m_{11} a\widetilde{w}_1 + m_{12} a\widetilde{w}_2,\quad
+\widetilde{w}_2 = m_{21} a\widetilde{w}_1 + m_{22} a\widetilde{w}_2,
+$$
+%%% page 275
+for integers $m_{jk}$.  Therefore, we have the product of matrices
+$$
+\begin{pmatrix}
+  n_{11} & n_{12} \\ n_{21} & n_{22}
+\end{pmatrix}
+\begin{pmatrix}
+  m_{11} & m_{12} \\ m_{21} & m_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+  1 & 0 \\ 0 & 1
+\end{pmatrix}.
+$$
+Therefore, the product of the determinants is 1, or
+$$
+n_{11} n_{22} - n_{21} n_{12} = \pm 1.
+$$
+Conversely, if this equation holds, then the relations expressing
+$aw_1$ and $aw_2$ in terms of $\widetilde{w}_1$ and $\widetilde{w}_2$
+can be inverted, and thus $\widetilde{\Omega} = a \Omega$.
+
+Almost as an afterthought we mention that if $S$ is a compact,
+connected Riemann surface, then a necessary and sufficient condition
+that there exist a meromorphic function on $S$ which takes every value
+2 times is that $S$ be analytically equivalent to the Riemann surface
+of a polynomial
+$$
+w^2 - (z-a_1)(z-a_2) \cdots (z-a_\ell),
+$$
+where $a_1, a_2, \cdots, a_\ell$ are distinct.
+
+The proof is almost trivial.  If $S$ is the Riemann surface of the
+above polynomial, then the function $\pi$ takes every value 2 times
+since the polynomial has degree 2 in $w$.  Conversely, suppose $f$ is
+a meromorphic function on $S$ which takes every value 2 times.  By the
+proof of the Corollary 6.7, there exists a meromorphic function $g$ on
+%%% page 276
+$S$ such that $f$ and $g$ satisfy a polynomial equation which is
+irreducible and has degree 2 in $g$.  Thus, for certain rational
+functions $a$ and $b$,
+$$
+g^2 - 2a(f)g + b(f) = 0.
+$$
+Completing the square,
+$$
+(g - a(f))^2 = a(f)^2 - b(f).
+$$
+Let $g_1 = g - a(f)$ and $f_1 = a(f)^2 - b(f)$.  Then
+$$
+g_1^2 = f_1.
+$$
+Since $f_1$ is a rational function of $f$, we can write
+$$
+g_1^2 = \alpha^2 \frac{\prod_{k=1}^m (f - \alpha_k)^2}{
+  \prod_{k=1}^{m'} (f - \alpha_k')^2}
+  \times \frac{\prod_{j=1}^n (f - \beta_j)}{
+    \prod_{j=1}^{n'} (f - \beta_j')},
+$$
+where the $\alpha$'s and $\beta$'s are complex constants and the
+numbers $\beta_j$ and $\beta_j'$ are distinct.  Let
+$$
+g_2 = \frac{1}{\alpha} \frac{\prod_{k=1}^{m'} (f - \alpha_k')}{
+  \prod_{k=1}^{m} (f - \alpha_k)}
+  \prod_{j=1}^{n'} (f - \beta_j') g_1.
+$$
+Thus, we have produced distinct complex numbers $\alpha_1, \cdots,
+\alpha_\ell$ ($\ell = n + n'$) and a meromorphic function $g_2$ such
+that
+$$
+g_2^2 = \prod_{k=1}^\ell (f - \alpha_k).
+$$
+This type of Riemann surface is called \emph{hyperelliptic}.
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

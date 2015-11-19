@@ -1,0 +1,218 @@
+%\usepackage{framed}
+%%% http://tex.stackexchange.com/questions/13506/how-to-continue-the-framed-text-box-on-multiple-pages
+%%% http://tex.stackexchange.com/questions/151532/could-not-get-round-corner-working-in-mdframed
+\usepackage{mdframed}
+%\usepackage[framemethod=pstricks]{mdframed} % Text cannot display in XDVI
+%\usepackage[outerbars,color]{changebar}
+%\usepackage[outerbars]{changebar}  % \cbstart & \cbend
+
+\newtheorem{mycustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\themycustomthm{#1}\mycustomthm}
+  {\endmycustomthm}
+
+\ifamsstyle
+\usepackage{amsthm}
+%\theoremstyle{plain} %--- default
+\newtheorem{thm}{Theorem}[section]
+%\newtheorem{theorem}{Theorem}[section]
+%\newenvironment{thm}[1]{\begin{theorem}[#1]\cbstart}{\cbend\end{theorem}}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{crit}[thm]{Criteria}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{propn}[thm]{Proposition}
+
+\theoremstyle{definition}
+%\usepackage{theorem} %\theorembodyfont
+%With \usepackage{theorem}: \theorembodyfont{\upshape}
+\newtheorem{defn}[thm]{Definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newenvironment{defn}{\begin{definition}\cbstart}{\cbend\end{definition}}
+\newtheorem{form}[thm]{Formula}
+\newtheorem{method}[thm]{Method}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{exer}{Exercise}[]
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{ques}[thm]{Problem}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{stat}[thm]{\hspace{-1ex}}
+\else
+\usepackage{ntheorem}  % No proof environment
+%\usepackage{ntheorem}
+\theoremstyle{margin}
+\newtheorem{thm}{Theorem}[topic]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{crit}[thm]{Criteria}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{propn}[thm]{Proposition}
+%\renewcommand\labelenumi{(\arabic{enumi})}
+
+%\theoremstyle{definition}
+{
+\theorembodyfont{\upshape}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{exer}[thm]{Exercise}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{ques}[thm]{Problem}
+\newtheorem{stat}[thm]{\hspace{-1ex}}
+}
+
+% adapted from /usr/share/texmf/tex/latex/amscls/amsthm.sty
+\makeatletter
+\let\QED@stack\@empty
+\let\qed@elt\relax
+\newcommand{\pushQED}[1]{%
+  \toks@{\qed@elt{#1}}\@temptokena\expandafter{\QED@stack}%
+  \xdef\QED@stack{\the\toks@\the\@temptokena}%
+}
+\newcommand{\popQED}{%
+  \begingroup\let\qed@elt\popQED@elt \QED@stack\relax\relax\endgroup
+}
+\def\popQED@elt#1#2\relax{#1\gdef\QED@stack{#2}}
+\newenvironment{proof}[1][Proof]{\par
+  \pushQED{\hfill$\square$}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\fi
+\renewcommand\theequation{{\thetopic}.\arabic{equation}}
+\renewcommand\thesection{\thetopic.\arabic{section}}
+%%% \@dottedtocline{LEVEL}{INDENT}{NUMWIDTH}{TITLE}{PAGE}
+%%% From article.cls
+\makeatletter
+%%% http://en.wikibooks.org/wiki/TeX/ifx
+\ifx\@mylabel\undefined
+\def\mylabellength{2.2em}
+\else
+\def\mylabellength{\@mylabel}
+\fi
+\renewcommand*\l@section[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty\@secpenalty
+    \addvspace{1.0ex \@plus\p@}%
+    \setlength\@tempdima{\mylabellength}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+\renewcommand*\l@subsection{\@dottedtocline{2}{\mylabellength}{3em}}
+\makeatother
+%%%%%%%%%%%%%%
+
+\def\myskipabove{3pt}
+\def\myskipbelow{2pt}
+\def\myintopmarg{2pt}
+
+% adapted from /usr/share/texmf/tex/latex/amscls/amsthm.sty
+\makeatletter
+\def\@seccntformat#1{\S\csname the#1\endcsname\quad}
+\newenvironment{soln}[1][Solution]{\par
+  \begin{mdframed}[skipabove=\myskipabove,skipbelow=\myskipbelow,innertopmargin=\myintopmarg]
+  \pushQED{\qed}%
+  \normalfont \topsep1\p@\@plus1\p@\relax
+  %\trivlist
+  \iflecturer
+  \trivlist \color{blue}
+  \else
+  \trivlist \color{white}
+  \fi
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\color{black}\endtrivlist\@endpefalse
+  \end{mdframed}
+}
+
+% http://tex.stackexchange.com/questions/19099/framebox-and-minipage-causes-white-space-and-is-not-float
+\newcommand\framename{Frame}
+\newcounter{framecnt}
+\setcounter{framecnt}{0}
+\newcommand{\TitleFrame}[2]{%
+    \fboxrule=\FrameRule
+    \fboxsep=\FrameSep
+    \vbox{\nobreak \vskip -0.7\FrameSep
+        \rlap{\strut#1}\nobreak\nointerlineskip% left justified
+        \vskip 0.7\FrameSep
+        \noindent\fbox{#2}}}
+\newenvironment{titledframe}[2][\FrameFirst@Lab\ (cont.)]{%
+    \refstepcounter{framecnt}%
+    \def\FrameFirst@Lab{\textbf{\framename\ \theframecnt:\ #2}}%
+    \def\FrameCont@Lab{\textbf{#1}}%
+    \def\FrameCommand##1{%
+        \TitleFrame{\FrameFirst@Lab}{##1}}%
+    \def\FirstFrameCommand##1{%
+        \TitleFrame{\FrameFirst@Lab}{##1}}%
+    \def\MidFrameCommand##1{%
+        \TitleFrame{\FrameCont@Lab}{##1}}%
+    \def\LastFrameCommand##1{%
+        \TitleFrame{\FrameCont@Lab}{##1}}%
+    \MakeFramed{\hsize\textwidth
+    \advance\hsize -2\FrameRule
+    \advance\hsize -2\FrameSep
+    \FrameRestore}}%
+   {\endMakeFramed}
+
+\newenvironment{myframe}{
+  \par
+  \begin{mdframed}[skipabove=\myskipabove,skipbelow=\myskipbelow]
+  \iflecturer
+  \color{blue}
+  \else
+  \color{white}
+  \fi
+}{%
+  \color{black}
+  \end{mdframed}
+}
+\newenvironment{myproof}{
+  \par
+  \begin{mdframed}[skipabove=\myskipabove,skipbelow=\myskipbelow]
+    ~\par\vspace{-1em}
+  \begin{proof}
+  \iflecturer
+  \color{blue}
+  \else
+  \color{white}
+  \fi
+}{%
+  \end{proof}
+  \color{black}
+  \end{mdframed}
+}
+\makeatother
+
+%%% Command Abbreviations (in symbol.tex)
+%\newcommand{\ds}{\displaystyle}
+%\newcommand{\p}{\partial}
+
+%\newcommand{\boxof}[1]{\hspace*{\textwidth}\vspace*{#1}}
+\newcommand{\boxof}[1]{\begin{mdframed}\hspace*{\textwidth}\vspace*{#1}
+\end{mdframed}}
+
+\newenvironment{myinclude}
+  {\par\bgroup
+   \hbox to\hsize{\hss\vrule width 0.4pt height 0cm depth 0.2cm%
+                      \vrule width 1.025\hsize height 0cm depth 0.4pt%
+                      \vrule width 0.4pt height 0cm depth 0.2cm\hss}
+   \nopagebreak\vspace*{-1ex}\nopagebreak
+   \renewcommand\baselinestretch{1.0}\parindent=0pt\small
+   \tt\obeyspaces\obeylines\nopagebreak}
+  {\nopagebreak\vspace*{-2ex}\par\nopagebreak
+   \hbox to\hsize{\hss\vrule width 0.4pt height 0.25cm depth 0cm%
+                      \vrule width 1.025\hsize height 0.4pt depth 0cm%
+                      \vrule width 0.4pt height 0.25cm depth 0cm\hss}
+   \egroup\medskip}
+

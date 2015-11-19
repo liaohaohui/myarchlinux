@@ -1,0 +1,1114 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{showkeys}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\setcounter{topic}{3}
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: The Weierstrass Concept of a Riemann Surface}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+%%% E.page 54
+In this topic we shall consider the process of analytic continuation
+and obtain the Weierstrass definition of analytic function.  As we
+shall see, a concise language can be given to this process which
+brings us to construct a Riemann surface as a replacement for
+(``multiple-valued'') analytic function.
+
+The basic idea and the basic difficulty have been indicated in Topic
+1.  Given a holomorphic or even a meromorphic function defined on an
+open set, we want to extend it as far as possible and somehow take
+care of the multiple-valuedness that arises.
+
+\section{Analytic Continuation Along Paths}
+
+What we shall basically consider is analytic continuation along
+paths.  First, we shall describe the classical concept and then we
+shall fix everything up with lots of notation so that we end up with a
+Riemann surface and so that the problems of analytic continuation go
+over into statements about topological and other properties of Riemann
+surfaces.  Analytic continuation is classically considered in the
+following way: suppose $f$ is meromorphic in a disk $\Delta$ and has a
+Laurent expansion about the centre $a$ of $\Delta$ converging in
+$\Delta$:
+%%% page 55
+If $b \in \Delta$, it then makes sense to consider the Laurent
+expansion of $f$ about $b$.  This can be done in at least two ways; we
+can write
+$$
+(z-a)^k = (z-b + b-a)^k
+= (b-a)^k (1 + \frac{z-b}{b-a})^k
+= (b-a)^k \sum_{n=0}^{\infty} \binom{k}{n} \frac{(z-b)^n}{(b-a)^n}
+$$
+by the binomial theorem, and then we insert this into the formula for
+$f$, rearrange terms (permissible if $z$ is near $b$), and thus obtain
+for $b \ne a$ a Taylor series expansion for $f$ in a neighbourhood of
+$b$.  The other procedure would be simply to write
+$$
+f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(b)}{n!}(z-b)^n,\quad
+z \text{ near } b.
+$$
+If it so happens that the new series has radius of convergence larger
+than the distance from $b$ to the boundary of $\Delta$, we then have
+what is termed a \emph{direct} or an \emph{immediate} analytic
+continuation of $f$. Taking the new function in the new disk, we can
+again apply this process, etc.  We can thus arrive at a sequence
+$\Delta_1$, $\Delta_2$, $\cdots$ of disks an corresponding meromorphic
+functions $f_1, f_2, \cdots$ such that
+%%% page 56
+\begin{quote}
+  $f_k$ is meromorphic in $\Delta_k$, the centre of $\Delta_k$ belongs
+  to $\Delta_{k-1}$, $f_k$ is a direct analytic continuation of
+  $f_{k-1}$.
+\end{quote}
+Our first adjustment of this process will be to ignore the definite
+procedure for direct analytic continuation.  Thus, instead of
+considering $f_k$ to be constructed from $f_{k-1}$ by a definite
+process, we shall just require $f_{k-1} \equiv f_k$ in $\Delta_{k-1}
+\cap \Delta_k$.  Also, there is then no reason to require the centre
+of $\Delta_k$ to be in $\Delta_{k-1}$.
+
+\begin{defn}
+  \label{def:1}
+  Let $\gamma :[0,1] \to \CCC$ be a path.  An \emph{analytic
+    continuation along $\gamma$} is a collection of disks $\Delta_1,
+  \Delta_2, \cdots, \Delta_n$ and meromorphic functions $f_1, f_2,
+  \cdots, f_n$ such that
+  \begin{quote}
+    $f_k$ is meromorphic in $\Delta_k$, $f_{k-1} \equiv f_k$ in
+    $\Delta_{k-1} \cap \Delta_k$,
+  \end{quote}
+  and such that there exists $0 = t_0 < t_1 < \cdots < t_n = 1$ with
+  $$
+  \gamma([t_{k-1},t_k]) \subset \Delta_k,\quad k = 1,2,\cdots, n.
+  $$
+\end{defn}
+
+We clearly wish to consider all possible analytic continuations along
+paths, usually starting with a given meromorphic function $f_1$ in a
+given disk $\Delta_1$.  This will define a meromorphic function $f_n$
+in $\Delta_n$, but the value $f_n(\gamma(1))$ is not in general
+independent of $\gamma$, so that we cannot in general define a
+meromorphic function in $\CCC$ which extends $f_1$.
+%%% page 57
+For example, if $f_1$ is the principal determination of $z^{1/2}$ in
+$\Delta_1(1)$:
+$$
+f_1(z) = (1 + (z-1))^{1/2} = \sum_{n=0}^{\infty} \binom{1/2}{n}(z-1)^n,
+$$
+then analytic continuations along paths from 1 to $-1$ definitely
+depend on the path.  Consider the figure:
+
+\begin{mdframed}
+  \begin{minipage}{7cm}
+  \vspace{3cm}    
+  \end{minipage}%
+  \begin{minipage}{7cm}
+    analytic continuation along $\gamma_1$ yields a holomorphic
+    function near $-1$ whose value at $-1$ is $i$; but analytic
+    continuation along $\gamma_2$ yields the value $-i$.
+  \end{minipage}
+\end{mdframed}
+
+These statements are trivial to justify since we can write $z =
+re^{i\theta}$ with $-\pi < \theta < \pi$ (except on the negative real
+axis) and then $z^{1/2} = r^{1/2} e^{i\theta/2}$.  Along $\gamma_1$
+$\theta$ increases to $\pi$ and along $\gamma_2$ $\theta$ decreases to
+$-\pi$, and thus the two different values at $-1$ result.
+
+Therefore, if we wish to define some meromorphic function which is a
+largest possible analytic continuation of $f_1$, or which is derived
+from $f_1$ by analytic continuation on all paths for which
+continuation is possible, we shall have to have something other than
+$\CCC$ on which to define the extended function.  So we now begin to
+introduce the Riemann surface on which these continuations will be
+defined.
+
+%% page 58
+By the principle of the uniqueness of analytic continuation, it
+suffices to know the original function in an arbitrarily small open
+neighbourhood.  Such a ``germ'' of a function uniquely will determine
+the function everywhere.  So we make the following definitions.
+
+\begin{defn}
+  \label{def:2}
+  Let $a\in \CCC$ and suppose $f$ and $g$ are functions which are
+  meromorphic in neighbourhoods of $a$.  Then $f$ is \emph{equivalent}
+  to $g$, written $f \sim g$, if $f=g$ in some neighbourhood of $a$.
+\end{defn}
+
+This is an equivalence relation and we then make the following
+\begin{defn}
+  Let $a \in \CCC$.  Then $M_a$ is a collection of equivalence classes
+  of functions meromorphic in a neighbourhood of $a$.  Any element of
+  $M_a$ is called a \emph{germ of a meromorphic function}.  If $f$ is
+  a meromorphic function in a neighbourhood of $a$, then $[f]_a$ is
+  the germ to which $f$ belongs.  We say $[f]_a$ is the \emph{germ of
+    $f$ at $a$}.
+\end{defn}
+
+By definition, $[f]_a = [g]_a$ if and only if $f \equiv g$ near $a$.
+
+%%% page 59
+\begin{defn}
+  $M = \bigcup_{a\in\CCC} M_a$.  We also define the obvious mapping
+  $\pi : M \to \CCC$ by $\pi([f]_a) = a$.
+\end{defn}
+
+Below we shall make $M$ into a topological space in a natural way and
+then $M$ will be called the \emph{sheaf of germs of meromorphic
+  functions}, and $M_a$ the \emph{stalk} over the point $a$.
+
+We shall define a topology on $M$ by exhibiting a neighbourhood basis
+for each point in $M$.  Simple considerations then show that if we
+define a set in $M$ to be \emph{open} if it contains one of these
+special neighbourhoods of each of its points, then the class of open
+sets in $M$ forms a topology for which each point has the given
+neighbourhood basis as a basis of open neighbourhoods in this topology
+if the given neighbourhood bases satisfy the following conditions:
+\begin{enumerate}
+\item any two neighbourhoods of a point contain a third neighbourhood
+  of that point;
+\item any neighbourhood contains a neighbourhood of each of its
+  points.
+\end{enumerate}
+Furthermore, the topology of $M$ is \emph{Hausdorff} if also
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item any two distinct points of $M$ are contained in disjoint
+  neighbourhoods.
+\end{enumerate}
+
+\begin{mdframed}[skipabove=1ex,skipbelow=1ex]
+  \centerline{\bf The Topology of $M$.}
+\end{mdframed}
+
+Suppose $[f]_a \in M$.  Then there exists a disk $\Delta$ centred at
+$a$ such that $f$ is meromorphic on $\Delta$.  Define
+$$
+U(a,f,\Delta) = \{[f]_b ~:~ b\in \Delta\}.
+$$
+A neighbourhood basis of $[f]_a$ is defined to be all sets
+$U(a,f,\Delta)$ such that $f$ is meromorphic on $\Delta$.  Although
+the definition is quite simple, we have already incorporated into it
+the notion of direct analytic continuation, for the definition states
+that the germs ``close'' to $[f]_a$ are just the germs of the function
+$f$ itself at points close to $a$.  Now we check the various
+requirements for neighbourhood bases:
+\begin{enumerate}
+\item $U(a,f,\Delta_1) \cap U(a,f,\Delta_2) \supset U(a,f,\Delta_3)$
+  if $\Delta_3 \subset \Delta_1 \cap \Delta_1$;
+\item suppose $[f]_b \in U(a,f,\Delta)$.  Then let $\Delta'$ be a disk
+  centred at $b$ such that $\Delta' \subset \Delta$, and note that
+  $$
+  U(b,f,\Delta') \subset U(a,f,\Delta);
+  $$
+  \begin{center}
+    \begin{tikzpicture}[font={\small}]
+      \draw (0,0) circle [radius=1.4] node [below left]{$a$}
+      (-1.5,-0.2) node [below] {$\Delta$};
+      \draw (0.5,0.5) circle [radius=0.45] node [above] {$b$}
+      (0.5,-0.2) node {$\Delta'$};
+      \filldraw (0,0) circle [radius=2pt]
+      (0.5,0.5) circle [radius=2pt];
+    \end{tikzpicture}
+  \end{center}
+
+%%% page 61
+\item now we check that $M$ is Hausdorff.  Suppose that $[f]_a$ and
+  $[g]_{a'}$ are distinct points in $M$.  If $a\ne a'$, then take
+  $\Delta$ and $\Delta'$ to be disjoint disks centred at $a$ and $a'$,
+  respectively, and note that $U(a,f,\Delta)$ and $U(a',g,\Delta')$
+  are obviously disjoint.  If $a=a'$, then choose a disk $\Delta$ such
+  that $f$ and $g$ meromorphic in $\Delta$.  Then $U(a,f,\Delta)$ and
+  $U(a, g, \Delta)$ are disjoint.  For otherwise there would exist a
+  point $[f]_b = [g]_b$ for some $b \in \Delta$, and thus $f \equiv g$
+  in a neighbourhood of $b$.  By the uniqueness of analytic
+  continuation, $f \equiv g$ in $\Delta$, contradicting $[f]_a \ne
+  [g]_a$.
+\end{enumerate}
+
+Now $M$ is a topological space.  Note how much information is
+contained in the statement of the validity of the Hausdorff separation
+axiom --- namely, this property reflects the uniqueness of analytic
+continuation.
+
+\begin{mdframed}[skipabove=1ex,skipbelow=1ex]
+\centerline{\bf $M$ is surface}
+\end{mdframed}
+
+The charts are almost obvious.  Just use the mapping $\pi$ restricted
+to the various neighbourhoods of $U(a,f,\Delta)$.  Suppose we call
+$\varphi$ the restriction of $\pi$ to $U(a,f,\Delta)$.  Then
+$$
+\varphi : U(a,f,\Delta) \to \Delta
+$$
+is given by $\varphi([f]_b) = b$, and $\varphi^{-1}(b) = [f]_b$.
+Thus, $\varphi$ is a bijection.  Also, if $U(b,f,\Delta') \subset
+U(a,f, \Delta)$, then clearly
+$$
+\varphi(U(b,f,\Delta')) = \Delta'.
+$$
+%%% page 62
+Thus, $\varphi$ induces a one-to-one correspondence between a
+neighbourhood basis of $[f]_b$ and a neighbourhood basis of
+$\varphi([f]_b) = b$.  Thus, $\varphi$ is a homeomorphism.  This
+proves that $M$ is a surface.
+
+Moreover, we now have a nice atlas on $M$ and we claim it is an
+analytic atlas and thus
+
+\begin{mdframed}[skipabove=1ex,skipbelow=1ex]
+\centerline{\bf $M$ is a Riemann surface}
+\end{mdframed}
+
+Suppose $\varphi$ is the restriction of $\pi$ to $U(a,f,\Delta)$ and
+$\psi$ is the restriction of $\pi$ to $U(b,g,\Delta')$.  If $z \in
+\Delta$ and $\varphi^{-1}(z) \in U(a,f,\Delta) \cap U(b,g,\Delta')$,
+then $\varphi^{-1}(z) = [f]_z = [g]_z$, and thus
+$\psi(\varphi^{-1}(z)) = z$.  Thus, where it is defined we have
+$$
+\psi \circ \varphi^{-1} = \text{identity}!
+$$
+The coordinate transition functions are thus trivially holomorphic and
+$M$ is a Riemann surface.
+
+The mapping $\pi : M \to \CCC$ is holomorphic.  This really needs no
+checking at all, since $\pi$ restricted to any neighbourhood
+$U(a,f,\Delta)$ is a chart in the analytic atlas we have constructed,
+and such charts are always holomorphic.
+
+\begin{ques}
+  \label{problem:2}
+  Define $V : M \to \widehat{\CCC}$ by the formula
+  $$
+  V([f]_a) = f(a).
+  $$
+  Prove that $V$ is meromorphic.
+\end{ques}
+
+%%% page 63
+Thus, we have two meromorphic functions $\pi$ and $V$ on $M$ which are
+quite natural and simple functions to consider.  We shall in the next
+topic define an extension of $M$ which is quite a bit more
+complicated, and again will be able to single out two natural
+meromorphic functions, which we shall again designate $\pi$ and $V$.
+In that context these functions will appear much alike, although on
+$M$ the function $\pi$ seems to be somewhat simpler than $V$.
+
+In terms of $M$ we can give a characterisation of analytic
+continuation along paths (see Definition~\ref{def:1}).
+
+\begin{propn}
+  \label{propn:1}
+  Let $[f]_a \in M$ be given, and let $\gamma$ be a path in $\CCC$
+  starting at $a$.  A necessary and sufficient condition that there
+  exists an analytic continuation along $\gamma$ with $f_1 = f$ in a
+  disk $\Delta_1$ containing $a$ (using the notation of
+  Definition~\ref{def:1}) is that there exists a path
+  $\widetilde{\gamma}$ in $M$ such that
+  $$
+  \pi \circ \widetilde{\gamma} = \gamma,\quad
+  \widetilde{\gamma}(0) = [f]_a.
+  $$
+\end{propn}
+\begin{myproof}
+  The necessity is quite clear.  Using the notation of
+  Definition~\ref{def:1} we define
+  $$
+  \widetilde{\gamma}(t) = [f_k]_{\gamma(t)},\quad t_{k-1} \le t \le t_k.
+  $$
+  %%% pgage 64
+  Since $\gamma(t_{k-1}) \in \Delta_{k-1} \cap \Delta_k$ and $f_{k-1}
+  \equiv f_k$ in $\Delta_{k-1} \cap \Delta_k$, we have
+  $[f_{k-1}]_{\gamma(t_{k-1})} = [f_{k}]_{\gamma(t_{k-1})}$.  Thus,
+  $\widetilde{\gamma}$ is unambiguously defined, and clearly
+  $\pi(\widetilde{\gamma}(t)) = \gamma(t)$, $\widetilde{\gamma}(0) =
+  [f_1]_{\gamma(0)} = [f]_a$.  The continuity of $\widetilde{\gamma}$
+  is immediate from the definition of the topology of $M$ and the
+  continuity of $\gamma$.
+
+  The proof of sufficiency relies on a compactness argument.  The
+  continuity of $\widetilde{\gamma}$ and the definition of the
+  topology of $M$ show that for each $t \in [0,1]$ there exists an
+  open interval $I_t$ (open relative to $[0,1]$) containing $g$ and a
+  meromorphic function $f_t$ defined on a disk $\Delta_t$ centred at
+  $\gamma(t)$ such that
+  $$
+  \widetilde{\gamma}(I_t) \subset U(\gamma(t), f_t, \Delta_t) 
+  \equiv U_t \subset M.
+  $$
+  The compactness result we need is that there exists $\epsilon > 0$
+  such that any interval in $[0,1]$ of length not exceeding $\epsilon$
+  is contained in one of the intervals $I_t$.  The proof proceeds in
+  the following manner.  For each $s \in [0,1]$, there exists $r(s) >
+  0$ such that
+  $$
+  [0,1] \cap (s-r(s), s + r(s)) \subset I_s.
+  $$
+  As $[0,1]$ is compact, there exist points $s_1, \cdots, s_k$ such
+  that 
+  $$
+  [0,1] \subset \bigcup_{j=1}^k (s_j - \frac{1}{2}r(s_j), s_j +
+  \frac{1}{2}r(s_j)).
+  $$
+  Let $\epsilon = \min\{r(s_j) ~:~ 1\le j\le k\}$.  Then if $x \in
+  [0,1]$ choose $j$ such that $|x-s_j| < \frac{1}{2}r(s_j)$.  If
+  $|y-x| \le \frac{1}{2}\epsilon$, then
+  %%% page 65
+  $$
+  |y - s_j| \le |y-x| + |x-s_j| 
+  < \frac{1}{2}\epsilon + \frac{1}{2}r(s_j) \le r(s_j),
+  $$
+  so
+  $$
+  y \in (s_j - r(s_j), s_j + r(s_j)) \subset I_{s_j}.
+  $$
+  Thus,
+  $$
+  [0,1] \cap [x-\frac{1}{2}\epsilon, x+\frac{1}{2}\epsilon]
+  \subset I_{s_j},
+  $$
+  as required.
+
+  Now choose points $t_0, \cdots, t_n$ such that $0 = t_0 < t_1 <
+  \cdots < t_n = 1$, $t_k-t_{k-1} \le \epsilon$, $1\le k \le n$.  By
+  choice of $\epsilon$, the interval $[t_{k-1},t_k]$ is contained in
+  some set $I_{\tau_k}$ constructed above.  Thus, we are given a
+  collection of disks $\Delta_{\tau_k}$ and meromorphic functions
+  $f_{\tau_k}$ on $\Delta_{\tau_k}$, and we have to check that we have
+  thereby obtained an analytic continuation along $\gamma$.  Since
+  $\widetilde{\gamma}([t_{k-1}, t_k]) \subset
+  \widetilde{\gamma}(I_{\tau_k}) \subset U_{\tau_k}$, we obtain
+  $$
+  \gamma([t_{k-1},t_k]) = \pi(\widetilde{\gamma}([t_{k-1},t_k]))
+  \subset \pi(U_{\tau_k}) = \Delta_{\tau_k}.
+  $$
+  If $z \in \Delta_{\tau_{k-1}} \cap \Delta_{\tau_k}$, then the
+  corresponding points in $U_{\tau_{k-1}}$ and $U_{\tau_{k}}$ are
+  $[f_{\tau_{k-1}}]_z$ and $[f_{\tau_{k}}]_z$, respectively.  In
+  particular for $z = \gamma(t_{k-1})$ we have
+  $$
+  \widetilde{\gamma}(t_{k-1}) = [f_{\tau_{k-1}}]_z 
+  = [f_{\tau_{k}}]_z
+  $$
+  so that $f_{\tau_{k-1}} \equiv f_{\tau_{k}}$ in a neighbourhood of
+  $\gamma(t_{k-1})$, and by analytic continuation $f_{\tau_{k-1}}
+  \equiv f_{\tau_k}$ in $\Delta_{\tau_{k-1}} \cap \Delta_{\tau_k}$.
+  Finally, it is clear that since $\widetilde{\gamma}(0) = [f]_a$, we
+  have $f_{\tau_1} \equiv f$ in $\Delta_1 \cap \Delta_{\tau_0}$, so
+  the analytic continuation along $\gamma$ which we have constructed
+  begins with the given meromorphic function $f$ in a neighbourhood of
+  $a$.
+\end{myproof}
+
+\begin{defn}
+  \label{def:5}
+  If $\gamma$ and $\widetilde{\gamma}$ are paths into $\CCC$ and $M$,
+  respectively, such that $\gamma = \pi \circ \widetilde{\gamma}$,
+  then $\widetilde{\gamma}$ is said to be a \emph{lifting} of
+  $\gamma$. 
+\end{defn}
+
+\begin{propn}[Unique Lifting Theorem (and ``Analytic Continuation'')]
+  \label{propn:2}
+  If $\widetilde{\gamma}_1$ and $\widetilde{\gamma}_2$ are paths in
+  $M$ such that $\pi \circ \widetilde{\gamma}_1 = \pi \circ
+  \widetilde{\gamma}_2$, then either
+  $$
+  \widetilde{\gamma}_1(t) = \widetilde{\gamma}_2(t)
+  \text{ for every } t \in [0,1],
+  $$
+  or
+  $$
+  \widetilde{\gamma}_1(t) = \widetilde{\gamma}_2(t)
+  \text{ for no } t \in [0,1].
+  $$
+\end{propn}
+
+\begin{myproof}
+  Let $A = \{t\in [0,1] ~:~ \widetilde{\gamma}_1(t) =
+  \widetilde{\gamma}_2(t) \}$.  By continuity of
+  $\widetilde{\gamma}_1$ and $\widetilde{\gamma}_2$, $A$ is a closed
+  set.  It is also an open set, for consider any $t_0 \in A$.  Let $a
+  = \pi \circ \widetilde{\gamma}_i(t_0)$ and
+  $\widetilde{\gamma}_i(t_0) = [f]_a$.  Then $f$ is meromorphic on a
+  disk $\Delta$ centred at $a$ and a neighbourhood $U(a,f,\Delta)$ of
+  $[f]_a$ is defined.  By continuity of $\widetilde{\gamma}_i$,
+  $\widetilde{\gamma}_i(t)$ is contained in $U(a,f,\Delta)$ for $t$
+  sufficiently near $t_0$ and thus for those values of $t$
+  $$
+  \widetilde{\gamma}_i(t) = [f]_{\pi \circ \widetilde{\gamma}_i(t)}
+  $$
+  %%% page 67
+  and since $\pi \circ \widetilde{\gamma}_1 = \pi \circ
+  \widetilde{\gamma}_2$ we obtain $\widetilde{\gamma}_1(t) =
+  \widetilde{\gamma}_2(t)$, or, $t \in A$.
+
+  %%% page 67
+  Since $A$ is both open and closed and $[0,1]$ is connected, we have
+  either $A = [0,1]$ or $A$ is empty.
+\end{myproof}
+
+Thus, although in the sense of Definition~\ref{def:1} analytic
+continuation is not a uniquely defined construction (since difference 
+choices could be made for the $t_k$'s and the disks $\Delta_k$), yet 
+viewed as a lifting problem we do have a strong uniqueness statement.  
+Moreover, we see now that the natural choice we have used in the proof 
+of necessity of Proposition~\ref{propn:1} was really forced upon us.
+There was no other way to choose $\widetilde{\gamma}(t)$.
+
+This discussion definitely does not imply that the unique continuation
+property along paths leads to a germ at the end point of the path
+which is uniquely determined by the end point.  The discussion in
+between Definitions~\ref{def:1} and \ref{def:2} makes this clear.  
+In terms of the example of the square root mentioned there, observe 
+that if $f_1$ is the
+principal determination of $z^{1/2}$ near 1 and if $\gamma$ is the
+path $\gamma(t) = e^{2\pi it}$, $0 \le t \le 1$, then $\gamma$ can be
+lifted to a path $\widetilde{\gamma}$ such that $\widetilde{\gamma}(0)
+= [f_1]_1$, but $\widetilde{\gamma}(1) = [-f_1]_1$.  Thus,
+$\widetilde{\gamma}(0) \ne \widetilde{\gamma}(1)$, although
+$\gamma(0) = \gamma(1)$.  Another way of stating this is that 
+$[f_1]_1$ and $[-f_1]_1$ are ``far apart'' in the
+topology of $M$, and yet both lie in $M_1$ and can be connected by a
+path in $M$.
+
+
+\section{Monodromy Theorem}
+%%% page 68
+Now we begin to prove the famous ``monodromy theorem'', which
+essentially states that the phenomenon just discussed cannot occur on
+simply connected regions.  A consequence will be the fact that on any
+simply connected region in $\CCC$ which does not contain the origin
+one can define a (single-valued) analytic determination of $z^{1/m}$,
+$\log(z)$, etc.   First we introduce the notation $I = [0,1]$, $I^2 =
+[0,1] \times [0,1]$.
+
+\begin{lem}
+  \label{lem:1}
+  Let $\Gamma : I^2 \to \CCC$ be continuous, and let
+  $\widetilde{\Gamma} : I^2 \to M$ satisfy $\pi \circ
+  \widetilde{\Gamma} = \Gamma$.  Assume that for each fixed $u \in I$,
+  $\widetilde{\Gamma}(t,u)$ is a continuous function of $t$; and also
+  that $\widetilde{\Gamma}(0,u)$ is a continuous function of $u$.
+  Then $\widetilde{\Gamma}$ is continuous.
+\end{lem}
+
+\begin{myproof}
+  This follows in a purely topological manner from the unique lifting
+  theorem (Proposition~\ref{propn:2}) and the description of lifting
+  in terms of analytic continuous given in Proposition~\ref{propn:1}.
+  Let $\beta \in I$.  We shall then prove that there exists $\epsilon
+  > 0$ such that $\widetilde{\Gamma}$ is continuous on $I \times (I
+  \cap (\beta-\epsilon, \beta + \epsilon))$, and the lemma will then
+  be proved.  For each fixed $u$ define for $t\in I$
+  $$
+  \gamma_u(t) = \Gamma(t,u),\quad \widetilde{\gamma}_u(t) =
+  \widetilde{\Gamma}(t,u).
+  $$
+  Then $\gamma_u$ and $\widetilde{\gamma}_u$ are continuous and $\pi
+  \circ \widetilde{\gamma}_u = \gamma_u$.  Now we apply
+  Proposition~\ref{propn:1}, which guarantees the existence of a
+  collection of disks $\Delta_1, \cdots, \Delta_n$, meromorphic $f_k$
+  defined in $\Delta_k$, $1\le k\le n$, and points $t_k$ such that $0
+  = t_0 < t_1 < \cdots < t_n = 1$ and
+  $$
+  \gamma_\beta([t_{k-1},t_k]) \subset \Delta_k,\quad
+  f_{k-1} = f_k \text{ on }\Delta_{k-1}\cap \Delta_k,
+  $$
+  and
+  $$
+  \widetilde{\gamma}_\beta(t) = [f_k]_{\widetilde{\gamma}_\beta(t)},
+  \quad t_{k-1} \le t \le t_k,
+  $$
+  the latter choice being forced as follows from the proof of
+  Proposition~\ref{propn:1} and the unique lifting theorem.  Note that
+  we have \textbf{fixed} $\beta$ and applied Proposition~\ref{propn:1}
+  to the paths $\gamma_\beta$ and $\widetilde{\gamma}_\beta$.
+
+  Since $\Gamma$ is \textbf{uniformly} continuous, there exists
+  $\epsilon_1 > 0$ such that
+  $$
+  \gamma_u([t_{k-1},t_k]) \subset \Delta_k \text{ if }
+  |u - \beta| < \epsilon_1, \quad u \in I
+  $$
+  (recall that $\Delta_k$ is an \textbf{open} disk).  Also, since
+  $\widetilde{\Gamma}(0,u)$ is a continuous function of $u$, there
+  exists $\epsilon_2 > 0$ such that 
+  $$
+  \widetilde{\Gamma}(0,u) \in U(a,f_1,\Delta_1)
+  \text{ if } |u-\beta| < \epsilon_2,\quad u \in I
+  $$
+  ($a$ = centre of $\Delta_1$).  Thus, if $\epsilon =
+  \min\{\epsilon_1, \epsilon_2\}$,
+  $$
+  \widetilde{\gamma}_u(0) = [f_1]_{\widetilde{\gamma}_u(0)}
+  \text{ if }|u-\beta| < \epsilon,\ u\in I.
+  $$
+  %%% page 70
+  The unique lifting theorem now implies that
+  $$
+  \widetilde{\gamma}_u(t) = [f_k]_{\gamma_u(t)},\quad
+  t_{k-1} \le t \le t_k,\ |u-\beta| < \epsilon,\ u\in I.
+  $$
+  That is,
+  $$
+  \widetilde{\Gamma}(t,u) = [f_k]_{\Gamma(t,u)},\quad
+  t_{k-1} \le t \le t_k,\ |u-\beta| < \epsilon,\ u\in I.
+  $$
+  But the continuity of $\Gamma(t,u)$ in the indicated range implies
+  that of $\widetilde{\Gamma}(t,u)$ in the same range.
+\end{myproof}
+
+\begin{defn}
+  \label{def:6}
+  If $T$ is a topological space and $\gamma_0 : I \to T$ and $\gamma_1
+  : I \to T$ are paths in $T$ having the same end points, then
+  $\gamma_0$ and $\gamma_1$ are \emph{homotopic with fixed end points}
+  if there exists a continuous
+  $$
+  \Gamma : I^2 \to T
+  $$
+  such that
+  $$
+  \Gamma(t,0) = \gamma_0(t),\ 
+  \Gamma(t,1) = \gamma_1(t),\ 
+  \Gamma(0,u) = \gamma_0(0) = \gamma_1(0),\ 
+  \Gamma(1,u) = \gamma_0(1) = \gamma_1(1).
+  $$
+  The function $\Gamma$ is called a \emph{homotopy} between $\gamma_0$
+  and $\gamma_1$.  If there is possibility of confusion we will say
+  $\gamma_0$ and $\gamma_1$ are \emph{$T$-homotopic} with fixed end
+  points.
+\end{defn}
+
+%%% page 71
+\begin{defn}
+  \label{def:7}
+  A connected topological space $T$ is \emph{simply connected} if each
+  pair of paths $\gamma_0$ and $\gamma_1$ in $T$ having the same end
+  points are homotopic with fixed end points.
+\end{defn}
+
+Now we can state various trivial consequences of Lemma~\ref{lem:1}.
+
+\begin{thm}[Covering Homotopy Theorem]
+  Let $\Gamma : I^2 \to \CCC$ be a homotopy in $\CCC$ and let $p \in
+  M$ such that $\pi(p) = \Gamma(0,u)$ ($0 \le u \le 1$), and suppose
+  for each $u \in I$ the path $t \mapsto \Gamma(t,u)$ can be lifted to
+  a path in $M$ starting at $p$, say $\widetilde{\Gamma}(t,u)$ so that
+  $$
+  \pi \circ \widetilde{\Gamma} = \Gamma.
+  $$
+  Then $\widetilde{\Gamma}$ is homotopy in $M$.
+\end{thm}
+\begin{myproof}
+  For each $u \in I$ the function $t \mapsto \widetilde{\Gamma}(t,u)$
+  is continuous, by hypothesis.  And $\widetilde{\Gamma}(0,u) = p$ is
+  constant and thus a continuous function of $u$.  Therefore,
+  Lemma~\ref{lem:1} implies $\widetilde{\Gamma}$ is continuous.
+  Finally, consider the two paths
+  $$
+  \widetilde{\gamma}(u) = \widetilde{\Gamma}(1,u),\quad
+  \widetilde{\gamma}'(u) = \widetilde{\Gamma}(1,0).
+  $$
+  We then have
+  $$
+  \widetilde{\gamma}(0) = \widetilde{\gamma}'(0)
+  $$
+  and
+  $$
+  \pi \circ \widetilde{\gamma}(u) 
+  = \Gamma(1,u)
+  = \Gamma(1,0)
+  = \pi \circ \widetilde{\gamma}'(u)
+  $$
+  Thus Proposition~\ref{propn:2} implies $\widetilde{\gamma} =
+  \widetilde{\gamma}'$.  That is, $\widetilde{\Gamma}(1,u) =
+  \widetilde{\Gamma}(1,0)$, and thus $\widetilde{\Gamma}$ is a
+  homotopy.
+\end{myproof}
+
+%%% page 72
+\begin{thm}[Monodromy Theorem]
+  Let $D$ be a simply connected region in $\CCC$, $a \in D$, and $f$ a
+  meromorphic function in a neighbourhood of $a$.  Assume that $f$ has
+  an analytic continuation along every path in $D$ which starts at
+  $a$.  Then there exists a meromorphic function $F$ on $D$ such that
+  $f \equiv F$ in a neighbourhood of $a$.
+\end{thm}
+
+\begin{myproof}
+  The hypothesis means that for every path $\gamma$ in $D$ such that
+  $\gamma(0) = a$, there exists a path $\widetilde{\gamma}$ in $M$
+  such that $\pi \circ \widetilde{\gamma} = \gamma$ and
+  $\widetilde{\gamma}(0) = [f]_a$.  If $\gamma_0$ and $\gamma_1$ are
+  paths in $D$ from $a$ to $z$, then $\gamma_0$ and $\gamma_1$ are
+  $D$-homotopic with fixed end points, and by the covering homotopy
+  theorem the paths $\widetilde{\gamma}_0$ and
+  $\widetilde{\gamma}_1$.  Thus, we can define unambiguously
+  $$
+  F(z) = V(\widetilde{\gamma}(1)),
+  $$
+  where $\widetilde{\gamma}$ is a path in $M$ such that
+  $\widetilde{\gamma}(0) = [f]_a$ and $\pi \circ \widetilde{\gamma}$
+  is a path in $D$ from $a$ to $z$.  Now we must check the properties
+  of $F$.
+  %%% page 73
+  First, suppose $\widetilde{\gamma}(1) = [g]_z$, where $g$ is
+  holomorphic in a disk $\Delta$ centred at $z$.  For $w \in \Delta$
+  we use the path which goes from $a$ to $z$ along $\gamma$ and then
+  from $z$ to $w$ along a line segment.  The lifting from $a$ to $z$
+  is $\widetilde{\gamma}$ and the lifting from $z$ to $w$ is just the
+  germ of $g$ at pints on the segment from $z$ to $w$.  Since $F$ is
+  unambiguously defined, $F(w0 = V([g]_w) = g(w)$.  Thus, $F$ is
+  meromorphic in $\Delta$ and this proves $F$ is meromorphic in $D$.
+  In particular, if $z = a$ we can take $g = f$ and we obtain $F(w) =
+  f(w)$ for $w$ near $a$.
+\end{myproof}
+
+One application of the monodromy theorem has already been mentioned.
+Namely, on a simply connected region $D \subset \CCC - \{0\}$, there
+exists a holomorphic determination of $\log(z)$.  The only hypothesis
+which needs to be checked is that $\log(z)$ can be analytically
+continued along  all paths in $D$.  This can be verified in a simple
+manner, but we omit the proof now since a slightly different version
+of the same result will be given in the discussion of algebraic
+functions in Topic 5.
+
+We next want to give and example pertinent to the monodromy theorem,
+but we shall first give a rather simple but important theorem on
+analytic continuation, the so-called ``permanence of functional
+relations''.  This is a generalisation of a familiar result on
+single-valued functions, an example of which is the fact that the
+identity $\sin 2z = 2\sin z \cos z$ follows from its validity for
+\textbf{real} $z$ and the analyticity of all the functions involved.
+%%% page 74
+The theorem we shall give is really a generalisation of usual theorems
+on unique analytic continuation because we are not here dealing with
+single-valued functions.  Also, a more general theorem could be
+stated.
+
+\begin{thm}[Permanence of Functional Relations]
+  Let $A(z,w)$ be a holomorphic function for $z$ in a region $D
+  \subset \CCC$ and all $w \in \CCC$.  Let $\widetilde{\gamma}$ be a
+  path in $M$ such that $\gamma = \pi \circ \widetilde{\gamma}$ is a
+  path in $D$ and each $t \in I$ yields $\widetilde{\gamma}(t) =
+  [f_t]_{\gamma(t)}$, where $f_t$ is a holomorphic function in a
+  neighbourhood of $\gamma(t)$.  If $A(z,f_0(z)) \equiv 0$ in a
+  neighbourhood of $\gamma(0)$, then for each $t \in I$, $A(z,f_t(z))
+  \equiv 0$ in a neighbourhood of $\gamma(t)$.
+\end{thm}
+
+\begin{rem}
+  We have not given a definition for a function $A$ to be holomorphic
+  in two complex variables.  One definition states that for any $(z_0,
+  w_0)$ in the domain of definition of $A$, $A$ has a power series
+  expansion
+  $$
+  A(z,w) = \sum_{j,k=0}^{\infty} a_{jk}(z-z_0)^j (w-w_0)^k
+  $$
+  converging absolutely for $z$ near $z_0$ and $w$ near $w_0$.  The
+  important property we need is that if $f$ is a holomorphic function
+  of one variable near $z_0$, then $A(z,f(z))$ is holomorphic for $z$
+  near $z_0$.  For most important case we shall consider this is quite
+  obvious; namely, the case in which the function $A(z,w)$ is a
+  polynomial in which $w$ with coefficients holomorphic functions of
+  $z$:
+  $$
+  A(z,w) = a_0(z) w^n + \cdots + a_{n-1}w + a_n(z).
+  $$
+\end{rem}
+
+%%% page 75
+\begin{myproof}
+  Since $f_t$ is holomorphic near $\gamma(t)$, the function
+  $A(z,f_t(z))$ is holomorphic near $\gamma(t)$ and thus defines a
+  germ at $\gamma(t)$ which we denote
+  $$
+  \widetilde{\gamma}_1(t) = [A(z,f_t(z))]_{\gamma(t)}.
+  $$
+  Since $\widetilde{\gamma}(t) = [f_t]_{\gamma(t)}$, it follows that
+  $\widetilde{\gamma}_1$ is a path in $M$ (i.e., $\widetilde{\gamma}_1$
+  is continuation) and obviously $\pi \circ \widetilde{\gamma}_1 =
+  \gamma$.  Also define
+  $$
+  \widetilde{\gamma}_2(t) = [0]_{\gamma(t)}.
+  $$
+  Then $\widetilde{\gamma}_2$ is a path in $M$ with $\pi \circ
+  \widetilde{\gamma}_2 = \gamma$.  By hypothesis,
+  $\widetilde{\gamma}_1(0) = \widetilde{\gamma}_2(0)$.  Thus,
+  Proposition~\ref{propn:2} implies $\widetilde{\gamma}_1 =
+  \widetilde{\gamma}_2$ and this implies the result.
+\end{myproof}
+
+Before giving the example, let us make one important observation about
+analytic continuation.  This is the fact that if two germs at a point
+$a$ are different, then they remain different under analytic
+continuation along any fixed path.  This is another consequence of
+Proposition~\ref{propn:2}, which in this case would read that if
+$\widetilde{\gamma}_1(1) = \widetilde{\gamma}_2(1)$, then
+$\widetilde{\gamma}_1(0) = \widetilde{\gamma}_2(0)$.  Also, if $[f]_a$
+is a germ at $a$ and if $f$ can be continued analytically along every
+path in a region $D$ and if the continuation of $f$ depends only on
+the terminal point of the path and not on the path itself, then there
+is a meromorphic $F$ defined in $D$ such that $F = f$ near $a$.  The
+proof of this is exactly like the proof of the monodromy theorem was
+once we knew that analytically continuation did not depend on the
+path.
+
+%%% page 76
+The monodromy theorem has of course two critical hypothesis.  We have
+already indicated the reason for assuming $D$ is simply connected, and
+now we shall examine the other main hypothesis, that $f$ has an
+analytic continuation along \textbf{every} path in $D$.  Note
+especially that the hypothesis does not state that $f$ can be
+continued analytically to each point of $D$ along \textbf{some} path
+in $D$.  We shall now give an example to refute such a possibility for
+a weakening of the hypothesis of the theorem.
+
+This example will be the Riemann surface for the ``inverse'' of the
+function $G(w) = w^3 - 3w$, and the analytic continuation process will
+reduce to finding paths on the surface.  As $G'(w) = 3w^2 - 3$, the
+inverse function theorem of complex analysis will apply if $w \ne \pm
+1$.  Since $G(1) = -2$ and $G(-1) = 2$, we conclude that if $G(w_0) =
+z_0 \ne \pm 2$, then there exists a unique holomorphic function $f$ in
+a neighbourhood of $z_0$ such that $G(f(z)) = z$ near $z_0$ and
+%%% page 77
+$f(z_0) = w_0$.  But for each $z_0 \ne \pm 2$ there are three distinct
+corresponding values of $w_0$ and thus three distinct solutions $f$ of
+$G(f(z)) = z$ defined near $z_0$.  We shall make this multiple-valued
+correspondence $z \mapsto w$ into a single-valued function on an
+appropriate Riemann surface by the technique of the introduction, even
+though we no longer possess and explicit formula for $w$ in terms of
+$z$.  Thus, we select three copies of the $z$-plane cut along the real
+axis from 2 to $\infty$ and from $-2$ to $\infty$:
+
+\begin{mdframed}
+  \begin{minipage}{7cm}
+  \begin{tikzpicture}
+    \draw 
+    (-3,0) node [below] {$\infty$} -- (-1,0) node [below] {$-2$}
+    (1,0) node [below] {$2$} -- (3,0) node [below] {$\infty$}
+    ;
+  \end{tikzpicture}    
+  \end{minipage}%
+  \begin{minipage}{8cm}
+    Each of these slit planes is simply connected, so the monodromy
+    theorem applies to show that in each plane we can define a global
+    solution $f$ to the equation $G(f(z)) = z$ and $f$ is holomorphic
+    in the slit plane.
+  \end{minipage}
+\end{mdframed}
+
+In order to accomplish the corresponding gluing we must see what
+happens to these functions at the slits.  So we wish to examine
+carefully the values of $w$ corresponding to real $z$ such that $2 <
+|z| < \infty$.  To do this we introduce coordinates $z = x+iy$, $w =
+u+iv$ and compute from
+$$
+(u+iv)^3 - 3(u+iv) = x+iy.
+$$
+We find
+%%% page 78
+$$
+u^3 - 3uv^2 - 3u = x,\quad
+3u^2v-v^3-3v = y.
+$$
+Along the slits we have $y=0$, or $3v(u^2 - \frac{v^2}{3} - 1) = 0$.
+Thus, $v=0$ or $u^2 - \frac{v^2}{3} = 1$.  This locus in the $w$-plane
+looks like the real axis and a hyperbola:
+
+\begin{mdframed}
+  \vspace{3cm}
+  %page 78
+\end{mdframed}
+
+For $v = 0$ we have $x = u^3 - 3u$.  Thus, $x>2 \Leftrightarrow u > 2$
+and $x < -2 \Leftrightarrow u < -2$, as one easily sees by considering
+the graph of $u^3-3u$.  For $u^2 - \frac{v^2}{3} = 1$ we have $x = u^3
+- 3u(3u^2 - 3) - 3u = -8u^3 + 6u$.  Again, it is easily seen that $x >
+2 \Leftrightarrow u < -1$ and $x < -2 \Leftrightarrow u > 1$.
+
+Now we distinguish three regions in the $w$-plane:
+$$
+\begin{aligned}
+  A &= \{(u,v) ~:~ u^2 - \frac{v^2}{3} > 1,\ u>0\}
+  - \{(u,0) ~:~ 2 \le u < \infty\},\\
+  B &= \{(u,v) ~:~ u^2 - \frac{v^2}{3} < 1\},\\
+  C &= \{(u,v) ~:~ u^2 - \frac{v^2}{3} > 1,\ u<0\}
+  - \{(u,0) ~:~ -\infty < u \le 2\}.
+\end{aligned}
+$$
+%%% page 79
+Then one easily sees that the function $G$ maps $A$, $B$, and $C$ each
+onto a copy of the $z$-plane, cut as described.  Suppose we use three
+copies of the $z$-plane, labelled $\CCC_A$, $\CCC_B$, and $\CCC_C$.
+In order to see how these should be glued along the cuts, we just need
+to check the sign of $y$ near the boundaries of $A$, $B$, and $C$ in
+the $w$-plane.  This is indicated in the figure.
+
+\begin{mdframed}
+  \vspace{3cm}
+  %page 79
+\end{mdframed}
+
+Now we can easily indicate the method of gluing the planes $\CCC_A$,
+$\CCC_B$, $\CCC_C$:
+
+\begin{mdframed}
+  \vspace{3cm}
+  %page 79
+\end{mdframed}
+
+%%% page 80
+Note in particular that the cuts from 2 to $\infty$ in $\CCC_A$ and
+from $-2$ to $\infty$ in $\CCC_C$ can now be erased.  \emph{This is
+  the basic reason this example has been introduced.} ``Over''
+the point $z = 2$ lie \textbf{two} points of our Riemann surface, one
+a branch point, the other not.  Likewise for $z = -2$.
+
+Now we have a function $f$ defined on this Riemann surface which
+represents all the solutions of $G(w) = z$ for any $z$.  Now suppose
+we start at $z = 0$ with the solution $f_0$ of the equation $G(f_0(z))
+= z$ near $z = 0$, $f_0(0) = 0$, $f_0$ holomorphic.  Given any complex
+number $a$, there is \emph{some} path $\gamma$ from 0 to $a$ along
+which $f_0$ has an analytic continuation.  If $a \ne \pm 2$, one can
+indeed go along any path from 0 to $a$ which does not pass through
+$\pm 2$.  If $a = 2$, use the path:
+
+\begin{mdframed}
+  \begin{minipage}{7cm}
+    %page 80
+  \end{minipage}%
+  \begin{minipage}{8cm}
+    Here is the reason.  The starting point corresponds to $z= 0$, $w
+    =0$ and thus to the origin in $\CCC_B$.  In order to get to the
+    point 2 in $\CCC_A$ (where this is not a branch point), we pass
+    through the cut joining $\CCC_B$ to $\CCC_A$. 
+  \end{minipage}
+\end{mdframed}
+
+Likewise, if $a = -2$, use the path
+
+\begin{mdframed}
+  \vspace{3cm}
+  %page 80
+\end{mdframed}
+
+%%% page 81
+But the conclusion of the monodromy theorem fails.  Otherwise, by the
+permanence of functional relations there would exist a function $F$
+holomorphic in all of $\CCC$ such that $G(F(z)) \equiv z$, $z \in
+\CCC$. It is rather clear that this cannot happen since by its very
+nature the relation $z \mapsto w$ must be multiple valued.  A direct
+proof would be this.  Since $F^3 - 3F \equiv z$, we have $F(z) \to
+\infty$ as $z \to \infty$.  Thus $F$ has a pole at $\infty$ and so the
+Laurent expansion of $F$ at $\infty$ shows that $F(z) = \alpha z^n +
+\cdots$ (smaller powers of $z$), where $\alpha \ne 0$ and $n$ is a
+positive integer.  But then $F^3 - 3F = \alpha^3 z^{3n} + \cdots$ and
+there is no way this can behave like $z$ near $\infty$.
+
+We shall return this example in Topic 5, where algebraic functions
+in general are treated.  But it should even be noted here that the
+branch point 2 lying in $\CCC_B$ and $\CCC_C$ and the branch point
+$-2$ lying in $\CCC_A$ and $\CCC_B$ can be added to the surface in the
+way described in Topic 1, and likewise $\infty$ in $\CCC_A$,
+$\CCC_B$,  and $\CCC_C$ can be added, all three sheets being joined
+there.  The resulting surface is a Riemann surface and the function
+$f$ on it corresponding to the mapping $z \mapsto w$ is meromorphic.
+Also, $f$ is easily seen to be one-to-one since the inverse mapping $w
+\mapsto z$ is single-valued.  Therefore, since $f$ is also onto, $f$
+is an analytic equivalence with $\widehat{\CCC}$, so this Riemann
+surface is equivalent to $\widehat{\CCC}$.
+
+%%% page 82
+\begin{thm}[Poincar\'e and Volterra]
+  Let $S$ be a connected open subset of $M$.  Then for any $a \in
+  \CCC$ the set
+  $$
+  \{[f]_a ~:~ [f]_a \in S\} = S \cap \pi^{-1}(a)
+  $$
+  is countable or finite.  
+\end{thm}
+
+\begin{myproof}
+  Since $S$ is connected we can consider some fixed $[g]_b \in S$ and
+  the note that each element of $S\cap \pi^{-1}(a)$ can be connected
+  to $[g]_b$ by a path $\widetilde{\gamma}$ in $S$, by
+  Proposition~2.11 of Topic 2.  So, if $\gamma = \pi \circ
+  \widetilde{\gamma}$, then analytic continuation of $g$ along
+  $\gamma$ results in $f$, if $[f]_a$ is the point we are
+  considering.  By Proposition~\ref{propn:1} it follows that if
+  $\gamma'$ is another path such that for a sufficiently small
+  $\epsilon > 0$
+  $$
+  | \gamma'(t) - \gamma(t) | < \epsilon, \quad 0 \le t \le 1,
+  $$
+  then $[g]_{\gamma'(0)}$ can be analytically continued along
+  $\gamma'$ and the resulting germ is $[f]_{\gamma'(1)}$.  We have
+  again appealed to the unique lifting theorem and the argument used
+  in the proof of Lemma~\ref{lem:1}.  Now there is such a $\gamma'$
+  with initial point $b$ and terminal point $a$, such that $\gamma'$
+  is a polygon with vertices (except for $a$ and $b$) at rational
+  complex numbers (i.e., complex numbers whose real and imaginary
+  parts are both rational).  Thus, $S \cap \pi^{-1}(a)$ consists of
+  germs $[f]_a$ which come from analytic continuation from $[g]_b$
+  along paths which are polygons with rational vertices.  There are
+  only countable many such paths so the theorem is proved.
+\end{myproof}
+
+%%% page 83
+Of course, the example which is immediately suggested by this theorem
+is the Riemann surface for $\log(z)$ which has countably many sheets.
+In the language of germs, we have over a point $a \ne 0, \infty$, the
+germs $[\log(z) + 2n\pi i]_a$, where $\log(z)$ represents an arbitrary
+determination of the logarithm near $a$, and $n$ is any integer.
+
+\begin{defn}
+  \label{def:8}
+  Let $f$ be a meromorphic function in a neighbourhood of a point $a
+  \in \CCC$.  The \emph{Riemann surface (in $M$) of $f$} is the
+  component of $[f]_a$ in $M$.
+\end{defn}
+
+Here we have used a topological word ``component'', which by
+definition is a maximal connected set --- a connected set contained in
+no strictly larger connected set.  Since $M$ is a surface, in this
+case the component containing $[f]_a$ (the component of $[f]_a$ (is
+the collection of germs which can be joined to $[f]_a$ by a path (in
+$M$).
+
+For example, the Riemann surface of any determination of $z^{1/m}$
+near a point $a \ne 0$ consists of all germs $[f]_b$ such that $f(z)^m
+\equiv z$ near $b$, $b\ne 0$.  By the permanence of functional
+relations all the terms in this Riemann surface must satisfy this
+identity, and we thus need only verify that any germ satisfying the
+identity can be joined to any other such germ.  This can of course be
+easily checked directly, but an argument will be given in Topic 5
+for a general theorem along these lines.
+
+%%% page 84
+There is an obvious deficiency in the Riemann surface for $z^{1/m}$.
+Namely, the branch points 0 and $\infty$ are missing.  This situation
+is true in general for $M$ --- it has been constructed without branch
+points (a phrase which we haven't even yet defined), and also it does
+not contain germs of functions meromorphic at $\infty$.  The latter is
+not a serious omission and indeed we could have considered from the
+start germs of meromorphic functions on any fixed Riemann surface.
+But in the next topic we shall construct a Riemann surface which
+contains $M$ in a very precise sense and has all the branch points and
+also the germs at $\infty$.  Then we shall give a satisfactory
+definition of the Riemann surface of a meromorphic function, replacing
+Definition~\ref{def:8}. 
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

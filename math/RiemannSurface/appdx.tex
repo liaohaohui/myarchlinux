@@ -1,0 +1,971 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+
+\usepackage{xypic}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\setcounter{topic}{9}
+\input common
+\renewcommand\theequation{\arabic{equation}}
+\renewcommand\thesection{\arabic{section}}
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Appendix}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+%%% page 278
+\section{Final Examination}
+
+\begin{enumerate}
+\item Let $a$ and $b$ be relatively prime positive integers.  Analyse
+  the Riemann surface of the polynomial
+  $$
+  A(z,w) = w^{2a} - 2z^b w^a + 1.
+  $$
+  Do the same for the polynomial
+  $$
+  B(z,w) = z^{2a} - 2w^b z^a + 1.
+  $$
+  Be sure to compute the genus in each case and check that they are
+  equal.
+
+\item Let $A(z,w)$ be an irreducible polynomial of degree at least 2
+  in $w$.  Prove that there does not exist a rational function $f$
+  such that
+  $$
+  A(z, f(z)) \equiv 0.
+  $$
+
+\item If $A(z,w)$ is an irreducible polynomial and $S$ is the Riemann
+  surface of $A$, prove that $S$ cannot have exactly one branch point
+  (of possibly high order).
+
+\item The Riemann surface of the polynomial $w^3 + z^3 - 1$ is easily
+  seen to have genus 1.  Thus, it is homeomorphic to a torus and by
+  our general theorem is analytically equivalent to the Riemann
+  surface of a polynomial of the form
+  $$
+  w^2 - 4(z-e_1)(z-e_2)(z-e_3).
+  $$
+  Find such a polynomial explicitly. \textbf{Hint:} Use algebra only
+
+  %%% page 279
+\item Prove that the sum of two algebraic functions is algebraic.
+  Compute explicitly a polynomial $A(z,w)$ such that
+  $$
+  A(z, z^{1/2} + z^{1/3}) = 0.
+  $$
+
+\item Are the following (noncompact) Riemann surfaces parabolic or
+  hyperbolic?
+  \begin{enumerate}
+  \item A compact Riemann surface minus a point.
+  \item A Riemann surface minus the closure of an analytic disk.
+  \item A Riemann surface on which a Green's function exists.
+  \end{enumerate}
+\end{enumerate}
+
+
+
+\section{Solutions to Problems 5.15 and 5.16}
+
+\underline{Problem 5.15} % page 139+8
+Analysis of $A(z,w) = w^3 - 3zw + z^3$.
+
+\begin{mdframed}
+  \textbf{Irreducible}: If not $A$ must have a linear factor, so
+  $$
+  A = (w + \alpha) (w^2 + \beta w + \gamma),
+  $$
+  where $\alpha, \beta, \gamma$ are polynomials in $z$ which must
+  satisfy
+  $$
+  \alpha + \beta = 0,\quad
+  \alpha \beta + \gamma = -3z,\quad
+  \alpha \gamma = z^3.
+  $$
+  The third relation shows that $\alpha = cz^k$, where $c \ne 0$ and
+  $k \in \{0,1,2,3\}$; solving for $\alpha$ and $\beta$ using the
+  second relation show that
+  %%% page 280
+  $$
+  -c^2 z^{2k} + c^{-1} z^{3-k} \equiv -3z,
+  $$
+  an impossible identity.
+
+  \textbf{Critical Points}:  By definition, $z = \infty$ is critical.
+  Since $A(0,w) = w^3$, $z = 0$ is critical.  For other $z$, we look
+  for solutions of the pair of equations $A(z,w) = 0$ and
+  $$
+  \frac{\p A}{\p w} = 3w^2 - 3z = 0.
+  \Rightarrow
+  \left\{
+  \begin{aligned}
+    w^3 - 3zw + z^3 &= 0,\\
+    w^2 &= z.
+  \end{aligned}
+  \right.
+  $$
+  Thus, $w^3 - 3w^3 + w^6 = 0$, so $w^6 = 2w^3$ and since $w \ne 0$ we
+  have $w = 2^{1/3} w^k$, where $2^{1/3} > 0$ and $w = e^{2\pi i/3}$,
+  $k = 0,1,2$.  Thus,
+  $$
+  z = 2^{2/3} w^{2k}, \quad k = 0,1,2.
+  $$
+
+  \textbf{Puiseaux expansions}:
+
+  \underline{$z=0$}.  First, we argue heuristically.  If $w_1$, $w_2$,
+  $w_3$ are the zeros of $A$, then
+  $$
+  \left\{
+    \begin{aligned}
+      w_1 + w_2 + w_3 &= 0,\\
+      w_1 w_2 + w_2 w_3 + w_3 w_1 &= -3z,
+      w_1 w_2 w_3 &= -z^3.
+    \end{aligned}
+  \right.
+  \eqno{(*)}
+  $$
+  If there s no branching, these are all holomorphic near $z = 0$ and
+  $|w_k| \le C|z|$, contradicting the second line of $(*)$.  If the
+  branching is of order 2, then each $|w_k|$ is asymptotic to constant
+  $|z|^{\ell/3}$ for some integer $\ell$.  The third line of $(*)$
+  shows $\ell = 3$, again contradicting the second line.  The only
+  other possibility is a branch point of order 1 and a holomorphic
+  solution $e(t,tQ)$.  For this solution we have
+  $$
+  t^3 Q^3 - 3t^2 Q + t^3 = 0.
+  $$
+  Thus,
+  $$
+  tQ^3 - 3Q + t = 0.
+  $$
+  Thus, $Q(0) = 0$, so we let $Q = tQ_1$ and find
+  $$
+  t^4 Q_1^3 - 3t Q_1 + t = 0.
+  $$
+  Thus,
+  $$
+  t^3 Q_1^3 - 3Q_1 + 1 = 0.
+  $$
+  The derivative of this polynomial with respect to $Q_1$ equals $-3$
+  at $t = 0$, so the implicit function theorem implies $Q_1$ exists
+  with $Q_1(0) = 1/3$.  Thus, the Riemann surface has an element
+  $$
+  e(t, t^2/3 + \cdots).
+  $$
+
+  The branched element we represent as $e(t^2, tQ)$ and find
+  $$
+  t^3 Q^3 - 3t^3 Q + t^6 = 0.
+  $$
+  Thus,
+  %%% page 282
+  $$
+  Q^3 - 3Q + t^3 = 0.
+  $$
+  At $t=0$ there is a solution $Q(0) = \sqrt{3}$ and the implicit
+  function theorem again can be applied to provide an element
+  $$
+  e(t^2, \sqrt{3} t + \cdots).
+  $$
+
+  \underline{$z= \infty$}.
+  The heuristic analysis is similar. Now we try $e(\frac{1}{t},
+  \frac{Q}{t})$ and obtain
+  $$
+  \begin{aligned}
+    t^{-3}Q^3 - 3t^{-2}Q + t^{-3} &= 0;\\
+    Q^3 - 3tQ + 1 = 0.
+  \end{aligned}
+  $$
+  At $t = 0$ we obtain 3 \emph{distinct} solutions $Q(0) = -w^j$, so
+  we find 3 unbranched solutions
+  $$
+  e(\frac{1}{t},\frac{-1}{t}+\cdots),\quad
+  e(\frac{1}{t},\frac{-w}{t}+\cdots),\quad
+  e(\frac{1}{t},\frac{-w^2}{t}+\cdots).
+  $$
+
+  \underline{$z = 2^{2/3} w^{2k}$}. $(k=0,1,2)$
+  Again we omit the heuristics, except to note that $w = 2^{1/3} w^k$
+  is \emph{exactly} a double root, so there is at least one unbranched
+  solution, and the corresponding root is $-2 \cdot 2^{1/3} w^k$.
+  Thus, there is an element
+  $$
+  e(2^{2/3} w^{2k} + t,\ -2 \cdot 2^{1/3} w^k + \cdots).
+  $$
+  Now we see whether the other two solutions are branched.  If not,
+  then there is an element
+  %%% page 283
+  $$
+  e(2^{2/3} w^{2k} + t,\ 2^{1/3} w^k + \cdots).
+  $$
+
+  \textbf{Observation}: The total branching order is $V = 4$ (first
+  order branch points at 0, $2^{2/3} w^{2k}$) and $n = 3$, so the
+  genus is 0 (recall $V = 2(n+g-1)$).
+\end{mdframed}
+
+
+\begin{exmp}[Another example of an algebraic function]
+  Let
+  $
+  A(z,w) = 2zw^5 - 5w^2 + 3z^2.
+  $
+  Then
+  $\ds
+  \frac{\p A}{\p w} = 10zw^4 - 10w.
+  $
+  Now the critical points are $z = 0$, $z=\infty$, and for the others
+  we obtain
+  %%% page 284
+  $$
+  \frac{\p A}{\p w} = 0 = 10w(zw^3-1).
+  $$
+  If $w = 0$, then $A=0 \Rightarrow z = 0$, which we are not now
+  considering.  Thus,
+  $$
+  zw^3 = 1\quad\text{and}\quad A = 0 = 2w^2 - 5w^2 + 3z^2,
+  $$
+  so
+  $$
+  z^2 = w^2. \quad \text{Therefore, } z^2 w^6 = 1 = w^8.
+  $$
+  Thus, if $\omega = e^{2\pi i/8}$, $w = \omega^k$, $0 \le k \le
+  7$,and $z = \omega^{-3k}$.  We still must check $z^2 = w^2$:
+  $\omega^{-6k} = \omega^{2k}$, which is valid.  So we have found all
+  the critical points, and we now analyse them.
+
+  \underline{$w = \omega^{-3k}$}.  The only possible multiple value
+  for $w$ is $\omega^k$, and at these points
+  $$
+  \frac{\p^2 A}{\p w^2} = 40 z w^3 - 10 = 30 \ne 0.
+  $$
+  We guess a branch point occurs, so we try for an element
+  $e(\omega^{-3k} + t^2, \omega^k + tQ)$.  Then
+  $$
+  2(\omega^{-3k} + t^2)(\omega^k + tQ)^5 - 5(\omega^k + tQ)^2
+  + 3(\omega^{-3k} + t^2)^2 \equiv 0.
+  $$
+  Expanding,
+  $$
+  \begin{aligned}
+    2(\omega^{-3k} + t^2)(\omega^{5k} + 5\omega^{4k} tQ +
+    10\omega^{2k} t^2 Q^2 + \cdots) - 5(\omega^{2k} + 2\omega^k tQ +
+    t^2 Q^2) + 3(\omega^{-6k} + 2\omega^{-3k} t^2 + t^4) &\equiv 0;\\
+    10\omega^k tQ + 20 t^2 Q^2 + 2\omega^{5k} t^2 + 10 \omega^{4k} t^3
+    Q + \cdots - 10\omega^k tQ - 5t^2 Q^2 + 6\omega^{-3k} t^2 + 3t^4
+    &\equiv 0;
+  \end{aligned}
+  $$
+  dividing by $t^2$,
+  $$
+  15Q^2 + 8\omega^{5k} + 10\omega^{4k} tQ + \cdots + 3t^2 \equiv 0,
+  $$
+  %%% page 285
+  where the omitted terms vanish at $t=0$.  At $t=0$ we can let $\ds
+  Q(0) = \sqrt{-\frac{8w^{5k}}{15}}$ (either determination) and note
+  that at $t=0$ and for this value of $Q(0)$ the above expression has
+  its derivative with respect to $Q$ equal to
+  $$
+  30Q \ne 0.
+  $$
+  Thus, the implicit function theorem is in force and we obtain branch
+  points
+  $$
+  e(\omega^{-3k} + t^2,\ \omega^k + \sqrt{-\frac{8\omega^{5k}}{15}} t
+  + \cdots),\quad 0 \le k \le 7.
+  $$
+
+  In order to treat the critical points 0 and $\infty$ we look for
+  meromorphic elements of the form
+  $$
+  e(t^m,\ t^\ell Q),
+  $$
+  where $m$ and $\ell$ are integers ($m\ne 0$) and $Q$ is holomorphic
+  near 0, $Q(0) \ne 0$.  Then
+  $$
+  2t^{m+5\ell} Q^5 - 5t^{2\ell} Q^2 + 3t^{2m} \equiv 0.
+  $$
+  We now try to juggle $m$ and $\ell$ to obtain some definite
+  information as $t \to 0$.  Thus, we would like to have at least two
+  exponents of $t$ in this equation coincide and to correspond to the
+  dominant terms near $t=0$.  Obviously it is impossible to have all
+  three exponents coincide.  Thus, the various possibilities in this
+  case are 
+  %%% page 286
+  \begin{enumerate}[(a)]
+  \item $m + 5\ell = 2\ell < 2m$,
+  \item $2\ell = 2m < m + 5\ell$,
+  \item $m + 5\ell = 2m < 2\ell$.
+  \end{enumerate}
+
+  In \underline{case (a)} we have $m = -3\ell > \ell$, o $\ell < 0$.
+  Thus, we must have $\ell = -1$, $m = 3$, and the equation for $Q$
+  becomes
+  $$
+  2Q^5 - 5Q^2 + 3t^8 \equiv 0.
+  $$
+  Thus, $2Q(0)^3 = 5$ and the derivative with respect to $Q$ is $10Q^4
+  - 10Q = 15Q \ne 0$ for $Q(0)$.  Thus, the implicit function theorem
+  shows we obtain the branch point
+  $$
+  e(t^3,\ (\frac{5}{2})^{1/3} \frac{1}{t} + \cdots).
+  $$
+  In \underline{case (b)} we have $m = \ell < 3\ell$ so $\ell> 0$.
+  Choosing $m = \ell = 1$ gives
+  $$
+  2t^4 Q^5 - 5Q^2 + 3 \equiv 0.
+  $$
+  Again we obtain solutions corresponding to either choice of $Q(0)$
+  and we get two \emph{regular} elements
+  $$
+  e(t,\ (\frac{3}{5})^{1/2} t + \cdots),\quad
+  e(t,\ -(\frac{3}{5})^{1/2} t + \cdots).
+  $$
+  In \underline{case (c)} we have $m = 5\ell < \ell$ o $\ell < 0$.
+  Thus, we must $\ell = -1$, $m = -5$, and we obtain
+  $$
+  2Q^5 - 5t^8 Q^2 + 3 \equiv 0.
+  $$
+  Again we obtain the branch point
+  $$
+  e(t^{-5},\ -(\frac{3}{2})^{1/5} t^{-1} + \cdots).
+  $$
+
+  %%% page 287
+  This completes the analysis of this example except for the
+  observation that the branch point corresponding to $z = \infty$ is
+  of order 4 and thus all five ``sheets'' of the Riemann surface are
+  branched at $\infty$ in a single cycle.  This proves that $A$ is
+  \emph{irreducible}.
+
+  Notice the total branching order here is $V = 8 + 2 + 4 = 14$, so
+  the genus $g$ satisfies
+  $$
+  7 = n + g - 1 = 4 + g,
+  $$
+  or $g = 3$.
+\end{exmp}
+
+\underline{Problem 5.16} % page 139+8
+Analysis of $A(z,w) = z w^3 - 3w + 2z^a$, $a$ any integer.  now
+$\frac{\p A}{\p w} = 3zw^2 - 3$, so critical points other than $z = 0,
+\infty$, come from solving
+$$
+\left\{
+\begin{aligned}
+  zw^2 &= 1,\\
+  -2w + 2z^a &= 0.
+\end{aligned}
+\right.
+$$
+So $w = z^a$ and thus $z^{2a+1} = 1$.  Let $b = 2a+1$ and
+$$
+\omega = e^{2\pi i/b}.
+$$
+Then we have the critical points $z = \omega^k$, $0 \le k \le |2a+1| -
+1$; the corresponding double value of $w$ is $\omega^{ak}$.  Here is a
+good place to present a criterion for branching: suppose $z_0 \ne
+\infty$ is a critical point for a polynomial $A$ and that $A(z_0, w_0)
+= \frac{\p A}{\p w}(z_0, w_0) = 0$ but $\frac{\p A}{\p z}(z_0, w_0)
+\ne 0$.  Then any element $e(z_0 + t^m, Q(t))$ in the Riemann surface
+for $A$ must be a branch point if $Q(0) = w_0$.  That is, $m \ge 2$.
+For suppose $m =1$.  Then for $t$ near 0
+%%% page 288
+$$
+A(z_0 + t, Q(t)) \equiv 0.
+$$
+Differentiate this identity with respect to $t$ and set $t = 0$ to
+obtain
+$$
+0 = \frac{\p A}{\p z}(z_0, w_0) + \frac{\p A}{\p w}(z_0, w_0) Q'(0)
+= \frac{\p A}{\p z}(z_0, w_0) \ne 0,
+$$
+a contradiction.
+
+In the present case we have $z_0 = \omega^k$, $w_0 = \omega^{ak}$, and
+$$
+\frac{\p A}{\p z}(z_0, w_0) = w_0^3 + 2az_0^{a-1}
+= \omega^{3ak} + 2a\omega^{(a-1)k} = 0.
+$$
+Here we also have more information.  Namely, $\ds \frac{\p^2 A}{\p
+  w^2}(z_0, w_0) = 6z_0 w_0 \ne 0$, so $w_0$ is \emph{exactly} a
+double root.  Thus, the meromorphic element in this case has $m = 2$,
+and we can express it as
+$$
+e(\omega^k + t^2,\ \omega^{ak} + \cdots),\quad
+0 \le k \le |2a+1|-1.
+$$
+
+To examine the critical points $z = 0$ and $\infty$ consider elements
+$$
+e(t^m, t^\ell Q),\ Q(0) \ne 0.
+$$
+Then
+$$
+t^{m + 3\ell} Q^3 - 3t^\ell Q + 2t^{am} \equiv 0.
+$$
+For these exponents to the equal we require $m = -2\ell = -2am$, so
+$bm = 0$, and thus $m = 0$, which is not allowed.
+
+\begin{mdframed}
+\underline{Case (a). $m+3\ell = \ell < am$}
+
+Here $m = -2\ell$ so we must have $\ell = 1$, $m = -2$ and $1 + 2a <
+0$, or $\ell = -1$, $m = 2$, and $1 + 2a > 0$.  We obtain in either
+case
+%%% page 289
+$$
+Q^3 - 3Q + 2t^{|b|} = 0,
+$$
+and we have the branch point
+$$
+e(t^{\pm 2}, \sqrt{3} t^{\mp 1} + \cdots)
+\begin{cases}
+  \text{top signs if } a > 0,\\
+  \text{bottom signs if } a < 0.
+\end{cases}
+$$
+
+\underline{Case (b). $m+3\ell = am < \ell$}
+
+Here $3 \ell = (a-1)m$ and $m + 2\ell < 0$.  The equation is
+$$
+Q^3 - 3t^{-m - 2\ell} Q + 2 = 0,
+$$
+so
+$$
+Q(0)^3 = -2.
+$$
+We note that $0 > 3m + 6\ell = 3m + (2a-2)m = bm$.  We can take $m =
+\pm 1$ if and only if $a \equiv 1 \pmod{3}$, and we thus obtain smooth
+solutions only:
+$$
+e(t^{\mp 1}, -2^{1/3} t^{\mp 1} + \cdots)
+\begin{cases}
+  \text{top signs if } a > 0,\\
+  \text{bottom signs if } a < 0,
+\end{cases}
+$$
+where we use all three determinations of $2^{1/3}$.  If $a \not\equiv
+1 \pmod{3}$, we must choose $m = \mp 3$ and we have a branch point of
+order 2.
+
+\underline{Case (c) $\ell = am < m + 3\ell$}
+
+Thus, $am < m + 3am$, or $bm > 0$.  We can take $m = \pm 1$, $\ell =
+\mp a$ and obtain the smooth solution
+$$
+e(t^{\pm 1}, \frac{2}{3}t^{\pm a} + \cdots).
+$$
+%%% page 290
+
+\textbf{Summary}.
+\begin{itemize}
+\item If $a \ge 0$,
+  \begin{itemize}
+  \item $z = 0$ corresponds to a first order branch point,
+  \item $z = \infty$ corresponds to a second order branch point if $a
+    \not\equiv 1 \pmod{3}$, to no branch point if $a \equiv 1
+    \pmod{3}$.
+  \end{itemize}
+\item If $a < 0$,
+  \begin{itemize}
+  \item $z = \infty$ corresponds to a first order branch point,
+  \item $z = 0$ corresponds to a second order branch point if $a
+    \not\equiv 1 \pmod{3}$, to no branch point if $a \equiv 1
+    \pmod{3}$.
+  \end{itemize}
+\end{itemize}
+Thus, $\ds V = |2a+1| + 1 +
+\begin{cases}
+  2\text{ if } a \not\equiv 1 \pmod{3},\\
+  0\text{ if } a \equiv 1 \pmod{3},
+\end{cases}
+$
+
+\noindent
+$$
+g = \frac{V}{2} - 2 =
+\begin{cases}
+  a \text{ if } a \not\equiv 1 \pmod{3},\ a \ge 0,\\
+  a - 1 \text{ if } a \equiv 1 \pmod{3},\ a \ge 0,\\
+  |a| - 1 \text{ if } a \not\equiv 1 \pmod{3},\ a < 0,\\
+  |a| - 2 \text{ if } a \equiv 1 \pmod{3},\ a < 0.
+\end{cases}
+$$
+\end{mdframed}
+
+
+\section{Solutions to Final Exam Problems}
+
+\begin{enumerate}
+\item $A(z,w) = w^{2a} - 2z^b w^a + 1$
+  $$
+  \left\{
+    \begin{aligned}
+      \frac{\p A}{\p w} &= 2aw^{2a-1} - 2az^b w^{a-1}\\
+      \frac{\p^2 A}{\p w^2} &= 2a(2a-1)w^{2a-2} - 2a(a-1)z^b w^{a-2}\\
+      \frac{\p A}{\p z} &= -2bz^{b-1} w^a
+    \end{aligned}
+  \right.
+  $$
+  \begin{itemize}
+  \item Critical points:
+    \begin{itemize}
+    \item $z = \infty$ by definition is critical.
+
+      Suppose $\frac{\p A}{\p w} = 0$ and $A = 0$.  Then $w^a = z^b$
+      so
+      $$
+      A = z^{2b} - 2z^{2b} + 1 = -z^{2b} + 1.
+      $$
+      Let $\omega = e^{\pi i/b}$.  Then $z = \omega^k$, $0 \le k \le
+      2b - 1$, and
+      $$
+      w^a = z^b = \omega^{bk} = (-1)^k.
+      $$
+      Thus, for each $z = \omega^k$ there are distinct solutions of
+      $A(z,w) = 0$.  Since $\frac{\p^2 A}{\p w^2} = 2a^2 w^{2a-2} \ne
+      0$, we have no more than double roots.  And since $\frac{\p
+        A}{\p z} = -2bz^{2b-1} \ne 0$, we have a branch point of order
+      1 associated with each solutions $w$ of $A(\omega^k, w) = 0$.
+      Thus, there are a branch points of order 1 lying over each $z =
+      \omega^k$, so the branching associated with these critical
+      points is $2ab$.
+
+      Now consider $z = \infty$.  Look for elements of $\overline{M}$
+      of the form
+      $$
+      e(t^{-m}, t^\ell Q),
+      $$
+      where $m > 0$ and $Q(0) \ne 0$.  Substituting,
+      $$
+      t^{2a\ell} Q^{2a} - 2t^{a\ell-bm} Q^2 + 1 \equiv 0.
+      $$
+      We have 3 cases:
+      \begin{enumerate}[(a)]
+      \item \underline{$2a\ell = a\ell - bm < 0$}
+
+        Here $\ell < 0$ and $a \ell = -bm$.  If we choose $m = a$ and
+        $\ell = -b$, we obtain
+        $$
+        Q^{2a} - 2Q^a + t^{2ab} \equiv 0
+        $$
+        and thus
+        $$
+        Q(0)^a = 2.
+        $$
+        Then we obtain
+        $$
+        e(t^{-a}, 2^{1/a} t^{-b} + \cdots).
+        $$
+        Since $a$ and $b$ are relatively prime, this is an element of
+        $\overline{M}$.
+
+      \item \underline{$a\ell - bm = 0 < 2a\ell$}
+
+        Here $\ell > 0$ and $a \ell = bm$.  Choose $m=a$ and $\ell =
+        b$, obtaining 
+        $$
+        t^{2ab} Q^{2a} - 2Q^a + 1 \equiv 0,
+        $$
+        so that $Q(0)^a = \frac{1}{2}$.  Then we obtain
+        $$
+        e(t^{-a}, 2^{1/a} t^b + \cdots).
+        $$
+
+      \item \underline{$2a\ell = 0 < a\ell - bm$}
+
+        Here $\ell = 0$ and $bm < 0$, which is impossible.
+        Summarising, at $z = \infty$ we have two branching points,
+        each of order $a-1$.  Thus, $V = 2ab + 2(a-1)$, 
+        %%% page 293
+        so
+        $$
+        ab + a - 1 = 2a + g - 1
+        $$
+        or
+        $$
+        g = ab - a.
+        $$
+      \end{enumerate}
+
+    \item \underline{Second part}. $B = z^{2a} - 2w^b z^a + 1$.
+
+      The equation $B = 0$ is
+      $$
+      w^b = \frac{z^{2a} + 1}{2z^a} = \frac{z^a + z^{-a}}{2}.
+      $$
+      Thus, we simply obtain branch points at $z = 0$, $z = \infty$,
+      and where $w = 0$, which is $z^{2a} + 1 = 0$.  Since
+      $$
+      w = \left(\frac{z^a + z^{-a}}{2}\right)^{1/b},
+      $$
+      the branch points at finite $z$ are of order $b-1$ and at $z =
+      0$ or $\infty$ are of order $b-1$ as well, since $a$ and $b$
+      are relatively prime.  Thus, $V = 2a(b-1) + 2(b-1)$, so
+      $$
+      a(b+1) + b - 1 = b + g - 1
+      \Rightarrow g = a(b-1) = ab-a.
+      $$
+
+      \underline{Alternative solution}: Solution for $w^a$:
+      $$
+      w^a = z^b + \sqrt{z^{2b} - 1}\quad\text{(either determination)}.
+      $$
+      By inspection there are branch points over the roots of
+      $z^{2b}  1$, each of order 1.  This gives $2ba$ to the total
+      branching.  Then near $z = \infty$ we have 
+      $$
+      w^a \approx
+      \begin{cases}
+        z^b \pm z^b = 2z^b &\text{on half the sheets and}\\
+        z^b - z^b(1 - \frac{1}{2}z^{-2b} + \cdots) 
+        = \frac{1}{2z^b} + \cdots &\text{ on the other half}.
+      \end{cases}
+      $$
+      %%% page 294
+      Thus, $\ds w \approx 2^{1/a} z^{b/a}$ gives a branch point of
+      order $a-1$ and $w \approx 2^{1/a} z^{b/a}$ of order $a-1$.
+      So
+      $$
+      V = 2ba + 2(a-1),
+      $$
+      and
+      $$
+      ab + a-1 = 2a + g-1 \Rightarrow g = ab-a.
+      $$
+    \end{itemize}
+  \end{itemize}
+
+\item Let $n$ be the degree of $A$ with respect to $w$. Let $S_A$ be
+  the Riemann surface of $A$.  Let $S$ be the component of
+  $\overline{M}$ which contains all the germs $[f]_a = e(a+t,
+  f(a+t))$, assuming $f$ is rational.  By hypothesis, $S \subset
+  S_A$.  Clearly, $\pi : S \to \widehat{\CCC}$ is an analytic
+  equivalence, so $S$ is compact.  As $S_A$ is connected, $S = S_A$.
+  Thus, $\pi : S_A \to \widehat{\CCC}$ is an analytic equivalence.
+  But $\pi$ restricted to $S_A$ takes every value $n$ times.  Thus, $n
+  = 1$.
+
+  \underline{Alternative solution}:
+  Suppose $f$ is rational: $f(z) = \frac{P(z)}{Q(z)}$ in lowest
+  terms.  Let
+  $$
+  B(z, w) = Q(z) w - P(z).
+  $$
+  Then $A(z, f(z)) = B(z, f(z)) = 0$ for all $z$.  Thus, Lemma 3 on
+  p. 121 ????? implies $A$ and $B$ have a common factor.  Since $A$ is
+  irreducible and $B$ is linear in $w$, this implies that $A = $
+  constant $B$, which shows $A$ has degree 1.
+
+\item We prove something more general.  We have $\pi : S \to
+  \widehat{\CCC}$, 
+  %%% page 294
+  taking every value $n$ times.  Here $n > 1$, since otherwise $\pi$
+  is an analytic equivalence and there are \textbf{no} branch points.
+  Suppose $S$ has branch points $e_1, \cdots, e_m$ and that $\pi(e_1)
+  = \cdots = \pi(e_m) = z_0$.  Since $\widehat{\CCC} - \{z_0\}$ is
+  simply connected, the corollary on p. 119 ????? implies there exists
+  a meromorphic function $f$ on $\widehat{\CCC} - \{z_0\}$ such that
+  $A(z, f(z)) = 0$.  (Actually, the corollary is stated for regions in
+  $\CCC$ and holomorphic $f$, but the generalisation to this case is
+  easy.)  By familiar estimates, $f$ grows at most like a power of
+  $z-z_0$ as $z \to z_0$.  Thus, $f$ is rational and the previous
+  point implies $n = 1$, a contradiction.
+
+\item Let $S$ be the Riemann surface of $w^3 + z^3 - 1$.  Then $\pi$
+  and $v$ restricted to $S$ satisfies $v^3 + \pi^3 = 1$.  Let
+  $$
+  v = \frac{1+g}{f},\quad \pi = \frac{1-g}{f},
+  $$
+  so that $f = \frac{2}{v+\pi}$ and $g = \frac{v-\pi}{v+\pi}$ are
+  meromorphic on $S$.  Then
+  $$
+  1 = (\frac{1+g}{f})^3 + (\frac{1-g}{f})^3 = \frac{2+6g^2}{f^3},
+  $$
+  so that
+  $$
+  g^2 = \frac{1}{6}(f^3 - 2).
+  $$
+  Now let $g_1 = 2\sqrt{6}g$, obtaining
+  %%% page 296
+  $$
+  g_1^2 = 4(f^3 - 2).
+  $$
+  Now apply the argument which appears on p. 256 and p. 262 ???????,
+  concluding that $S$ is analyticall equivalent to the Riemann surface
+  of the polynomial $w^2 - 4(z^3 - 2)$.  A little care seems to be
+  needed at this step.  Namely, we need to know that $f$ take every
+  value 2 times in order to be able to apply item 4 of Theorem 6.5 in
+  Topic 6.  We do this by checking that $f$ takes the value 0 two
+  times, or that $v + \pi$ takes the value $\infty$ two times.  This
+  is esy.  The surface $S$ has 3 smooth sheets over $\infty$, and if
+  $\omega = e^{\pi i/3}$ (cube root of $-1$), then on these three
+  sheet we have respectively
+  $$
+    V = \omega \pi (1 - \pi^{-3})^{1/3},\quad
+    V = \omega^2 \pi (1 - \pi^{-3})^{1/3},\quad
+    V = \omega^3 \pi (1 - \pi^{-3})^{1/3},
+  $$
+  where $(1-\pi^{-3})^{1/3}$ is the principal determination near $\pi
+  = \infty$.  Thus, in the first two case, we have
+  $$
+  v + \pi = \pi[1 + \omega + \cdots]
+  $$
+  and
+  $$
+  v + \pi = \pi[1 + \omega^2 + \cdots]
+  $$
+  and thus $v + \pi$ takes the value $\infty$ one time on each sheet.
+  On the third sheet
+  $$
+  v + \pi = \pi[1 - (1-\pi^{-3})^{1/3}]
+  = \pi[1 - (1-\frac{1}{3}\pi^{-3} + \cdots)]
+  = \frac{1}{3\pi^2} + \cdots,
+  $$
+  %%% page 297
+  and thus $v + \pi$ takes the value 0 on this sheet (at the point
+  lying over $z = \infty$).  Thus, $v + \pi$ takes the value $\infty$
+  exactly two times.
+
+  \medskip
+  \underline{Alternative solution}:  Define
+  $$
+  F = a\frac{1+\pi}{1-\pi}\quad\text{on}\quad S,
+  $$
+  so also $F$ takes every value 3 times.  Then
+  $$
+  F - F\pi = a + a\pi
+  \Rightarrow \pi = \frac{F-a}{F+a}.
+  $$
+  Thus,
+  $$
+  v^3 + \frac{(F-a)^3}{(F+a)^3} \equiv 1
+  \Rightarrow ((F+a)v)^3 \equiv 2(3F^2a + a^3).
+  $$
+  Let 
+  $$
+  G = \frac{(F+a)v}{(24a)^{1/3}}.
+  $$
+  Then
+  $$
+  24aG^3 \equiv 6aF^2 + 2a^3
+  \Rightarrow F^2 = 4G^3 - \frac{a^2}{3}.
+  $$
+
+\item We write the hypothesis in the following way.  On a disk $\Delta
+  \subset \CCC$ are given meromorphic functions $f$ and $g$ such that
+  for certain polynomials $A(z,w)$ and $B(z,w)$,
+  %%% page 298
+  $$
+  A(z, f(z)) = B(z,g(z)) = 0, \quad z \in \Delta.
+  $$
+  We can assume $A$ and $B$ are irreducible.  Let $z_1, \cdots, z_N$
+  be the critical points of either $A$ or $B$.  Then define for $z \ne
+  z_j$
+  $$
+  C(z, w) = \prod_{\substack{A(z,\alpha)=0\\B(z,\beta)=0}} (w - \alpha
+  - \beta).
+  $$
+  By the usual symmetry argument, $C$ is a polynomial in $w$ with
+  coefficients which are holomorphic functions of $z \in
+  \widehat{\CCC} - \{z_1, \cdots, z_N\}$.  By the usual estimates,
+  these coefficients have polynomial growth at these exceptional
+  points, and thus are rational functions of $z$.  Obviously, $C(z,
+  f(z) + g(z)) \equiv 0$ for $z \in \Delta$.
+
+  To do the second part we use the above formula.  The required
+  polynomial is therefore
+  $$
+  \begin{aligned}
+    C(z,w) &= (w-z^{1/2}-z^{1/3})(w+z^{1/2}-z^{1/3})(w-z^{1/2}-\omega
+    z^{1/3}) (w+z^{1/2}-\omega z^{1/3})\\
+    &\qquad (w-z^{1/2}-\omega^2 z^{1/3}) (w+z^{1/2}-\omega z^{1/3}),
+  \end{aligned}
+  $$
+  where $\omega = e^{2\pi i/3}$ and $z^{1/2}$ and $z^{1/3}$ are any
+  values of the roots.  After multiplying all these terms together we
+  are bound to get a polynomial.  Here is the arithmetic: take the
+  terms \#1,3,5 together and likewise \#2,4,6 to obtain
+  $$
+  \begin{aligned}
+    C(z,w) &= [(w-z^{1/2})^3 - z][(w+z^{1/2})^3 - z]\\
+    &= [w^3 - 3z^{1/2} w^2 + 3zw - z^{3/2} - z]
+    [w^3 + 3z^{1/2} w^2 + 3zw + z^{3/2} - z]\\
+    &= (w^3 + 3zw - z)^2 - (3z^{1/2} w^2 + z^{3/2})^2\\
+    &= w^6 + (6z-9z)w^4 + (-2z) w^3 + (9z^2-6z^2)w^2
+    - 6z^2 w + z^2 - z^3\\
+    &= w^6 - 3zw^4 - 2zw^3 + 3z^2 w^2 - 6z^2 w + z^2 - z^3.
+  \end{aligned}
+  $$
+  %%% page 299
+\item 
+  \begin{enumerate}[a)]
+  \item \underline{Parabolic}.  We check item 2 of Proposition 6.41 in
+    Topic 6.  If $S$ is the compact Riemann surface and $p \in S$, let
+    $D$ be an analytic disk in $S - \{p\}$, and let $u$ be a bounded
+    continuous nonnegative function in $S - \{p\} -D$ which is
+    harmonic in $S - \{p\} - D^-$ and $\equiv 0$ on $\p D$.  Since $u$
+    is bounded near $p$, $u$ has a unique extension to a harmonic
+    function in $S - D^-$  As $S - D$ is compact, the maximum
+    principle holds and implies that $\sup_{S-D} u = \sup_{\p D} u =
+    0$, so $u \le 0$.  Thus, $u \equiv 0$.
+  \item \underline{Hyperbolic}.  Choose a nonconstant function $f$
+    which is continuous and real-valued on the boundary of the
+    analytic disk in question.  By Proposition 6.35, there exists a
+    harmonic function $u$ in the Riemann surface minus the closed
+    disk, continuous up to the boundary, where it equals $f$.
+    Moreover, $u$ is bounded.  Since $f$ is not constant, $u$ is not
+    constant.  Thus, $u$ is a bounded nonconstant subharmonic
+    function, and we apply Proposition 6.41 item 1.
+  \item \underline{Hyperbolic}.  By definition, there is a point $p
+    \in S$ and a function $g$ on $S - \{p\}$ satisfying the conditions
+    of Definition~6.48 of Topic 6.  Since 
+    %%% page 300
+    $g \to \infty$ as one approaches $p$, if $A$ is a sufficiently
+    large constant the function $u = \min(g,A)$ is superharmonic and
+    not constant.  In fact, $u$ is superharmonic on $S$ since $u
+    \equiv A$ near $p$.  As $0 < u \le A$, $u$ is also bounded.  Apply
+    Proposition 6.41 item 1 of Topic 6.
+  \end{enumerate}
+\end{enumerate}
+
+
+\section{References}
+
+\begin{enumerate}
+\itemsep=0pt
+\parskip=0pt
+\item \cite{ahlfors60:_rieman_surfac}
+\item Behnke, H., and Sommer, F., Theorie der analytischen Funktionen
+  einer komplexnen Veranderlichen, 2nd ed., Springer, Berlin, 1962.
+\item \cite{bers58:_rieman_surfac}
+\item Chevalley, C., Introduction to the Theory of Algebraic Functions
+  of One Variable, Amer. Math. Soc., Providence, R. I., 1951.
+\item Cohn, H., Conformal Mapping on Riemann Surfaces, McGraw-Hill,
+  1967.
+\item Favard, J. Cours d'analyse de l'{\'E}cole Polytechnique, Vol. 3,
+  Gauthier-Villars, Paris, 1962.
+\item \cite{gunning66:_lectur_rieman_surfac}
+\item Heins, M., Complex Function Theory, Academic Press, N. Y., 1968.
+\item Hurwitz, A., and Courant, R., Vorlesungen \"uber allgemeine
+  Funktionentheorie und elliptische Funktionen.  Geometrische
+  Funktionentheorie, 4th ed., Springer, Berlin, 1964.
+\item \cite{knopp47:_theor_funct}
+\item Mackey, G., Lectures on the Theory of Functions of a Complex
+  Variable, Van Nostrand, Princeton, N. J., 1967.
+\item \cite{markushevich67:_theor_funct_compl_variab3:da92}
+\item Narashimhan, M., et al, Riemann Surfaces, Tata Inst. of
+  Fundamental Research, Bombay, 1963.
+\item Osgood, W. F., Lehrbuch der Funktionentheorie, Vol. 1, 5th ed.,
+  Teubner, Leipzig, 1928.
+\item Pfluger, A. Theorie der Riemannschen Fl{\"a}chen, Springer,
+  Berlin, 1957
+\item Riemann, B., Collected Works, Dover, N. Y., 1953.
+\item \cite{springer57:_introd_rieman_surfac:da78}
+\item Sto{\"\i}low, S., Le\c{c}ons sur les Principes Topologieques de
+  la Th\'eorie des Fonctions Analytiques, Gauthier-Villars, Paris,
+  1938.
+\item Veech, W., A Second Course in Complex Analysis, Benjamin, N. Y.,
+  1967.
+\item \cite{weyl64:_concep_rieman_surfac:da111}
+\end{enumerate}
+
+%%% BibLaTeX
+\xpatchbibmacro{date+extrayear}{%
+  \printtext[parens]%
+}{%
+  \setunit{\addperiod\space}%
+  \printtext%
+}{}{}
+\printbibliography
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,0 +1,2695 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{xypic}
+\usepackage{enumerate}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{todonotes}
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\setcounter{topic}{6}
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: Existence of Meromorphic Functions}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+%%% page 157
+The thrust of this topic is the proof that there exist nonconstant
+meromorphic functions on \textbf{any} Riemann surface.  It will take a
+tremendous amount of machinery to achieve this result; in particular,
+we will need to give a careful and fairly complete discussion of
+harmonic functions on Riemann surfaces.  But before beginning this
+topic, we shall exhibit one problem which can be solved using the
+existence of meromorphic functions.
+
+First, we introduce a lemma which really logically belongs in Topic~4,
+but has not been needed before now.
+
+\begin{lem}
+  \label{lem:1}
+  Let $m$ be a positive integer and $Q$ a meromorphic function near 0
+  having Laurent expansion
+  $$
+  Q(s) = \sum_{j=-\infty}^{\infty} \alpha_j s^j,
+  $$
+  and assume that no positive integer except 1 is a common factor of
+  all $j$ such that $\alpha_j \ne 0$.  Let $n$ be an integer
+  relatively prime to $m$.  Then $(t^m, Q(t^n))$ is a pair.
+\end{lem}
+
+\begin{myproof}
+  We have to prove that the mapping $t \mapsto (t^m, Q(t^n))$ is
+  one-to-one near 0.  If this is not the case, then there exist $s_k
+  \to 0$ and $t_k \to 0$ such that $s_k \ne t_k$ and $s_k^m = t_k^m$, 
+  %%% page 158
+  $Q(s_k^n) = Q(t_k^n)$.  Thus, $(s_k/t_k)^m = 1$, and by taking a
+  sub-sequence we can assume that there exists a fixed $w$ such that
+  $w \ne 1$, $w^m = 1$, $s_k = wt_k$.  Therefore, $Q(w^n t_k^n) =
+  Q(t_k^n)$, so that the two functions $Q(w^n s)$ and $Q(s)$ agree on
+  a sequence $s = t_k^n \to 0$.  Since they are both meromorphic, they
+  must be identical:
+  $$
+  \sum_{j=-\infty}^{\infty} \alpha_j w^{nj} s^j 
+  \equiv \sum_{j=-\infty}^{\infty} \alpha_j s^j,\quad s \text{ near } 0.
+  $$
+  Therefore the coefficients must agree: $\alpha_j w^{nj} = \alpha_j$
+  for all $j$.  This means that $\alpha_j \ne 0$ implies $w^{nj} =
+  1$.  It follows easily that $w^n = 1$.  For the set $\{ j ~:~ w^{nj}
+  = 1\}$ is an additive subgroup of the integers and the Euclidean
+  algorithm implies that any subgroup equals the integer  multiples of
+  a fixed positive integer $j_0$.  Thus, $\alpha_j \ne 0$ implies $j$
+  contains $j_0$ as a factor.  By hypothesis, $j_0 = 1$ and therefore
+  $w^n = 1$.  Since $n$ and $m$ are relatively prime, the Euclidean
+  algorithm again implies there exist integers $p$ and $q$ such that
+  $pm + qn = 1$.  Thus,
+  $$
+  w = w^{pm + qn} = (w^m)^p(w^n)^q = 1,
+  $$
+  a contradiction.
+\end{myproof}
+
+\begin{thm}
+  \label{thm:1}
+  Let $S$ be any connected Riemann surface.  Let $f$ and $g$ be
+  meromorphic functions on $S$ such that $f \not\equiv$ constant.
+  Then there exists a unique analytic $\Phi : S \to \overline{M}$ such
+  that
+  $$
+  f = \pi \circ \Phi, \quad g = v \circ \Phi.
+  $$
+\end{thm}
+
+%%% page 159
+It is convenient to draw a diagram to indicate these two equations:
+$$
+\xymatrix {
+  S \ar[rr]^{\Phi} \ar[dr]_{f,g} && \overline{M} \ar[dl]^{\pi, v}\\
+  & \widehat{\CCC} \times \widehat{\CCC}
+}
+$$
+The statement of the theorem is then exactly that there exists an
+analytic $\Phi$ making this diagram commutative.
+
+\begin{myproof}
+  \underline{Uniqueness:}  Suppose $p \in S$ and that $m_f(p) = 1$.
+  Since $f = \pi \circ \Phi$, it follows that $m_\Phi(p) = 1$.   Let
+  $\psi$ be any compatible chart in a neighbourhood of $p$.  Suppose
+  $\Phi(p) = e(P, Q)$ and let $\varphi : U(P,Q,\Delta) \to \Delta$ be
+  a canonical chart.  We assume $\psi(p) = 0$.
+
+  \begin{mdframed}
+    \vspace{3cm}
+  \end{mdframed}
+
+  %%% page 160
+  Recall from Topic~5 (Definition 5.10) that
+  $$
+  P = \pi \circ \varphi^{-1},\quad
+  Q = v \circ \varphi^{-1}.
+  $$
+  Now the mapping $\varphi \circ \Phi \circ \psi^{-1}$ is a
+  \emph{parameter change}, since it is one-to-one near 0 and maps 0 to
+  0.  Thus, we consider
+  $$
+  \begin{aligned}
+    P \circ (\varphi \circ \Phi \circ \psi^{-1}) 
+    &= \pi \circ \Phi \circ \psi^{-1} = f \circ \psi^{-1},\\
+    Q \circ (\varphi \circ \Phi \circ \psi^{-1}) 
+    &= v \circ \Phi \circ \psi^{-1} = g \circ \psi^{-1},
+  \end{aligned}
+  $$
+  and we thus have
+  $$
+  (P, Q) \sim (f \circ \psi^{-1}, g\circ \psi^{-1}).
+  $$
+  Therefore, if $m_f(p) = 1$ we have
+  $$
+  \Phi(p) = e(f \circ \psi^{-1}, g\circ \psi^{-1}).
+  $$
+  This proves that $\Phi$ is uniquely determined except on the
+  discrete set where the multiplicity of $f$ is greater that 1.  Since
+  $\Phi$ is continuous on $S$, then $\Phi$ is also uniquely determined
+  everywhere.
+
+  \underline{Existence:}
+  We already know how to define $\Phi$ at points where $m_f = 1$.
+  Therefore, we so define $\Phi$ at those points, just noting that the
+  definition $\Phi(p) = e(f\circ \psi^{-1}, g\circ \psi^{-1})$ really
+  is independent of the particular chart $\psi$; a different selection
+  of the chart merely gives a parameter change.
+
+  %%% page 161
+  Now suppose $p_0 \in S$ and $m_f(p_0) = m$.  Choose a chart $\psi$
+  near $p_0$ such that $\psi(p_0) = 0$ and
+  $$
+  f \circ \psi^{-1}(t) = f(p_0) + t^m
+  $$
+  if $f(p_0) \ne \infty$.  As usual, if $f(p_0) = \infty$ we have
+  instead
+  $$
+  f \circ \psi^{-1}(t) = t^{-m}.
+  $$
+  Then consider the Laurent expansion of $g \circ \psi^{-1}$:
+  $$
+  g \circ \psi^{-1}(t) = \sum_{k=-\infty}^{\infty} a_k t^k.
+  $$
+  Let $n$ be the largest positive integer which is a factor of all $k$
+  such that $a_k \ne 0$; in case $a_k = 0$ for all $k$, let $n=m$.
+  Then we can let $k = nj$ in the above series and we obtain
+  $$
+  g \circ \psi^{-1}(t) = \sum_{j=-\infty}^{\infty} a_{nj} t^{nj} = Q(t^n),
+  $$
+  where
+  $$
+  Q(s) = \sum_{j=-\infty}^{\infty} \alpha_j s^j
+  $$
+  and $\alpha_j = a_{nj}$.  Thus, either $\alpha_j = 0$ for all $j$ or
+  there is no common factor of all $j$ with $\alpha_j \ne 0$ except 1
+  (and $-1$).  Let $u$ be the positive integer which is the greatest
+  common divisor of $m$ and $n$ and define
+  $$
+  \Phi(p_0) = e(f(p_0) + t^{m/\mu}, Q(t^{n/\mu}))
+  $$
+  %%% page 162
+  (replace $f(p_0) + t^{m/\mu}$ by $t^{-m/\mu}$ if $f(p_0) =
+  \infty$).  We have to check that this is really a meromorphic
+  element, i.e., that
+  $$
+  (t^{m/\mu}, Q(t^{m/\mu}))
+  $$
+  is a pair.  If $\alpha_j = 0$ for all $j$, then $\frac{m}{\mu} = 1$
+  and it is obvious.  Otherwise, Lemma \ref{lem:1} applied to the 
+  relatively prime integers $\frac{m}{\mu}$ and $\frac{n}{\mu}$ shows 
+  that we do have a pair.  Thus, $\Phi(p_0)$ makes sense; we do not 
+  need to check that we have defined it independently of the choice of 
+  $\psi$ (there are only $m$ choices to make) since we can regard the 
+  choice of $\psi$ to be an arbitrary ``function'' of $p_0$.
+
+  We now observe that this definition of $\Phi(p_0)$ works even when
+  $m = 1$; then $\mu = 1$ and the definition agrees with the earlier
+  definition of $\Phi$ at points where $f$ has multiplicity 1.  Note
+  that obviously
+  $$
+  \pi \circ \Phi(p_0) = f(p_0),\quad
+  v \circ \Phi(p_0) = Q(0) = g\circ \psi^{-1}(0) = g(p_0).
+  $$
+  Thus, the required commutativity of the diagram is proved.  We thus
+  need to check the analyticity of $\Phi$ in order to finish the
+  proof.  We prove that $\Phi$ is analytic in a neighbourhood of
+  $p_0$, using the above notation.
+
+  Let $z$ be near 0, $z \ne 0$, and let $p = \psi^{-1}(z)$.  Then for
+  sufficiently small $z$, $p$ is a point where $f$ has multiplicity
+  1.
+  %%% page 163
+  Define the chart $\psi_1 = \psi-z$, so that $\psi_1(p) = 0$ and
+  $$
+  \psi_1^{-1}(t) = \psi^{-1}(z + t).
+  $$
+  Therefore, according to our first definition of $\Phi$,
+  $$
+  \begin{aligned}
+    \Phi(\psi^{-1}(z)) 
+    &= e(f \circ \psi_1^{-1}, g\circ \psi_1^{-1})\\
+    &= e(f \circ \psi^{-1}(z+t), g\circ \psi^{-1}(z+t))\\
+    &= e(f(p_0) + (z+t)^m, Q((z+t)^n)).
+  \end{aligned}
+  $$
+  Now we introduce the canonical chart near $\Phi(p_0)$: call it
+  $\varphi : U \to \Delta$, where
+  $$
+  \varphi^{-1}(t_0) = e(f(p_0) + (t_0 + t)^{m/\mu},\ 
+  Q((t_0 + t)^{n/\mu})).
+  $$
+  We introduce next the parameter change $\rho$ defined by
+  $$
+  \rho(t) = (z+t)^\mu - z^\mu;
+  $$
+  since $z \ne 0$, this is a parameter change.  And we have
+  $$
+  (z+t)^m = (z^\mu + \rho(t))^{m/\mu}\quad
+  (\text{and a similar formula with }n),
+  $$
+  showing that 
+  $$
+  \begin{aligned}
+  \Phi(\psi^{-1}(z))
+  &= e(f(p_0) + (z^\mu + \rho(t))^{m/\mu}, Q((z^\mu +
+  \rho(t))^{n/\mu}))\\
+  &= e(f(p_0) + (z^\mu + t)^{m/\mu}, Q((z^\mu + t)^{n/\mu}))
+  = \varphi^{-1}(z^\mu).
+  \end{aligned}
+  $$
+  Thus,
+  %%% page 164
+  $$
+  \varphi \circ \Phi \circ \psi^{-1}(z) = z^\mu,
+  $$
+  so $\varphi \circ \Phi \circ \psi^{-1}$ is holomorphic near 0. This
+  proves that $\Phi$ is analytic near $p_0$.
+\end{myproof}
+
+\begin{cor}
+  Let $S$ be any compact connected Riemann surface and $f,g$
+  meromorphic functions on $S$ such that $f \not\equiv$ constant.
+  Then there exist a unique compact analytic configuration $T$ and
+  analytic function $\Phi$ from $S$ onto $T$ such that the diagram
+  commutes:
+  $$
+  \xymatrix {
+    S \ar[rr]^{\Phi} \ar[dr]_{f,g} && T \ar[dl]^{\pi, v}\\
+    & \widehat{\CCC} \times \widehat{\CCC}
+  }
+  $$
+\end{cor}
+
+\begin{myproof}
+  This is trivial.  We just let $T = \Phi(S)$. Since $S$ is compact
+  and connected and $\Phi$ is continuous, $T$ is also compact and
+  connected.  Since $\Phi$ is analytic and nonconstant,
+  Proposition~2.18 of Topic~2 implies $T$ is an open subset of
+  $\overline{M}$.  As $T$ is thus closed and open and connected, it is
+  an analytic configuration.
+\end{myproof}
+
+\begin{cor}
+  Under the hypothesis of the previous corollary, there exists a
+  unique irreducible polynomial $A(z,w)$ such that
+  %%% page 165
+  $$
+  A(f(p), g(p)) = 0\text{ for } p \in S.
+  $$
+\end{cor}
+
+\begin{myproof}
+  We first prove uniqueness.  If $A$ has the required properties, then
+  $A(\pi(\Phi(p)), v(\Phi(p))) = 0$ for $p \in S$.  Since $\Phi$ is
+  onto, this implies $A(\pi(e), v(e)) = 0$ for $e \in T$.  Therefore
+  the Riemann surface for $A$ satisfies $S_A \supset T$.  Since $T$ is
+  a component of $\overline{M}$ and $S_A$ is connected, $S_A = T$.
+  Thus, Theorem~5.17 of Topic~5 shows $A$ is unique.
+
+  Existence is trivial.  Simply let $A$ be chosen by Theorem~5.17
+  such that $S_A = T$.  The above argument worked the other direction 
+  proves $A(f,g) = 0$.
+\end{myproof}
+
+We are most interested in the possibility that the mapping $\Phi$ of
+$S$ onto $T$ is also one-to-one.  For then we will have an analytic
+equivalence of the compact Riemann surface $S$ with an analytic
+configuration.  The next theorem gives some equivalent conditions.
+
+\begin{thm}
+  \label{thm:2}
+  Let $S$ be a compact connected Riemann surface and $f, g$
+  meromorphic functions on $S$ such that $f \not\equiv$ constant.  Let
+  $\Phi$, $T$, $A$ be the objects of the two previous corollaries.
+  Assume that $f$ takes every value $n$ times.  Then the following
+  conditions are equivalent.
+  \begin{enumerate}
+  \item $\Phi$ is an analytic equivalence of $S$ onto $T$.
+  \item There exists a point $z \in \widehat{\CCC}$ such that $\{g(p)
+    ~:~ f(p) = z \}$ has $n$ points.
+  \item For all except finitely many $z \in \widehat{\CCC}$, $\{ g(p)
+    ~:~ f(p) = z\}$ has $n$ points.
+  \item The polynomial $A$ has degree $n$ in $w$.
+  \end{enumerate}
+\end{thm}
+
+%%% page 166
+\begin{myproof}
+  $1 \Rightarrow 4$:  Since $\Phi$ is an analytic equivalence and $f =
+  \pi \circ \Phi$, $\pi$ also takes every value $n$ times.  The
+  results of Topic~5, especially Theorem 5.17, imply that $A$ has
+  degree $n$ in $w$.
+
+  $4 \Rightarrow 3$: If $z$ is a regular point for $A$ (and this is
+  true for all but the finitely many critical points), then $T \cap
+  \pi^{-1}(\{z\}) = \{e_1,\cdots, e_n\}$ and the numbers $v(e_1),
+  \cdots, v(e_n)$ are distinct, being the solutions of $A(z, w) = 0$.
+  Since $\Phi$ is onto, there exist $p_1, \cdots, p_n \in S$ such that
+  $\Phi(p_k) = e_k$.  Then $g(p_k) = v(e_k)$ and $f(p_k) = \pi(e_k) =
+  z$, so
+  $$
+  \{g(p) ~:~ f(p) = z\}
+  $$
+  has at least $n$ points $v(e_1), \cdots, v(e_n)$.  Since $f$ takes
+  every value $n$ times, this set can contain no more than $n$
+  points. 
+
+  $3 \Rightarrow 2$: Trivial.
+
+  $2 \Rightarrow 1$: Finally we come to an interesting proof.  By
+  hypothesis there are $n$ points $p_1, \cdots, p_n$ such that $f(p_k)
+  = z$ and the numbers $g(p_1), \cdots, g(p_n)$ are distinct.  In
+  particular, since $f$ takes the value $z$ $n$ times, $m_f(p_1) =
+  1$.  Since $f = \pi \circ \Phi$, $m_\Phi(p_1) = 1$.  Let $e =
+  \Phi(p_1)$.  We shall show that $\Phi$ takes the value $e$ one
+  time.  Suppose then that $\Phi(p) = e$.  Then $f(p) = \pi(e) = \pi
+  \circ \Phi(p_1) = f(p_1) = z$, so $p = p_k$ for some $k$.  Then
+  $g(p_k) = v(e) = v \circ \Phi(p_1) = g(p_1)$, so $p_k = p_1$.  Thus
+  $\Phi(p) = e$ if and only if $p = p_1$.  Since moreover $m_\Phi(p_1)
+  = 1$, we have now proved that $\Phi$ takes the value $e$ one time.
+  But Proposition~2.24 item 1 of Topic~2 implies $\Phi$ takes every
+  value one time.  That is, $\Phi$ is one-to-one.  Thus, $\Phi$ is an
+  analytic equivalence.
+\end{myproof}
+
+%%% page 167
+Let us comment on 4.  Suppose that the mapping $\Phi$ takes every
+value $k$ times, and that $\pi : T \to \widehat{\CCC}$ takes every
+value $m$ times.  Then since $f = \pi \circ \Phi$, it is easy to see
+that $f$ takes every value $mk$ times.  In the notation of
+Theorem~\ref{thm:2}, this means $n=mk$ and $A$ has degree $m$ in $w$.
+Thus, in general the degree of $A$ is a factor of $n$.  For example,
+consider the trivial case in which $S = \widehat{\CCC}$, $f(z) = z^4$
+and $g(z) = z^2$.  The uniqueness assertion of the previous corollary
+implies
+$$
+A(z, w) = w^2 - z.
+$$
+For, $A$ is irreducible and $A(f(z), g(z)) = g(z)^2 = f(z) = z^4 - z^4
+= 0$.  Thus, $f$ takes every value 4 times, the degree of $A$ is 2, so
+we conclude that $\Phi$ takes every value 2 times.  In fact, our
+explicit construction shows that for $z \ne 0, \infty$,
+$$
+\begin{aligned}
+  \Phi(z) &= e((z+t)^4, (z+t)^2).\\
+  \Phi(-z) &= e((-z+t)^4, (-z+t)^2) = e((z-t)^4, (z-t)^2)
+  = e((z+t)^4, (z+t)^2) = \Phi(z)
+\end{aligned}
+$$
+by the parameter change $t \to -t$.
+
+%%% page 168
+Now we state the main theorem of this section and show how it can be
+used to produce functions $f$ and $g$ which satisfy the criteria of
+Theorem~\ref{thm:2}.  Note that we must at least produce a nonconstant
+meromorphic function $f$ on $S$; the following theorem allows us to do
+even better.
+
+\begin{thm}
+  \label{thm:3}
+  Let $S$ be any connected Riemann surface and let $p,q \in S$, $p \ne
+  q$.  Then there exists a meromorphic function $f$ on $S$ such that
+  $f(p) \ne f(q)$.
+\end{thm}
+
+We are nowhere near being able to prove this yet.  But assuming its
+validity for the moment we prove
+
+\begin{cor}
+  Let $S$ be a compact connected Riemann surface.  Then $S$ is
+  analytically equivalent to an analytic configuration.
+\end{cor}
+
+\begin{myproof}
+  First apply Theorem~\ref{thm:3} to find a nonconstant meromorphic
+  $f$ on $S$.  Now we show how to construct another meromorphic $g$ on
+  $S$ which satisfies criterion 2 of Theorem~\ref{thm:2}.  Assume that
+  $f$ takes every value $n$ times.  
+  %%% page 169
+  If $n=1$, take $g=0$.  Suppose $n
+  > 1$.  Since the points of $S$ where the multiplicity of $f$ is
+  greater than 1 are isolated, there exists $z \in \widehat{\CCC}$
+  such that $f^{-1}(\{z\})$ consists of $n$ distinct points $p_1,
+  \cdots, p_n$.  Theorem~\ref{thm:3} implies that if $j\ne 1$, there
+  exists a meromorphic $h$ on $S$ such that $h(p_j) \ne h(p_1)$.
+  Choose a complex number $\alpha \notin \{h(p_1), \cdots, h(p_n)\}$.
+  Then there exists a M\"obius transformation
+  $$
+  F(w) = \frac{aw+b}{cw+d}
+  $$
+  such that $F(h(p_1)) = 1$, $F(h(p_j)) = 0$, $F(\alpha) = \infty$.
+  Thus, there exists a meromorphic $h_j = F\circ h$ such that
+  $$
+  h_j(p_1) = 1,\quad
+  h_j(p_j) = 0,\quad
+  h_j(p_k)\text{ is in }\CCC\text{ for }1\le k\le n.
+  $$
+  Define $g_1 = \prod_{j=1}^n h_j$.  Then $g_1$ is meromorphic on $S$
+  and
+  $$
+  g_1(p_1) = 1,\quad
+  g_1(p_j) = 0, \quad 2\le j\le n.
+  $$
+  Repeating this construction, there exist meromorphic functions $g_1,
+  \cdots, g_n$ on $S$ such that
+  $$
+  g_k(p_k) = 1,\quad
+  g_k(p_j) = 0 \text{ if } j\ne k.
+  $$
+  Now define
+  $$
+  g = \sum_{k=1}^{n} kg_k.
+  $$
+  %%% page 170
+  Then $g$ is meromorphic on $S$ and $g(p_k) = k$, $1\le k \le n$.
+  Therefore,
+  $$
+  g(p): f(p) \equiv z = \{1,2,\cdots, n\}
+  $$
+  has $n$ points.  So criterion 3 of Theorem~\ref{thm:2} is satisfied
+  and therefore $S$ is analytically equivalent to an analytically
+  configuration (criterion 1 of Theorem~\ref{thm:2}.
+\end{myproof}
+
+Now we shall begin to introduce the machinery needed to prove
+Theorem~\ref{thm:3}.  The basis is the idea of harmonic functions on
+Riemann surfaces.  First, we recall that a function $u$ on an open set
+in $\CCC$ is said to be harmonic if $u$ is a class $C^2$ and
+$\frac{\p^2 u}{\p x^2} + \frac{\p u^2}{\p y^2} = 0$.  A convenient way
+of discussing this is to define the differential operators
+$$
+\p u \equiv \frac{1}{2}\frac{\p u}{\p x} 
++ \frac{1}{2i}\frac{\p u}{\p y},
+\quad
+\overline{\p} u \equiv \frac{1}{2}\frac{\p u}{\p x} 
+- \frac{1}{2i}\frac{\p u}{\p y}.
+$$
+Then
+$$
+\p\overline{\p} u = \overline{\p} \p u
+= \frac{1}{4}(\frac{\p^2 u}{\p x^2} + \frac{\p u^2}{\p y^2}).
+$$
+Now the equation $\overline{\p} f = 0$ is exactly the Cauchy-Riemann
+equation.  Thus, $f$ is holomorphic if and only if $\overline{\p} f =
+0$; moreover, in this case $\p f = f'$, the ordinary complex
+derivative of $f$.  Thus, if $u$ is of class $C^2$, then $u$ is
+harmonic if and only if $\p u$ is holomorphic.  In particular,
+%%% page 171
+if $u$ is harmonic then $\p u$ has derivatives of all orders.
+Likewise, $\overline{u}$ is harmonic so that $\overline{\p} u =
+\overline{\p \overline{u}}$ has derivatives of all orders.  Thus,
+$\frac{\p u}{\p x} = \p u + \overline{\p} u$ has derivatives of all
+orders, and the same is true for $\frac{\p u}{\p y}$.  Thus,
+\emph{harmonic functions have derivatives of all orders}.
+
+\textbf{Chain rule}.  There is a chain rule for these differential
+operators, which we now describe.  Suppose $V$ and $W$ are open sets
+in $\CCC$ and $h : V \to W$ is a class $C^1$ mapping of $V$ into $W$.
+
+Let $u : W \to \CCC$ be of class $C^1$.  Then $u \circ h$ is also of
+class $C^1$ and if we let $D_1$ denote partial differentiation with
+respect to the first argument and $D_2$ with respect to the second
+argument, the usual chain rule reads
+$$
+\begin{aligned}
+  D_1(u \circ h) &= (D_1 u) \circ h D_1 (\Re(h)) 
+  + (D_2 u) \circ h D_1 (\Im(h)),\\
+  D_2(u \circ h) &= (D_1 u) \circ h D_2 (\Re(h)) 
+  + (D_2 u) \circ h D_2 (\Im(h)).  
+\end{aligned}
+$$
+Therefore,
+$$
+\begin{aligned}
+  \p(u\circ h) &= (D_1 u) \circ h \p(\Re(h)) + (D_2 u)\circ h
+  \p(\Im(h))\\
+  &= (D_1 u) \circ h \frac{\p h + \p \overline{h}}{2} 
+  + (D_2 u)\circ h \frac{\p h - \p \overline{h}}{2i}\\
+  &= (\frac{1}{2}D_1u + \frac{1}{2i}D_2 u)\circ h \p h
+  + (\frac{1}{2}D_1u - \frac{1}{2i}D_2 u)\circ h \p \overline{h}\\
+  &= (\p u) \circ h \p h + (\overline{\p} u) \circ h \p \overline{h}.
+\end{aligned}
+$$
+The corresponding formula for $\overline{\p}(u\circ h)$ follows the
+same way.  We thus obtain
+%%% page 171
+$$
+\begin{aligned}
+  \p(u\circ h) &= (\p h) \circ h \p h + (\overline{\p}u) \circ 
+  \p\;\overline{h},\\
+  \overline{\p}(u\circ h) &= (\p h) \circ h \overline{\p} h 
+  + (\overline{\p}u) \circ    \overline{\p}\;\overline{h}.
+\end{aligned}
+$$
+As a special case, suppose $h$ is holomorphic.  Then $\p h = h'$,
+$\overline{\p} h = 0$, so we obtain
+\begin{equation}
+  \label{e:1}
+  \p(u\circ h) = (\p u) \circ h h',\quad
+  \overline{\p}(u\circ h) = (\overline{\p} u) \circ h 
+  \overline{h'}.
+\end{equation}
+
+Now define $\Delta = \frac{\p^2}{\p x^2} + \frac{\p^2}{\p y^2}$ (the
+\emph{Laplacian}); as we have seen, $\Delta = 4\p \overline{\p} 
+= 4 \overline{\p}\p$. Thus, if $h$ is holomorphic, the above chain
+rule implies
+$$
+\Delta(u \circ h) 
+= 4\overline{\p}[(\p u)\circ h \times h']
+= 4\overline{\p}[(\p u)\circ h] \times h'
++ 4(\p u)\circ h \times \overline{\p} h']
+= 4[\overline{\p}\p u \circ h]\overline{h'}h' + 0,
+$$
+so we obtain
+\begin{equation}
+  \label{e:2}
+  \Delta(u \circ h) = (\Delta u) \circ h |h'|^2.
+\end{equation}
+
+We need one more formula involving $\p$.  Suppose $f$ is holomorphic.
+Then
+$$
+\p \Re(f) = \frac{\p f + \p \overline{f}}{2} = \frac{f'+0}{2},
+$$
+so we have
+%%% page 173
+\begin{equation}
+  \label{e:3}
+  \p \Re(f) = \frac{1}{2}f'.
+\end{equation}
+
+\begin{defn}
+  \label{def:1}
+  Let $u$ be a real-valued function defined on a Riemann surface $S$.
+  Then $u$ is \emph{harmonic} if for every chart $\varphi : U \to W$
+  in the complete analytic atlas for $S$, $u\circ \varphi^{-1}$ is
+  harmonic on $W$.
+\end{defn}
+
+\begin{propn}
+  \label{propn:1}
+  Let $S$ be a Riemann surface and $u : S \to \RR$.  Then the
+  following conditions are equivalent.
+  \begin{enumerate}
+  \item $u$ is harmonic.
+  \item For each $p \in S$ there exists a chart $\varphi : U \to W$ in
+    the complete analytic atlas for $S$ such that $p \in U$ and $u
+    \circ \varphi^{-1}$ is harmonic in a neighbourhood of $\varphi(p)$.
+  \item In a neighbourhood of each point of $S$ there exists
+    holomorphic functions $f$ and $g$ such that $u = f +
+    \overline{g}$.
+  \item In a neighbourhood of each point of $S$ there exists a
+    holomorphic function $F$ such that $u = \Re(F)$.
+  \end{enumerate}
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}:
+  \begin{itemize}
+  \item $1 \Rightarrow 2$: Trivial.
+  \item $2 \Rightarrow 1$: If $u \circ \varphi^{-1}$ is harmonic near
+    $\varphi(p)$ as in condition 2., and if $\psi$ is any compatible
+    chart near $p$, then
+    $$
+    u \circ \psi^{-1} = u\circ \varphi^{-1} \circ (\varphi \circ
+    \psi^{-1}),
+    $$
+    so $u \circ \psi^{-1}$ is also harmonic by formula
+    \eqref{e:2}. This proves 1.
+  %%% page 174
+  \item $2\Rightarrow 3$: Since $u \circ \varphi^{-1}$ is harmonic,
+    $\p (u \circ \varphi^{-1})$ is holomorphic.  Locally, any
+    holomorphic function has a primitive, so there exists a
+    holomorphic function $f$ near $p$ such that near $\varphi(p)$
+    $$
+    \p(u\circ \varphi^{-1}) = (f \circ \varphi^{-1})'.
+    $$
+    Define $\overline{g} = u - f$.  Then
+    $$
+    \overline{\p}(g \circ \varphi^{-1})
+    = \overline{\p(\overline{g} \circ \varphi^{-1})}
+    = \overline{\p(u\circ \varphi^{-1}) - \p(f\circ \varphi^{-1})}
+    = \overline{\p(u\circ \varphi^{-1}) - (f\circ \varphi^{-1})'}
+    = 0.
+    $$
+    Thus, $g \circ \varphi^{-1}$ is holomorphic, proving $g$ is
+    holomorphic.
+  \item $3 \Rightarrow 4$: Using $u = f + \overline{g}$, we have since
+    $u$ is real, $u = \Re(u) = \Re(f) + \Re(\overline{g}) = \Re(f) +
+    \Re(g)$, so we merely take $F = f+g$.
+  \item $4 \Rightarrow 2$: We have $u \circ \varphi^{-1} = \Re(F \circ
+    \varphi^{-1})$ is harmonic near $\varphi(p)$.
+  \end{itemize}
+\end{mdframed}
+
+\begin{propn}
+  \label{propn:2}
+  Let $S$ and $T$ be Riemann surfaces, $F : S \to T$ an analytic
+  mapping.  If $u$ is a harmonic function on $T$, then $u \circ F$ is
+  harmonic on $S$.
+\end{propn}
+
+%%% page 175
+\begin{myproof}
+  If $\varphi$ is a chart on $S$ and $\psi$ a chart on $T$, then we
+  must investigate $(u\circ F) \circ \varphi^{-1}$.  This is
+  $$
+  (u \circ F)\circ \varphi^{-1} 
+  = u \circ \varphi^{-1} \circ (\varphi \circ F \circ \varphi^{-1})
+  $$
+  and we know $u \circ \varphi^{-1}$ is harmonic and $\varphi \circ F
+  \circ \varphi^{-1}$ is holomorphic. Therefore, formula \eqref{e:2}
+  implies $u \circ F$ is harmonic.
+\end{myproof}
+
+\begin{propn}
+  \label{propn:3}
+  Let $S$ be a connected Riemann surface and $u$ a harmonic function
+  on $S$.  If $u$ vanishes on a neighbourhood of some point of $S$,
+  then $u \equiv 0$.
+\end{propn}
+
+\begin{myproof}
+  Define $A = \{p \in S ~:~ u \equiv 0$ in a neighbourhood of $p\}$.
+  Then $A$ is open by definition and $A \ne \emptyset$ by hypothesis.
+  We now demonstrate that $A$ is closed: suppose $p_0$ is a limit
+  point of $A$>  By criterion 4 of Proposition~\ref{propn:1}, there
+  exists a holomorphic function $F$ near $p_0$ such that $u = \Re(F)$
+  near $p_0$.  Thus, $\Re(F)$ vanishes on some open set near $p_0$,
+  namely on the intersection of $A$ with any neighbourhood of $p_0$
+  where $F$ is defined.  But the $F$ must be construction on this open
+  set and by the uniqueness of analytic continuation $F$ is constant.
+  Thus, $u$ is constant near $p_0$ and thus $p_0 \in A$.  Since $A$ is
+  open and closed and not empty, and since $S$ is connected, $A = S$. 
+\end{myproof}
+
+The fundamental Theorem~\ref{thm:3} actually follows from a theorem on
+the existence of harmonic functions, which we now state.
+%%% page 176
+\begin{thm}
+  \label{thm:4}
+  Let $S$ be any connected Riemann surface and let $p \in S$.  Let
+  $\varphi : U \to W$ be a chart in the complete analytic atlas for
+  $S$ with $p \in U$ and $\varphi(p) = 0$.  Let $n$ be a positive
+  integer.  Then there exists a harmonic function $u$ on $S-\{p\}$
+  such that for $z$ near 0
+  $$
+  u \circ \varphi^{-1}(z) = c\log|z| + \Re(f(z)),
+  $$
+  where $c$ is some real constant and $f$ is meromorphic in a
+  neighbourhood of 0 and has a pole of order $n$ at 0.
+\end{thm}
+
+Thus, Theorem~\ref{thm:4} guarantees the existence of a harmonic
+function on $S - \{p\}$ with prescribed singularity at $p$.  For
+emphasis, we repeat that the order of the pole of $f$ at 0 is
+\emph{exactly} $n$: $\p_f(0) = -n$.
+
+Now we shall indicate how the knowledge of Theorem~\ref{thm:4} leads
+to a proof of Theorem~\ref{thm:3}.  Let $p_0, q_0$ be the distinct
+points on $S$ mentioned in the hypothesis of Theorem~\ref{thm:3}.  Let
+$u$ be harmonic on $S - \{p_0\}$ with representation near $p_0$ as
+prescribed by Theorem~\ref{thm:4} with (say) $n=1$:
+$$
+\begin{aligned}
+  u \circ \varphi^{-1}(z) &= c\log|z| + \Re(f(z)),\\
+  f(z) &= \frac{\alpha}{2} + \text{(Laurent expansion near 0)},\
+  \alpha \ne 0.
+\end{aligned}
+$$
+Let $\psi$ be a chart near $q_0$, $\psi(q_0) = 0$, and let $v$ be a
+harmonic function on $S - \{q_0\}$ with expansion near 0 of the form
+%%% page 177
+$$
+\begin{aligned}
+  v \circ \psi^{-1}(z) &= d\log|z| + \Re(g(z)),\\
+  g(z) &= \frac{\beta}{2} + \cdots,\ \beta \ne 0.
+\end{aligned}
+$$
+Using these two harmonic functions we shall construct the meromorphic
+functions required in Theorem~\ref{thm:3}.  Here is how it is done:
+let $p_1 \in S$ and let $\sigma$ be a chart near $p_1$ (in the
+complete analytic atlas for $S$).  Near $p_1$ we define
+$$
+F(p) = \frac{\p(u\circ \sigma^{-1})(\sigma(p))}{
+  \p(v\circ \sigma^{-1})(\sigma(p))}.
+$$
+First, we show this definition to be independent of $\sigma$.  Let
+$\sigma_1$ be another chart near $p_1$ and let $h = \sigma \circ
+\sigma_1^{-1}$, so that $h$ is holomorphic and has a holomorphic
+inverse.  Then formula \eqref{e:1} implies
+$$
+\begin{aligned}
+  \p(u\circ \sigma_1^{-1})(\sigma_1(p))
+  &= \p(u\circ \sigma^{-1} \circ h)(\sigma_1(p))\\
+  &= \p(u\circ \sigma^{-1})(h(\sigma_1(p)))h'(\sigma_1(p))\\
+  &= \p(u\circ \sigma^{-1})(\sigma(p))h'(\sigma_1(p)).
+\end{aligned}
+$$
+Therefore,
+$$
+\frac{\p(u\circ\sigma_1^{-1})(\sigma_1(p))}{
+  \p(v\circ\sigma_1^{-1})(\sigma_1(p))}
+= \frac{\p(u\circ\sigma^{-1})(\sigma(p))}{
+  \p(v\circ\sigma^{-1})(\sigma(p))}
+$$
+since the common nonzero factor $h'(\sigma_1(p))$ cancels after
+division.  Thus, the definition of $F$ is independent of the choice of
+chart.
+
+%%% page 178
+Next, since $u \circ \sigma^{-1}$ and $v \circ \sigma^{-1}$ are
+harmonic, the functions $\p(u \circ \sigma^{-1})$ and $\p(v\circ
+\sigma^{-1})$ are holomorphic, and not identically zero since
+otherwise e.g. $\overline{v \circ \sigma^{-1}}$ would be holomorphic
+(Cauchy-Riemann equation) and thus constant (since it is
+real-valued).  But then Proposition~\ref{propn:3} would imply that $v$
+is constant on $S - \{q_0\}$, which manifestly contradicts its
+singular behaviour near $q_0$.  Thus, the zeros of $\p(v\circ
+\sigma^{-1})$ are isolated, so the formula for $F$ exhibits $F$ as the
+quotient of two holomorphic functions near $p_1$, the denominator not
+vanishing identically, and thus $F$ is meromorphic near $p_1$.  Thus,
+$F$ is meromorphic on $S - \{p_0\} - \{q_0\}$.
+
+Finally, we must examine the behaviour of $F$ near $p_0$ and $q_0$.
+Near $p_0$ we use the chart $\varphi$ and compute according to
+\eqref{e:3}
+$$
+\p(u \circ \varphi^{-1}(z)) = \frac{c}{2z} + \frac{1}{2}f'(z)
+= -\frac{\alpha}{2z^2} + \cdots,
+$$
+so that $F\circ \varphi^{-1}$ has a pole of order at least 2 at 0.
+Thus, $F(P_0) = \infty$.  Likewise, near $q_0$ we use the chart $\psi$
+and compute
+$$
+\p(v \circ \psi^{-1}(z)) = -\frac{\beta}{2z^2} + \cdots,
+$$
+so that $F \circ \psi^{-1}$ has a zero of order at least 2 at 0.
+
+Thus, $F(q_0) = 0$.  This concludes the proof of Theorem~\ref{thm:3}.
+
+%%% page 179
+We have therefore finally reduced the problem to that of demonstrating
+Theorem~\ref{thm:4}.  It will take a considerable amount of machinery
+and technique in the area of harmonic function theory to accomplish
+this, so we now begin a discussion of the relevant properties we
+need.
+
+\begin{propn}
+  \label{propn:4}
+  Let $u$ be continuous on $\overline{\Delta}$, the closure of an open
+  disk $\Delta \subset \CCC$, and harmonic in $\Delta$.  Suppose
+  $\Delta$ has centre $z_0$ and radius $r$.  Then
+  $$
+  u(z_0) = \frac{1}{2\pi} \int_0^{2\pi} u(z_0 + re^{i\theta})
+  d\theta.
+  $$
+\end{propn}
+
+\begin{myproof}
+  Let $0 < \rho < r$.  Then the divergence theorem implies
+  $$
+  0 = \int_{|z-z_0|< \rho} (\frac{\p^2u}{\p x^2} + \frac{\p^2u}{\p
+    y^2}) dx dy = \int_{|z-z_0|<\rho} \frac{\p u}{\p \nu} dS,
+  $$
+  where $dS$ is the element of arc length on the circle $|z-z_0| =
+  \rho$ and $\frac{\p u}{\p \nu}$ is the directional derivative in the
+  direction of the outer normal.  Another way of writing this is
+  $$
+  0 = \int_0^{2\pi} (\frac{\p}{\p \rho} u(z_0 + \rho e^{i\theta}))
+  \rho d\theta.
+  $$
+  %%% page 180
+  Dividing by $\rho$ and then moving $\frac{\p}{\p \rho}$ outside the
+  sign of integration implies
+  $$
+  0 = \frac{\p}{\p \rho}\int_0^{2\pi} u(z_0 + \rho e^{i\theta}) d\theta.
+  $$
+  Therefore, the continuous function of $\rho \in [0,r]$ given by
+  $$
+  \rho \mapsto \frac{1}{2\pi} \int_0^{2\pi} u(z_0 + \rho e^{i\theta})
+  d\theta
+  $$
+  is constant.  Since its value at $\rho = 0$ is $u(z_0)$, the result
+  follows. 
+\end{myproof}
+
+Now we show how to apply this simple property of harmonic functions to
+obtain a representation of $u$ in all of $\Delta$, not just at the
+centre.  First, we take $\Delta$ to be the unit disk for simplicity of 
+computations.  Let $a \in \Delta$ and consider the M\"obius 
+transformation
+$$
+T(z) = \frac{z-a}{1-\overline{a}z};
+$$
+$T$ maps $\Delta$ onto $\Delta$ conformally, $\overline{\Delta}$ onto
+$\overline{\Delta}$, and $T(a) = 0$.  Thus $u \circ T^{-1}$ is
+harmonic on $\Delta$, continuous on $\overline{\Delta}$, so that
+Proposition~\ref{propn:4} implies
+$$
+u \circ T^{-1}(0) = \frac{1}{2\pi} \int_0^{2\pi} u \circ
+T^{-1}(e^{i\varphi}) d\varphi.
+$$
+Now we introduce the change of variable
+%%% page 181
+$$
+e^{i\theta} = T^{-1}(e^{i\varphi}).
+$$
+Then $e^{i\varphi} = T(e^{i\theta})$, so that a simple computation
+yields
+$$
+\begin{aligned}
+  \frac{d \varphi}{d\theta}
+  &= \frac{e^{i\theta}}{e^{i\theta}-a} 
+  + \frac{\overline{a} e^{i\theta}}{1-\overline{a} e^{i\theta}}
+  = \frac{e^{i\theta}}{e^{i\theta}-a} 
+  + \frac{\overline{a}}{e^{-i\theta}-\overline{a}} \\
+  &= \frac{1-\overline{a}e^{i\theta} + \overline{a} e^{i\theta} -
+    \overline{a} a}{(e^{i\theta}-a)(e^{-i\theta}-\overline{a})}
+  = \frac{1-|a|^2}{|e^{i\theta} - a|^2}
+\end{aligned}
+$$
+Therefore,
+$$
+u(a) = \frac{1}{2\pi} \int_0^{2\pi} \frac{1-|a|^2}{|e^{i\theta} -
+  a|^2} u(e^{i\theta}) d\theta.
+$$
+Define
+\begin{equation}
+  \label{e:4}
+  P(z, e^{i\theta}) = \frac{1}{2\pi} \frac{1-|z|^2}{|e^{i\theta} -
+    z|^2}, \quad |z| < 1;
+\end{equation}
+this is the so-called \emph{Poisson kernel}.  We want to observe
+certain things about it:
+\begin{enumerate}
+\item $P \ge 0$;
+\item $\int_0^{2\pi} P(z, e^{i\theta}) d\theta = 1$, $|z| < 1$;
+\item $P(z, e^{i\theta})$ is harmonic function of $z$;
+\item for any $\delta > 0$,
+  %%% page 182
+  $$
+  \lim_{z \to e^{i\theta_0}} \int_{|e^{i\theta} - e^{i\theta_0}|
+    \ge \delta} P(z, e^{i\theta}) d\theta = 0.
+  $$
+\end{enumerate}
+The first property is obvious and the second follows from formula
+\eqref{e:4} applied to the harmonic function $u \equiv 1$.  The third
+follows from the formula for $\frac{d\varphi}{d\theta}$, which reads
+$$
+2\pi P(z, e^{i\theta}) = \frac{e^{i\theta}}{e^{i\theta}-z}
++ \frac{\overline{z}e^{i\theta}}{1-\overline{z}e^{i\theta}},
+$$
+exhibiting $P$ as a sum of two harmonic functions of $z$.
+
+To prove the fourth, assume $|z-e^{i\theta_0}| < \delta/2$.  Then
+$$
+|e^{i\theta} - z| \ge |e^{i\theta} - e^{i\theta_0}| - |e^{i\theta_0} -
+z| > \delta - \delta/2 = \delta/2,
+$$
+so that
+$$
+\int_{|e^{i\theta} - e^{i\theta_0}| \ge \delta} P(z, e^{i\theta})
+d\theta \le \frac{1}{2\pi} \frac{1-|z|^2}{(\delta/2)^2} \cdot 2\pi
+< \frac{8}{\delta^2}(1-|z|),
+$$
+and this clearly tends to zero as $z \to e^{i\theta_0}$.
+
+These four properties are all we need to establish the following
+converse to formula \eqref{e:4}.
+
+\begin{propn}
+  \label{propn:5}
+  Let $f$ be a continuous function on the circle $|z| = 1$.  Define
+  $$
+  u(z) =
+  \begin{cases}
+    \int_0^{2\pi} P(z,e^{i\theta}) f(e^{i\theta}) d\theta, & |z| <
+    1,\\
+    f(z), & |z| = 1.
+  \end{cases}
+  $$
+  Then $u$ is harmonic for $|z| < 1$ and continuous for $|z| \ge 1$.
+\end{propn}
+
+\begin{myproof}
+  The fact that $u$ is harmonic for $|z| < 1$ follows from 3. by
+  differentiation under the integer sign.  Clearly, we need only prove
+  that $\lim u(z) = f(e^{i\theta_0})$ for $|z| < 1$, $z \to
+  e^{i\theta_0}$, in order to finish the proof.  Let $\epsilon > 0$.
+  By continuity of $f$ at $e^{i\theta_0}$, there exists $\delta > 0$
+  such that $|f(e^{i\theta}) - f(e^{i\theta_0})| < \frac{\epsilon}{2}$
+  if $|e^{i\theta} - e^{i\theta_0}| < \delta$.  Now 2. implies
+  $$
+  u(z) - f(e^{i\theta_0}) = \int_0^{2\pi} P(z, e^{i\theta})
+  [f(e^{i\theta}) - f(e^{i\theta_0})] d\theta.
+  $$
+  Choose a constant $C$ such that $|f(e^{i\theta})| \le C$ for all
+  $\theta$.  Then
+  $$
+  |u(z) - f(e^{i\theta_0})|
+  \le \frac{\epsilon}{2}\int_{|e^{i\theta}-e^{i\theta_0}|< \delta}
+  P(z, e^{i\theta})d\theta 
+  + 2C \int_{|e^{i\theta}-e^{i\theta_0}|< \delta}
+  P(z, e^{i\theta})d\theta.
+  $$
+  Since the first integral is bounded by 1, and property 4. implies
+  there exists $\delta' > 0$ such that the second integral is bounded
+  by $\frac{\epsilon}{4C}$ if $|z - e^{i\theta_0}| < \delta'$, we
+  obtain
+  $$
+  |u(z) - f(e^{i\theta_0})| < \epsilon
+  $$
+  if $|z - e^{i\theta_0}| < \delta'$.
+\end{myproof}
+
+%%% page 184
+Of course, it is not necessary to restrict our attention to the unit
+disk.  If we consider functions in the disk $\Delta_r(z_0)$, the
+formula analogous to that of Proposition~\ref{propn:5} is
+$$
+u(z) = \frac{1}{2\pi} \int_0^{2\pi} \frac{r^2 - |z-z_0|^2}{
+|re^{i\theta} - (z-z_0)|^2} f(z_0 + re^{i\theta}) d\theta.
+$$
+This can be derived in the same manner, or merely by considering the
+change of variable $z - z_0 = rw$ and using Proposition~\ref{propn:5}
+as it stands.
+
+The Poisson integral formula we have just derived has several
+immediate applications which will be of great importance to us.  For
+example, we have 
+
+\begin{propn}
+  \label{propn:6}
+  Let $D$ be an open set in $\CCC$ and $K$ a compact subset of $D$.
+  Then there exists a constant $C$ which depends only on $K$ and $D$
+  such that if $u$ is harmonic in $D$ then
+  $$
+  \sup_K \left|\frac{\p u}{\p x}\right|
+  \le C \sup_D |u|.
+  $$
+  A similar result holds will $\frac{\p}{\p x}$ replaced by any
+  derivative of any order.
+\end{propn}
+
+\begin{myproof}
+  For any $z_0 \in K$ there exists a disk $\Delta_r(z_0)$ such that
+  the close of $\Delta$ is contained in $D$.  For $|z-z_0| <
+  \frac{1}{2}r$, the Poisson integral formula implies
+  $$
+  \left|\frac{\p u}{\p x}(z)\right| \le C \sup_D |u|,
+  $$
+  where
+  %%% page 185
+  $$
+  C = \sup_{\substack{|z-z_0|<\frac{1}{2}r\\ 0\le \theta \le 2\pi}}
+  \left|\frac{\p}{\p x} \frac{r^2-|z-z_0|^2}{
+      |re^{i\theta} - (z-z_0)|^2}\right|
+  $$
+  is easily seen to be finite.  Since $K$ can be covered by finitely
+  many such disks as $\{z ~:~ |z-z_0| < \frac{1}{2}r\}$, the results
+  follows.
+\end{myproof}
+
+\begin{propn}
+  \label{propn:7}
+  Let $D$ be an open set in $\CCC$ and $u_1, u_2, \cdots$ a sequence
+  of harmonic functions in $D$ which converge uniformly on compact
+  subsets of $D$ to a function $u$.  Then $u$ is harmonic in $D$ and
+  the sequence $\frac{\p u_n}{\p x}$ converges to $\frac{\p u}{\p x}$,
+  also uniformly on compact sets in $D$.
+\end{propn}
+
+\begin{myproof}
+  If $\Delta$ is a disk whose closure is contained in $D$, then $u_n$
+  has a Poisson integral representation in $\Delta$ of the form
+  $$
+  u_n(z) = \frac{1}{2\pi} \int_0^{2\pi} \frac{r^2 - |z-z_0|^2}{
+  |re^{i\theta} - (z-z_0)|^2} u_n(z_0 + re^{i\theta}) d\theta.
+  $$
+  For fixed $z \in \Delta$ let $n\to \infty$ in this formula and use
+  the uniform convergence to pass the limit under the integral sign to
+  obtain
+  $$
+  u(z) = \frac{1}{2\pi} \int_0^{2\pi} \frac{r^2 - |z-z_0|^2}{
+  |re^{i\theta} - (z-z_0)|^2} u(z_0 + re^{i\theta}) d\theta.
+  $$
+  Therefore, $u$ is harmonic in $\Delta$.  Therefore, $u$ is harmonic
+  in $D$.
+
+  Now suppose $K$ is a compact subset of $D$.  Choose an open set
+  $D_1$ such that $K \subset D_1$ and the closure of $D_1$ is compact
+  subset of $D$.  Let $C$ be the constant of Proposition~\ref{propn:6}
+  relative to $K$ and $D_1$.  Then
+  %%% page 186
+  $$
+  \sup_K \left|\frac{\p u_n}{\p x} - \frac{\p u}{\p x}\right|
+  \le C \sup_{D_1} |u_1 - u|.
+  $$
+  By hypothesis, $\sup_{D_1}|u_n-u| \to 0$ as $n \to \infty$, and
+  therefore $\frac{\p u_n}{\p x} \to \frac{\p u}{\p x}$ uniformly on
+  $K$.  As $K$ is arbitrary, the result follows.
+\end{myproof}
+
+\begin{propn}
+  \label{propn:8}
+  Let $D$ be an open set in $\CCC$ and $u_1, u_2, \cdots$ a sequence
+  of harmonic functions in $D$ which are uniformly bound on every
+  compact subset of $D$.  Then there exists a subsequence $n_1 < n_2 <
+  \cdots$ such that
+  $$
+  \lim_{k\to \infty} u_{n_k}
+  $$
+  exists uniformly on compact subsets of $D$.
+\end{propn}
+
+\begin{myproof}
+  If $\Delta$ is a disk such that its closure is a compact subset of
+  $D$, then there exists a constant $C$ depending only on $\Delta$
+  such that $|u_n(z)| \le C$ for $z \in \Delta$, $n \ge 1$.
+  Therefore, Proposition~\ref{propn:6} implies that if
+  $\frac{1}{2}\Delta$ is the concentric disk with half the radius of
+  $\Delta$ then for some other constant $C_1$
+  $$
+  \left|\frac{\p u_n}{\p x}\right| \le C_1,\quad
+  \left|\frac{\p u_n}{\p y}\right| \le C_1 \quad\text{on }
+  \frac{1}{2}\Delta.
+  $$
+  Now we apply the mean value theorem on the disk $\frac{1}{2}\Delta$
+  (details omitted) to conclude for $z, z' \in \frac{1}{2}\Delta$,
+  %%% page 187
+  $$
+  |u_n(z) - u_n(z')| \le 2C_1 |z-z'|.
+  $$
+  This proves that the family of functions $u_1, u_2, \cdots$ is
+  \emph{equi-continuous} on $\frac{1}{2}\Delta$.  Since $\Delta$ was
+  arbitrary, it follows that the family $u_1, u_2, \cdots$ is
+  equi-continuous on each compact subset of $D$.  By the Arzela-Ascoli
+  theorem, there exists a subsequence with the required property that
+  $u_{n_k}$ converges uniformly on compact subsets of $D$.
+\end{myproof}
+
+\begin{defn}
+  \label{def:2}
+  An open subset $D$ of a Riemann surface is an \emph{analytic disk}
+  if there exists a chart $\varphi : U \to W$ in the complete analytic
+  atlas such that $\varphi(D)$ is a disk whose closure is a (compact)
+  subset of $W$.
+\end{defn}
+
+\textbf{Notation}.  If $A$ is a subset of a topological space, $A^-$
+denotes the closure of $A$ and $\p A$ denotes the boundary of $A$.
+
+\begin{propn}
+  \label{propn:9}
+  Let $D$ be an analytic disk in a Riemann surface $S$ and let $f : \p
+  D \to \RR$ be continuous.  Then there exists a unique function $P_f$
+  on $D^-$ such that $P_f$ is continuous on $D^-$, harmonic in $D$,
+  and $P_f \equiv f$ on $\p D$.
+\end{propn}
+
+\begin{myproof}
+  Let $\varphi : U \to W$ be a chart in the complete analytic atlas
+  for $S$ satisfying the condition of Definition~\ref{def:2}.  If
+  $\varphi(D) = \{z ~:~ |z-z_0| < r\}$, then $P_f \circ \varphi^{-1}$
+  must be continuous on $\varphi(D)^-$, harmonic on $\varphi(D)$, and
+  $P_f \circ \varphi^{-1} \equiv f \circ \varphi^{-1}$ on $\p
+  \varphi(D)$ (= $\varphi(\p D)$).  Thus, if $z \in \varphi(D)$, then
+  %%% page 188
+  $$
+  P_f \circ \varphi^{-1}(z) = \frac{1}{2\pi}\int_0^{2\pi}
+  \frac{r^2-|z-z_0|^2}{|re^{i\theta} - (z-z_0)|^2}
+  f\circ \varphi^{-1}(z_0 + re^{i\theta}) d\theta.
+  $$
+  Therefore, $P_f$ is uniquely determined and
+  Proposition~\ref{propn:5} implies that $P_f$ as defined by this
+  formula satisfies the conditions of Proposition~\ref{propn:9}.
+\end{myproof}
+
+\begin{defn}
+  \label{def:3}
+  If $D$ is an analytic disk in Riemann surface $S$ and if $u : S \to
+  \RR$ is continuous, $u_D$ is the unique continuous function on $S$
+  which agrees with $u$ on $S - D$ and is harmonic in $D$.  The
+  existence and uniqueness of $u_D$ are guaranteed by
+  Proposition~\ref{propn:9}.
+\end{defn}
+
+\begin{lem}
+  \label{lem:2}
+  Let $S$ be a Riemann surface and $p_0 \in S$.  Let $\epsilon >
+  0$. Then there exists a neighbourhood $U$ of $p_0$ such that for all
+  functions $u$ which are harmonic and nonnegative on $S$, and for all
+  $p, q \in U$
+  $$
+  u(p) \le (1+\epsilon) u(q).
+  $$
+\end{lem}
+
+\begin{myproof}
+  There exists a chart $\varphi : U_0 \to W$ in the complete analytic
+  atlas for $S$ such that $W$ contains $\{z : |z| < 1\}$ and
+  $\varphi(p_0) = 0$.  This can obviously be achieved by composing an
+  arbitrary chart with a suitable linear transformation of $\CCC$ onto
+  itself.  Let $v = u \circ \varphi^{-1}$.  Then
+  %%% page 189
+  $$
+  v(z) = \int_0^{2\pi} P(z, e^{i\theta} v(e^{i\theta}) d\theta,
+  \quad |z| < 1.
+  $$
+  Now $1 - |z| \le |e^{i\theta} - z| \le 1 + |z|$, so we obtain
+  $$
+  \frac{1-|z|}{1+|z|}
+  = \frac{1-|z|^2}{(1+|z|)^2}
+  \le \frac{1-|z|^2}{|e^{i\theta}-z|^2} \le \frac{1-|z|^2}{(1-|z|)^2}
+  = \frac{1+|z|}{1-|z|}.
+  $$
+  Therefore, since $v(e^{i\theta}) \ge 0$,
+  $$
+  \frac{1-|z|}{1+|z|} \frac{1}{2\pi} \int_0^{2\pi} v(e^{i\theta})
+  d\theta
+  \le v(z) \le
+  \frac{1+|z|}{1-|z|} \frac{1}{2\pi} \int_0^{2\pi} v(e^{i\theta})
+  d\theta.
+  $$
+  By Proposition~\ref{propn:4} this pair of inequalities can be
+  written in the form
+  $$
+  \frac{1-|z|}{1+|z|}v(0) \le v(z) \le \frac{1+|z|}{1-|z|}v(0).
+  $$
+  If $0 < \delta < 1$ and $|z| \le \delta$, we obtain
+  $$
+  \frac{1-\delta}{1+\delta} v(0) \le v(z) \le
+  \frac{1+\delta}{1-\delta} v(0).
+  $$
+  Therefore, if $|z| \le \delta$ and $|w| \le \delta$,
+  $$
+  v(z) \le \frac{1+\delta}{1-\delta}v(0) 
+  \le (\frac{1+\delta}{1-\delta})^2 v(w).
+  $$
+  %%% page 190
+  Pick $\delta$ such that
+  $$
+  (\frac{1+\delta}{1-\delta})^2 \le 1 + \epsilon.
+  $$
+  Then let $U = \varphi^{-1}(\{z ~:~ |z| < \delta\})$.  This is a
+  neighbourhood of $p_0 = \varphi^{-1}(0)$ and for $p,q \in U$,
+  $$
+  u(p) = v(\varphi(p)) \le (1+\epsilon) v(\varphi(q))
+  = (1 + \epsilon) u(q).
+  $$
+\end{myproof}
+
+\begin{thm}[Harnack's Inequality]
+  Let $S$ be a connected Riemann surface and $K$ a compact subset of
+  $S$.  Then there exists a constant $C$ depending only on $K$ and $S$
+  such that for all nonnegative harmonic functions $u$ on $S$ and all
+  $p, q\in K$,
+  $$
+  u(p) \le Cu(q).
+  $$
+\end{thm}
+
+\begin{mdframed}
+  \textbf{Proof}:
+  If obviously suffices to consider the class $H$ of functions which
+  are harmonic and positive on $S$; if $u$ is harmonic and $u \ge 0$,
+  then for every $\epsilon > 0$, $u + \epsilon \in H$ and if the
+  inequality is true for functions in $H$ then $u(p) + \epsilon \le
+  C(u(q) + \epsilon)$.  Then let $\epsilon \to 0$.  Of course, we are
+  debating a triviality anyway, because Harnack's inequality implies
+  that if $u \ge 0$ and $u$ is harmonic, then either $u \equiv 0$ or
+  $u> 0$.  Now choose some fixed point $p_0 \in S$ and define
+  $$
+  F(p) = \sup\ \max\ (\frac{u(p)}{u(p_0)}, \frac{u(p_0)}{u(p)}) ~:~ u
+  \in H.
+  $$
+  %%% page 191
+  We are going to prove $F$ is continuous.  Let $p_1 \in S$ and let
+  $\epsilon > 0$.  Let $U$ be a neighbourhood of $p_1$ satisfying the
+  condition of Lemma~\ref{lem:2}.  Then for $u \in H$ and $p,q\in U$,
+  $$
+  \begin{aligned}
+    \frac{u(p)}{u(p_0)} &\le (1 + \epsilon) \frac{u(q)}{u(p_0)}
+    \le (1 + \epsilon) F(q),\\
+    \frac{u(p_0)}{u(p)} &\le (1 + \epsilon) \frac{u(p_0)}{u(q)}
+    \le (1 + \epsilon) F(q).
+  \end{aligned}
+  $$
+  Therefore,
+  \begin{equation}
+    \label{e:5}
+    F(p) \le (1 + \epsilon) F(q) \quad \text{for }p,q\in U.
+  \end{equation}
+  In particular, if $F(p_1) < \infty$ we choose $q = p_1$ to conclude
+  that $F(p) < \infty$ for all $p \in U$; if $F(p_1) = \infty$ we
+  choose $p=p_1$ to conclude that $F(q) = \infty$ for all $q \in U$.
+  Therefore, the sets
+  $$
+  \{p \in S ~:~ F(p) < \infty\}, \quad
+  \{p \in S ~:~ F(p) = \infty\}
+  $$
+  are open.   As they are obviously disjoint and their union is
+  obviously $S$< the connectedness of $S$ implies one of these sets is
+  $S$, the other empty.  Since $F(p_0) = 1$, $p_0$ belongs to the
+  first of the sets, and thus we have proved that $F < \infty$
+  everywhere on $S$.
+
+  Now we obtain the continuity.  Taking $q = p_1$ in \eqref{e:5},
+  $$
+  F(p) - F(p_1) \le \epsilon F(p_1) \text{ if } p \in U;
+  $$
+  taking $p = p_1$,
+  $$
+  -\epsilon F(p_1) \le (1 + \epsilon) (F(q) - F(p_1)) \text{ if }
+  q \in U.
+  $$
+  %%% page 192
+  Thus, we obtain
+  $$
+  - \frac{\epsilon}{1+\epsilon} F(p_1) \le F(p) - F(p_1) \le \epsilon
+  F(p_1) \text{ if } p \in U,
+  $$
+  and since $\epsilon$ is arbitrary, this proves that $F$ is
+  continuous at $p_1$.
+
+  Since $F$ is continuous on $S$ and $K$ is compact, there exists a
+  constant $c$ such that $F(p) \le c$ for $p \in K$.  Therefore, if
+  $p, q \in K$
+  $$
+  u(p) < F(p) u(p_0) \le F(p) F(q) u(q) \le c^2 u(q).
+  $$
+\end{mdframed}
+
+\begin{thm}[Harnack's Convergence Theorem]
+  Let $S$ be a connected Riemann surface and $\calH$ a nonvoid family
+  of harmonic functions on $S$ which is directed upwards, i.e., if $u,
+  v \in \calH$, there exists $w \in \calH$ such that $w \ge u$, $w \ge
+  v$.  Let $U = \sup \calH$, i.e. for $p \in S$
+  $$
+  U(p) = \sup\{u(p) ~:~ u \in \calH\}.
+  $$
+  Then there exists a sequence $u_1 \le u_2 \le u_3 \le \cdots$ such
+  that $u_n \in \calH$ for all $n$ and $u_n \to U$ uniformly on
+  compact subsets of $S$.  Moreover, either $U \equiv \infty$ or $U$
+  is harmonic on $S$.
+\end{thm}
+
+\begin{mdframed}
+  \textbf{Proof}:  Let $u_0$ be an arbitrary function in $\calH$ and
+  let
+  $$
+  \calH' = \{u \in \calH ~:~ u \ge u_0\}.
+  $$
+  Then $\sup \calH' = \sup \calH$.  Indeed, since $\calH' \subset
+  \calH$ the inequality $\sup \calH' \ge \sup \calH$ is obvious, and
+  if $u \in \calH$ then there exists $v \in \calH$ such that $v \ge u$
+  and $v \ge u_0$; therefore, $v \in \calH'$ and $v \ge u$, proving
+  that $\sup \calH' \ge \sup \calH$.
+
+  %%% page 193
+  For any compact set $K \subset S$ let $C_K$ be the corresponding
+  constant in the conclusion of Harnack's inequality.  The for $u \in
+  \calH'$, $u - u_0$ is a nonnegative harmonic function, so for all
+  $p, q \in K$ it follows that
+  $$
+  u(p) - u_0(p) \le C_K(u(q)-u_0(q)) 
+  \le C_K(U(q)-u_0(q)).
+  $$
+  Taking the supremum over all $u \in \calH'$ implies
+  \begin{equation}
+    \label{e:6}
+    U(p) - u_0(p) \le C_K(u(q)-u_0(q)).
+  \end{equation}
+  It follows that if $U(q) < \infty$, then $U(p) < \infty$, and here
+  $p,q$ can be any points in $S$ (just take $K$ to be the compact set
+  $[p,q]$).  Therefore, either $U \equiv \infty$ or $U < \infty$.
+
+  Let $p_0 \in S$ be fixed and choose a sequence $u_1', u_2', u_3',
+  \cdots$ from $\calH$ such that $u_n'(p_0) \to U(p_0)$.  By
+  hypothesis, we can let $u_1 = u_1'$ and then find inductively $u_n
+  \in \calH$ such that
+  $$
+  u_n \ge u_n',\quad u_n \ge u_{n-1}.
+  $$
+  Then we have a sequence $u_1 \le u_2 \le \cdots$ from $\calH$ such
+  that $u_n(p_0) \to U(p_0)$.  Note that \eqref{e:6} holds for an
+  arbitrary $u_0 \in \calH$, so we can take $u_0 = u_n$ in
+  \eqref{e:6}.  If $U(p_0) = \infty$, then for any compact set $K$
+  containing $p_0$ Harnack's inequality implies
+  $$
+  u_n(p_0) - u_1(p_0) \le C_K(u_n(q) - u_1(q)), \quad q\in K,
+  $$
+  %%% page 194
+  and therefore $u_n(q) \to \infty$ uniformly on $K$.  This proves the
+  result in case $U \equiv \infty$.  If $U(p_0) < \infty$, the
+  \eqref{e:6} implies
+  $$
+  U(p) - u_n(p) \le C_K(U(p_0)-u_n(p_0)),\quad p \in K,
+  $$
+  and therefore $u_n(p) \to U(p)$ uniformly for $p \in K$.  Finally,
+  Proposition~\ref{propn:7} shows that $U$ is harmonic in this case.
+\end{mdframed}
+
+Now we need to introduce the basic building block other than the
+Poisson integral, which is \emph{subharmonic} functions.  The basic
+theory is contained in the following proposition.
+
+\begin{propn}
+  \label{propn:10}
+  Let $u$ be a continuous real-valued function on a connected Riemann
+  surface $S$.  Then the following conditions are equivalent.
+  \begin{enumerate}
+  \item For every analytic disk $D \subset S$, $u \le u_D$.
+    (Cf. Definition~\ref{def:3}.)
+  \item If $\sO$ is a proper open subset of $S$, if $\sO^-$ is
+    compact, if $h$ is continuous on $\sO^-$ and harmonic in $\sO$,
+    and if $u \le h$ on $\p \sO$, then $u = h$ in $\sO$.
+  \item For each $p \in S$ there exists a chart $\varphi : U \to W$ in
+    the complete analytic atlas for $S$ such that $p \in U$ and
+    $$
+    u(p) \le \frac{1}{2\pi} \int_0^{2\pi} u \circ \varphi^{-1}(
+    \varphi(p) + re^{i\theta}) d \theta
+    $$
+    for small positive $r$.
+    %%% page 195
+  \item For each $p \in S$ and every chart $\varphi : U \to W$ in the
+    complete analytic atlas for $S$ such that $p \in U$ and every $z$
+    sufficiently close to $\varphi(p)$,
+    $$
+    u \circ \varphi^{-1}(z) \le \frac{1}{2\pi} \int_0^{2\pi}
+    u \circ \varphi^{-1}(z + re^{i\theta}) d\theta
+    $$
+    for small positive $r$.
+  \end{enumerate}
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}: We are going to establish four implications, three
+  of which are absolutely trivial.
+
+  \begin{itemize}
+  \item $2 \Rightarrow 1$: Assume that 2 holds and let $D$ be an
+    analytic disk.  Use 2 with $\sO = D$ and $h = u_D$ restricted to
+    $\sO^-$.  Then $u = h$ on $\p D$ so we obtain $u \le h$ in $D$,
+    i.e., $u \le u_D$ in $D$.  Since $u = u_D$ outside $D$, 1 follows.
+  \item $1 \Rightarrow 4$: Assume that 1 holds and consider the
+    analytic disk
+    $$
+    D = \varphi^{-1}(\{w ~:~ |z-w| < r\})
+    $$
+    for sufficiently small $r$.  Then $u \le u_D$, so in particular
+    $$
+    u \circ \varphi^{-1}(z) \le u_D \circ \varphi^{-1}(z).
+    $$
+    Since $u_D \circ \varphi^{-1}$ is continuous on $\{w ~:~ |z-w| \le
+    r\}$ and harmonic in the interior, the mean value property of
+    Proposition~\ref{propn:4} implies
+    $$
+    u_D \circ \varphi^{-1}(z)
+    = \frac{1}{2\pi} \int_0^{2\pi} u_D \circ
+    \varphi^{-1}(z+re^{i\theta}) d \theta
+    = \frac{1}{2\pi} \int_0^{2\pi} u \circ
+    \varphi^{-1}(z+re^{i\theta}) d \theta
+    $$
+    since $u_D = u$ on $\p D$.  Thus, 4 follows.
+  \item $4 \Rightarrow 3$: Completely trivial: we allow \emph{every}
+    chart in 4 and moreover 3 is just 4 at the single point $z =
+    \varphi(p)$.
+  \item $3 \Rightarrow 2$: Finally here is something which requires
+    thought.  Assume that 3 holds and assume we have the hypothesis of
+    2.  Define $v = u-h$ in $\sO^-$.  Let $M = \sup_{\sO^-} v$.  Since
+    $\sO^-$ is compact and $v$ is continuous, the supremum is
+    attained, so the set
+    $$
+    A = \{p \in \sO ~:~ v(p) = M\}
+    $$
+    is either nonvoid or $v = M$ somewhere on $\p \sO$.  In the latter
+    case, since $v \le 0$ on $\p \sO$ we obtain $M \le 0$ and the
+    result follows. So we assume $v < M$ everywhere on $\p \sO$, in
+    which case $A$ is not empty.  Since $v$ is continuous, the set $A$
+    is \emph{closed} relative to $\sO$.  We use 3 to show that $A$ is
+    \emph{open}: suppose $p \in A$.  Pick a chart $\varphi$ according
+    to 3 with respect to the point $p$.  Then for small positive $r$
+    $$
+    u(p) \le \frac{1}{2\pi}\int_0^{2\pi} u \circ
+    \varphi^{-1}(\varphi(p) + re^{i\theta}) d \theta.
+    $$
+    Since $h$ is harmonic, it satisfies the similar relation with
+    \emph{equality} instead of inequality (Proposition~\ref{propn:4})
+    and thus we obtain by subtraction
+    $$
+    v(p) \le \frac{1}{2\pi} \int_0^{2\pi} v \circ
+    \varphi^{-1}(\varphi(p) + re^{i\theta}) d\theta.
+    $$
+    But the left side is $v(p) = M$ and the integrand
+    %%% page 197
+    $v \circ \varphi^{-1}(\varphi(p) + re^{i\theta}) \le M$ by
+    definition of $M$.  Thus, we conclude that equality holds
+    everywhere, so
+    $$
+    v \circ \varphi^{-1}(\varphi(p) + re^{i\theta}) \equiv M
+    $$
+    for $0 \le \theta \le 2\pi$ and small positive $r$.  Thus, $v
+    \equiv M$ near $p$, so $A$ is open.
+
+    It is now a simple topological argument to show that $\p A$ and
+    $\p \sO$ have a point in common.  To see this, let $p_0 \in A$ and
+    $p_1 \in S - \sO$ be chose arbitrarily, and use the connectedness
+    of $S$ to conclude that there exists a path $\gamma$ in $S$ from
+    $p_0$ to $p_1$.  Since $p_0 \in A$ and $p_1 \notin A$ and the
+    image of $\gamma$ is connected, there exists a point $p_2$ in the
+    image of $\gamma$ such that $p_2 \in \p A$.  If a neighbourhood of
+    $p_2$ were disjoint from $\sO$, it would also be disjoint from
+    $A$, contradicting $p_2 \in A^-$.  Therefore, $p_2 \in \sO^-$.  If
+    $p_2 \in \sO$, then since $A$ is closed in $\sO$, $p_2 \in A$;
+    since $A$ is open, this contradicts the fact that $p_2 \in
+    (S-A)^-$.  Thus $p_2 \in \p \sO$.  Since $p_2 \in \p A$, $v(p_2) =
+    M$ by continuity of $v$.  Since $p_2 \in \p\sO$, $v(p_2) \le 0$ by
+    hypothesis.  Therefore, $M \le 0$, and the conclusion of 2
+    follows.
+  \end{itemize}
+\end{mdframed}
+
+\begin{defn}
+  \label{def:4}
+  A continuous real-valued function $u$ on a Riemann surface $S$ is
+  \emph{subharmonic} if it satisfies condition 4 of
+  Proposition~\ref{propn:10}.
+\end{defn}
+
+%%% page 198
+\begin{thm}[Strong Maximum Principle]
+  Let $u$ be a subharmonic function on a connected Riemann surface $S$
+  such that $u \le 0$.  Then either $u < 0$ on $S$ or $u \equiv 0$ on
+  $S$.
+\end{thm}
+
+\begin{myproof}
+  This is contained in the proof of $3 \Rightarrow 2$ of
+  Proposition~\ref{propn:10}.  For the set $A = \{p \in S ~:~ u(p) =
+  0\}$ is closed since $u$ is continuous and is open by Condition~4 of
+  Proposition~\ref{propn:10}, and thus either $A = S$ or $A$ is
+  empty.
+\end{myproof}
+
+\begin{thm}[Weak Maximum Principle]
+  Let $S$ be a connected Riemann surface, and $\sO$ a proper open
+  subset of $S$ such that $\sO^-$ is compact.  Let $u$ be continuous
+  on $\sO^-$ and subharmonic on $\sO$.  Assume $u \le 0$ on $\p
+  \sO$. Then $u \le 0$.
+\end{thm}
+
+\begin{myproof}
+  This is again contained in the proof of $3 \Rightarrow 2$ of
+  Proposition~\ref{propn:10}.  If $M = \max_{\sO^-} u$ and if $M > 0$,
+  let $A = \{p \in \sO ~:~ u(p) = M\}$.  Then the argument proving $3
+  \Rightarrow 2$ shows that $\p A$ and $\p \sO$ have a point in common
+  and thus $M \le 0$, a contradiction.
+\end{myproof}
+
+\begin{cor}
+  If $\sO$ is a proper open subset of a connected Riemann surface $S$
+  such that $\sO^-$ is compact and if $u$ is harmonic on $\sO$ and
+  continuous on $\sO^-$, then 
+  $$
+  \sup_{\sO^-} |u| = \sup_{\p\sO} |u|.
+  $$
+\end{cor}
+
+%%% page 199
+\begin{myproof}
+  Let $M = \sup_{\p \sO}|u|$.  Then $-M+u$ and $-M-u$ are subharmonic
+  in $\sO$ and nonpositive on $\p\sO$, so the weak maximum principle
+  implies $-M+u \le 0$ and $-M-u\le 0$ in $\sO$.  That is, $-M \le u
+  \le M$.
+\end{myproof}
+
+\begin{propn}
+  \label{propn:11}
+  Let $u$ be a continuous real-valued function on a Riemann surface
+  $S$.  Then $u$ is harmonic if and only if $u$ and $-u$ are
+  subharmonic.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}:
+  We only have to prove the ``if'' part of the assertion.  Since the
+  proposition deals with local properties, we can assume $S$ is
+  connected.  By part 1 of Proposition~\ref{propn:10}, if $D$ is an
+  analytic disk, then $u \le u_D$ and $-u \le (-u)_D$.  But clearly
+  $(-u)_D = -u_D$, so we have $u \le u_D$ and $-u \le -u_D$.  Thus, $u
+  \equiv u_D$.  Therefore, $u$ is harmonic in $D$.  Since every point
+  of $S$ is contained in an analytic disk, $u$ is harmonic in $S$.
+\end{mdframed}
+
+\begin{propn}
+  \label{propn:12}
+  Let $u, u_1, \cdots, u_n$ be subharmonic on a Riemann surface
+  $S$, and let $a_1, a_2, \cdots, a_n$ be nonnegative real numbers.
+  Then the functions
+  $$
+  a_1 u_1 + \cdots + a_n u_n,\quad \max(u_1,\cdots,u_n)
+  $$
+  are subharmonic.  Also, if $D$ is an analytic disk, $u_D$ is
+  subharmonic.
+\end{propn}
+
+%%% page 200
+\begin{myproof}
+  This follows directly from the definition.  Condition 4 of
+  Proposition~\ref{propn:10} asserts in that notation that for small
+  positive $r$
+  $$
+  u_k \circ \varphi^{-1}(z) \le \frac{1}{2\pi} \int_0^{2\pi} u_k \circ
+  \varphi^{-1}(z + re^{i\theta}) d\theta.
+  $$
+  Multiplying by $a_k$ and adding, the function $a_1 u_1 + \cdots +
+  a_n u_n$ is seen to satisfy condition 4.  If $u = \max(u_1, \cdots,
+  u_n)$, then we have
+  $$
+  u_k \circ \varphi^{-1}(z) \le \frac{1}{2\pi} \int_0^{2\pi}
+  u \circ \varphi^{-1}(z+re^{i\theta}) d \theta,\quad 1 \le k \le n.
+  $$
+  Therefore,
+  $$
+  u \circ \varphi^{-1}(z) \le \frac{1}{2\pi} \int_0^{2\pi}
+  u \circ \varphi^{-1}(z + re^{i\theta}) d \theta,
+  $$
+  proving that $u$ is subharmonic.  The last statement will be proved
+  later.
+\end{myproof}
+
+The basic theorem we need is the following.
+
+\begin{thm}
+  \label{thm:5}
+  Let $S$ be a connected Riemann surface and $\calI$ a nonempty family
+  of subharmonic functions on $S$ such that
+  \begin{enumerate}
+  \item if $u, v \in \calI$, then $\max(u,v) \in \calI$,
+  \item if $u \in \calI$ and $D$ is an analytic disk in $S$, then $u_D
+    \in \calI$.
+  \end{enumerate}
+  Then $\sup \calI$ is either harmonic in $S$ or $\sup \calI \equiv
+  \infty$.
+\end{thm}
+
+%%% page 201
+\begin{myproof}
+  Let $U = \sup \calI$.  If $D$ is an analytic disk in $S$, let
+  $\calI_D$ be the functions on $D$ defined by
+  $$
+  \calI_D = \{u_D ~:~ u \in \calI\}.
+  $$
+  Then $\calI_D$ is a family of harmonic functions on $D$ and
+  $$
+  \sup \calI_D = U\text{ in }D.
+  $$
+  For, $u \in \calI$ implies $u_D \in \calI$, so that any function in
+  $\calI_D$ is the restriction to $D$ of a function in $\calI$ and
+  thus $\sup \calI_D \le U$ in $D$.  On the other hand, $u \in \calI$
+  implies $u \le u_D$ by item 1 of Proposition~\ref{propn:10}.
+  Therefore, $U \le \sup \calI_D$ in $D$.
+
+  Now we apply Harnack's convergence theorem to the family $\calI_D$
+  on the Riemann surface $D$.  We have to check that $\calI_D$ is
+  directed upwards.  So suppose $u,v \in \calI$.  Let $w = \max(u,v)$,
+  so that $w \in \calI$ by property 1.  Then $u \le w$ implies $u_D
+  \le w_D$ and $v \le w$ implies $v_D \le w_D$, so that we have found
+  $w_D \in \calI_D$ such that $w_D \ge u_D$, $w_D \ge v_D$.  Thus
+  $\calI_D$ is directed upwards.  Thus, Harnack's convergence theorem
+  implies that either $\sup \calI_D$ is harmonic or $\sup \calI_D
+  \equiv \infty$.  Therefore, either $U$ is harmonic on $D$ or $U
+  \equiv \infty$ on $D$.
+
+  Finally, we have the familiar connectivity argument: if $A = \{p \in
+  S ~:~ U(p) = \infty\}$ and $B = \{p \in S ~:~ U(p) < \infty\}$, then
+  $A$ and $B$ are disjoint open sets with union $S$.  Since $S$ is
+  connected, either $A$ is empty or $A = S$.  Thus, either $U <
+  \infty$ on $S$ or $U \equiv \infty$ on $S$.  If $U < \infty$ on $S$,
+  we have shown that $U$ is harmonic in every analytic disk in $S$.
+  Therefore, $U$ is harmonic.
+\end{myproof}
+
+%%% page 202
+\begin{ques}[The Dirichlet problem for an annulus]
+  \label{ques:8}
+  \begin{enumerate}
+  \item Prove the Weierstrass approximation theorem for a circle.
+    That is, if $f$ is a continuous complex-valued function on the
+    circle $|z| = 1$ and $\epsilon > 0$, then there exists a
+    \emph{finite} sum
+    $$
+    g(z) = \sum a_n z^n \text{ (positive and negative }n)
+    $$
+    such that $|f(z) - g(z)| < \epsilon$ for $|z| = 1$.
+
+    \textbf{Hint}: Use Proposition~\ref{propn:5} and
+    Proposition~\ref{propn:1}, with the obvious remark that the proof
+    of $1 \Rightarrow 3$ for the disk $|z| < 1$ gives two holomorphic
+    functions defined on the entire disk.
+  \item Consider the annulus $r < |z| < 1$, where $0 < r < 1$ is
+    fixed.  Let $n$ be an integer.  Exhibit the (unique) harmonic
+    functions which equals $z^n$ for $|z| = 1$ and equals 0 for $|z| =
+    r$. 
+  %%% page 203
+  \item Combine 1 and 2 to conclude that there exist a function
+    $u_\epsilon$ which is harmonic for $r < |z| < 1$, continuous for
+    $r \le |z| \le 1$ (in fact, it will be harmonic for $0 < |z| <
+    \infty$) such that
+    $$
+    \begin{aligned}
+      |u_\epsilon(z) - f(z)| < \epsilon & \quad\text{for}\quad |z|=1,\\
+      u_\epsilon(z) = 0 & \quad\text{for}\quad |z|=r.
+    \end{aligned}
+    $$
+  \item By a limiting argument, prove there exists a function $u$
+    which is harmonic for $r < |z| < 1$, continuous for $r \le |z| \le
+    1$, such that
+    $$
+    u(z) =
+    \begin{cases}
+      f(z) &\text{for } |z| = 1,\\
+      0 &\text{for } |z| = r.
+    \end{cases}
+    $$
+  \item Use this result and an appropriate conformal mapping to treat
+    any continuous boundary values on $|z| = r$ as well.
+  \end{enumerate}
+\end{ques}
+
+Now we state a corollary, and we use the obvious terminology that a
+function $w$ is \emph{superharmonic} if $-w$ is subharmonic.
+
+\begin{cor}
+  Let $w$ be a superharmonic function on a connected Riemann surface
+  $S$.  Let
+  $$
+  \calI = \{v ~:~ v \text{ subharmonic on }S,\ v \le w\}.
+  $$
+  Then $\sup \calI$ is either harmonic in $S$ or $\sup \calI \equiv
+  -\infty$. 
+\end{cor}
+
+%%% page 204
+\begin{myproof}
+  We have $\sup \calI \equiv -\infty$ if and only if $\calI$ is empty,
+  so we assume from now on that $\calI$ is not empty.  We verify the
+  two properties required in Theorem~\ref{thm:5}.  First, if $v_1, v_2
+  \in \calI$, then clearly $\max(v_1, v_2) \le w$ and
+  Proposition~\ref{propn:12} implies $\max(v_1, v_2)$ is subharmonic;
+  thus, $\max(v_1, v_2) \in \calI$.  If $D$ is an analytic disk in
+  $S$, then for $v \in \calI$,
+  $$
+  v_D \le w_D \le w,
+  $$
+  the latter inequality being a consequence of criterion 1 of
+  Proposition~\ref{propn:10} for \emph{superharmonic} functions.  So
+  we need only check $v_D$ is subharmonic.  This amounts to checking
+  the local criterion 3 of Proposition~\ref{propn:10}.  This mean
+  value criterion clearly holds at any point $p \in D$ (since $v_D$ is
+  harmonic near $p$) and at any point $p$ in $S - \overline{D}$ (since
+  $v_D \equiv v$ is subharmonic near $p$).  So we consider $p \in \p
+  D$ and a chart $\varphi$ in the complete analytic atlas for $S$,
+  $\varphi$ defined near $p$.  Since $v$ is subharmonic and $v \le
+  v_D$, we obtain for small positive $r$
+  $$
+  \begin{aligned}
+    v_D(p) = v(p) \le \frac{1}{2\pi} \int_0^{2\pi} v \circ
+    \varphi^{-1}(\varphi(p) + re^{i\theta}) d\theta
+    < \frac{1}{2\pi} \int_0^{2\pi} v_D \circ \varphi^{-1}(\varphi(p)
+    + re^{i\theta}) d\theta,
+  \end{aligned}
+  $$
+  establishing the criterion in this case as well.  Thus, $v_D$ is
+  subharmonic on $S$.  Now Theorem~\ref{thm:5} implies $\sup \calI
+  \equiv \infty$ (which is impossible in this case) or $\sup \calI$ is
+  harmonic.
+\end{myproof}
+
+%%% page 205
+\begin{defn}
+  \label{def:5}
+  Let $w$ be a superharmonic function on a connected Riemann surface.
+  The function
+  $$
+  u = \sup\{ v ~:~ v \text{ subharmonic on } S,\ v \le w\}
+  $$
+  is called the \emph{greatest harmonic minorant of $w$}.  This
+  terminology agrees with the obvious fact that if $v$ is harmonic on
+  $S$ and $v \le w$, then $v \le u$.  Moreover, if $w$ has any
+  harmonic minorant at all, then $u$ is harmonic (not $\equiv
+  -\infty$).  Of course, our corollary shows that actually $u$ is the
+  greatest subharmonic minorant of $w$, and is itself harmonic.  We
+  shall use the abbreviation
+  $$
+  u = \text{GHM of }w.
+  $$
+\end{defn}
+
+As an application of these ideas, we show how to solve a certain kind
+of Dirichlet problem.
+
+\begin{propn}
+  \label{propn:13}
+  Let $D$ be an analytic disk in a connected Riemann surface $S$ and
+  $f : \p D \to \RR$ a continuous function.  Then there exists a
+  function $u$ which is continuous in $S-D$, harmonic in $S-D^-$, and
+  such that $u = f$ on $\p D$.  Moreover, we can assume
+  $$
+  \sup_{S-D} u = \sup_{\p D} f,\quad
+  \inf_{S-D} u = \inf_{\p D} f.
+  $$
+\end{propn}
+
+\begin{rem}
+  Nothing is claimed about the uniqueness of $u$.  As we shall see,
+  $u$ is unique for certain $S$ and not unique for other $S$.
+\end{rem}
+
+%%% page 206
+\begin{myproof}
+  By Definition~\ref{def:2} of analytic disk, there exists a chart
+  $\varphi : U \to W$ in the complete analytic atlas for $S$ such that
+  $\varphi(D)$ is a disk $\Delta$.  Since $\Delta^- \subset W$, there
+  exists a concentric disk $\Delta_1$ with $\Delta^- \subset
+  \Delta_1$, $\Delta_1^- \subset W$.
+
+  \begin{mdframed}
+    \vspace{4cm}
+  \end{mdframed}
+
+  Let $D_1 = \varphi^{-1}(\Delta_1)$. If $c \in ???$ then by
+  Problem~\ref{ques:8} there exists a unique function $h_c$ which is
+  continuous on $\Delta_1^- - \Delta$, harmonic in $\Delta_1 -
+  \Delta^-$, and such that
+  $$
+  h_c \equiv
+  \begin{cases}
+    c &\text{on }\p \Delta_1,\\
+    f\circ \varphi^{-1} &\text{on }\p \Delta.
+  \end{cases}
+  $$
+  Define a function $v_c$ on $S - D$ by the formula
+  $$
+  v_c =
+  \begin{cases}
+    h_c \circ \varphi & \text{in } D_1^- - D,\\
+    c & \text{in } S-D_1.
+  \end{cases}
+  $$
+  Then $v_c$ is continuous on $S-D$, $v_c \equiv f$ on $\p D$, and
+  $v_c$ is harmonic in $S - D_1^-$ and in $D_1 - D^-$.  If $c \le
+  \inf_{\p D} f$, then $v_c$ is subharmonic on $S - D^-$; for, the
+  only points where we need to check the mean value criterion 3 of
+  Proposition~\ref{propn:10} are on $\p D_1$, and there $v_c$ takes
+  the value $c$.  But the minimum principle implies $h_c \ge c$ in
+  $\Delta_1^- - \Delta$, and thus $v_c \ge c$ in $S-D$.  Therefore,
+  criterion 3 of Proposition~\ref{propn:10} is trivially satisfied at
+  a point of $\p D_1$.  Thus $v_c$ is subharmonic in $S-D^-$.
+  Likewise, if $c \ge \sup_{\p D} f$, then $v_c$ is superharmonic in
+  $S - D^-$.
+
+  %%% page 207
+  Let $A = \inf_{\p D} f$, $D = \sup_{\p D} f$.   Then $v_A$ is
+  subharmonic in $S-D^-$, $v_B$ is superharmonic in $S-D^-$, and $v_A
+  \le v_B$ in $S-D$.  This last inequality follows from the maximum
+  principle, since $h_B - h_A$ is continuous in $\Delta_1^- - \Delta$,
+  harmonic in $\Delta_1 - \Delta^-$, $\equiv B-A$ on $\p \Delta_1$,
+  $\equiv 0$ on $\p \Delta$, and thus $h_B - h_A \ge 0$.  Let $u$ be
+  GHM pf $v_B$.  Then since $v_A$ is a subharmonic minorant of $v_B$,
+  we have
+  \begin{equation}
+    \label{e:7}
+    v_A \le u \le v_B,
+  \end{equation}
+  and $u$ is defined and harmonic on $S - D^-$.  We have of course
+  applied the corollary of Theorem~\ref{thm:5} to the connected
+  Riemann surface $S - D^-$, which is why $u$ is defined only on $S -
+  D^-$.  But the inequalities \eqref{e:7} imply that $u$ can be
+  extended to a continuous function on $S =- D$ in exactly one way,
+  namely by taking $u \equiv v_A \equiv v_B \equiv f$ on $\p D$.
+
+  Finally the last assertion of the proposition follows from
+  $$
+  A \le v_A \le u < v_B \le B.
+  $$
+\end{myproof}
+
+\begin{rem}
+  The above analytic is typical in the sense that even when we wish to
+  have boundary values for a certain harmonic function, the corollary
+  to Theorem~\ref{thm:5} does not by itself give anything more than a
+  harmonic function on an \emph{open} set.  Some other considerable,
+  e.g. \eqref{e:7}, is needed to obtain information about the function
+  at the boundary.  We shall see more instances of this phenomenon
+  later.
+\end{rem}
+
+%%% page 208
+To complete the preliminary material, we need to obtain a
+representation for harmonic functions in an annulus, analogous to the
+Laurent expansion of a holomorphic function.
+
+\begin{propn}
+  \label{propn:14}
+  Let $u$ be a real harmonic function in an annulus $a < |z| < b$,
+  where $0 \le a < b \le \infty$.  Then there exist unique complex
+  numbers $c$, $\{a_n\}$, such that for $a < |z| < b$
+  $$
+  u(z) = c\log|z| + \Re(\sum_{n=-\infty}^{\infty} a_n z^n),
+  $$
+  and $a_0$ is real.  Furthermore, if $a < a' < b' < b$, then there
+  exist constants $K$ and $\{K_n\}$ depending only on $a'$ and $b'$
+  (and $n$) such that
+  $$
+  \begin{aligned}
+    |c| &\le K \sup\{|u(z)| ~:~ a' \le |z| \le |b'|\},\\
+    |a_n| &\le K_n \sup\{|u(z)| ~:~ a' \le |z| \le |b'|\}.
+  \end{aligned}
+  $$
+\end{propn}
+
+\begin{myproof}
+  The discussion in the proof of Theorem~\ref{thm:1} implies $\p u$ is 
+  holomorphic for $a < |z| < b$.  Therefore, the Laurent expansion of 
+  $\p u$ exists, say
+  $$
+  \p u = \sum_{-\infty}^{\infty} c_n z^n,\quad a < |z| < b.
+  $$
+\end{myproof}
+
+%%% page 209
+By formula \eqref{e:3}, for $n \ne -1$ we have
+$$
+\begin{aligned}
+  c_n z^n &= \frac{d}{dz} \frac{c_n z^{n+1}}{n+1} = 2 \p \Re(\frac{c_n
+  z^{n+1}}{n+1}),\\
+  c_{-1} z^{-1} &= \frac{d}{dz} (c_{-1} \log(z)) = 2 \p (c_{-1} \log|z|).
+\end{aligned}
+$$
+Now the Laurent expansion for $\p u$ converges uniformly on compact
+subsets of the annulus, and therefore the same is true for the
+integrated series, so we obtain
+$$
+\begin{aligned}
+  \p u &= 2 \p (c_{-1} \log|z|) + \sum_{n\ne -1} 2\p \Re(\frac{c_n z^{n+1}}{
+    n+1})\\
+  &= 2 \p (c_{-1} \log|z|) + \sum_{n\ne 0} 2\p \Re(\frac{c_{n-1} z^{n}}{n}) \\
+  &= \p (c \log|z| + \Re(\sum_{n\ne0} a_n z^n)),
+\end{aligned}
+$$
+where $c = 2c_{-1}$ and $a_n = \frac{2c_{n-1}}{n}$.  The
+Cauchy-Riemann equation
+$$
+\overline{\p} (u - \overline{c} \log |z| - \Re(
+\sum_{n\ne 0} a_n z^n)) = 0
+$$
+follows and shows that there exists a function $g$ holomorphic in $a <
+|z| < b$ such that
+$$
+u = \overline{c} \log |z| + \Re(\sum_{n\ne 0} a_n z^n) + g(z).
+$$
+Taking the imaginary parts,
+$$
+\Im g = (\Im c) \log|z|.
+$$
+Since $i\log(z) = -\arg(z) + i\log|z|$, this shows that $g = i(\Im
+c)\log(z)$, and thus $g$ is defined only if $\Im c = 0$.  Then $g$ is
+a \emph{real} holomorphic function, and thus is constant.  Thus, if $g
+\equiv a_0$, we have
+%%% page 210
+$$
+u(z) = c \log|z| + \Re(\sum_{-\infty}^{\infty} a_n z^n),\quad
+c,\ a_0\ \text{real},
+$$
+a representation of the desired form.
+
+Now we obtain the uniqueness: if $a < r < b$, then
+$$
+\begin{aligned}
+  u(re^{i\theta}) 
+  &= c\log r 
+  + \frac{1}{2}\sum_{n=-\infty}^{\infty} a_n r^n e^{in\theta} 
+  + \frac{1}{2}\sum_{n=-\infty}^{\infty} \overline{a}_n r^n e^{-in\theta} \\
+  &= c\log r 
+  + \frac{1}{2}\sum_{n=-\infty}^{\infty} (a_n r^n + \overline{a_{-n}}
+  r^{-n}) e^{in\theta}.
+\end{aligned}
+$$
+Since this series converges uniformly for $0 \le \theta \le 2\pi$, we
+obtain by integration
+\begin{equation}
+  \label{e:8}
+  \begin{aligned}
+    \frac{1}{2\pi} \int_0^{2\pi} u(re^{i\theta}) d\theta
+    &= c\log r + a_0,\\
+    \frac{1}{\pi} \int_0^{2\pi} u(re^{i\theta}) e^{-im\theta} d\theta
+    &= a_m r^m + \overline{a_{-m}} r^{-m},\quad m \ne 0.
+  \end{aligned}
+\end{equation}
+Here we have used the orthogonality relation
+$$
+\frac{1}{2\pi} \int_0^{2\pi} e^{in\theta} e^{-im\theta} d \theta
+=
+\begin{cases}
+  0 &\text{if } m \ne n,\\
+  1 &\text{if } m = n.
+\end{cases}
+$$
+If we use the relations \eqref{e:8} for two different values $r, r'
+\in (a,b)$, we can solve for all coefficients:
+$$
+\begin{aligned}
+  c &= \frac{1}{\log r - \log r'} \frac{1}{2\pi}
+  \int_0^{2\pi} [u(re^{i\theta}) - u(r'e^{i\theta})] d\theta,\\
+  a_0 &= \frac{1}{\log r - \log r'} \frac{1}{2\pi}
+  \int_0^{2\pi} [u(re^{i\theta})\log r - u(r'e^{i\theta})
+  \log r'] d\theta,\\
+  a_m &= \frac{1}{(\frac{r}{r'})^m - (\frac{r'}{r})^m} \frac{1}{\pi}
+  \int_0^{2\pi} [u(re^{i\theta})(r')^{-m} - u(r'e^{i\theta})
+  r^{-m}] e^{-im\theta} d\theta,\quad m \ne 0.
+\end{aligned}
+$$
+%%% page 211
+This proves that the coefficients are uniquely determined by $u$, and
+at the same time shows easily how to obtain the estimates stated in
+the last half of the proposition.
+
+\begin{cor}[Removable Singularity Theorem]
+  Let $u$ be harmonic and bounded in an annulus $0 < |z| < b$.  Then
+  there exists a harmonic function in the disk $|z| < b$ which agrees
+  with $u$ in the annulus $0 < |z| < b$.
+\end{cor}
+
+\begin{myproof}
+  By Proposition~\ref{propn:14} we have
+  $$
+  u(z) = c\log|z| + \Re(\sum_{n=-\infty}^{\infty} a_n z^n),\quad
+  0 < |z| < b.
+  $$
+  In formula \eqref{e:8} we let $r \to 0$ and we read off the
+  relations
+  $$
+  \begin{aligned}
+    &c\log r \text{ is bounded},\\
+    &a_m r^m + \overline{a_{-m}} r^{-m}\text{ is bounded, }m\ne 0.
+  \end{aligned}
+  $$
+  Therefore, $c = 0$ and $m < 0$ implies $a_m = 0$.  Thus the
+  expansion for $u$ reads
+  $$
+  u(z) = \Re(\sum_{n=0}^{\infty} a_n z^n),\quad 0 < |z| < b.
+  $$
+  The right side of this expression is harmonic in the disk $|z| <
+  b$.
+\end{myproof}
+
+\begin{cor}
+  \label{cor:p211b}
+  If $u$ is harmonic and bounded for $a < |z| < \infty$ and continuous
+  for $a \le |z| < \infty$, and if $u(z) \equiv 0$ for $|z| = a$, then
+  $u \equiv 0$.
+\end{cor}
+
+%%% page 212
+\begin{myproof}
+  In formula \eqref{e:8} let $r \to a$ to obtain $c \log a + a_0 = 0$,
+  $a_m a^m + \overline{a_{-m}} a^{-m} = 0$.  By the reasoning given in
+  the previous corollary, $a_m = 0$ for $m > 0$ and $c = 0$.
+  Therefore, $a_0 = 0$ and $a_m = 0$ for $m < 0$.  Thus, $u \equiv
+  0$.
+\end{myproof}
+
+We are now almost ready to prove Theorem~\ref{thm:4}.  But something
+rather strange will arise in the proof.  Namely, we shall see that
+there is a certain dichotomy of Riemann surfaces which requires that
+the proof of Theorem~\ref{thm:4} be quite dependent on this
+classification, although the statement of the theorem is the same in
+both cases.  We present this phenomenon in the form of a proposition.
+
+\begin{propn}
+  \label{propn:15}
+  The following conditions on a connected Riemann surface $S$ are
+  equivalent.
+  \begin{enumerate}
+  \item Every bounded subharmonic function on $S$ is constant.
+  \item If $D$ is any analytic disk and $u$ is a bounded continuous
+    nonnegative function in $S - D$ which is harmonic in $S - D^-$ and
+    which vanishes identically on $\p D$, then $u \equiv 0$.
+  %%% page 213
+  \item If $D$ is any analytic disk and $u$ is a bounded continuous
+    function in $S - D$ which is harmonic in $S-D^-$, then
+    $$
+    \sup_{S-D} u = \sup_{\p D} u.
+    $$
+  \item Same as 3. with ``harmonic'' replace by ``subharmonic''.
+  \item Condition 2. holds for \emph{some} analytic disk $D$.
+  \item Condition 3. holds for \emph{some} analytic disk $D$.
+  \item Condition 4. holds for \emph{some} analytic disk $D$.
+  \end{enumerate}
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}:
+  We shall prove $1 \Rightarrow 2 \Rightarrow 3 \Rightarrow 4$ and $5
+  \Rightarrow 6 \Rightarrow 7 \Rightarrow 1$.  Since the assertions $2
+  \Rightarrow 5$, $3 \Rightarrow 6$ and $4\Rightarrow 7$ are trivial,
+  the proposition will follow.  The proof that $2 \Rightarrow 3$ is
+  identical to the proof that $5 \Rightarrow 6$ and likewise for $3
+  \Rightarrow 4$ and $6\Rightarrow 7$.
+
+  $\boxed{3 \Rightarrow 4}$: As in the proof of
+  Proposition~\ref{propn:13}, we choose a ``concentric'' analytic disk
+  $D_1$ with $D^- \subset D_1$.  Suppose $u$ is a bounded continuous
+  function in $S - D$ which is subharmonic in $S - D^-$.  Choose a
+  constant $C$ such that $\sup_{S-D} u \le C$.  Let $w$ be the unique
+  function which is continuous in $S-D$ harmonic in $D_1 - D^-$, such
+  that
+  %%% page 214
+  $$
+  w =
+  \begin{cases}
+    u &\text{on }\p D,\\
+    C &\text{in }S-D_1.
+  \end{cases}
+  $$
+  Then $w$ is superharmonic in $S-D^-$ and criterion 2 of
+  Proposition~\ref{propn:10} implies $u \le w$ in $D_1^- - D$ and
+  therefore $u \le w$ in $S-D$.  Let $v = $GHM of $w$.  Then $v$ is
+  harmonic in $S-D^-$ and $u \le v \le w$.  Therefore, we can
+  naturally extend $v$ to be continuous in $S-D$ by setting $v = u =
+  w$ on $\p D$.  Condition 3 applies to $v$ and thus
+  $$
+  \sup_{S-D} u \le \sup_{S-D} v = \sup_{\p D} v - \sup_{\p D} u.
+  $$
+
+  $\boxed{7\Rightarrow 1}$: Suppose $u$ is a bounded subharmonic
+  function on $S$.  Let $D$ be an analytic disk on $S$ for which
+  condition 4 holds.  Then
+  $$
+  \sup_{S-D} u = \sup_{\p D} u.
+  $$
+  Therefore,
+  $$
+  \sup_{S} u = \sup_{D^-} u,
+  $$
+  and since $D^-$ is compact, we see that $u$ assumes its maximum.  By
+  the strong maximum principle, $u \equiv$ constant.
+
+  $\boxed{1 \Rightarrow 2}$: Let $u$ be the function in the hypothesis
+  of 2.  Define $v$ on $S$ by
+  $$
+  v =
+  \begin{cases}
+    u &\text{in }S-D,\\
+    0 &\text{in }D.
+  \end{cases}
+  $$
+  %%% page 215
+  Then $v$ is subharmonic and bounded on $S$, so 1 implies $v \equiv$
+  constant.  Thus, $v \equiv 0$ and it follows that $u \equiv 0$.
+
+  $\boxed{2\Rightarrow 3}$: Let $u$ be the function in the hypothesis
+  of 3.  Define
+  $$
+  A = \inf_{S-D} u,\quad B = \sup_{S-D} u,\quad C = \sup_{\p D} u.
+  $$
+  Then $A \le C \le B$ and we want to prove $B = C$.  As in the proof
+  of Proposition~\ref{propn:13} and also the current proof that $3
+  \Rightarrow 4$ we take a disk $D_1$ and define $v_A$ to be
+  continuous in $S-D$, harmonic in $D_1 - D^-$, such that
+  $$
+  v_A =
+  \begin{cases}
+    u &\text{on }\p D,\\
+    A &\text{in }\p S-D_1.
+  \end{cases}
+  $$
+  We define $v_B$ the same way with $A$ replaced by $B$.  Then $v_A$
+  is subharmonic, $v_b$ is superharmonic in $S-D^-$, and $v_A \le C$,
+  $v_A \le u$, $u \le v_B$ all of which follow from the maximum
+  principle.  Let
+  $$
+  \begin{aligned}
+    w_1 &= \text{GHM of min }(u,C),\\
+    w_2 &= \text{GHM of }v_B.
+  \end{aligned}
+  $$
+  Note that $\min(u,C)$ is superharmonic by
+  Proposition~\ref{propn:12}.  Then the inequalities we have obtained
+  for $v_A$ and $v_B$ show
+  $$
+  v_A \le w_1 \le u \le w_2 \le v_B
+  $$
+  Thus, $w_1$ and $w_2$ have continuous extensions to $S-D$ with $w_1
+  = w_2 = u$ on $\p D$.  Therefore, $w_2 - w_1$ satisfies the
+  hypothesis of 2, the required boundedness following from $w_2 - w_2
+  \le v_B - v_A \le B-A$.  Thus, condition 2 implies $w_2 - w_1 \equiv
+  0$.  Thus
+  $$
+  B = \sup_{S-D} u = \sup_{S-D} w_1 \le C.
+  $$
+\end{mdframed}
+
+%%% page 216
+\begin{defn}
+  A noncompact connected Riemann surface satisfying the conditions of
+  Proposition~\ref{propn:15} is a \emph{parabolic}\todo{Why the term
+    parabolic???}\ Riemann surface.  A noncompact connected Riemann
+  surface not satisfying condition is \emph{hyperbolic}.
+\end{defn}
+
+\begin{exmp}
+  \label{eg:1}
+  If $S$ is compact and connected, $S$ satisfies the conditions of
+  Proposition~\ref{propn:15}.  For suppose $u$ is a bounded
+  subharmonic function on $S$.  Then $u$ assumes its maximum, so the
+  strong maximum principle implies $u$ is constant.
+\end{exmp}
+
+\begin{exmp}
+  \label{eg:2}
+  $\CCC$ is parabolic.  We verify conditions 5 for $D = \{z ~:~ |z| <
+  1\}$.  Suppose $u$ is a function satisfying the hypothesis of
+  Proposition~\ref{propn:15}, criterion 5.  By the
+  corollary~\ref{cor:p211b}, $u \equiv 0$.
+\end{exmp}
+
+\begin{exmp}
+  \label{eg:3}
+  If $S = \{z ~:~ |z| < 1\}$ has its usual complete analytic atlas,
+  then $S$ is hyperbolic.  This is obvious, a nonconstant subharmonic
+  function which is bounded on $S$ being, for example, $z \mapsto
+  \Re(z)$.
+\end{exmp}
+
+%%% page 217
+Finally, the stage is set for the proof of Theorem~\ref{thm:4}.  In
+the statement of the theorem, there is a given chart $\varphi : U \to
+W$ in the complete analytic atlas for $S$, where $U$ contains the
+given point $p$ and $\varphi(p) = 0$.  By a simple change of variable,
+we can assume taht
+$$
+\{ z ~:~ |z| \le 2 \} \subset W.
+$$
+Let $D_r = \varphi^{-1}(\Delta_r(0))$ for $0 < r \le 2$.
+
+\textbf{Proof of Theorem~\ref{thm:4} in case $S$ does not satisfy the
+  conditions of Proposition~\ref{propn:15}}:  By criterion 5, there
+exists a bounded continuous nonnegative function $v$ in $S - D_1$
+which is harmonic in $S - D_1^-$ and which is identically zero on $\p
+D_1$, and yet $v \ne 0$.  The strong maximum principle implies that $v
+> 0$ in $S-D_1^-$.  The function $\varphi$ is holomorphic on $U$, and 
+therefore $\Re(\varphi^{-n} - \varphi^n)$ is harmonic on $U-\{p\}$ and
+in particular is harmonic on $D_2$.  On $\p D_1$, $|\varphi| = 1$ so
+that $\varphi^{-n} = \overline{\varphi}^n$ and thus $\varphi^{-n} -
+\varphi^n$ is purely imaginary and thus $\Re(\varphi^{-n} - \varphi^n)
+= 0$.  Since $v > 0$ on the compact set $\p D_2$, it is bounded below
+by a positive constant there.  Therefore, there exists a constant $C$
+such that
+%%% pag 218
+$$
+|\Re(\varphi^{-n} - \varphi^n)| \le C v \quad \text{on}\quad \p D_2.
+$$
+The same inequality holds trivially on $\p D_1$, both sides vanishing,
+and therefore the weak maximum principle implies
+\begin{equation}
+  \label{e:9}
+  |\Re(\varphi^{-n} - \varphi^n)| \le Cv \quad\text{in}\quad D_2^- - D_1.
+\end{equation}
+Now we define
+$$
+\begin{aligned}
+  w_1 &=
+  \begin{cases}
+    -Cv &\text{in }S-D_1,\\
+    \Re(\varphi^{-n} - \varphi^n) &\text{in }D_1-\{p\},
+  \end{cases}\\
+  w_2 &=
+  \begin{cases}
+    Cv &\text{in }S-D_1,\\
+    \Re(\varphi^{-n} - \varphi^n) &\text{in }D_1-\{p\},
+  \end{cases}  
+\end{aligned}
+$$
+Then $w_1$ and $w_2$ are clearly continuous on $S-\{p\}$ and
+\eqref{e:9} implies $w_1$ is superharmonic and $w_2$ is subharmonic in
+$S - \{p\}$: it suffices to check the mean value property of
+item 3 of Proposition~\ref{propn:10} at points on $\p D_1$ and at such
+a point $w_1 = 0 = \Re(\varphi^{-n} - \varphi^n) = $ the mean value of
+$\Re(\varphi^{-n} - \varphi^n)$ on small circles centred at the point
+$\ge$ the corresponding mean value of $w_1$ (since $\Re(\varphi^{-n} -
+\varphi^n) \ge - Cv$ on the part of the circle lying outside $D_1$).
+Thus, $w_1$ is superharmonic,and a similar proof $w_2$ is
+subharmonic.
+
+Choose a constant $A \ge 2C \sup_{S-D_1} v$.  Let $u = $GHM of $w_1 +
+A$.  Note that trivially $w_2 - w_2 \le A$, and therefore
+%%% page 219
+$$
+w_2 \le u \le w_1 + A.
+$$
+We have of course used here the existence of GHM on the Riemann
+surface $S - \{p\}$.  Therefore, $u$ is harmonic on $S - \{p\}$ and
+our inequalities show
+$$
+0 \le u - \Re(\varphi^{-n} - \varphi^n) \le A \quad\text{in}\quad
+D_1 - \{p\}.
+$$
+Therefore, the function $u - \Re(\varphi^{-n} - \varphi^n)$ is
+harmonic and \emph{bounded} in $D_1 - \{p\}$, so the removable
+singularity theorem shows that there is a harmonic function $h$ in
+$D_1$ such that
+$$
+u = \Re(\varphi^{-n}) + h\quad\text{in}\quad D_1.
+$$
+Since $h = \Re(F)$ for some holomorphic function $F$ in $D_1$
+(Proposition~\ref{propn:1} item 4), we have proved Theorem~\ref{thm:4}
+in this case, and we can even assert that no term $\log|\varphi|$
+appears in the representation for $u$.
+
+\textbf{Proof of Theorem~\ref{thm:4} in case $S$ does satisfy the
+  conditions of Proposition~\ref{propn:15}}:  By
+Proposition~\ref{propn:13}, there exists for $0 < r < 1$ a bounded
+continuous function $u_r$ in $S-D_r$ such that $u_r =
+\Re(\varphi^{-n})$ on $\p D_r$ and $u_r$ is harmonic in $S - D_r^-$.
+If $u_r$ is constant on $\p D_1$, then Proposition~\ref{propn:15} item
+3 implies $u_r$ is constant in $S-D_1$ (apply the criterion 3 both to
+$u_r$ and $-u_r$) and thus $u_r$ is constant in $S-D_r$ by
+Proposition~\ref{propn:3}, which is not true.  Thus $u_r$ is not
+constant on $\p D_1$, and therefore there exist unique coefficients
+$\alpha_r$ and $\beta_r$ such that if $v_r = \alpha_r u_r + \beta_r$,
+then 
+%%% page 220
+$$
+\max_{\p D_1} v_r = 1,\quad \min_{\p D_1} v_r = 0.
+$$
+Proposition~\ref{propn:15} item 3 implies $0 \le v_r \le 1$ in $S -
+D_1$.
+
+By Proposition~\ref{propn:8} there exists a sequence $r_k \to 0$ such
+that $v_{r_k}$ converges uniformly on compact subsets of $D_2 -
+D_1^-$.  Moreover, Proposition~\ref{propn:15} item 3 applied to
+$D_{3/2}$ implies that $v_{r_k}$ converges uniformly on $S -
+D_{3/2}$.  If $v = \lim_{k\to\infty} v_{r_k}$, then
+Proposition~\ref{propn:7} implies $v$ is harmonic in $S-D_1^-$.
+
+We now write down the Laurent expansion of Proposition~\ref{propn:14}
+for $v_r$ in the set $D_2 - D_r^-$:
+$$
+v_r \circ \varphi^{-1}(z) = c(r) \log|z| +
+\Re(\sum_{n=-\infty}^{\infty} a_j(r) z^j),\quad
+r < |z| < 2,
+$$
+where $c(r)$ and $a_0(r)$ are real, and formula \eqref{e:8} shows
+\begin{equation}
+  \label{e:10}
+  \begin{aligned}
+    c(r)\log s  + a_0(r) &= \frac{1}{2\pi} \int_0^{2\pi} v_r \circ
+    \varphi^{-1}(s e^{i\theta}) d\theta,\\
+    a_j(r) s^j + \overline{a_{-j}(r)} s^{-j}
+    &= \frac{1}{\pi} \int_0^{2\pi} v_r \circ \varphi^{-1}(s
+    e^{i\theta}) e^{-ij\theta} d \theta,\quad j\ne 0,
+  \end{aligned}
+\end{equation}
+for $r < s < 2$.
+
+%%% page 221
+Now 
+$$
+v_r \circ \varphi^{-1}(re^{i\theta}) 
+= \alpha_r \Re(r^{-n} e^{-in\theta}) + \beta_r 
+= \alpha_r r^{-n} \frac{e^{in\theta} + e^{-in\theta}}{2} + \beta_r 
+$$
+and therefore if we let $s \to r$ in the second part of \eqref{e:10}
+we obtain
+$$
+a_j(r) r^j + \overline{a_{-j}(r)} r^{-j} = 0
+\quad\text{if}\quad j \ge 1,\ j \ne n.
+$$
+Taking $s=1$ in \eqref{e:10},
+$$
+|a_j(r) + \overline{a_{-j}(r)}| \le 2 \quad\text{if}\quad j\ge 1.
+$$
+Therefore, for $j \ge 1$ and $j \ne n$,
+$$
+2 \ge |a_j(r) + \overline{s_{-j}(r)}|
+= |a_j(r) - a_j(r)r^{2j}|
+= |a_j(r)|(1-r^{2j}) \ge \frac{1}{2}|a_j(r)|
+\text{ if } 0 < r < \frac{1}{2};
+$$
+thus $|a_j(r)| \le 4$ and therefore
+$$
+|a_{-j}(r)| \le 4r^{2j}.
+$$
+
+Now the estimates in Proposition~\ref{propn:14} imply that as $r_k \to
+0$, the coefficients in the Laurent expansion for $v_{r_k}$ converge
+to the coefficients in the Laurent expansion for $v$.  Therefore,
+$$
+v\circ \varphi^{-1}(z) 
+= c \log|z| + \Re(a_{-n}z^{-n} + \sum_{j=0}^{\infty} a_jz^j),\quad
+1 < |z| < 2,
+$$
+%%% page 222
+since $a_{-j}(r_k) \to 0$ for $j \ge 1$, $j \ne n$.  Now we define $u$
+on $S-\{p\}$ by
+$$
+\begin{aligned}
+  u &= v \quad\text{in }S-D_1^-,\\
+  u \circ \varphi^{-1}(z) 
+  &= c\log|z| + \Re(a_{-n}z^{-n} + \sum_{j=0}^{\infty} a_jz^j),\quad
+  1 < |z| < 2.
+\end{aligned}
+$$
+It is clear that $u$ is harmonic on $S-\{p\}$.  The theorem will be
+proved once we establish that $a_{-n} \ne 0$.  This involves a rather
+delicate argument.
+
+Suppose that $a_{-n} = 0$.  Then the formula for $u$ near $p$ shows
+that there exists
+$$
+\ell = \lim_{q\to p} u(q),
+$$
+where $-\infty \le \ell \le \infty$.  By Proposition~\ref{propn:15}
+item 3 applied to $u$ and $-u$ and small analytic disks containing
+$p$, we conclude that $u = \ell$ on $S - \{p\}$; therefore, $-\infty <
+\ell < \infty$.  Now we shall prove that $v_{r_k} \to u$ uniformly on
+$\p D_1$, and therefore that $\max_{\p D_1} u = 1$, $\min_{\p D_1} u =
+0$, contradicting the fact that $u$ is constant.  Again,
+Proposition~\ref{propn:15} item 3 shows that it is sufficient to prove
+that $v_{r_k} \to u$ uniformly on $\p D_{1/2}$.  For $|z| =
+\frac{1}{2}$ and $0 < r < \frac{1}{2}$,
+$$
+\begin{aligned}
+  |v_r \circ \varphi^{-1}(z) - u \circ \varphi^{-1}(z)|
+  &\le |c(r) - c| \log 2 + |a_{-n}(r) - a_{-n}| 2^n\\
+  &\qquad + \sum_{j=0}^{N} |a_j(r) - a_j| 
+  + \sum_{j=N+1}^{\infty} (4 + 4) 2^{-j} 
+  + \sum_{\substack{j<0\\j\ne -n}} 4r^{-2j} 2^{-j} ???\\
+  &\le C_n\left[
+    |c(r) - r| + |a_{-n}(r) - a_{-n}| 
+    + \sum_{j=0}^{N} |a_j(r) - a_j|
+  \right] + 8\cdot 2^{-N} + \frac{8r^2}{1-2r^2}.
+\end{aligned}
+$$
+%%% page 223
+Therefore, if $\epsilon > 0$ we can choose a fixed $N$ such that $8
+\cdot 2^{-N} < \frac{\epsilon}{3}$ and a $k_0$ such that
+$\frac{8r_k^2}{1-2r_k^2} < \frac{\epsilon}{3}$ and $r_k < \frac{1}{2}$
+for $k \ge k_0$.  Then we choose $k_1 \ge k_1$ such that
+$$
+C_n\left[
+  |c(r_k) - r| + |a_{-n}(r_k) - a_{-n}| 
+  + \sum_{j=0}^{N} |a_j(r_k) - a_j|
+\right] < \frac{\epsilon}{3}
+$$
+if $k \ge k_1$.  Therefore, if $k \ge k_1$, 
+$$
+|v_r - u| < \epsilon \quad\text{on}\quad \p D_{1/2}.
+$$
+
+Thus, we have completed the proof of Theorem~\ref{thm:4}.  We have
+already indicated the use of this theorem in establishing the
+existence of meromorphic functions, in the proof of
+Theorem~\ref{thm:3}.  In the next topic, we shall give further
+applications.
+
+\begin{rem}
+  In the above proof in the second case, the second part of
+  \eqref{e:10} in the case $j=n$ was not used.  But we get additional
+  information by using this formula:
+  %%% page 224
+  $$
+  a_n(r) s^n + \overline{a_{-n}(r)} s^{-n}
+  = \frac{1}{\pi} \int_0^{2\pi} v_r \circ \varphi^{-1}(s e^{i\theta})
+  e^{-in\theta} d\theta.
+  $$
+  Letting $s = r$, we obtain
+  $$
+  a_n(r) r^n + \overline{a_{-n}(r)} r^{-n}
+  = \alpha_r r^{-n} \frac{1}{2\pi} \int_0^{2\pi} (e^{in\theta} 
+  + e^{-in\theta}) e^{-in\theta} d\theta 
+  + \beta_r \frac{1}{\pi} \int_0^{2\pi} e^{-in\theta} d \theta
+  = \alpha_r r^{-n}.
+  $$
+  We already know from $s = 1$ that
+  $$
+  |a_n(r) + \overline{a_{-n}(r)}| \le 2.
+  $$
+  Therefore,
+  $$
+  |\alpha_r - \overline{a_{-n}(r)} 
+  + \overline{a_{-n}(r)}r^{2n}| \le 2r^{2n}.
+  $$
+  Taking imaginary parts, we conclude
+  $$
+  |\Im(a_{-n}(r)| (1 - r^{2n}) \le 2r^{2n},
+  $$
+  showing that $\Im(a_{-n}(r)) \to 0$ as $r \to 0$.  Therefore, letting
+  $r = r_k$, we have
+  $$
+  a_{-n} = \lim_{k\to \infty} a_{-n}(r_k) \text{ is \emph{real}}.
+  $$
+\end{rem}
+
+We obtain from this remark the following result:
+
+\begin{cor}[Corollary to Theorem~\ref{thm:4}]
+  Let $S$ be any connected Riemann surface and let $p \in S$.  Let
+  $\varphi: U \to W$ be a chart in the complete analytic atlas for $S$
+  with $p \in U$ and $\varphi(p) = 0$.
+  %%% page 225
+  Let $n$ be a positive integer.  Then there exists a harmonic
+  function $u$ on $S - \{p\}$ such that for $z$ near 0
+  $$
+  u \circ \varphi^{-1}(z)
+  = \Re(\frac{\alpha}{z^n}) + \Re(f(z)),
+  $$
+  where $\alpha$ is a nonzero complex number and $f$ is holomorphic in
+  a neighbourhood of 0.  Moreover, $u$ can be taken to be bounded
+  outside a neighbourhood of $p$.
+\end{cor}
+
+\begin{mdframed}
+  \textbf{Proof}: If $S$ is hyperbolic, the proof of
+  Theorem~\ref{thm:4} already contained this result with $\alpha =
+  1$.  The boundedness of $u$ away from $p$ has also been shown in
+  this case.
+
+  If $S$ is compact or parabolic, the assertion about the boundedness
+  of $u$ is automatic.  What we must do is eliminate the term
+  involving $\log|z|$.  By the previous remark, we have obtained a
+  harmonic function $v$ on $S - \{p\}$ such that near 0
+  $$
+  v \circ \varphi^{-1}(z) 
+  = c \log|z| + \Re(\frac{a}{z^n}) + \Re(g(z)),
+  $$
+  where $g$ is holomorphic near 0, $c$ is real, and $a \ne 0$ is
+  real.  If $c=0$, we are through.  Otherwise, we replace $\varphi$ by
+  the chart $w\varphi$, where $w$ is a fixed complex number with $w^n
+  = i$.  Applying our result in this case, we obtain a harmonic
+  function $w$ on $S - \{p\}$ such that near 0
+  $$
+  w \circ \varphi^{-1}(z) = d \log|z| + \Re(\frac{b}{iz^n})
+  + \Re(h(z))
+  $$
+  where $h$ is holomorphic near 0, $d$ is real, and $b \ne 0$ is
+  real.  We have left out a trivial intermediate calculation here.
+  %%% page 226
+  Now define
+  $$
+  u = w - \frac{d}{c}v.
+  $$
+  Then $u$ is harmonic on $S - \{p\}$, and near 0
+  $$
+  u \circ \varphi^{-1}(z) = \Re(\frac{\alpha}{z^n} + \Re(h(z) -
+  \frac{d}{c}g(z)),
+  $$
+  where
+  $$
+  \alpha = \frac{b}{i} - \frac{da}{c} \ne 0.
+  $$
+\end{mdframed}
+
+Also in the next section we shall require the existence of a Green's
+function on a parabolic Riemann surface.
+
+\begin{defn}
+  \label{def:7}
+  Let $S$ be a connected Riemann surface and $p \in S$.  A function
+  $g$ defined on $S-\{p\}$ is a \emph{Green's function} if
+  \begin{enumerate}
+  \item $g$ is positive and harmonic in $S - \{p\}$;
+  \item if $\varphi$ is an analytic chart near $p$ with $\varphi(p) =
+    0$, then $g + \log|\varphi|$ is harmonic in a neighbourhood of
+    $p$;
+  \item if $h$ has properties 1 and 2, then $g \le h$.
+  \end{enumerate}
+\end{defn}
+
+We first remark that condition 2 is independent of the particular
+chart $\varphi$, since any other analytic chart $\psi$ can be
+expressed as
+$$
+\psi = a\varphi(1 + \sum_{k=1}^{\infty} \alpha_k \varphi^k)
+$$
+and so
+$$
+\log|\psi| = \log|\varphi|
++ \log|a| + \log\left| 1 + \sum_{k=1}^{\infty} \alpha_k \varphi^k \right|
+$$
+and we see that $\log|\psi| - \log|\varphi|$ is harmonic in a
+neighbourhood of $p$.
+
+\begin{propn}
+  \label{propn:16}
+  Let $S$ be a connected hyperbolic Riemann surface and $p \in S$.
+  Then there exists a unique Green's function on $S - \{p\}$.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}:  Uniqueness is clear by property 3 of a Green's
+  function.  The proof of existence is like the proof of
+  Theorem~\ref{thm:4} in the hyperbolic case.  Thus, $v$ is bounded
+  continuous function on $S - D_1$, $v > 0$ and $v$ is harmonic in
+  $S-D_1^-$, and $v \equiv 0$ on $\p D_1$.  As before, there exists a
+  constant $C > 0$ such that
+  $$
+  \log|\varphi| \le C v \text{ in } D_2^- - D_1.
+  $$
+  As before, the function
+  $$
+  w_1 =
+  \begin{cases}
+    -Cv \text{ in } S-D_1,\\
+    -\log|\varphi| \text{ in }D_1,
+  \end{cases}
+  $$
+  is superharmonic in $S - \{p\}$.  Much more trivially, the function
+  %%% page 228
+  $$
+  w_2 =
+  \begin{cases}
+    0 & \text{in } S-D-1,\\
+    -\log|\varphi| & \text{in } D-1,
+  \end{cases}
+  $$
+  is subharmonic in $S-\{p\}$.  Let $g$ be the \emph{least harmonic
+    majorant} of $w_2$.  As in Definition~\ref{def:5}, $g$ is harmonic
+  on $S - \{p\}$ and if $A \ge C \sup_{S-D_1} v$, then $w_2 \le w_1 +
+  A$, so that
+  $$
+  w_2 \le g \le w_1 + A.
+  $$
+  By the removable singularity theorem, $g + \log|\varphi|$ is
+  harmonic in $D_1$, so property 2 follows.  Also since $w_2 \ge 0$,
+  also $g \ge 0$ and since $g$ is not constant, the strong maximum
+  principle implies property 1.  To check property 3, suppose $h$ has
+  properties 1 and 2.  Then $h + \log|\varphi|$ is harmonic in $D_1$
+  and is positive on $\p D_1$, so the minimum principle for harmonic
+  functions implies $h + \log|\varphi| > 0$ in $D_1$.  Therefore, $h >
+  w_2$ on $S - \{p\}$, and the definition of $g$ therefore implies $g
+  \le h$.
+\end{mdframed}
+
+\begin{rem}
+  We can prove even more.  Namely, if $h$ is positive and
+  superharmonic on $S - \{p\}$ and  $h + \log|\varphi|$ is
+  superharmonic near $p$, then $g \le h$.  It's exact the same proof.
+\end{rem}
+
+\begin{ques}
+  \label{ques:9}
+  Find the Green's function for the unit disk $\{z ~:~ |z| < 1\}$.
+\end{ques}
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,0 +1,747 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\setcounter{topic}{7}
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: Classification of Simply Connected Riemann Surfaces}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+%%% page 229
+As an application of the results of the previous topic, we are going
+to prove that every simply connected Riemann surface is analytically
+equivalent to the sphere $\widehat{\CCC}$, the complex plane $\CCC$,
+or the unit disk $\Delta$.  These cases are exclusive, of course,
+since the compactness of the sphere shows it is not even homeomorphic
+to the plane or disk; and the plane and disk, though homeomorphic, are
+not analytically equivalent (Liouville's Theorem).
+
+We shall require some slight generalisations of some of the basic
+results in Topic 3.  Namely, we shall require a \emph{permanence of
+  functional relations} and a \emph{monodromy theorem}.  In addition,
+we shall require a generalisation of Lemma~5.4 from Topic 5 which
+deals with unrestricted analytic continuation.
+
+The framework for this discussion has been mentioned -- the analytic
+continuation of meromorphic functions defined on arbitrary Riemann
+surfaces, rather than $\CCC$.  Given a Riemann surface $S$, we can
+form definitions as the beginning of Topic 3 and speak of $M_S$, the
+\emph{sheaf of germs of meromorphic functions on $S$}.  The
+applications we have in mind are given in the next two lemmas.
+
+%%% page 230
+\begin{lem}
+  \label{lem:1}
+  Let $p \in S$, a simply connected Riemann surface.  Let $u$ be
+  harmonic on $S - \{p\}$ such that if $\varphi$ is an analytic chart
+  near $p$ with $\varphi(p) = 0$, then
+  $$
+  u \circ \varphi^{-1}(z) = \Re(\sum_{k=N}^{\infty} a_k z^k),\quad
+  z\text{ near }0,
+  $$
+  where $a_N \ne 0$.  Here $-\infty < N < \infty$.  Then there
+  exists a meromorphic function $f$ on $S$ such that
+  \begin{equation}
+    \label{e:1}
+    \Re(f) \equiv u.
+  \end{equation}
+\end{lem}
+
+\begin{myproof}
+  It is obvious that we may define $f$ near $p$ by setting
+  $$
+  f \circ \varphi^{-1}(z) = \sum_{k=N}^{\infty} a_k z^k,\quad
+  z \text{ near } 0.
+  $$
+  It is now a question of continuing $f$ analytically to all of $S$.
+  The generalised principle of the permanence of functional relations
+  implies that the analytic continuation will always satisfy the
+  identity \eqref{e:1}.  Briefly, the reason is that if $f$ is
+  meromorphic in an analytic disk $D$ and $\Re(f) = u$ in a
+  neighbourhood of some point of $D$, then $\Re(f) = u$ holds
+  throughout $D$ (see Topic 6 Proposition 6.11).
+
+  The second point is that analytic continuation is possible along
+  every path in $S$ with initial point $p$.  The reason is that
+  item 1 of Topic 6 Proposition 6.9 shows that \eqref{e:1} holds
+  locally; this and the permanence of functional relations combine as
+  in the proof of Lemma 5.4 (Topic 5) to show that the process of
+  analytic continuation never ``stops''.
+
+  %%% page 231
+  Now we have the hypothesis needed to apply the monodromy theorem,
+  and the lemma is proved.
+\end{myproof}
+
+\begin{lem}
+  \label{lem:2}
+  Let $p \in S$, a simply connected Riemann surface.  Let $u$ be
+  harmonic on $S - \{p\}$ such that if $\varphi$ is an analytic chart
+  near $p$ with $\varphi(p) = 0$, then
+  $$
+  u \circ \varphi^{-1}(z) = \log|z| + \Re(\sum_{k=0}^{\infty} a_k
+  z^k),
+  \quad z\text{ near } 0.
+  $$
+  Then there exists a holomorphic function $f$ on $S$ such that
+  \begin{equation}
+    \label{e:2}
+    |f| \equiv e^u.
+  \end{equation}
+\end{lem}
+
+\begin{myproof}
+  The outline of the proof is the same as in the previous lemma.
+  First, we prove that $f$ exists near $p$.  Using $e^{\log|z|} =
+  |z|$, we naturally choose
+  $$
+  f \circ \varphi^{-1}(z) = z \exp(\sum_{k=0}^{\infty} a_k z^k),
+  \quad z\text{ near } 0.
+  $$
+  Then \eqref{e:2} obviously holds near $p$.  Second, we apply the
+  permanence of functional relations to show that \eqref{e:2} remains
+  valid under analytic continuation of $f$.  The point to be checked
+  %%% page 232
+  is that if $f$ is holomorphic in an analytic disk and \eqref{e:2}
+  holds in a neighbourhood of some point, then \eqref{e:2} holds
+  throughout the disk.  This follows as before since $\log|f|$ is
+  harmonic.  One might think there is trouble here at \emph{zeros} of
+  $f$; by \eqref{e:2}, however, if $f$ has a zero along some path of
+  analytic continuation, then \eqref{e:2} will have been violated
+  before the zero is reached.
+
+  Third, \eqref{e:2} holds locally at least.  For locally we can write
+  $u = \Re F$, $F$ holomorphic (we are not now treating neighbourhoods
+  of the exceptional point $p$).  Then we set $f = e^F$, implying
+  \eqref{e:2}.  Therefore, as before, analytic continuation is
+  possible along every path from $p$.  We are also using in this step
+  the fact that \eqref{e:2} determines $f$ locally essentially
+  uniquely.  That is, any other choice of $f$ is just $f$ multiplied
+  by a constant of modulus 1, since holomorphic functions with
+  constant modulus must be constant.  (A similar fact about
+  \eqref{e:1} was used implicitly in the proof of Lemma~\ref{lem:1};
+  in that case functions satisfying \eqref{e:1} constant
+  \emph{differences}.)
+
+  Fourth, the monodromy theorem finishes the proof.
+\end{myproof}
+
+Next, a technicality.
+%%% page 233
+\begin{lem}
+  \label{lem:3}
+  Let $E$ be any bounded nonempty set in $\CCC$.  Then there exist
+  complex numbers $\alpha$ and $\beta$, $\alpha \ne 0$, such that if
+  $$
+  \widetilde{E} = \{\alpha z + \beta ~:~ z \in E\},
+  $$
+  then
+  $$
+  \sup \{|w| ~:~ w \in \tilde{E}\} = 1,\quad
+  \inf \{|w| ~:~ w \in \tilde{E}\} = \frac{1}{2}.
+  $$
+\end{lem}
+
+\begin{myproof}
+  Let $a = \inf \{ \Re(z) : z \in E\}$ and choose $b$ such that $a +
+  ib \in E^-$ (using the boundedness of $E$).  Let $E_1 = \{z - a - ib
+  ~:~ z \in E\}$, so that $\inf \{\Re(z) : z \in E_1 \} = 0$, $0 \in
+  E_1^-$.  Define for $t \ge 0$
+  $$
+  m(t) = \inf\{|z+t| ~:~ z \in E_1\},\quad
+  M(t) = \sup\{|z+t| ~:~ z \in E_1\}.
+  $$
+  Then $m$ and $M$ are continuous increasing functions, $m(0) = 0$,
+  and the boundedness of $E_1$ implies $\frac{m}{M} \to 1$ as $t \to
+  \infty$.  Choose $t$ such that $\frac{m(t)}{M(t)} =
+  \frac{1}{2}$. Let $c = M(t)$ and
+  $$
+  \tilde{E} = \{\frac{z+t}{c} ~:~ z \in E_1\}.
+  $$
+  Then $\tilde{E}$ satisfies the conditions of the lemma, and
+  $$
+  \alpha = \frac{1}{c},\quad
+  \beta = \frac{t-a-ib}{c}.
+  $$
+\end{myproof}
+
+%%% page 234
+\begin{thm}[The Famous Classification Theorem: Uniformisation Theorem]
+  Any connected, simply connected Riemann surface is analytically
+  equivalent to the Riemann sphere, the complex plane, or the unit
+  disk.
+\end{thm}
+
+\begin{mdframed}[skipbelow=1ex]
+  \textbf{Proof}:
+  Let $S$ be the connected, simply connected Riemann surface.  We have
+  three cases to consider.
+
+  \textbf{$S$ is compact}:  By the Corollary~6.47 to Theorem~6.12, if
+  $p \in S$, then there exists a harmonic function $u$ on $S - \{p\}$
+  such that in terms of a given analytic chart $\varphi$ near $p$ near
+  $\varphi(p) = 0$,
+  $$
+  u \circ \varphi^{-1}(z) = \Re(\frac{\alpha}{z}) + \Re(F(z)),\quad
+  z \text{ near } 0,\ \alpha \ne 0,
+  $$
+  where $F$ is holomorphic near 0.  By Lemma~\ref{lem:1} there exists
+  a meromorphic function $f$ on $S$ such that
+  $$
+  \Re(f) \equiv u.
+  $$
+  Now the only pole of $f$ is the point $p$, and this is a pole of
+  order 1.  Thus, $f$ takes the value $\infty$ exactly one time.  By
+  item 1 of Proposition 2.24, $f$ takes every value in
+  $\widehat{\CCC}$ exactly one time.  That is, $f : S \to
+  \widehat{\CCC}$ is an analytic equivalence between $S$ and
+  $\widehat{\CCC}$, proving the result in this case. 
+
+  \textbf{$S$ is parabolic}: If $p \in S$, and $\varphi$ is an
+  analytic chart in a neighbourhood of $p$, then by the Corollary~6.47
+  to Theorem~6.12, there exists a harmonic function $u$ on $S - \{p\}$
+  such that
+  $$
+  u \circ \varphi^{-1}(z) = \Re(\frac{\alpha}{z}) + \Re(F(z)),\quad
+  z \text{ near } 0,\ \alpha \ne 0,
+  $$
+  %%% page 235
+  where $F$ is holomorphic near 0.  We are assuming $\varphi(p) = 0$.
+  The construction of $u$ shows that $u$ is \emph{bounded} outside any
+  neighbourhood of $p$.  For this, checkout Topic 6, where $0 \le v
+  \le 1$ in $S-D_1$; $u = v$ in $S-D_1$; and our function $u$ is a
+  linear combination of two functions bounded in $S-D_1$.  Note that
+  we are tacitly assuming that $\varphi$ is rescaled if necessary to
+  guarantee the existence of $D_2$, the analytic disk given by
+  $|\varphi| < 2$.
+
+  By Lemma~\ref{lem:1} there exists a meromorphic function $f$ on $S$
+  such that
+  $$
+  \Re(f) \equiv u.
+  $$
+  Note that $f$ has a pole only at $p$, that $p$ is a simple pole, and
+  that $\Re(f)$ is bounded outside any neighbourhood of $p$.  We wish
+  to obtain another function with the stronger property that $|f|$ is
+  bounded outside any neighbourhood of $p$.
+
+  To do this let $a_1 < a_2 < a_3 < \cdots$ be a sequence of positive
+  integers.  Since these are real numbers tending to $\infty$ and the
+  real part of $f$ is one-to-one in a neighbourhood of $p$, it follows
+  that for sufficiently large $n$ there exists a unique $p_n \in S$
+  such that $f(p_n) = a_n$.  By eliminating the first few terms in the
+  sequence, we can assume this holds for all $n$.  Also, it is clear
+  that $p_n \to p$.  Since $\Re(f)$ is bounded outside any
+  neighbourhood $U$ of $p$, we obtain for sufficiently large $n$
+  %%% page 236
+  $$
+  |f-a_n| \ge a_n - \Re(f) \ge \frac{1}{2}a_n
+  \text{ outside } U,
+  $$
+  and therefore since we can assume $f$ is one-to-one in $U$,
+  $\frac{1}{f-a_n}$ has a simple pole exactly at $p_n$ and is bounded
+  outside any neighbourhood of $p_n$.  By Lemma~\ref{lem:3} there
+  exist constants $\alpha_n$ and $\beta_n$ such that if
+  $$
+  f_n = \frac{\alpha_n}{f-a_n} + \beta_n,
+  $$
+  then
+  $$
+  \sup_{D_2^- - D_1} |f_n| = 1,\quad
+  \inf_{D_2^- - D_1} |f_n| = \frac{1}{2}.
+  $$
+  Since $S$ is parabolic, item 4 of Proposition~6.41 in Topic 6
+  implies
+  $$
+  \sup_{S-D_1} |f_n| = 1
+  $$
+  ($|f_n|$ is subharmonic).
+
+  By Proposition~6.17, there exists a subsequence $n_1 < n_2 < \cdots$
+  such that $\lim_{k\to\infty} f_{n_k}$ exists uniformly on compact
+  subsets of $D_2 - D_1^-$, and then item 4 of Proposition 6.41 again
+  implies $\lim_{k\to\infty} f_{n_k}$ exists uniformly on $S -
+  D_{3/2}$.  Let
+  $$
+  h = \lim_{k\to\infty} f_{n_k} \text{ in } S - D_1^-.
+  $$
+  %%% page 237
+  Then $h$ is holomorphic on $S-D_1^-$ and $|h| \le 1$.  By renaming
+  all the sequences, we can assume $n_k \equiv k$.
+
+  Now we consider $f_n$ in $D_2$, where $f_n$ has a simple pole at
+  $p_n$ and no other pole.  Thus, we may write
+  $$
+  f_n = \frac{g_n}{\varphi - \varphi(p_n)}, \text{ in } D_2,
+  $$
+  where $g_n$ is holomorphic in $D_2$.  Note that in $D_2 - D_1^-$
+  $$
+  \begin{aligned}
+    |g_n - g_m|
+    &= |[\varphi-\varphi(p_n)]f_n - [\varphi-\varphi(p_m)]f_m|\\
+    &\le |\varphi-\varphi(p_n)||f_n-f_m| 
+    + |\varphi(p_n)-\varphi(p_m)||f_m|\\
+    &\le 4|f_n - f_m| + |\varphi(p_n) - \varphi(p_m)|,
+  \end{aligned}
+  $$
+  and therefore the sequence $g_n$ converges uniformly on, say, $\p
+  D_{3/2}$ (since $p_n \to p$, $\varphi(p_n) \to 0$).  By the maximum
+  principle, $g_n$ converges uniformly in $D_{3/2}$, say
+  $$
+  \lim_{n\to \infty} g_n = g, \text{ holomorphic  in } D_{3/2}.
+  $$
+  Now define
+  $$
+  f_p =
+  \begin{cases}
+    h &\text{in }S-D_1^-,\\
+    \frac{g}{\varphi} &\text{in }D_{3/2}.
+  \end{cases}
+  $$
+  Then we see that $f_p$ is well defined, is meromorphic on $S$, and
+  has at most a pole of first order at $p$ and no other poles.  Since
+  $g_n \to g$ uniformly in $D_{3/2}$ and $f_n \to h$ uniformly in $S -
+  D_{3/2}$, we obtain the result that $f_n \to f_p$ uniformly in
+  $D_2^- - D_1$.  Therefore,
+  %%% page 238
+  $$
+  \sup_{D_2^- - D_1} |f_p| = 1,\quad
+  \inf_{D_2^- - D_1} |f_p| = \frac{1}{2},
+  $$
+  proving that $f_p$ is not constant.  Since $S$ is parabolic, the
+  nonconstant function $|f_p|$ cannot be bounded, and since $|f_p| \le
+  1$ in $S-D_1^-$, it follows that $f_p$ really does have a pole at
+  $p$.
+
+  Summarising the construction thus far, we have shown that for every
+  $p \in S$ there exists a meromorphic function $f_p$ on $S$ such that
+  $f_p$ has a pole of order 1 at $p$ and $f_p$ is bounded outside
+  every neighbourhood of $p$.
+
+  These conditions essentially uniquely determine $f_p$.  For if
+  $\tilde{f}_p$ has the same properties, then there is a unique
+  complex number $\alpha \ne 0$ such that $\tilde{f}_p - \alpha f_p$
+  has no pole at $p$, and is therefore a bounded meromorphic function
+  on all of $S$.  Since $S$ is parabolic, $\tilde{f}_p - \alpha f_p$
+  is constant, and thus
+  $$
+  \tilde{f}_p = \alpha f_p + \beta.
+  $$
+  Conversely, for any constants $\alpha$ and $\beta$, $\alpha \ne 0$,
+  the function $\alpha f_p + \beta$ has properties similar to those of
+  $f_p$.
+
+  Also, for a given fixed $p$, the function $\frac{1}{f_p - f_p(q)}$
+  has a simple pole at $q$ if $q$ is in a sufficiently small
+  neighbourhood of $p$, and $\frac{1}{f_p - f_p(q)}$ has no other
+  poles.
+  %%% page 239
+  Furthermore, this function is bounded outside any neighbourhood of
+  $q$, if $q$ is sufficiently near $p$.  Thus, by the remark above,
+  $$
+  \frac{1}{f_p - f_p(q)} = \alpha f_q + \beta,
+  $$
+  where $\alpha$ and $\beta$ are constants depending only on $q$.
+  Thus, for $q$ sufficiently near $p$ there exists a M\"obius
+  transformation $T_q$ such that
+  $$
+  f_q = T_q \circ f_p.
+  $$
+
+  Now let $p_0$ be a fixed point in $S$ and let
+  $$
+  A = \{ p \in S ~:~ \exists \text{ M\"obius transformation } T
+  \text{ such that } f_p = T \circ f_{p_0} \}.
+  $$
+  Then $p_0 \in A$, and the argument just given shows that $A$ is
+  \textbf{open}.  The same argument shows that $A$ is
+  \textbf{closed}.  In both cases we rely on the fact that the
+  M\"obius transformations form a \textbf{group} under composition.
+  Since $S$ is connected $A = S$.
+
+  Now we prove that $f_{p_0}$ is \emph{one-to-one}.  Suppose
+  $$
+  f_{p_0}(p) = f_{p_0}(q).
+  $$
+  Then there exists a M\"obius transformation $T$ such that
+  $$
+  f_p = T \circ f_{p_0}.
+  $$
+  %%% page 240
+  Therefore,
+  $$
+  \infty = f_p(p) = T(f_{p_0}(p)) = T(f_{p_0}(q)) = f_p(q).
+  $$
+  Since $f_p$ has pole at $p$ only, $q = p$.
+
+  Now we prove that $\widehat{\CCC} - f_{p_0}(S)$ cannot have more
+  than one point.  Otherwise, there are two complex numbers $\alpha,
+  \beta \notin f_{p_0}(S)$ --- note that definitely $\infty \in
+  f_{p_0}(S)$.  Since $f_{p_0}(S)$ is simply connected, the monodromy
+  theorem implies there exists a holomorphic determination of 
+  $$
+  \sqrt{\frac{w-\alpha}{w-\beta}}
+  $$
+  for $w \in f_{p_0}(S)$; choose that determination which is 1 at $w =
+  \infty$.  Define
+  $$
+  F = \sqrt{\frac{f_{p_0}-\alpha}{f_{p_0}-\beta}}.
+  $$
+  Then $F$ is holomorphic on $S$ and $F(p_0) = 1$.  Furthermore, $F$
+  never takes the value zero and it is impossible for $F(p) =
+  -F(p')$.  For if this holds, then $F(p)^2 = F(p')^2$, which implies
+  $f_{p_0}(p) = f_{p_0}(p')$ and $p = p'$, since $f_{p_0}$ is
+  one-to-one.  Since $F$ is not constant and takes the value 1, $F$
+  takes every value $z$ for $|z-1| < \epsilon$, some $\epsilon > 0$.
+  Therefore,
+  $$
+  |F(p) + 1| \ge \epsilon
+  \text{ for all } p \in S.
+  $$
+  Thus, $\frac{1}{F+1}$ is a bounded holomorphic function on $S$ and
+  is therefore constant since $S$ is parabolic.  This is a
+  contradiction.
+
+  %%% page 241
+  Now we cannot have $f_{p_0}(S) = \widehat{\CCC}$ by item 2 of
+  Proposition 2.24 (Topic 2) since $S$ is \textbf{not} compact.
+  Therefore, there is a unique complex $\gamma$ such that $f_{p_0}(S)
+  = \widehat{\CCC} - \{\gamma\}$.  Therefore
+  $$
+  \frac{1}{f_{p_0} - \gamma}
+  $$
+  is a one-to-one analytic mapping of $S$ onto $\CCC$, and thus forms
+  the desired analytic equivalence between $S$ and $\CCC$.
+
+
+  \textbf{$S$ is hyperbolic}: Here we use Proposition~6.49 (Topic 6)
+  and let $g_p$ be the unique Green's function on $S - \{p\}$.  By
+  Lemma~\ref{lem:2} there exists a holomorphic function $f_p$ on $S$
+  such that
+  $$
+  |f_p| \equiv e^{-g_p}.
+  $$
+  Then
+  \begin{enumerate}
+  \item $f_p(p) = 0$,
+  \item $|f_p| < 1$,
+  \item $f_p$ is holomorphic on $S$,
+  \item $f_p$ does not vanish on $S-\{p\}$,
+  \item if $h$ is a function on $S$ satisfying 1., 2., 3. then $|h|
+    \le |f_p|$.
+  \end{enumerate}
+  %%% page 242
+  We have to prove the last statement.  By 1., if $\varphi$ is an
+  analytic chart with $\varphi(p) = 0$, then near $p$
+  $$
+  h = \alpha \varphi^n (1 + \beta \varphi + \cdots),
+  $$
+  where we can assume $\alpha \ne 0$ and $n \ge 1$.  Thus, near $p$ we
+  have
+  $$
+  \log|h| = n\log|\varphi| + \log|\alpha| + \log|1 + \beta \varphi +
+  \cdots|,
+  $$
+  showing that
+  $$
+  \frac{-\log|h|}{n} + \log|\varphi|
+  $$
+  is harmonic near $p$.  Also, $\frac{-\log|h|}{n} > 0$ by item 2. and is
+  harmonic away from zeros of $h$.  Let
+  $$
+  \widetilde{h} = \min(g_p, \frac{-\log|h|}{n}).
+  $$
+  Then $\widetilde{h}$ is superharmonic on $S - \{p\}$, $\widetilde{h}
+  > 0$, and near $p$
+  $$
+  \widetilde{h} + \log|\varphi| 
+  = \min(g_p + \log|\varphi|, \frac{-\log|h|}{n} + \log|\varphi|)
+  $$
+  is superharmonic, being the mininum of two harmonic functions near
+  $p$.  By the minimal property of the Green's function,
+  $$
+  g_p \le \widetilde{h}.
+  $$
+  Thus,
+  $$
+  g_p \le \frac{-\log|h|}{n},
+  $$
+  so
+  $$
+  |f_p| = e^{-g} \ge e^{\log|h|/n} = |h|^{1/n},
+  $$
+  %%% page 243
+  and thus
+  $$
+  |h| \le |f_p|^n \le |f_p|.
+  $$
+  This proves property 5.
+
+  Now let $p,q \in S$ and set
+  $$
+  h - \frac{f_p - f_p(q)}{1 - \overline{f_p(q)}f_p}.
+  $$
+  Then since all numbers involved have modulus less than 1, we see
+  that $h(q) = 0$, $|h| < 1$, $h$ is holomorphic on $S$.  Therefore,
+  property 5 above implies
+  $$
+  |h| \le |f_q|.
+  $$
+  Since $h(p) = -f_p(q)$, we obtain in particular
+  $$
+  |f_p(q)| \le |f_q(p)|.
+  $$
+  By symmetry we conclude
+  $$
+  |f_p(q)| = |f_q(p)| \text{ for all } p, q \in S.
+  $$
+  (In terms of the Green's functions, this relation states
+  $$
+  g_p(q) = g_q(p).)
+  $$
+
+  Thus, we conclude that the holomorphic function $\frac{h}{f_q}$
+  satisfies
+  %%% page 244
+  $$
+  \left|\frac{h}{f_q}\right| \le 1 \text{ on } S,\quad
+  \left|\frac{h(p)}{f_q(p)}\right| = 1.
+  $$
+  By the strong maximum principle, it follows that $\frac{h}{f_q}$ is
+  constant, and in particular
+  \begin{equation}
+    \label{e:3}
+    \left|\frac{h}{f_q}\right| \equiv 1 \text{ on } S.
+  \end{equation}
+  Now we prove that $f_p$ is \emph{one-to-one}.  Suppose $f_p(q) =
+  f_p(q')$.  Then $h(q') = 0$ and by \eqref{e:3} $f_q(q') = 0$.  By
+  property 4. of $f_q$, we conclude that $q' = q$.
+
+  Therefore, for any $p \in S$, $f_p$ is a one-to-one analytic mapping
+  of $S$ into the unit disk $\Delta$.  We prove that $f_p(S) =
+  \Delta$.  If this is not the case, then a simple topological
+  argument shows that there exists
+  $$
+  \alpha \in \p f_p(S),\quad |\alpha| < 1.
+  $$
+  Since $f_p(S)$ is open, $\alpha \notin f_p(S)$.  Choose $p_1, p_2,
+  p_3, \cdots$ in $S$ such that
+  $$
+  f_p(p_n) \to \alpha.
+  $$
+  Since $f_p(S)$ is simply connected and $\alpha \notin f_p(S)$, the
+  monodromy theorem implies there exists an analytic determination of
+  $\log(w - \alpha)$ for $w \in f_p(S)$.  Note that
+  $$
+  \Re(\log(f_p - \alpha)) = \log|f_p - \alpha| < \log 2.
+  $$
+  Let $T$ be a M\"obius transformation mapping
+  $$
+  \{z ~:~ \Re(z) < \log2\}
+  $$
+  onto $\Delta$ and such that $T(\log(-\alpha)) = 0$.  Consider the
+  function
+  $$
+  F = T \circ \log(f_p - \alpha).
+  $$
+  Then $F$ is holomorphic on $S$ and $|F| < 1$, $F(p) =
+  T(\log(-\alpha)) = 0$.  By property 5. of $f_p$,
+  $$
+  |F| \le |f_p|.
+  $$
+  We therefore conclude successively that
+  $$
+  \begin{aligned}
+    f_p(p_n) - \alpha &\to 0,\\
+    \log(f_p(p_n) - \alpha) &\to \infty,\\
+    T\circ \log(f_p(p_n) - \alpha) &\to \p \Delta,
+  \end{aligned}
+  $$
+  i.e. $|F(p_n)| \to 1$, and thus $|f_p(p_n)| \to 1$.
+  Thus, $|\alpha| = 1$, a contradiction.
+\end{mdframed}
+
+\begin{cor}[The Riemann Mapping Theorem]
+  Let $S$ be a connected, simply connected open subset of $\CCC$ with
+  $S \ne \CCC$.  Then there exists an analytic equivalence of $S$ and
+  the unit disk.
+\end{cor}
+
+%%% page 246
+\begin{mdframed}[skipbelow=1ex]
+  \textbf{Proof}: 
+  We have only show that the Riemann surface $S$ is hyperbolic.  If
+  $\alpha \in \CCC - S$, then there exists a holomorphic determination
+  of $\sqrt{w - \alpha}$ for $w \in S$.  Define $F(w) = \sqrt{w -
+    \alpha}$.  Then one shows that $F(w) = -F(w')$ implies $w = w'$ by
+  squaring both sides, so that it is impossible that $F(w) = -F(w')$.
+  Suppose $w_0 \in S$.  Since $F$ is an open mapping, there exists
+  $\epsilon > 0$ such that $F(S)$ includes the set $\{ z ~:~ |z -
+  F(w_0)| < \epsilon\}$.  Therefore, $F(S)$ is disjoint form the set
+  $\{ z ~:~ |z + F(w_0)| < \epsilon \}$, or, $|F(w) + F(w_0)| \ge
+  \epsilon$ for all $w \in S$.  Thus $\frac{1}{F + F(w_0)}$ is a
+  bounded, nonconstant holomorphic function on $S$, proving that $S$
+  is hyperbolic.
+\end{mdframed}
+
+Now we want to indicate some applications of the classification
+theorem.  The first of these is a trivial application, but answers the
+question of which Riemann surfaces are homeomorphic to a sphere.
+
+\begin{thm}
+  \label{thm:1}
+  Let $S$ be a connected compact Riemann surface.  Then the following
+  conditions are equivalent.
+  \begin{enumerate}
+  \parskip=0pt
+  \itemsep=0pt
+  \item $S$ is analytically equivalent to $\widehat{\CCC}$.
+  \item $S$ is homeomorphic to $\widehat{\CCC}$.
+  \item $S$ is simply connected.
+    %%% page 247
+  \item There exists a meromorphic function $f$ on $S$ such that every
+    meromorphic function on $S$ is a rational function of $f$.
+  \item There exists a meromorphic function $f$ on $S$ having a simple
+    pole at some point and no other pole.
+  \end{enumerate}
+\end{thm}
+
+\begin{mdframed}[skipbelow=1ex]
+  \textbf{Proof}:
+  \begin{description}
+  \parskip=0pt
+  \itemsep=0pt
+  \item[1 $\Rightarrow$ 2:] Trivial.
+  \item[2 $\Rightarrow$ 3:] Trivial, since a sphere is simply
+    connected.
+  \item[3 $\Rightarrow$ 1:] Follows from the classification theorem.
+  \item[1 $\Rightarrow$ 4:] We can assume $S = \widehat{\CCC}$ and we
+    then take $f(z) = z$.  The result is immediate.
+  \item[4 $\Rightarrow$ 5:] We prove that the function $f$ of 4. must
+    be one-to-one.  Suppose $p, q \in S$, $p \ne q$.  By Theorem~6.6
+    of Topic 6, there exists a meromorphic function $g$ on $S$
+    such that $g(p) \ne g(q)$.  By condition 4, there exists a
+    rational function $A$ such that $g = A \circ f$.  Thus, $A(f(p))
+    \ne A(f(q))$, which implies $f(p) \ne f(q)$.  By item 2 of
+    Proposition 2.24 of Topic 2, $f$ takes every value the same number
+    (one) of times, of $f$ takes the value $\infty$ one time.
+  \item[5 $\Rightarrow$ 1:] By item 2 of Proposition 2.24 of Topic 2,
+    $f$ maps $S$ onto $\widehat{\CCC}$ in a one-to-one fashion.  Thus,
+    $f$ is an analytic equivalence of $S$ onto $\widehat{\CCC}$.
+  \end{description}
+\end{mdframed}
+
+We are now going to discuss the next easiest case.
+Theorem~\ref{thm:1} is concerned with a compact surface of genus 0.
+We shall next discuss the compact surfaces of genus 1.  This case is
+already so involved that we shall devote a separate topic to it.
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

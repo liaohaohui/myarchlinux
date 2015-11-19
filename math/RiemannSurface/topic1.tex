@@ -1,0 +1,945 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\setcounter{topic}{1}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: Introduction}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+\begin{abstract}
+  First, we will study the need for Riemann surfaces to made some
+  ``multi-valued functions'' in complex analysis into ``single-valued
+  functions''.  Then we will define the notion of abstract Riemann
+  surface, where it is the right place to learn the notion of
+  ``basic algebraic topology''.  After these, we will investigate the
+  generalisation of ``analyticity'' from complex analysis to Riemann
+  surface.  We will investigate algebraic functions, meromorphic
+  functions and ``uniformisation theorem'' and hopefully a little bit
+  about the classification of compact Riemann surfaces.
+\end{abstract}
+
+\tableofcontents
+
+\section{Prerequisites for Riemann Surface}
+
+Complex Analysis is probably the only prerequisite to Riemann
+Surface.  A little bit of point-set topology is important but not
+compulsory.  The following are some complex analysis books:
+\begin{itemize}
+\item Complex Analysis: The Geometric Viewpoint by Steven G. Krantz. A
+  nice little book where you can learn more about Picard's theorems,
+  for example.
+\item Hayman, W.K.: Multivalent functions, 1958.
+\item Jameson, G.J.O.: A first course on complex functions, 1970.
+\item Kodaira, Kunihiko: Introduction to complex analysis, 1984.
+\item Littlewood, J.E.: Lectures on the theory of functions, 1944.
+\item Narasimhan, Raghavan: Complex analysis in one variable, 1985.
+\item Remmert, Reinhold: Classical topics in complex function theory,
+  1998.
+\item Stewart, Ian; Tall, David: Complex Analysis, 1983.
+\item Visual Complex Functions: An Introduction with Phase Portraits
+  by Elias Wegert.
+\end{itemize}
+
+
+
+\section{Recommended Books for Riemann Surface}
+
+This whole seminar will be based on the book ``Rudiments of Riemann
+Surfaces'' by B. Frank Jones, Jr.  The electronic copy of the book
+is available for download on the Internet.  It is neither famous nor
+comprehensive but it is relatively short and should be fine for a
+short semester discussion.
+
+According to Kerry (see
+\url{http://math.stackexchange.com/questions/135047/perspectives-on-riemann-surfaces/135108}),
+randomly picking a book and read is not so bad.  There is no need to
+worry about one book is better or worse than the other because of
+``algebraic'', ``analytic'' --- we will find a synthesis!  We learn
+something by reading other's treatment of a subject we do not
+understand well enough.
+
+Kerry recommended
+\begin{itemize}
+\item Curtis Mcmullen's notes and course outline.
+  (Harvard U. Math 275 (Spring 1998): Riemann surfaces, dynamics and
+  geometry)
+\item R. Miranda, Algebraic Curves and Riemann Surfaces, AMS 1995
+  % DA08
+\item Simon Donaldson, Riemann Surfaces, OUP 2011 % DA115
+\item R. Gunning, Lectures on Riemann Surfaces, Princeton Univ. Press
+  1966 (The classical reference for researchers should be this)
+  % DA10
+\end{itemize}
+
+Riemann Surfaces is a huge subject, with on going research in multiple
+fronts in different levels. Hoping to achieve a deep understanding of
+it in one semester is difficult --- because we have to do a lot of
+problems and usually they are not easy.
+
+There are many recommendations from Internet
+(e.g. \url{math.stackexchange.com}, etc.) regarding good complex
+analysis textbooks:
+\begin{itemize}
+\parskip=1pt
+\item 
+  It depends partly what you are more interested in, geometry or
+  analysis. There are two relevant categories: compact complex
+  manifolds of dimension one (and holomorphic maps), and algebraic
+  complex curves (and rational maps). The approach in the wonderful
+  book of Miranda is to consider the functor from algebraic curves to
+  compact complex one manifolds, although he never fully proves it is
+  well defined. The more analytic approach is to begin with compact
+  complex one manifolds and prove they are all representable as
+  algebraic curves. This is probably the approach of Forster. Another
+  excellent analytic monograph from this point of view is the
+  Princeton lecture notes on Riemann surfaces by Robert Gunning, which
+  is also a good place to learn sheaf theory. His main result is that
+  all compact complex one manifolds occur as the Riemann surface of an
+  algebraic curve. Miranda's book contains more study of the geometry
+  of algebraic curves.
+
+  Riemann himself, as I recall, took an intermediate view, showing the
+  equivalence of the categories of (irreducible) algebraic curves with
+  that of (connected) compact complex manifolds equipped with a finite
+  holomorphic map to $\PP^1$. Another extremely nice book, a little more
+  advanced than Miranda, is the China notes on algebraic curves by
+  Phillip Griffiths. Mumford's book Complex projective varieties I,
+  also has a terrific chapter on curves from the complex analytic
+  point of view.
+
+  After you learn the basics, the book ``Geometry of Algebraic Curves
+  Volumes I and II'' of Arbarello, Cornalba, Griffiths, Harris, is
+  just amazing. Of course Riemann's thesis and followup paper on
+  theory of abelian functions is rather incredible as well.
+
+\item \url{http://www-home.math.uwo.ca/~masoud/riemannsurfaces.html}
+
+  I shall try to closely follow the newly published Riemann Surfaces,
+  by Simon Donaldson, Oxford University Press, 2011. Among all modern
+  expositions of the theory, this one is particularly close to 
+  Riemann's original analytic approach based on potential theory,
+  PDE's and ideas of mathematical physics. It is also remarkable in
+  its breath and scope and the clarity of exposition while keeping the
+  required prerequisites to a bare minimum.
+
+  Here are some other good texts on the subject (the list is by no
+  means exhaustive):
+  \begin{enumerate}
+    %%%   zStudy/physics/inDataArchive83++/WaldschmidtM-FromNumberTheoryToPhysics-1992.djvu
+  \item J.-B. Bost, Introduction to compact Riemann surfaces,
+    Jacobians, and abelian varieties, in From number theory to physics
+    (Les Houches, 1989), Springer, Berlin.1992, pp. 64--211. This is a
+    particularly inspiring text full of historical background and
+    references to original works (check Abel's amazing 2-page proof of
+    his addition theorem, or his discovery of what later came to be
+    known as the genus of a curve). 
+
+  \item Otto Forster (1981), Lectures on Riemann surfaces. A very
+    clear and lucid presentation.
+  \item H. M. Farkas, I. Kra, Riemann Surfaces.
+  \item J. Jost, Compact Riemann Surfaces.
+  \item F. Kirwan, Complex Algebraic Curves.
+    This one is more on the algebraic geometry side and at a more
+    elementary level. Very well written and suitable for an advanced
+    undergraduate course.
+  \item H. McKean, V. Moll, Elliptic curves: function theory,
+    geometry, arithmetic.
+
+    A good place to start learning about connections between Riemann
+    surfaces and arithmetic. Covers Kronecker-Weber and Mordel-Weil
+    theorems. Very close to the style of originals. 
+  \end{enumerate}
+\end{itemize}
+
+
+%There are many lecture notes on complex analysis from the Internet as
+%well such as \citet{neubrander:_lectur_notes_compl_analy}.
+
+
+
+\section{Why is Riemann Surface Interesting?}
+
+Because this subject provides many examples for the more abstract
+mathematical subjects:
+\begin{itemize}
+\item Algebraic Geometry
+\item Algebraic Topology
+\item Complex Dynamical System (Teichmuller Theory)
+\item Hyperbolic Geometry and Metric Geometry?
+\item Conformal Field Theory???
+\end{itemize}
+
+For me, it is interesting because can explain why a general polynomial
+of degree $\ge 5$ cannot have radical solutions.  A rather detail
+historical account of the solution of polynomials by radicals was
+given in Jim Brown's article ``Abel and the Insolvability of the
+Quintic''.
+
+
+
+\section{Frank Jones' Preface}
+
+...
+
+The purpose of the course was to introduce the various ideas of
+surfaces, sheaves, algebraic functions and potential theory in a
+rather concrete setting, and to show the usefulness of the concepts
+the students had learned abstractly in previous courses.  As a result,
+I discussed the material carefully and leisurely, and for example did
+not even attempt to discuss the notions of covering surface,
+differential forms, Fuchsian groups, etc.  Therefore, these notes are
+quite incomplete.  For comprehensive treatments of the subject, please
+consult the bibligraphy.
+
+I gratefully acknowledge some of the standard books which I consulted,
+especially M. H. Hein's Complex Function Theory, G. Springer's
+Introduction to Riemann Surfaces, and H. Weyl's The Concept of a
+Riemann Surface.  Also, I relied heavily on L. Ber's lecture notes,
+Riemann Surfaces, and especially on his Lectures 15--18.
+
+...
+
+Houston, 12 July, 1971
+
+\section{Introduction}
+
+The basic reason for the consideration and invention of Riemann
+surfaces is the desire to consider holomorphic functions on a region
+which in some sense is the ``largest'' possible. What makes this at
+all feasible is the principle of the \emph{uniqueness of analytic
+  continuation}, which states that if $f$ is holomorphic on a region
+(open, connected set) in $\CCC$ and vanishes in a non-void open subset
+of the region, then $f\equiv 0$.  This principle implies that if $f$
+is holomorphic in a region $D$ and if it is possible to extend $f$ to
+a larger region $\widetilde{D}$ in such a way that the extension is
+analytic, i.e. if there is an analytic function $g$ on $\widetilde{D}$
+such that $g=f$ on $D$, then $g$ is unique.  For if $h$ is another
+function with this same property of extension, then $h=f$ on $D$, so
+that $g-h$ on $D$.  Thus $g-h=0$ on $\widetilde{D}$.
+
+Of course, it is not always possible to extend analytic functions at
+all.  The easiest examples are the ``gap'' (lacunae)  power series, of
+which one is
+$$
+f(z) = \sum_{n=0}^{\infty} z^{2^n}.
+$$
+This function is holomorphic in the unit disk $|z|<1$ and there is no
+holomorphic function in a larger region which is an extension of $f$.
+But this is not the kind of difficulty that we wish to consider.
+
+Rather, the basic problem is that of multiple-valued ``functions''.
+Phrased in terms of continuations, there is not always a largest
+region to which a holomorphic function can be extended.  As an example
+let $D = \{z ~:~ |z-1| < 1\}$ and 
+$$
+f(z) = \text{principle determination of }\log z
+= \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} (z-1)^n
+$$
+defined on $D$.  Of course, we also have $f(z) = \log|z| + i\arg(z)$,
+where $\arg(z)$ is between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$.  Now
+$f$ can be extended to a holomorphic function on the (complex) plane
+$\CCC$ with the negative real axis removed, the extension being
+$\log|z| + i\arg(z)$ where $-\pi < \arg(z) < \pi$.  But there are
+other regions which can be considered as largest regions of extension;
+e.g. the plane $\CCC$ with the positive imaginary axis removed and the
+extension being $\log|z| + i\arg(z)$, where $-\frac{3\pi}{2} < \arg(z)
+< \frac{\pi}{2}$.
+
+It is admittedly frequently useful to ``cut'' the plane $\CCC$ along a
+line from 0 to $\infty$ as visualised in the above cases, and to
+consider there a single-value ``branch'' or ``determination'' of $\log
+z$, and such a technique is exploited e.g. in contour integrals.
+
+But from the point of view of this course, the cutting of $\CCC$ really
+enables one to evade the issue, which is namely how can one speak of
+$\log z$ and face up to its multiple-valuedness in a fearless way.
+And the same question for other functions.  The answer given by
+Riemann is that the plane $\CCC$ is too deficient to admit such
+functions, so we consider other \emph{surfaces} where functions can be
+defined which are single-valued and still exhibit the essential
+behaviour of (in our example) $\log z$.
+
+Let us now consider an explicit method for building such a surface for
+$\log z$.  Take an infinite sequence of planes minus the origin, which
+are to be considered as \emph{distinct}; call them $\CCC_n'$, where $n
+\in \ZZ$.  On $\CCC_n'$ define a function $f_n$ by
+$$
+f_n(z) = \log|z| + i\arg(z) + 2n\pi i,
+$$
+where $-\pi < \arg(z) \le \pi$.  Now we ``glue'' the planes $\CCC_n'$
+in a reasonable way.  This ``gluing'' is tantamount to defining a
+topology on the union of the (disjoint) sets $\CCC_n'$.  To define
+this topology we shall describe a neighbourhood basis of each point.
+For a point $z \in \CCC_n'$ which does not lie on the negative real
+axis a neighbourhood basis shall consist of all open disks in
+$\CCC_n'$ with centre at $z$.  If $z\in \CCC_n'$ and $z$ is a negative
+real number, a neighbourhood basis shall consist of all sets
+$$
+\{w \in \CCC_n' : |w-z|<\epsilon,\ \Im(w)\ge0\} \cup
+\{w \in \CCC_{n+1}' : |w-z|<\epsilon,\ \Im(w)<0\},
+$$
+where $0 < \epsilon < |z|$.
+
+\begin{mdframed}
+  \vspace{1in}  
+
+  Figure 1
+\end{mdframed}
+
+
+
+It is then easily checked that the set $S = \bigcup_{n=-\infty}^\infty
+\CCC_n'$ becomes a topological space with a neighbourhood basis for
+each point of $S$ being described as above.  Also, if $f$ is the
+function from $S$ to $\CCC$ which equals $f_n$ on $\CCC_n'$ for each
+$n$, then $f$ becomes a \emph{continuous} function on $S$.  Indeed, it
+suffices to check continuity at points $z \in \CCC_n'$ which are
+negative real numbers.  In the semidisk in $\CCC_n'$ depicted above $f
+= f_n$ takes values close to $\log|z| + i\pi + 2n\pi i$, and in the
+semidisk in $\CCC_{n+1}'$ $f=f_{n+1}$ takes values close to $\log|z| -
+i\pi + 2(n+1)\pi i$, so in the whole neighbourhood of $z$, $f$ is
+close to $\log|z| + i\pi + 2n\pi i = f(z)$.  Thus $f$ is continuous.
+
+Thus, we have succeeded in defining a set $S$ which caries a
+single-valued function $f$ which obviously is closely related to $\log
+z$.  We shall later point out the essential feature of $S$ which
+allows us to call it a Riemann surface (see Topic 2).
+
+We remark that it is easy to visualise $S$ as a collection of planes
+glued together as indicated and forming in $\RR^3$ an infinite
+spiral.  The next surface we construct will not have so simple a
+form.
+
+%%% p13
+For this construction consider the function $z^{1/m}$ where $m$ is an
+integer $\ge 2$.  Since each $z\ne 0$ has $m$ distinct
+$m$\textsuperscript{th} roots, this is a multiple-valued
+``function''.  In order to treat this function consider distinct
+copies of the plane minus the origin, $\CCC_1'$, $\CCC_2'$, $\cdots$,
+$\CCC_m'$.  Define a function $f_n$ on $\CCC_n'$ by the formula:
+$$
+f_n(re^{i\theta}) = r^{1/m}e^{i\theta/m} e^{2i\pi(n-1)/m},\quad r>0,\ 
+-\pi < \theta \le \pi.
+$$
+Let $T = \bigcup_{n=1}^m \CCC_n'$ and define a topology on $T$ exactly
+as before, except that a neighbourhood basis of a negative real number
+$z \in \CCC_m'$ is treated a little differently.  Note that an attempt
+to visualise $T$ as a spiral in $\RR^3$ is doomed, since the ``top''
+level $\CCC_m'$ has to be glued to the ``bottom'' level $\CCC_1'$
+along their negative real axes, and this without crossing any of the
+intermediate levels $\CCC_2', \cdots, \CCC_{m-1}'$ and also without
+crossing the seam where $\CCC_1'$ is joined to $\CCC_2'$ (in case
+$m=2$).  As before, define a function $f$ on $T$ by the formula $f =
+f_n$ on $\CCC_n'$.  If $z \in \CCC_n'$ is a negative real number, then
+in the semidisk in $\CCC_n'$ $f$ takes values close to $|z|^{1/m}
+e^{i\pi/m} e^{2i\pi(n-1)/m}$, and in the semidisk in $\CCC_{n+1}'$ $f$
+takes values close to $|z|^{1/m} e^{-i\pi/m} e^{2i\pi n/m}$, so $f$
+stays close to $|z|^{1/m} e^{i\pi(2n-1)/m} = f(z)$ in a neighbourhood
+of $z$.  And this holds even if $n=m$, in which case $\CCC_{n+1}'$ is
+replaced by $\CCC_1'$.  Thus, $f$ is continuous on $T$ and gives a
+reasonable representation of $z^{1/m}$.
+
+%%% Page 14
+Now a very interesting addition can be made to $T$.  Namely, consider
+each $\CCC_n'$ to have its origin replaced, but with the origins in
+each $\CCC_n$ representing a single point to be added to $T$.  Thus
+consider $T\cup \{0\}$ (the original set with one point added) and let
+a neighbourhood basis of 0 consist of sets of the form
+$$
+\{0\} \cup \bigcup_{n=1}^m \{z\in \CCC_n' ~:~ |z| < \epsilon\}
+$$
+for $0 < \epsilon < \infty$.  Extend $f$ by $f(0) = 0$.  Then $f$ is
+again continuous on $T\cup \{0\}$.  In the very same way, the point
+$\infty$ can be added.  Let
+$$
+\widetilde{T} = T \cup \{0\} \cup \{\infty\},
+$$
+let a neighbourhood basis of $\infty$ consist of sets of the form
+$$
+\{\infty\} \cup \bigcup_{n=1}^m \{z \in \CCC_n' ~:~
+|z|>\frac{1}{\epsilon}\},
+$$
+and let $f(\infty) = \infty$.  Then $f$ is a continuous function from
+$\widetilde{T}$ to the extended complex plane $\widehat{\CCC}$.
+Obviously the points 0 and $\infty$ are in some sense different from
+the other points in $\widetilde{T}$.  They are called \emph{branch
+  points}, and are said to have \emph{order} $m-1$.
+
+Although $\widetilde{T}$ is somewhat difficult to visualise as
+situated in $\RR^3$, we shall now easily see that it is homeomorphic
+to the sphere $\widehat{\CCC}$!  In fact, the mapping $f :
+\widetilde{T} \to \widehat{\CCC}$ is a homeomorphism.  We have shown
+that it is continuous; it is onto since every complex number is an 
+$m$\textsuperscript{th} root;  it is 1-1 since different complex
+numbers definitely have different $m$\textsuperscript{th} roots and
+also the same complex number $z \ne 0$ has $m$ distinct
+$m$\textsuperscript{th} roots.  General topology then shows $f^{-1}$
+is continuous since $\widetilde{T}$ is compact and $\widehat{\CCC}$ is
+Hausdorff; but it is quite easy to see directly that $f^{-1}$ is
+continuous.  Indeed, $f^{-1}(z)$ is essentially $z^m$ (positioned on
+the correct $\CCC_n'$).
+%%% https://jmanton.wordpress.com/2013/12/11/why-does-compactness-ensure-a-bijective-map-is-a-homeomorphism/
+
+%%% page 15
+The nature of this homeomorphism and the geometry involved in the
+construction of $\widetilde{T}$ are perhaps better seen when one
+considers the Riemann sphere $\widehat{\CCC}$ instead of $\CCC$ as the
+basic region from which $f$ is to be built.  If one regards
+$\widehat{\CCC}$ as the Euclidean sphere $\{(x,y,z) ~:~ x^2+y^2+z^2 =
+1\}$ in $\RR^3$ by means of stereographic projection and uses $m$
+distinct copies $\widehat{\CCC}_1, \cdots, \widehat{\CCC}_m$ with the
+gluing described above to be done along the meridians corresponding to
+the negative real axis, then an essentially equivalent surface
+$\widetilde{T}$ is obtained.  Now consider the action of the function
+$f$.  On $\widehat{\CCC}_n$ it is given by the determination $f_n$ of
+the $m$\textsuperscript{th} root and maps $\widehat{\CCC}_n$ onto a
+portion of $\widehat{\CCC}$ cut off by two meridians which correspond
+to rays in the plane with an included angle of $2\pi/m$.  In other
+words, it ``spreads open'' the cut in $\widehat{\CCC}_n$ from a hole
+with 0 opening to a hole with $(1-\frac{1}{m})2\pi$ opening.  Here is
+a picture, a ``top'' view looking ``down'' on the north pole,
+$\infty$:
+
+%%% page 16
+\begin{mdframed}
+  \vspace{3.5cm}
+
+  Figure 2
+\end{mdframed}
+
+Thus, the image of $\widetilde{T}$ under $f$ consists of $m$
+``slices'' of $\widehat{\CCC}$, and the gluing in $\widetilde{T}$
+shows that these slices of $\widehat{\CCC}$ are pieced together in
+such a way that $\widetilde{T}$ is mapped homeomorphically onto
+$\widehat{\CCC}$.
+
+If one is interested only in the topological properties of
+$\widetilde{T}$, then the procedure discussed in the above paragraph
+can be considerably shortened by ignoring the specific nature of the
+cuts and of the function $f$.  We illustrate with the case
+$m=2$. Since we shall only discuss topological properties, we replace
+the cut along a meridian by any old cut on the sphere which looks
+reasonable, and take two copies of the sphere:
+
+\begin{mdframed}
+  \vspace{3.5cm}
+
+  Figure 3
+\end{mdframed}
+
+The gluing is to be done in such a way that the shaded areas are to be
+attached, as are the unshaded areas.  The action of the function $f$
+is now replaced by a continuous opening of the two holes:
+
+%%% page 17
+\begin{mdframed}
+  \vspace{3.5cm}
+
+  Figure 4
+\end{mdframed}
+
+It is then obvious how to attach these two spheres with holes;  the
+resulting figure looks like a figure which is obviously homeomorphic
+to a sphere.
+
+\begin{mdframed}
+  \vspace{3cm}
+
+  Figure 5
+
+\end{mdframed}
+
+Now we shall briefly indicate the construction of some other Riemann
+surfaces.  For example, suppose $a$ and $b$ are distinct complex
+numbers and consider the multiple-valued ``function'' $z \mapsto
+\sqrt{(z-a)(z-b)}$.  The same procedure which works for $\sqrt{z}$ can
+be applied here if $\CCC$ or $\widehat{\CCC}$ is cut between $a$ and
+$b$. In trying to define this function one finds that the sign changes
+when a circuit is made around either $a$ or $b$, so two copies of
+$\widehat{\CCC}$ can be joined along the cut as before to provide a
+surface on which a function which is single-valued and has the
+properties of $\sqrt{(z-a)(z-b)}$ can be defined; the figure is
+exactly that which appears in Figure 3, where the two slits go
+from $a$ to $b$ on each sphere.  Here it should be remarked that
+either branch of $\sqrt{(z-a)(z-b)}$ is meromorphic at $\infty$, since
+one branch is approximately $z$ at $\infty$ and the other branch
+approximately $-z$.  The branch points on the surface we have
+constructed are $a$ and $b$, and the surface is again homeomorphic to
+$\widehat{\CCC}$.  However note that the function $\sqrt{(z-a)(z-b)}$
+is not the homeomorphism in this case.  Indeed, this function assumes
+every value in $\widehat{\CCC}$ exactly twice.  A natural
+homeomorphism in this case is the function on this surface
+corresponding to $\sqrt{\frac{z-a}{z-b}}$.  Note in particular that if
+we begin with this function and two copies of $\widehat{\CCC}$ cut
+from $a$ to $b$, we obtain the same surface.
+
+%%% page 18
+Using the same process, we shall now construct a Riemann surface which
+is note homeomorphic to a sphere.  For this consider the expression
+$\sqrt{(z-a)(z-b)(z-c)}$, where $a,b,c$ are distinct complex numbers.
+In order to attempt to define a single-valued function from this
+formula, consider two copies of the sphere each having two cuts, say
+from $a$ to $b$ and from $c$ to $\infty$; these cuts should not
+intersect:
+
+\begin{mdframed}
+  \vspace{3.5cm}
+
+  Figure 6
+\end{mdframed}
+
+%%% page 19
+In defining continuously the square root in this case, a change of
+sign results in going around $a$, or $b$, or $c$, or $\infty$.  The
+cuts we have provided prohibit this, and we also see just how to glue
+in order to obtain a continuous function: the shaded areas along the
+cuts from $a$ to $b$ are to be attached, and likewise along $c$ to
+$\infty$.  Now let $\widetilde{S}$ denote the resulting surface with
+the four branch points $a, b, c, \infty$ included, the topology being
+defined in the by now usual manner.  This surface is \emph{not}
+homeomorphic to a sphere.  To see this we will exhibit a closed curve
+on $\widetilde{S}$ which does not separate $\widetilde{S}$ into two
+components.  This is the curve shown on the left sphere
+
+\begin{mdframed}
+  \vspace{3cm}
+
+  Figure 7
+\end{mdframed}
+
+\noindent
+which encircles the cut from $a$ to $b$.  To see that this curve does
+not disconnect $\widetilde{S}$ consider the typical example of the
+curve (shown by a dotted line) which connects two points which at
+first glance might be separated by the given closed curve.
+
+Probably the best way to see this topological property is to apply the
+method of ``enlarging'' the seam.  After the first step we obtain the
+following spaces to be glued:
+
+\begin{mdframed}
+  \vspace{3.5cm}
+
+  Figure 8
+\end{mdframed}
+
+%%% page 20
+After the gluing, the resulting figure appears as shown:
+
+\begin{mdframed}
+  \vspace{3.5cm}
+
+  Figure 9
+\end{mdframed}
+
+This figure is clearly homeomorphic to a torus or a sphere with ``one
+handle''.  The same topological type of surface arises from the
+function $\sqrt{(z-a)(z-b)(z-c)(z-d)}$, where $a,b,c,d$ are distinct.
+The only difference is that the cuts on $\widehat{\CCC}$ go from $a$
+to $b$ and from $c$ to $d$.
+
+This same argument allows the treatment of the function
+$\sqrt{(z-a_1)(z-a_2)\cdots(z-a_m)}$, where $a_1, \cdots, a_m$ are
+distinct.  Two copies of $\widehat{\CCC}$ are used with cuts from
+$a_1$ to $a_2$, $a_3$ to $a_4$, etc.  If $m$ is even , the last cut is
+from $a_{m-1}$ to $a_m$, and if $m$ is odd, from $a_m$ to $\infty$.
+The same gluing procedure gives a topological type as illustrated:
+
+\begin{mdframed}
+  \vspace{4cm}
+
+  Figure 10
+\end{mdframed}
+
+%%% page 21
+\noindent
+there are $\lfloor \frac{m+1}{2}\rfloor$ connecting tubes.  This is
+homeomorphic to a sphere with ``handles'': there are $\lfloor
+\frac{m-1}{2}\rfloor$ handles.  This is said to be a surface having
+\emph{genus} equal to the number of handles.
+
+\section{Local Coordinates}
+
+In preparation for the definition of abstract Riemann surfaces to be
+given in the next topic, we shall now examine a common property of
+all the surfaces we have constructed.  Namely, each point on the
+surface has a neighbourhood homeomorphic to an open subset of $\CCC$
+--- the essential defining property for a surface.  This assertion is
+of course completely trivial except where we have made cuts and where
+we have inserted branch points, for outside these exceptional points
+the neighbourhoods can just be taken to be disks on the various copies
+of $\CCC$ and the homeomorphism essentially the identity mapping  on
+the same disk, now regarded as lying in some other fixed copy of
+$\CCC$.  The situation for points on the cuts which are not branch
+points is not much more involved.  Refer to the neighbourhoods
+related to Figure 1 which are defined and depicted there; call this
+neighbourhood $U(z)$ and let $\Delta_\epsilon(z)$ be the disk $\{w\in
+\CCC : |w-z|<\epsilon\}$.  Then define
+$$
+\varphi ~:~ U(z) \to \Delta_\epsilon(z)
+$$
+%%% page 22
+by the obvious relation $\varphi(w) = w$.
+
+The effect of $\varphi$ is obviously to attach the two semi-disks used
+to make up $U(z)$.  It is now trivial to check that each point which
+is not a branch point has a neighbourhood homeomorphic to an open set
+(a disk) in $\CCC$, and this is true for all the surfaces we have
+constructed.  If $\infty$ is not a branch point and does not lie on a
+cut, a neighbourhood can be taken to be the complement of a large
+closed disk in the appropriate copy of $\widehat{\CCC}$ and the
+mapping into $\CCC$ the function $\varphi(z) = z^{-1}$.
+
+Now for the branch points.  It should be no surprise that the branch
+points can be treated, for we have pointed out how the surface with
+branch points added is homeomorphic to a sphere or a sphere with
+handles (in the cased we have considered), making the neighbourhoods
+of the branch points look not very special at all.  Now we write down
+this homeomorphism explicitly in the case of the Riemann surface for
+$z^{1/m}$, since all the other branch points we have considered have
+the same behaviour as is exhibited in this case (for $m=2$).  In fact,
+the homeomorphism is exactly the ``function'' $z^{1/m}$ (which has
+been made single-valued).  A similar construction works when the
+branch points at $\infty$ are considered.
+
+%%% page 23
+Finally, consider how these various homeomorphisms are related.  That
+is, suppose given two overlapping neighbourhoods $U_1$ and $U_2$ on
+the surface with corresponding homeomorphisms $\varphi_1$ and
+$\varphi_2$.  Then the function $\varphi_2 \circ \varphi_1^{-1}$ is
+defined on an open subset of $\CCC$ and has values in another open
+subset of $\CCC$, and is clearly a homeomorphism.  The thing to be
+noted is that it is \emph{holomorphic}.  Except where $U_1$ or $U_2$
+involved a branch point this is trivial, as the map $\varphi_2 \circ
+\varphi_1^{-1}$ is the identity where it is defined.  If $U_1$
+involves a branch point with $m$ sheets, then $\varphi_1^{-1}$ is
+essentially the $m$\textsuperscript{th} power, and $\varphi_2 \circ
+\varphi_1^{-1}(z) = z^m$, which is holomorphic.  If $U_2$ involves a
+branch point, the $\varphi_2 \circ \varphi_1^{-1}$ is a holomorphic
+determination of the $m$\textsuperscript{th} root.
+
+The observation made above will be used to give a definition of
+Riemann surface in the next topic.
+
+\newpage
+\section{Why does Compactness ensure a Bijective Map is a Homeomorphism?}
+
+Source: \url{https://jmanton.wordpress.com/2013/12/11/why-does-compactness-ensure-a-bijective-map-is-a-homeomorphism/}
+
+The motivation for this exposition is threefold:
+\begin{itemize}
+\item It helps illustrate the mantra that intuition is as equally
+  important as algebraic manipulation.
+\item It relates to a fundamental concept in mathematics, namely
+  morphisms (from category theory).
+\item It helps explain why compact spaces and Hausdorff spaces are
+  important.
+\end{itemize}
+
+The following facts are readily found in textbooks; the tenet of this
+exposition is that it is impossible, without further thought, to
+appreciate any of these facts.
+
+A topological space is compact if every open cover has a finite
+subcover.
+
+A topological space is Hausdorff if every two points can be separated
+by neighbourhoods.
+
+A map (i.e., a continuous function) $f \colon X \rightarrow Y$ between
+topological spaces $X$ and $Y$ is a homeomorphism if it is bijective
+and its inverse $f^{-1}$ is continuous.
+
+If $X$ is compact and $Y$ is Hausdorff then a bijective map $f \colon
+X \rightarrow Y$ is automatically a homeomorphism.
+
+Questions:
+\begin{itemize}
+\item How can a bijective map not be a homeomorphism?
+\item How can compactness possibly have any relevance to whether a map
+  is a homeomorphism?
+\item Why the Hausdorff assumption on $Y$?
+\item How does this relate to ``morphisms'', as mentioned at the start
+  of this exposition?
+\end{itemize}
+
+Before addressing these questions, a standard proof of the above
+result is given, the purpose being to emphasise that the proof, on its
+own, does not directly answer any of these questions. Memorising the
+proof is essentially worthless. (Important are being able to derive
+the proof from scratch and being able to understand why the result
+should indeed be true.)
+
+Showing $f^{-1}$ is continuous means showing the preimage of every
+open set is open, or equivalently, showing the preimage of every
+closed set is closed. Since $f$ is bijective, the preimage under
+$f^{-1}$ of a set $A$ is simply $f(A)$. Hence it suffices to prove
+that $f$ is closed (the image of every closed set is closed). Let $A
+\subset X$ be closed. Since $X$ is compact, $A$ must be compact. The
+image of a compact set under a continuous function is itself compact,
+that is, $f(A)$ is compact. A compact subset of a Hausdorff space must
+be closed, that is, $f(A)$ is a closed subset of $Y$, proving $f$ is
+closed and therefore that $f^{-1}$ is continuous, as required.
+
+While basing topology on open sets works very well from the
+perspective of being able to give concise proofs such as the one
+above, it is perhaps the worst way of introducing topology. It is
+noteworthy that when topology was being developed, it took decades for
+the importance of ``open sets'' to be recognised.
+
+Let's start from scratch and try to understand things intuitively. One
+approach (but certainly not the only approach) to understanding a
+topological space is understanding what converges to what. In special
+cases, such as when the topology comes from a metric, it suffices to
+consider sequences (the curious reader may wish to read about
+sequential spaces). In general, nets must be considered instead of
+sequences, nevertheless, for the purposes of answering the questions
+above, it suffices to restrict attention to sequences. (It is often
+enough to understand intuitively why a result is true in special
+cases, leaving the proof to justify the result in full generality.)
+
+\textbf{Why a Bijective Map need not be a Homeomorphism}
+
+By restricting attention to sequences (and therefore to nice
+topological spaces), the definition of continuity becomes: $f$ is
+continuous if, whenever $x_n \rightarrow x$, it holds that $f(x_n)
+\rightarrow f(x)$. Therefore, a bijective map $f$ is a homeomorphism
+if and only if $f(x_n) \rightarrow f(y) implies x_n \rightarrow y$.
+
+Whereas bijectivity just tests whether distinct points are mapped to
+distinct points, being a homeomorphism means nearby points must be
+mapped to nearby points, in both directions, from $X$ to $Y$ and from
+$Y$ to $X$. (That is, a homeomorphism preserves the topology.)
+
+This suggests the following example. Let $X$ be the interval $[0,2\pi)
+\subset \mathbb{R}$ and let $Y$ be the unit circle $Y = \{ (x_1,x_2)
+\in \mathbb{R}^2 \mid x_1^2 + x_2^2 = 1\}$. Let $f\colon X \rightarrow
+Y$ be the function sending $\theta \in [0,2\pi)$ to
+$(\cos\theta,\sin\theta)$. Then $f$ is continuous because it sends
+nearby points in $X$ to nearby points in $Y$. But $f^{-1}$ is not
+continuous because the point $(1,0) \in Y$ is sent to the point $0 \in
+X$ but a point just below $(1,0) \in Y$, say $(\cos\theta,\sin\theta)$
+for $\theta$ just less than $2\pi$, is sent to a point far away from
+$0 \in X$. (The reader should pause to understand this fully; drawing
+a picture may help.)
+
+The above example is quintessential; an injective map $f$ is a
+homeomorphism only if it is not possible to map a ``line
+$\longrightarrow$'' to a ``loop $\circlearrowleft$``. In detail, let
+$x_n$ be a sequence of points that either does not have a limit point,
+or that converges to a point $x$ that is different from $x_1$. Such a
+sequence can be obtained by considering the location at regularly
+spaced intervals of an ant walking along a path in $X$ that does not
+eventually return to where it started. It is therefore referred to
+loosely as a ``line''. Let it loosely be said that this ``line'' gets
+mapped to a ``loop'' if $\lim f(x_n) = f(x_1)$. If it is possible for
+a line to be mapped to a loop, then f cannot be a homeomorphism. (Draw
+some pictures!)
+
+To summarise, injectivity of $f$ means that if $f(x) = f(y)$ then  $x
+= y$. For $f$ to be a homeomorphism requires more: if $\lim f(x_n) =
+f(y)$ then it must be that $\lim x_n = y$. Whereas injectivity just
+means the preimages of distinct points are distinct, a homeomorphism
+means the preimages of  convergent sequences with distinct limits are
+convergent sequences with distinct limits. Perhaps the best way of
+visualising this though is asking whether a ``line'' can be mapped to
+a ``loop''.
+
+\textbf{Relevance of the Domain being Compact and the Codomain being Hausdorff}
+
+Let $x_n$ be a ``line'', as defined above. There are two cases to
+consider: either $x_n$ does not have a limit point, in which case it
+will be seen that compactness of $X$ is relevant, or $x_n$ has a
+limit, in which case it will be seen that $Y$ being Hausdorff is
+significant. 
+
+When dealing with sequences, the role of compactness is guaranteeing
+every sequence has a limit point (or equivalently, that a convergent
+subsequence exists). Therefore, if $X$ is compact, it is not possible
+for $x_n$ to lack a limit point, and this option is immediately off
+the table.
+
+If it is possible for a ``line'' to be mapped to a ``loop'' despite
+$X$ being compact then it is possible to achieve this assuming $x_n$
+has a limit (by considering a convergent subsequence if
+necessary). Henceforth, assume $x_n \rightarrow x \neq x_1$ yet
+$f(x_n) \rightarrow f(x_1)$. Continuity of $f$ implies $f(x_n)
+\rightarrow f(x)$. When dealing with sequences, the role of the
+Hausdorff requirement is to ensure limits are unique. (Prove this for
+yourself, or look up a proof that limits are unique in Hausdorff
+spaces.) Therefore, $Y$ being Hausdorff means $f(x) = f(x_1)$ since
+$f(x_n)$ converges to both $f(x)$ and $f(x_1)$. Since $f$ is
+injective, this means $x = x_1$, contradicting $x_n$ being a
+``line''. Therefore, it is impossible for a ``line'' to be mapped to a
+``loop''; every injective map f from a compact space to a Hausdorff
+space is automatically a homeomorphism.
+
+The above has hopefully taken away a bit of the mystery of why
+compactness and the Hausdorff condition enter into the picture.
+\begin{itemize}
+\item An injective map $f$ (on a nice topological space where it
+  suffices to reason with sequences) is a homeomorphism if and only if
+  it is not possible for a ``line $\longrightarrow$'' to be mapped to
+  a ``loop $\circlearrowleft$''. (A line and a loop are topologically
+  distinct whereas the purpose of a homeomorphism is to preserve
+  topological structure.)
+\item If $y_n$ is a loop in $Y$, that is, $y_n \rightarrow y_1$, then
+  consider its preimage $f^{-1}(y_n)$. Unless there is some reason for
+  $f^{-1}(y_n)$ to converge, the fact that $f$ is injective is
+  powerless to prevent $f^{-1}(y_n)$ from being a ``line'', i.e., it
+  may well be the case that $f$ is not a homeomorphism.
+\item If $X$ is compact then $f^{-1}(y_n)$ has a limit point. By
+  considering a subsequence if necessary, assume without loss of
+  generality that $f^{-1}(y_n) \rightarrow x$. Continuity of $f$
+  implies $y_n \rightarrow f(x)$.
+\item If $Y$ is Hausdorff then limits are unique, therefore, $f(x) =
+  y_1$. Therefore, the preimage of a loop is a loop, not a line. The
+  topology has been preserved, hence $f$ is a homeomorphism.
+\item The above is ``intuitively'' why the result holds, yet the
+  formal proof based on open sets is shorter, more general but devoid
+  of intuition (at least for beginners); this is the joy of
+  mathematics.
+\end{itemize}
+
+\textbf{Morphisms}
+
+Very briefly, it is remarked that structure-preserving functions are
+called morphisms (in category theory). Two sets are equivalent if
+there exists a bijective function between them. As more structure is
+given to these sets, requirements stronger than just bijectivity are
+necessary if the structure is to be preserved.
+
+In linear algebra, two vector spaces are the same if there exists a
+bijective function $f$ between them that is linear and whose inverse
+is linear; the linearity of $f$ and $f^{-1}$ is what preserves the
+structure. Interestingly, if $f$ is linear and bijective then its
+inverse $f^{-1}$ is automatically linear.
+
+In topology, a continuous function preserves structure in one
+direction, therefore, to preserve structure in both directions
+requires a bijective f that is continuous and whose inverse $f^{-1}$
+is also continuous; as introduced earlier, such a function is called a
+homeomorphism. Unlike the linear case, $f$ being bijective and
+continuous is not enough to imply $f^{-1}$ is continuous.
+
+
+%%% References
+%\bibliography{complex}
+%\bibliographystyle{alpha}
+%\bibliographystyle{amsalpha}
+
+%%% BibLaTeX
+\xpatchbibmacro{date+extrayear}{%
+  \printtext[parens]%
+}{%
+  \setunit{\addperiod\space}%
+  \printtext%
+}{}{}
+\printbibliography
+
+
+\end{document}
+

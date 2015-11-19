@@ -1,0 +1,180 @@
+\usepackage{amssymb}
+%%% Command Abbreviations
+\newcommand{\ds}{\displaystyle}
+\newcommand{\p}{\partial}
+
+%%% http://tex.stackexchange.com/questions/4813/extendible-equals-sign
+\makeatletter
+\newcommand*{\Relbarfill@}{\arrowfill@\Relbar\Relbar\Relbar}
+\newcommand*{\xeq}[2][]{\ext@arrow 0055\Relbarfill@{#1}{#2}}
+\makeatother
+
+%%% Sets and Relations
+\newcommand{\notR}{\kern-2pt\not\kern-3pt{R}\,}
+
+%%% Calculus and Linear Algebra Operations
+\makeatletter
+\newcommand{\sech}{{\mathop{\operator@font sech}\nolimits}}
+\newcommand{\proj}{{\mathop{\operator@font proj}\nolimits}}
+\newcommand{\tr}{\hbox{tr}}
+\newcommand{\nullsp}{{\mathop{\operator@font nullsp}\nolimits}}
+\newcommand{\colsp}{{\mathop{\operator@font colsp}\nolimits}}
+\newcommand{\rowsp}{{\mathop{\operator@font rowsp}\nolimits}}
+\newcommand{\mref}{{\mathop{\operator@font ref}\nolimits}}
+\newcommand{\rank}{{\mathop{\operator@font rank}\nolimits}}
+\newcommand{\vspan}{{\mathop{\operator@font span}\nolimits}}
+\newcommand{\op}{{\mathop{\operator@font op}\nolimits}}
+\newcommand{\sgn}{{\mathop{\operator@font sgn}\nolimits}}
+\newcommand{\opdiv}{{\mathop{\operator@font div}\nolimits}}
+\newcommand{\opcurl}{{\mathop{\operator@font curl}\nolimits}}
+\newcommand{\opgrad}{{\mathop{\operator@font grad}\nolimits}}
+\newcommand{\adj}{{\mathop{\operator@font adj}\nolimits}}
+\newcommand{\argmin}{\mathop{\operator@font argmin}}
+\newcommand{\Arg}{{\mathop{\operator@font Arg}\nolimits}}
+\makeatother
+\DeclareMathOperator{\nul}{null}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\diag}{diag}
+
+%%% Complex Analysis
+\DeclareMathOperator*{\resid}{Res} % Define a math operator like \lim or \sum
+%\renewcommand{\Re}{\text{Re}}
+%\renewcommand{\Im}{\text{Im}}
+\makeatletter
+\renewcommand{\Re}{{\mathop{\operator@font Re}\nolimits}}
+\renewcommand{\Im}{{\mathop{\operator@font Im}\nolimits}}
+\newcommand{\Log}{{\mathop{\operator@font Log}\nolimits}}
+\makeatother
+\newcommand{\HH}{{\mathbb{H}}}  % Upper Half Plane
+
+%%% Vectors & Homological Algebra
+%\usepackage{bm}
+\newcommand{\va}{{\mathbf{a}}}
+\newcommand{\vb}{{\mathbf{b}}}
+\newcommand{\vc}{{\mathbf{c}}}
+\newcommand{\vd}{{\mathbf{d}}}
+\newcommand{\ve}{{\mathbf{e}}}
+\newcommand{\vf}{{\mathbf{f}}}
+\newcommand{\vg}{{\mathbf{g}}}
+\newcommand{\vi}{{\mathbf{i}}}
+\newcommand{\vj}{{\mathbf{j}}}
+\newcommand{\vk}{{\mathbf{k}}}
+\newcommand{\vn}{{\mathbf{n}}}
+\newcommand{\vp}{{\mathbf{p}}}
+\newcommand{\vq}{{\mathbf{q}}}
+\newcommand{\vr}{{\mathbf{r}}}
+\newcommand{\vs}{{\mathbf{s}}}
+\newcommand{\vt}{{\mathbf{t}}}
+\newcommand{\vu}{{\mathbf{u}}}
+\newcommand{\vv}{{\mathbf{v}}}
+\newcommand{\vw}{{\mathbf{w}}}
+\newcommand{\vx}{{\mathbf{x}}}
+\newcommand{\vy}{{\mathbf{y}}}
+\newcommand{\vz}{{\mathbf{z}}}
+\newcommand{\vzero}{{\mathbf{0}}}
+\newcommand{\vone}{{\mathbf{1}}}
+\newcommand{\vA}{{\mathbf{A}}}
+\newcommand{\vB}{{\mathbf{B}}}
+\newcommand{\vC}{{\mathbf{C}}}
+\newcommand{\vE}{{\mathbf{E}}}
+\newcommand{\vF}{{\mathbf{F}}}
+\newcommand{\vI}{{\mathbf{I}}}
+\newcommand{\vJ}{{\mathbf{J}}}
+\newcommand{\vN}{{\mathbf{N}}}
+\newcommand{\vP}{{\mathbf{P}}}
+\newcommand{\vQ}{{\mathbf{Q}}}
+\newcommand{\vS}{{\mathbf{S}}}
+\newcommand{\vT}{{\mathbf{T}}}
+\newcommand{\vU}{{\mathbf{U}}}
+\newcommand{\vV}{{\mathbf{V}}}
+\newcommand{\vX}{{\mathbf{X}}}
+\newcommand{\vY}{{\mathbf{Y}}}
+%%% http://math.berkeley.edu/~vojta/tex/samp-l/boldgreek
+%%% Bold Greek letters are available using boldsymbol in `amsmath'
+\newcommand{\valpha}{{\boldsymbol{\alpha}}}
+\newcommand{\vbeta}{{\boldsymbol{\beta}}}
+%%% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=boldgreek
+%\newcommand{\valpha}{{\bm{\alpha}}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\newcommand{\calE}{{\mathcal{E}}}
+\newcommand{\calH}{{\mathcal{H}}}
+\newcommand{\calU}{{\mathcal{U}}}
+\newcommand{\calV}{{\mathcal{V}}}
+\newcommand{\calW}{{\mathcal{W}}}
+
+%%% Set Theory Number Sets
+\newcommand{\nR}{\kern-2pt\not{\kern-3pt R}\,}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\CCC}{{\mathbb C}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\MM}{{\mathbb M}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+
+%%% Algebraic Geometry
+\newcommand{\AAA}{{\mathbb{A}}}
+
+%%% Number Theory
+\makeatletter
+\DeclareMathOperator{\Char}{char}
+\newcommand{\bF}{{\mathbb F}}
+\newcommand{\FFF}{{\mathbb F}}  % ascii package defines \FF
+\newcommand{\lcm}{{\mathop{\operator@font lcm}\nolimits}}
+\newcommand{\ind}{{\mathop{\operator@font ind}\nolimits}}
+\newcommand{\ord}{{\mathop{\operator@font ord}\nolimits}}
+\makeatother
+
+%%% Transform Operators
+\usepackage{mathrsfs}
+%\newcommand{\cF}{{\mathcal{F}}}
+%\newcommand{\cL}{{\mathcal{L}}}
+%\newcommand{\cF}{{\mathfrak{F}}}
+% http://tex.stackexchange.com/questions/113855/laplace-and-fourier-transforms
+\newcommand{\cF}{{\mathscr{F}}}
+\newcommand{\cL}{{\mathscr{L}}}
+\newcommand{\calI}{{\mathcal{I}}}
+\newcommand{\calL}{{\mathcal{L}}}
+\newcommand{\cG}{{\mathcal{G}}}
+
+%%% General Topology Symbols
+\newcommand{\topring}[1]{\overset{\circ}{#1}}
+\usepackage{mathrsfs}
+\newcommand{\sA}{{\mathscr{A}}}
+\newcommand{\sC}{{\mathscr{C}}}
+\newcommand{\sD}{{\mathscr{D}}}
+\newcommand{\sE}{{\mathscr{E}}}
+\newcommand{\sF}{{\mathscr{F}}}
+\newcommand{\sG}{{\mathscr{G}}}
+\newcommand{\sI}{{\mathscr{I}}}
+\newcommand{\sK}{{\mathscr{K}}}
+\newcommand{\sL}{{\mathscr{L}}}
+\newcommand{\sO}{{\mathscr{O}}}
+\newcommand{\sP}{{\mathscr{P}}}
+\newcommand{\sS}{{\mathscr{S}}}
+\newcommand{\sT}{{\mathscr{T}}}
+\newcommand{\sB}{{\mathscr{B}}}
+
+%%% Probability and Statistics
+\newcommand{\PP}{{\mathbb{P}}}
+\newcommand{\EE}{{\mathbb{E}}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cT}{\mathcal{T}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\opvec}{vec}
+
+%%% Logic Symbols
+\renewcommand{\implies}{\to}
+
+%%% Finite State Machines Symbols
+\newcommand{\fJ}{{\mathfrak{J}}}
+
+%%% Theory of Interest Symbols
+\newcommand{\RM}{{\mathrm{RM}}}
+

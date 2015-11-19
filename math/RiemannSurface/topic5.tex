@@ -1,0 +1,1381 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\setcounter{topic}{5}
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: Algebraic Functions}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+%%% E.page 118
+What we are going to study is solutions of an algebraic equation in
+two complex variables, i.e., equations of the form
+$$
+A(z,w) = 0
+$$
+where $A$ is a polynomial in $z$ and $w$. The viewpoint is that we
+want to regard $w$ as a function of $z$ satisfying $A(z,w(z)) = 0$.
+Of course, we expect $w$ to be multiple-valued and then we construct a
+Riemann surface on which a function like $w$ can be defined.  Examples
+of this procedure were given in Topic 1.  There we treated the
+following examples of $A$:
+$$
+\begin{aligned}
+  &w^m - z,\\
+  &w^2 - (z-a)(z-b)\\
+  &(z-b)w^2 - (z-a),\\
+  &w^2 - (z-a_1)(z-a_2)\cdots (z-a_m),
+\end{aligned}
+$$
+and in Topic 3, we discussed $w^3-3w-z$.  All the Riemann surfaces
+associated with these examples can be easily visualised as subsets of
+$\overline{M}$ and as such enjoy the topological property of
+\emph{compactness}.  The main fact 
+%%% page 119
+to come out of this topic is that algebraic equations always lead to
+compact surfaces and that, conversely, every compact analytic
+configuration has a unique algebraic equation associated with it.
+
+It follows from general topological considerations that every compact
+orientable surface (as Riemann surfaces are) is homeomorphic to a
+sphere with a certain number $g$ handles and $g$ is called the
+\emph{genus} of the surface.  Before analysing algebraic equations, we
+shall discuss heuristically a remarkable formula involving the genus,
+the number of sheets, and the branching of a compact Riemann surface.
+
+\begin{mdframed}
+\centering
+\bf Riemann-Hurwitz Formula
+\end{mdframed}
+
+Consider a compact analytic configuration $S$.  We first discuss its
+\emph{Euler characteristic}.  This can be defined in terms of a
+``triangulation'' of $S$.  We do not wish to pause to define
+triangulation, but if $f$ is the number of triangles (faces), $e$ the
+number of edges, and $v$ the number of vertices, then the Euler
+characteristic is $v-e+f$.  A theorem of topology is that this number
+is a topological invariant of the surface and equals $2-2g$:
+$$
+v - e + f = 2-2g.
+$$
+Now $S$ has certain branch points $e_1, \cdots, e_\ell$ of orders
+$b_1, \cdots, b_\ell$, respectively, $b_j \ge 1$.  Define
+%%% page 120
+$$
+V = \sum_{j=1}^{\ell} b_j.
+$$
+The number $V$ is called the \emph{ramification index} or \emph{total
+  branching order} of $S$.  Also $S$ has a certain number $n$ of
+\emph{sheets} when viewed as spread over $\widehat{\CCC}$; this is the
+number such that $\pi$ takes every value in $\widehat{\CCC}$ $n$ times
+... see the proof of Proposition 2.24 in Topic 2.  The Riemann-Hurwitz 
+formula is
+$$
+\boxed{
+\frac{V}{2} = n + g - 1.
+}
+$$
+To prove this formula consider a triangulation of the sphere
+$\widehat{\CCC}$ such that every point $\pi(e_j)$ is a vertex.  Let
+$f$, $e$, and $v$ be the number of faces, edges, and vertices.  Since
+$\widehat{\CCC}$ has genus 0, we have the Euler formula
+$$
+v - e + f = 2.
+$$
+Now consider the pre-image by $\pi$ of these triangles.  By lifting
+the triangulation of $\widehat{\CCC}$ to $S$ we obtain $nf$ faces and
+$ne$ edges in the triangulation of $S$, since $S$ has $n$ sheets.  And
+each vertex which is not a $\pi(e_j)$ is lifted to $n$ new
+vertices.  But each vertex $\pi(e_j)$ does not get lifted to $n$ new
+vertices.  Rather, if $z_0$ is one of these values, then
+$\pi^{-1}(\{z_0\})$ consists of exactly
+%%% page 121
+$$
+n = \sum_{\pi(e_j)=z_0} b_j
+$$
+distinct points.  Thus, the number of vertices in the triangulation of
+$S$ is 
+$$
+nv = V.
+$$
+Therefore,
+$$
+(nv-V) - ne + nf = 2-2g.
+$$
+Since $v-e+f = 2$ we can write this relation as
+$$
+2n - V = 2-2g,
+$$
+and the assertion is proved.
+
+Let us test this formula on some of the cases we have considered.  For
+example, we have treated
+$$
+w^2 = (z-a_1) \cdots (z-a_m),
+$$
+$a_1, \cdots, a_m$ distinct in Topic 1.  If $m$ is even there are
+branch points of order 1 at each $a_j$ and nowhere else, so $V = m$
+and thus
+$$
+\frac{m}{2} = n + g - 1 = 2 + g - 1
+\Rightarrow g = \frac{m-2}{2}.
+$$
+If $m$ is odd the also $\infty$ is a branch point of order 1 and so $V
+= m+1$ and $\ds g = \frac{m-1}{2}$.
+
+%%% page 122
+Next, consider the example $w^2 - 3w - z$ discussed in Topic 3.
+There the points 2 and $-2$ are branch points of order 2, so $V = 4$.
+Since $n = 3$, we find $g = 0$ and the Riemann surface is homeomorphic
+to a sphere.  This again agrees with our earlier findings in Topic
+3, we discussed an analytic equivalence of the surface with
+$\widehat{\CCC}$.
+
+Of course, we have not rigorously derived the formula, but we have
+given a sketch of a rigorous proof.  But the formula should prove
+useful as a check in working out other examples.  Every time one sees
+a compact Riemann surface, he should try out this formula on it.  Two
+things in the formula deserve special attention.  One is that $V$ is
+always an even integer.  The other is that a purely topological number
+$g$ is equal to the number $\frac{V}{2} - n + 1$ which depends very
+much on features of the surface which are not purely topological.
+
+\medskip
+\begin{mdframed}
+Now we proceed to the analytical discussion of algebraic equations.
+\end{mdframed}
+
+\begin{ques}
+  \label{prob:5}
+  In the spirit of Topic 3, discuss the algebraic equation $(w^2 -
+  1)^2 - z = 0$.
+\end{ques}
+
+\begin{lem}
+  \label{lem:1}
+  Let $a_1, \cdots, a_n$ be holomorphic on an open set $D \subset
+  \widehat{\CCC}$ and $A(z,w) = w^n + a_1(z) w^{n-1} + \cdots +
+  a_{n-1}(z) w + a_n(z)$.
+  %%% page 123
+  Suppose $z_0 \in D$ and
+  $$
+  A(z_0, w_0) = 0,\quad \frac{\p A}{\p w}(z_0, w_0) \ne 0.
+  $$
+  Then there exists a function $f$ holomorphic in a neighbourhood
+  $z_0$ such that  
+  $$
+  \begin{aligned}
+    A(z,f(z)) &= 0,\quad z\text{ near }z_0,\\
+    f(z_0) &= w_0,\\
+    A(z,w) &= 0,\ z\text{ near }z_0,\ w\text{ near }w_0 = w = f(z).
+  \end{aligned}
+  $$
+\end{lem}
+
+\begin{myproof}
+  This is merely an implicit function theorem and could be derived
+  from the general implicit function theorem of differential calculus
+  --- we would just have to check the validity of the Cauchy-Riemann
+  equation.  However, the proof is much simpler in the present case
+  than the proof of the general theorem and is even almost elegant, so
+  we present it.
+
+  Since $A$ is not constant in $w$, the zeros of $A(z_0, w)$ are
+  isolated.  Thus, there exists, $\epsilon > 0$ such that $A(z_0,w)
+  \ne 0$ for $0 < |w-w_0| \le \epsilon$.  Let $\gamma$ be the path
+  $\gamma(t) = w_0 + \epsilon e^{2\pi i t}$, $0 \le t \le 1$.  Since
+  the image of $\gamma$ is compact and $A(z_0, w) \ne 0$ there, there
+  exists $\delta > 0$ such that
+  $$
+  A(z,w) \ne 0\text{ for } |z-z_0| < \delta,\ |w-w_0| = \epsilon.
+  $$
+  %%% page 124
+  Therefore, the residue theorem implies that for each fixed $z$,
+  $|z-z_0| < \delta$,
+  $$
+  \frac{1}{2\pi i} \int_\gamma \frac{\frac{\p A}{\p w}(z,w)}{A(z,w)} dw
+  $$
+  is equal to the number of zeros of $A(z,w)$ (minus the number of
+  poles of $A(z,w)$) for $|w-w_0| < \epsilon$.  And it is clear that
+  this number is a continuous function of $z$ for $|z-z_0| < \delta$,
+  and it therefore constant.  For $z=z_0$ we are counting the number
+  of zeros of $A(z_0, w)$ in $|w-w_0| < \epsilon$.  Since $A(z_0, w) =
+  0$ only at $w = w_0$ and since $w_0$ is a \emph{first order} zero
+  ($\frac{\p A}{\p w}(z_0, w_0) \ne 0$), we have proved that the above
+  integral is equal to 1 for $|z-z_0| < \delta$.  Thus, $|z-z_0| <
+  \delta$ implies there exists a unique $f(z)$ such that $|f(z) - w_0|
+  < \epsilon$ and $A(z, f(z)) = 0$.  Again, the residue theorem
+  implies
+  $$
+  f(z) = \frac{1}{2\pi i} \int_\gamma w \frac{\frac{\p A}{\p
+      w}(z,w)}{A(z,w)} dw,\quad
+  |z-z_0| < \delta.
+  $$
+  From this formula it follows immediately that $f$ is holomorphic.
+  Of course, $f(z_0) = w_0$.
+
+  To prove uniqueness, suppose $g$ is holomorphic near $z_0$ and $A(z,
+  g(z)) = 0$, $g(z_0) = w_0$.  Then by continuity of $g$ it follows
+  that there exists $0 < \delta_1 \le \delta$ such that for $|z - z_0|
+  < \delta_1$, $|g(z) - w_0| < \epsilon$.  Therefore, $g(z) = f(z)$
+  for $|z-z_0| < \delta_1$.
+\end{myproof}
+
+%%% page 125
+\begin{cor}
+  Suppose $z_0 \in D$ and that there exists no $w$ satisfying
+  $$
+  A(z_0, w) = 0, \quad \frac{\p A}{\p w}(z_0, w) = 0.
+  $$
+  Then there exist unique holomorphic functions $f_1, \cdots, f_n$ in
+  a neighbourhood of $z_0$ such that
+  \begin{quote}
+    $A(z, f_k(z)) = 0$ near $z_0$, $1 \le k \le n$, for each $z$ near
+    $z_0$, the numbers $f_1(z), \cdots, f_n(z)$ are distinct.
+  \end{quote}
+\end{cor}
+
+\begin{myproof}
+  Since $A(z_0, w)$ is a polynomial in $w$ of degree $n$, it has $n$
+  zeros.  By hypothesis these zeros are distinct, say $A(z_0, w_k) =
+  0$, $1 \le k \le n$, $w_1, \cdots, w_n$ distinct.  Apply
+  Lemma~\ref{lem:1} to $w_0 = w_k$ to obtain the holomorphic solutions
+  $f_k$.  Since $f_1(z_0), \cdots, f_n(z_0)$ are distinct, it follows
+  by continuity that for $z$ sufficiently near $z_0$, $f_1(z), \cdots,
+  f_n(z)$ are distinct.
+\end{myproof}
+
+\begin{lem}
+  \label{lem:2}
+  Let $A$ be defined as in Lemma~\ref{lem:1}.  Assume that for every
+  $z \in D$ there exists no $w$ satisfying
+  %%% page 126
+  $$
+  A(z,w) = 0,\quad \frac{\p A}{\p w}(z,w) = 0.
+  $$
+  Let $f$ be a holomorphic function in a neighbourhood of $z_0 \in D$
+  satisfying
+  $$
+  A(z,f(z)) \equiv 0 \text{ near } z_0.
+  $$
+  Then $f$ can be analytically continued along any path in $D$
+  starting at $z_0$.
+\end{lem}
+
+\begin{myproof}
+  Let $\gamma : [0,1] \to D$ be a path with $\gamma(0) = z_0$.  We are
+  trying to prove the existence of a path $\widetilde{\gamma} : [0,1]
+  \to M$ such that $\widetilde{\gamma}(0) = [f]_{z_0}$ and $\pi \circ
+  \widetilde{\gamma} = \gamma$.  By the general discussion of analytic
+  continuation we know that $\widetilde{\gamma}$ exists on some
+  interval $[0,t_0]$, $t_0 > 0$, and that $\widetilde{\gamma}$ is
+  uniquely determine (Proposition 3.8, Unique Lifting Theorem, of
+  Topic 3).  Let $s_0$ be the supremum of such $t_0$.  Then
+  $\widetilde{\gamma}$ exists on the interval $[0,s_0)$.  Now we apply
+  the above corollary to the point $\gamma(s_0)$.  Obtaining
+  holomorphic functions $f_1, \cdots, f_n$ in the neighbourhood of
+  $\gamma(s_0)$ satisfying the conclusion of the corollary on a disk
+  $\Delta$ centred at $\gamma(s_0)$.  Choose any $s_1 < s_0$ such that
+  $\gamma(s_1) \in \Delta$.  Then $\widetilde{\gamma}(s_1) =
+  [g]_{\gamma(s_1)}$, where $g$ is holomorphic in a neighbourhood of
+  $\gamma(s_1)$ and by the permanence of function relations
+  $$
+  A(z,g(z)) \equiv 0 \text{ near }\gamma(s_1).
+  $$
+
+  \begin{mdframed}
+    \vspace{3cm}
+  \end{mdframed}
+
+  %%% page 127
+  \noindent
+  Thus, $g(z)$ is one of the $n$ zeros of the polynomial $A(z,w)$ and
+  must therefore the equal to one of the $f_k(z)$.  Thus, by
+  Lemma~\ref{lem:1} and its corollary we find that for a unique $k$,
+  $g(z) \equiv f_k(z)$, $z$ near $\gamma(s_1)$.  By the uniqueness of
+  analytic continuation,
+  $$
+  \widetilde{\gamma}(s) = [f_k]_{\gamma(s)},\quad
+  s_1 \le s < s_0.
+  $$
+  This formula serves to define $\widetilde{\gamma}$ for $s = s_0$ as
+  well and eve for $s>s_0$, $s-s_0$ sufficiently small, if $s_s < 1$.
+  Thus we conclude that $s_0 = 1$ and that $\widetilde{\gamma}$ exists
+  on $[0,1]$.
+\end{myproof}
+
+\begin{cor}
+  In addition to the hypothesis of Lemma~\ref{lem:2}, assume that $D$
+  is a simply connected region.  Then there exist holomorphic
+  functions $f_1, \cdots, f_n$ on $D$ such that
+  \begin{quote}
+    $A(z, f_k(z)) \equiv 0$ for $z \in D$, $1\le k \le n$, for each $z
+    \in D$, the numbers $f_1(z), \cdots, f_n(z)$ are distinct.
+  \end{quote}
+\end{cor}
+
+\begin{myproof}
+  Use the corollary of Lemma~\ref{lem:1} to obtain $f_1, \cdots, f_n$
+  near some point in $D$, say $z$.  Use Lemma~\ref{lem:2} and the
+  Monodromy Theorem (Topic 3) to obtain holomorphic extensions on all
+  of $D$, noting that $A(z,f_k(z)) \equiv 0$ on $D$ follows from the
+  permanence of functional relations.  If for some $z \in D$, $f_j(z)
+  = f_k(z)$, Lemma~\ref{lem:1} implies $f_j \equiv f_k$ near $z$ and
+  then $f_j \equiv f_k$ in $D$ by analytic continuation, contradicting
+  $f_j(z_0) \ne f_k(z_0)$ if $j\ne k$.  Thus, $j=k$.
+\end{myproof}
+
+%%% page 128
+The above corollary is about as far as we can go without really
+analysing what happens near points $z$ such that $A(z,w)$ has a
+multiple zero.  To carry out such an analysis will require a little
+algebraic background, which we now begin.
+
+First of all, what we shall be considering is functions $A$ which are
+polynomials in $z$ and $w$.  it is always possible and frequently
+useful to arrange $A$ according to powers of $w$ or according to
+powers of $z$.  Thus, we write
+$$
+A(z,w) = a_0(z) w^n + a_1(z) w^{n-1} + \cdots + a_{n-1}(z) w + a_n(z),
+$$
+where $a_0, a_1, \cdots, a_n$ are polynomials in $z$, and we assume
+$a_0 \not\equiv 0$.  We then say that $A$ has degree $n$ with respect
+to $w$.  We say that a polynomial $B$ is a \emph{factor} of $A$ if
+there exists another polynomial $C$ such that $A = BC$.  If $A$ has no
+factors other than constants or constant multiples of $A$, we say that
+$A$ is \emph{irreducible}.  It will also frequently be useful to
+factor $a_0$ from $A$, writing
+$$
+A(z,w) = a_0(z)[w^n + \alpha_1(z) w^{n-1} + \cdots + \alpha_{n-1}(z) w
++ \alpha_n(z)],
+$$
+%%% page 129
+where $\alpha_k = \frac{a_k}{a_0}$ is a \emph{rational} function of
+$z$.  Conversely, given rational functions of $z$, $\alpha_1, \cdots,
+\alpha_n$, we can let $a_0$ be the least common multiple of the
+denominators of $\alpha_1, \cdots, \alpha_n$, and use the above
+formula to define a polynomial $A$.  This innocent statement will
+prove to be extremely useful in constructing polynomials.  We shall
+frequently be able to construct holomorphic functions $\alpha_k$ on
+$\widehat{\CCC}$ minus a finite set, and by some argument show that
+$\alpha_k$ has no essential singularities in $\widehat{\CCC}$.  Then
+we use the fact that a meromorphic function $\alpha_k$ on
+$\widehat{\CCC}$ must be rational.
+
+\begin{lem}
+  \label{lem:3}
+  Let $A$ and $B$ be polynomials in $z$ and $w$ which have no common
+  nontrivial factor, and assume $A, B \not\equiv 0$.  Then there are
+  at most finitely many $z$ such that there exists $w$ such that
+  $$
+  A(z,w) = 0,\quad B(z,w) = 0.
+  $$
+\end{lem}
+
+\begin{myproof}
+  We shall use the Euclidean algorithm.  To do this it is most
+  convenient to regard $A$ and $B$ as polynomials in $w$.  Then we
+  employ the factorisation mentioned above to write
+  $$
+  A = a_0(z) A',\quad B = b_0(z) B'
+  $$
+  where
+  %%% page 122
+  $$
+  \begin{aligned}
+    A'(z,w) &= w^n + \alpha_1(z) w^{n-1} + \cdots + \alpha_n(z),\\
+    B'(z,w) &= w^m + \beta_1(z) w^{m-1} + \cdots + \beta_m(z),
+  \end{aligned}
+  $$
+  and $\alpha_1, \cdots, \alpha_n$, $\beta_1, \cdots, \beta_m$ are
+  rational functions of $z$.  We rely heavily on the fact that the
+  rational functions of $z$ form a field.  Also, we write for short
+  $\deg A' = n$ and $\deg B' = m$.  By long division we have uniquely
+  $$
+  A' = B' Q_1 + R_1, \quad \deg R_1 < \deg B'.
+  $$
+  Here $Q_1$ and $R_1$ are polynomials in $w$ with coefficients in the
+  field of rational functions of $z$, and if $R_1 \equiv 0$ we set
+  $\deg R_1 = -\infty$.  If $R_1 \not\equiv 0$, we apply this again to
+  obtain
+  $$
+  B' = R_1 Q_2 + R_2, \quad \deg R_2 < \deg R_1.
+  $$
+  Continue this division process:
+  $$
+  \begin{aligned}
+    R_1 &= R_2 Q_3 + R_3, \quad R_3 < \deg R_2,\\
+    \vdots &\\
+    R_{k-2} &= R_{k-1} Q_k + R_k, \quad R_k < \deg R_{k-1},\\
+    R_{k-1} &= R_k Q_{k+1}.
+  \end{aligned}
+  $$
+  As indicated in this scheme, the process eventually terminates
+  ($R_{k+1} \equiv 0$) since the degrees of the $R_j$'s keep
+  decreasing.  We assume of course that $R_k \not\equiv 0$.  Note that
+  if $R_1 \equiv 0$, then $B'$ is a factor of both $A'$ and $B'$, thus
+  $B$ is a polynomial in $z$ alone and the conclusion of the lemma is
+  trivial.  Thus, we can assume $R_1 \not\equiv 0$.  
+  %%% page 131
+  Working up through the above scheme, we see successively that $R_k$
+  is a factor of $R_{k-1}$, thus $R_{k-2}, \cdots$, and finally $R_k$
+  is a factor of $B'$, and thus of $A'$.  By hypothesis, $R_k$ must
+  have degree 0 in $w$, so $R_k$ is just a rational function of $z$.
+  Now we eliminate finitely many $z$ by requiring that $a_0(z) \ne 0$,
+  $b_0(z) \ne 0$, and $z$ is not a pole of any of the coefficients of
+  any of the polynomials $Q_1, \cdots, Q_k$ and $R_k(z) \ne 0$.  Then
+  we claim that there does not exist $w$ such that $A(z,w) = 0$,
+  $B(z,w) = 0$.  For suppose such $w$ exists.  Then also $A'(z,w) =
+  0$, $B'(z,w) = 0$, since $a_0(z) \ne 0$, $b_0(z) \ne 0$.  Since
+  $Q_1(z,w) \ne \infty$, the first equation in our division scheme
+  implies $R_1(z,w) = 0$.  Likewise, $R_2(z,w) = 0$ and on down the
+  line until we reach the contradiction $R_k(z) = 0$.
+\end{myproof}
+
+\begin{rem}
+  Perhaps a cleaner way of giving this argument is to work up through
+  the above equations to write
+  $$
+  R_k = CA' + DB',
+  $$
+  where $C$ and $D$ are polynomials in $w$ with coefficients which are
+  rational function of $z$.  By clearing all the fractions out of this
+  expression, we obtain
+  $$
+  R = EA + FB,
+  $$
+  where $R$ is a not identically vanishing polynomial in $z$ alone,
+  and $E$ and $F$ are polynomials in $z$ and $w$.  Then if $A(z,w) =
+  0$ and $B(z,w) = 0$, it follows that $R(z) = 0$.  Since $R$ has only
+  finitely many zeros, this proves the lemma.
+\end{rem}
+
+%%% page 132
+For our purposes the most important applications of this lemma occur
+when the polynomial $A$ is \emph{irreducible}.  Then $A$ and $B$ have
+no common nontrivial factor except perhaps $A$ itself.  Thus, if $A$
+is not a factor of $B$, Lemma~\ref{lem:3} is in force.  The most
+important example is the case in which the degree of $B$ with respect
+to $w$ is lower than that of $A$.
+
+\begin{defn}
+  \label{def:1}
+  Let $A$ be a polynomial,
+  $$
+  A(z,w) = a_0(z) w^n + a_1(z) w^{n-1} + \cdots + a_n(z),\quad
+  a_0 \not\equiv 0.
+  $$
+  Then a point $z \in \widehat{\CCC}$ is a \emph{critical point} for
+  $A$ if one of the following conditions holds:
+  \begin{enumerate}
+  \item $z = \infty$;
+  \item $a_0(z) = 0$;
+  \item there exists $w \in \CCC$ such that $A(z,w) =0$, $\frac{\p
+      A}{\p w}(z,w) =0$.
+  \end{enumerate}
+  If $z$ is not critical, then $z$ is a \emph{regular point} for $A$.
+\end{defn}
+
+\begin{propn}
+  \label{propn:1}
+  If $A$ is irreducible, then there are only finitely many critical
+  points for $A$.
+\end{propn}
+
+\begin{myproof}
+  Since $a_0$ has only finitely many zeros, there are only finitely
+  many $z$ satisfying 1 or 2.  Since the degree of $\frac{\p A}{\p w}$
+  with respect to $w$ is less than $n$, $A$ and $\frac{\p A}{\p w}$
+  have no nontrivial factor in common, and Lemma~\ref{lem:3} implies
+  that at most finitely many $z$ satisfy condition 3.
+\end{myproof}
+
+Of course, what we are aiming for is an analytic description of the
+solutions of $A(z,w) = 0$.  If we wish to do this in a neighbourhood
+of \emph{regular} point $z_0$, the corollary to Lemma~\ref{lem:1}
+contains all the information we need, namely that there are $n$
+distinct holomorphic solutions $f_1, \cdots, f_n$ near $z_0$:
+$A(z,f_k(z)) \equiv 0$.  Viewed as points in $\overline{M}$, we have
+found
+$$
+e_k = e(z_0 + t, f_k(z_0 + t))
+$$
+such that
+$$
+A(z_0 + t, f_k(z_0 + t)) \equiv 0, \quad t\text{ near }0.
+$$
+Another way of expressing this relation is that
+$$
+A(\pi(e), v(e)) = 0\text{ for }e\text{ near }e_k.
+$$
+Likewise, for the simplest example of critical point we have
+$$
+A(z,w) = w^n - z
+$$
+and the element
+$$
+e_0 = e(t^n,t)
+$$
+satisfies $A(t^n, t) \equiv 0$ near 0, or
+$$
+A(\pi(e), v(e)) \equiv 0 \text{ for } e \text{ near } e_0.
+$$
+%%% page 134
+Thus, we make the following definition.
+
+\begin{defn}
+  \label{def:2}
+  The \emph{Riemann surface} of the polynomial $A(z,w)$ is the largest
+  open subset of $\overline{M}$ on which $A(\pi,v) = 0$.  Thus, a
+  meromorphic element $e(P,Q)$ belongs to the Riemann surface of $A$
+  if and only if $A(P(t),Q(t)) \equiv 0$ for $t$ near 0.
+\end{defn}
+
+This latter assertion follows form the fact that if $\varphi$ is a
+chart defined on $U(P,Q,\Delta)$ in the canonical way indicated in
+Topic 4, then
+$$
+P(t_0) = \pi \circ \varphi^{-1}(t_0),\quad
+Q(t_0) = v \circ \varphi^{-1}(t_0),
+$$
+so that
+$$
+e(P,Q) = e(\pi \circ \varphi^{-1}, v \circ \varphi^{-1}).
+$$
+
+\textbf{Notation}.  $S_A$ is the Riemann surface of $A$.
+
+The first main result we shall obtain is that if $A$ is irreducible
+and has degree $n$ in $w$, then $S_A$ is compact, connected, and $\pi$
+restricted to $S_A$ takes every value in $\widehat{\CCC}$ $n$ times.
+First, we need a lemma on polynomials and their zeros.
+
+\begin{lem}
+  \label{lem:4}
+  If $w, \alpha_1, \cdots, \alpha_n$ are complex numbers such that
+  %%% page 135
+  $$
+  w^n + \alpha_1 w^{n-1} + \cdots + \alpha_{n-1} w + \alpha_n = 0,
+  $$
+  then
+  $$
+  |w| < |\alpha_1| + \cdots + |\alpha_n| + 1.
+  $$
+\end{lem}
+
+\begin{myproof}
+  If $|w| < 1$, the result holds.  If $|w| \ge 1$, then
+  $$
+  |w|^n \le |\alpha_1||w|^{n-1} + \cdots + |\alpha_{n-1}| |w|
+  + |\alpha_n| \le (|\alpha_1| + \cdots + |\alpha_n|)|w|^{n-1}
+  $$
+  so that
+  $$
+  |w| \le |\alpha_1| + \cdots + |\alpha_n|.
+  $$
+\end{myproof}
+
+\begin{thm}
+  \label{thm:1}
+  If $A$ is irreducible, then $S_A$ is an analytic configuration.
+\end{thm}
+
+\begin{myproof}
+  By Proposition~\ref{propn:1}, if $D$ is the set of regular points
+  for $A$, then $\widehat{\CCC}-D$ is finite.  We shall first prove
+  that $S_A \cap \pi^{-1}(D)$ is connected; this assertion forms the
+  main point of the proof.  Note that
+  $$
+  S_A \cap \pi^{-1}(D) \subset M.
+  $$
+  For suppose $e(P,Q) \in S_A \cap \pi^{-1}(D)$, and let $z_0 = P(0)$,
+  $w_0 = Q(0)$.  Then $z_0 \in D$ and $A(z_0, w_0) = 0$.  Since $z_0$
+  is a regular point, $\frac{\p A}{\p w}(z_0, w_0) \ne 0$.  Thus,
+  Lemma~\ref{lem:1}, implies there is a unique holomorphic $f$ near
+  $z_0$ such that
+  %%% page 136
+  $A(z,f(z)) \equiv 0$, $f(z_0) = w_0$.  Since $A(P(t), Q(t)) \equiv
+  0$ and $P(t)$ is near $z_0$, $Q(t)$ near $w_0$ for small $t$, we
+  then have $Q(t) = f(P(t))$.  If the mapping $t \mapsto (P(t), Q(t))$
+  is to be one-to-one (as it must), then the mapping $t \mapsto P(t)$
+  must be one-to-one, showing that $P$ has multiplicity 1 at 0.  Thus,
+  $e(P,Q) \in M$.
+
+  So we must now prove that if $z_0$ and $z_1 \in D$ and $[f]_{z_0}$
+  and $[g]_{z_1} \in S_A$, then there is a path in $S_A \cap
+  \pi^{-1}(D)$ connecting these two germs.  Since $\widehat{\CCC} - D$
+  is finite, $D$ is connected, and thus there is a path $\gamma$ in
+  $D$ with initial point $z_0$ and terminal point $z_0$.  By
+  Lemma~\ref{lem:2} there exists a (unique) path $\widetilde{\gamma}$
+  in $M$ such that $\pi \circ \widetilde{\gamma} = \gamma$ and
+  $\widetilde{\gamma}(0) = [g]_{z_1}$.  by the permanence of
+  functional relations, $\gamma(t)$ is in $S_A$ for every $t$.  In
+  particular, $\widetilde{\gamma}(1) \in S_A$ and thus is represented
+  by a holomorphic function near $z_0$ which forms zeros of $A$.  By
+  the corollary to Lemma~\ref{lem:1}, there are unique holomorphic
+  functions $f_1, \cdots, f_n$ in a neighbourhood of $z_0$ such that
+  $[f_k]_{z_0} \in S_A$ and $f_1(z), \cdots, f_n(z)$ are the distinct
+  zeros of the function $A(z,w)$, if $z$ is near $z_0$.  Thus,
+  $[f]_{z_0} = [f_j]_{z_0}$ and $\widetilde{\gamma}(1) = [f_k]_{z_0}$
+  for some $j$ and $k$.  To finish the proof that $S_A \cap
+  \pi^{-1}(D)$ is connected, it suffices to prove that for any $j$ and
+  $k$ there exists a path $\gamma$ in $D$ from $z_0$ to $z_0$ such
+  that analytic continuation of $f_j$ along $\gamma$ leads to $f_k$.
+  %%% page 137
+  Let us suppose that in all such analytic continuations $f_1$ can be
+  analytically continued to $f_1, f_2, \cdots, f_m$, but \textbf{not}
+  to $f_{m+1}, \cdots, f_n$ (where we have renumbered the $f_j$'s).
+  Here $1 \le m \le n$, and we want to prove $m=n$.
+
+  Now consider the function
+  $$
+  B(z,w) = \prod_{k=1}^m (w-f_k(z))
+  $$
+  defined for all $w \in \CCC$ and for $z$ in a neighbourhood of
+  $z_0$.  For each fixed $w$ the function $B(z,w)$ can be analytically
+  continued along all paths in $D$ with initial point $z_0$
+  (Lemma~\ref{lem:2}), and analytic continuation along a closed path
+  of this nature must simply lead to a \emph{permutation} of $f_1,
+  \cdots, f_m$: such a continuation could not lead to any of the
+  $f_{m+1}, \cdots, f_n$, and two different $f_j$'s could not be
+  continued to the same $f_k$, by the unique lifting theorem.
+  Therefore, $B(z,w)$ is analytically continued \emph{into itself}
+  along any closed path in $D$ from $z_0$ to $z_0$, since $B$ is a
+  \emph{symmetric} function of $f_1, \cdots, f_m$.  Another way of
+  looking at this is to perform the indicated multiplication in $B$
+  and write near $z_0$
+  $$
+  B(z,w) = w^m + \alpha_1(z) w^{m-1} + \cdots + \alpha_m(z),
+  $$
+  where
+  $$
+  \alpha_k(z) = (-1)^k \sum_{i_1 < i_2 < \cdots < i_k} f_{i_1} f_{i_2}
+  \cdots f_{i_k}.
+  $$
+  By the same reasoning, each $\alpha_k$ is symmetric in $f_1, \cdots,
+  f_m$, so $\alpha_k$ has the property that it can be analytically
+  %%% page 138
+  continued along all paths in $D$ and analytic continuation along
+  closed path leads back to $\alpha_k$.  Thus each $\alpha_k$ can be
+  extended to a \emph{single-valued} holomorphic function in $D$.
+
+  Now for a trick that will be used over and over.  The function
+  $\alpha_k$ is holomorphic in $\widehat{\CCC}$ except at finitely
+  many points.  We shall now estimate the growth of $\alpha_k$ at
+  these point to conclude $\alpha_k$ does not possess any essential
+  singularity.  Suppose now that $a$ is one of the critical points
+  (one of the points in $\widehat{\CCC}-D$).  Then for some
+  sufficiently large integer $N$ we have near $a$
+  $$
+  |a_0(z)| \ge |z-a|^N, \quad |a_k(z)| \le C \quad (1\le k\le n)
+  $$
+  ($C$ is some constant) if $a\ne \infty$; if $a=\infty$ we have near
+  $a$
+  $$
+  |a_0(z)| \ge c, \quad |a_k(z)| \le |z|^N \quad (1\le k\le n)
+  $$
+  ($c$ is some positive constant).  Thus, for $z$ near $a$ and $A(z,w)
+  = 0$, Lemma~\ref{lem:4} implies:
+  \begin{itemize}
+  \item if $a \ne \infty$, $|w| < nC|z-a|^{-N} + 1$,
+  \item if $a = \infty$, $|w| < \frac{n}{c}|z|^{N} + 1$.
+  \end{itemize}
+  Since $A(z, f_k(z)) = 0$, we thus obtain for $z$ near $a$,
+  $$
+  |f_k(z)| \le \text{const}|z-a|^{-N}\text{ or const }|z|^N
+  $$
+  if $a \ne \infty$ or $a = \infty$, respectively.  Thus, the formula
+  for $\alpha_k$ shows that for $z$ near $a$,
+  %%% page 139
+  $$
+  |\alpha_k(z)| \le \text{const}|z-a|^{-Nk}\text{ or const }|z|^{Nk}
+  $$
+  in the two cases.  Thus, $\alpha_k$ has either a pole or a removable
+  singularity at $a$.  Since this is true at each critical point,
+  $\alpha_k$ is meromorphic in $\widehat{\CCC}$ and is thus a
+  \emph{rational} function.
+
+  Let $b_0$ be the least common multiple of all the denominators of
+  the $\alpha_k$'s expressed as fractions without common factors, and
+  let
+  $$
+  \widetilde{B}(z,w) = b_0(z)B(z,w) = b_0(z)w^m + b_1(z)w^{m-1} +
+  \cdots + b_m(z),
+  $$
+  a polynomial in $z,w$ of degree $m$ in $w$.  Since for $z$ near
+  $z_0$
+  $$
+  \widetilde{B}(z,f_1(z)) = A(z,f_1(z)) = 0,
+  $$
+  the conclusion of Lemma~\ref{lem:3} does not hold for the
+  polynomials $A$ and $\widetilde{B}$.  Thus, $A$ and $\widetilde{B}$
+  possess a common nontrivial factor.  Since $A$ is irreducible, this
+  factor must be $A$ itself.  Thus, the degree of $\widetilde{B}$ must
+  be at least the degree of $A$, so $m=n$.
+
+  We have now completed the proof that $S_A \cap \pi^{-1}(D)$ is
+  connected.  The rest is easy.  Suppose $e(P,Q) \in S_A$.  Then for a
+  sufficiently small disk $\Delta$ centred at 0, $U(P,Q,\Delta)$
+  consists only of points in $S_A \cap \pi^{-1}(D)$ with the possible
+  exception of $e(P,Q)$, since $\widehat{\CCC}-D$ is finite.  Thus,
+  $e(P, Q)$ can be joined to a point in $S_A \cap \pi^{-1}(D)$ by a
+  path in $\overline{M}$.  Thus, $S_A$ is connected.
+
+  %%% page 140
+  To prove $S_A$ is a component we show it is both open and closed in
+  $\overline{M}$.  It is trivially open by Definition~\ref{def:2}.
+  Suppose $e(P,Q)$ is in the closure of $S_A$ and let $\varphi :
+  U(P,Q,\Delta) \to \Delta$ be a canonical chart.  Then there exists
+  $t_0 \in \Delta$ such that $\varphi^{-1}(t_0) \in S_A$.  Thus, since
+  $\varphi^{-1}(t_0) = e(P(t_0 + t), Q(t_0 + t))$, we have
+  $$
+  A(P(t_0 + t), Q(t_0 + t)) \equiv 0\text{ for }t\text{ small}.
+  $$
+  Thus, since $A(P(t), Q(t))$ is a meromorphic function for $t \in
+  \Delta$ which vanishes for $t$ near $t_0$, $A(P(t), Q(t)) \equiv 0$
+  in $\Delta$.  That is, $e(P,Q) \in S_A$, proving $S_A$ is closed.
+\end{myproof}
+
+\textbf{WARNING} It is tempting to think that if $z_0$ is a critical
+point of the type 3, that is, if the equation $A(z_0, w) = 0$ has a
+double root; and if $e(P,Q) \in S_A$, $P(0) = z_0$, and $Q(0)$ is a
+double zero, then $e(P,Q)$ is a branch point of order at least 1.
+This is not true in general.  For example, let
+$$
+A(z,w) = w^2 - z^2 - z^3.
+$$
+Then $A$ is irreducible and $z=0$ is a critical point, the zeros of
+$A(0, w) = w^2$ both vanishing.  There are two points in $S_A$ lying
+near $z=0$, and these are given by
+%%% page 141
+$$
+e(t, t\sqrt{1+t}), \quad e(t, -t\sqrt{1+t}),
+$$
+where $\sqrt{1+t}$ is the principal determination of the square root
+for $t$ small.  Clearly, neither of those meromorphic elements is a
+branch point of order $\ge 1$.
+
+\begin{thm}
+  \label{thm:2}
+  $S_A$ is compact.
+\end{thm}
+
+\begin{myproof}
+  We again write
+  $$
+  A(z,w) = a_0(z) w^n + \cdots + a_n(z).
+  $$
+  Consider the function $\pi : S_A \to \widehat{\CCC}$.  By
+  Proposition~2.24 item 2 of Topic 2, it suffices to prove that the
+  restriction of $\pi$ to $S_A$ takes every value in $\widehat{\CCC}$
+  $n$ times.  Of course, it suffices to consider the case in which $A$
+  is irreducible.  Let $D$ be the set of regular points for $A$; by
+  Proposition~\ref{propn:1} the set $\widehat{\CCC}-D$ is finite.  Let
+  $a \in \widehat{\CCC}$ and choose $\epsilon>0$ sufficiently small
+  that
+  $$
+  \Delta = \{ z ~:~ |z-a|<\epsilon \}\quad
+  (\Delta = \{z ~:~ |z| > \epsilon^{-1}\} \text{ if }a=\infty)
+  $$
+  contains only points of $D$ except possibly for $a$ itself.  Let
+  $\Delta'$ be the set $\Delta$ with a line from $a$ to the
+  circumference removed; for definiteness, let
+  $$
+  \Delta' = \{ z ~:~ z \in \Delta,\ z-a \text{ not a negative real
+    number} \}.
+  $$
+  Since $\Delta'$ is simply connected and contains no critical points
+  for $A$, the corollary to Lemma~\ref{lem:2} implies that there are
+  functions $f_1, \cdots, f_n$ holomorphic in $\Delta'$ such that for
+  each $z \in \Delta'$, $f_1(z), \cdots, f_n(z)$ are the distinct
+  solutions of $A(z,w) = 0$.
+  %%% page 142
+  Likewise, there are functions $g_1, \cdots, g_n$ holomorphic in the
+  region $\Delta''$ as illustrated:
+  \begin{center}
+    \begin{tikzpicture}[scale=1]
+      \filldraw[fill=black] (0,0) circle [radius=2pt];
+      \draw (0,0) node [below] {$a$}
+      (0,0) circle [radius=1.5cm]
+      -- (-1.5,0)
+      (1.4,1.4) node {$\Delta''$};
+    \end{tikzpicture}
+  \end{center}
+  Now just \emph{below} the slit in $\Delta'$ the function $f_k$ must
+  coincide with a unique $g_j$.  In turn, $g_j$ must coincide with a
+  unique $f_\ell$ just \emph{above} the slit in $\Delta'$.  Let us
+  denote $\ell = \sigma(k)$.  Thus, $f_{\sigma(k)}$ is the result of
+  analytically continuing $f_k$ in a counterclockwise manner around
+  $\Delta'$.  By the unique lifting theorem, the function $\sigma$ is
+  a permutation of the integers $1, 2, \cdots, n$.  This permutation
+  has a unique decomposition into cycles.  Let us consider a cycle of
+  length $m$ and let us renumber the functions $f_k$ so that this
+  cycle is represented by $\sigma(1) = 2$, $\sigma(2) = 3$, $\cdots$,
+  $\sigma(m-1) = m$, $\sigma(m) = 1$.  Define for small $t$
+  $$
+  Q(t) =
+  \begin{cases}
+    f_1(a+t^m), & 0 < \arg t < \frac{2\pi}{m},\\
+    f_2(a+t^m), & \frac{2\pi}{m} < \arg t < \frac{4\pi}{m},\\
+    & \vdots \\
+    f_m(a+t^m), & \frac{2(m-1)\pi}{m} < \arg t < 2\pi.
+  \end{cases}
+  $$
+  (If $a = \infty$ replace $a+t^m$ by $t^{-m}$ throughout.)  By the
+  definition of $\sigma$ and the particular enumeration of this
+  %%% page 143
+  cycle, $Q$ has an obvious extension to a holomorphic function defined
+  for $0 < |t| < \epsilon^{1/m}$.  Also, since each $f_k(a+t^m)$ is a
+  solution of $A(a+t^m, w) = 0$, Lemma~\ref{lem:4} can be applied
+  to show that $|f_k(a+t^m)| \le $const $|t|^{-N}$ as $t \to 0$, for
+  some positive integer $N$.  Therefore, $Q$ cannot have an essential
+  singularity at 0, and thus $Q$ is \emph{meromorphic} for $|t| <
+  \epsilon^{1/m}$.
+
+  Now we prove that $(a+t^m, Q(t))$ is a \emph{pair}.  Suppose that
+  for small $s$ and $t$, $a+t^m = a + s^m$, $Q(t) = Q(s)$.  Then $t^m
+  = s^m$.  If $\frac{2(k-1)\pi}{m} \le \arg t < \frac{2k\pi}{m}$ and 
+  $\frac{2(j-1)\pi}{m} \le \arg t < \frac{2j\pi}{m}$, then
+  $$
+  Q(t) = f_k(a+t^m) = \lim_{\delta\to 0^+} f_k(a+t^m
+  e^{i\delta}),\quad
+  Q(s) = f_j(a+t^m).
+  $$
+  Since $t^m = s^m$, $f_k(a+t^m) = f_j(a+t^m)$.  Since the functions
+  $f_1, \cdots, f_n$ represent \emph{distinct} solutions (and likewise
+  $g_1, \cdots, g_n$), we must have $j=k$.  By the inequalities for
+  $\arg t$ and $\arg s$, the equation $t^m = s^m$ now implies $t =
+  s$.  Thus, the mapping $t \mapsto (a+t^m, Q(t))$ is one-to-one.
+
+  Since $A(a+t^m, Q(t)) \equiv 0$, this argument finds an element
+  $$
+  e(a+t^m, Q(t))
+  $$
+  belonging to $S_A$.
+
+  %%% page 144
+  If the permutation $\sigma$ is decomposed into cycles of lengths
+  $m_1, \cdot, m_\ell$, then by the same argument we produce element
+  in $S_A$ of the forms
+  $$
+  \begin{array}{c}
+    e(a + t^{m_1}, Q_\ell(t)),\\
+    \vdots\\
+    e(a + t^{m_\ell}, Q_\ell(t)).
+  \end{array}
+  $$
+  Since the multiplicity of $\pi$ at each point $e(a+t^{m_i}, Q_i(t))$
+  is $m_i$ (Proposition~4.15 of Topic 4), it follows that $\pi$
+  takes the value $a$ \emph{at least} $m_1 + \cdots + m_\ell = n$
+  times.  The same is true if $a = \infty$, though we of coure need to
+  use slightly different notation.
+
+  An obvious remark shows that $\pi$ takes each value \emph{at most}
+  $n$ times... of course, we speak of the restriction of $\pi$ to
+  $S_A$.  In fact, if $a$ is a regular point for $A$, then the points
+  in $S_A \cap \pi^{-1}(\{a\})$ are in $M$ and these elements are
+  exactly the germs of the $n$ holomorphic solutions near $a$ by the
+  corollary to Lemma~\ref{lem:1}.  Thus, $\pi$ takes on the value $a$
+  exactly $n$ times in $S_A$.  If $\pi$ takes some value (a critical
+  value) more than $n$ times in $S_A$, then $\pi$ takes every
+  neighbouring value more than $n$ times in $S_A$, which implies $\pi$
+  takes some regular value more than $n$ times in $S_A$, a
+  contradiction.
+\end{myproof}
+
+%%% page 145
+\begin{rem}
+  \begin{enumerate}
+  \item One sees finally the reason for discussing $\overline{M}$ ---
+    it contains precisely enough points to discuss branch points in
+    general, and in particular to discuss all the solutions of
+    algebraic equations.  If $e(P,Q) \in S_A$ and $\varphi : U(P, Q,
+    \Delta) \to \Delta$ is the canonical chart, the function
+    $\varphi^{-1}$ is called a \emph{uniformizer} for $A$ near the
+    point $P(0)$.  It replaces the multiple-valued solutions of $A =
+    0$ by two single-valued meromorphic functions.  It is of course
+    only defined locally.
+
+  \item The elements $e(a+t^{m_i}, Q_i(t))$ produced in the above
+    proof are obviously different.  The only possibility for two of
+    them to coincide is for two of the multiplicities $m_i$ and $m_j$
+    to coincide and for $Q_i(t) \equiv Q_j(wt)$ for some root of unity
+    $w$.  By this would force the corresponding cycles to overlap, as
+    can be easily checked.
+
+  \item The function $Q$ in Definition~\ref{def:2} is meromorphic and
+    thus has a Laurent expansion:
+    $$
+    Q(t) = \sum_{k=N}^{\infty} a_k t^k.
+    $$
+    Substituting formally $z = a + t^m$, or $t = (z-a)^{1/m}$, gives a
+    series
+    $$
+    \sum_{k=N}^{\infty} a_k(z-a)^{k/m},
+    $$
+    with a similar series
+    %%% page 146
+    $$
+    \sum_{k=N}^{\infty} a_k z^{-k/m}
+    $$
+    in case $a = \infty$.  These are called \emph{Puiseaux} series,
+    and have the property that for any determination of $z^{1/m}$ the
+    sum of the series gives a solution of $A(z,w) = 0$, and different
+    determinations of $z^{1/m}$ yield different solutions.  Of course,
+    all this information is contained in the idea of the corresponding
+    meromorphic element.
+
+  \item It is almost amazing how easy it was to find the elements $e(a
+    + t^{m_i}, Q_i(t))$ in $S_A$.  However, when one observes what had
+    to be known, it is quite obvious that it should be easy.  Namely,
+    we had to have completely solved the equation $A(z,w) = 0$ away
+    from the critical points, and then it was a simple matter of
+    checking what $S_A$ looks like above these finitely many critical
+    points.  But this sort of procedure can almost never be carried
+    out in practice for rather obvious reasons.  We can't even usually
+    hope to solve the equation near a critical point and observe how
+    the zeros behave under analytic continuation around the critical
+    point.
+
+  \item Even without knowing Proposition~2.24 item 2 of Topic 2, it is
+    almost obvious why $S_A$ is compact.  For $S_A$ consists
+    essentially of $n$ copies of the (compact) sphere $\widehat{\CCC}$
+    branched above certain finitely many points.  The only way $S_A$
+    could fail to be compact would be for certain of these branch
+    points not to be included in $S_A$.  Essentially the proof shows
+    %%% page 147
+    they are indeed all included and this statement is phrased in the
+    perhaps deceptive statement that the restriction of $\pi$ to $S_A$
+    takes every value $n$ times.
+  \end{enumerate}
+\end{rem}
+
+\begin{ques}
+  \label{ques:6}
+  Let $A(z,w) = w^3 - 3zw + z^3$.  Prove that $A$ is irreducible.
+  Find its critical points and discover the type of meromorphic
+  elements which belong to $S_A$.  Compute the genus of $S_A$ by the
+  Riemann-Hurwitz formula.
+\end{ques}
+
+\begin{ques}
+  \label{ques:7}
+  Same for $A(z,w) = zw^3 - 3w + 2z^a$, where $a$ is any integer
+  (positive or negative).  Of course, if $a < 0$ then this is
+  interpreted to be the problem for the \emph{polynomial}
+  $$
+  z^{1-a} w^3 - 3z^{-a} w + 2.
+  $$
+\end{ques}
+
+Now we pass to the converse of Theorem~\ref{thm:2}.  This states that
+every compact analytic configuration is the Riemann surface of a
+unique (to within a constant factor) irreducible algebraic function.
+In Topic 6 this statement will be improved considerably and will state
+that \emph{any} compact connected Riemann surface is analytically
+equivalent to a compact analytic configuration (and thus has an
+associated irreducible polynomial).
+
+Before stating this converse of Theorem~\ref{thm:2}, we make a useful
+observation about $S_A$. First, divide out the leading coefficient
+$a_0(z)$ to write $A(z,w) = a_0(z) A'(z,w)$ where
+%%% page 148
+$$
+A'(z,w) = w^n + \alpha_1(z) w^{n-1} + \cdots + \alpha_n(z)
+$$
+and $\alpha_1, \cdots, \alpha_n$ are rational functions of $z$.  We
+assume $A$ (and thus $A')$ to be irreducible.  If $a$ is a regular
+point for $A$, then the corollary to Lemma~\ref{lem:2} shows the
+existence of the holomorphic zeros $f_1, \cdots, f_n$ as usual.  Thus,
+$$
+e_k  = e(a+t, f_k(a+t))
+$$
+is a point in $S_A$, $1\le k \le n$, and the elements $e_k$ are the
+only ones in $S_A \cap \pi^{-1}(\{a\})$.  Also, $v(e_) = f_k(a)$, so
+the numbers $v(e_k)$ are the $n$ solutions of $A'(a,w) = 0$.  Thus, we
+obtain a factorisation
+\begin{equation}
+  \label{e:A'}
+A'(a,w) = \prod_{k=1}^n (w - v(e_k)) = \prod_{\substack{e\in S_A\\
+    \pi(e) = a}}(w - v(e)).
+\end{equation}
+
+\begin{thm}
+  \label{thm:3}
+  Let $S$ be a compact analytic configuration.  Then there exists a
+  unique (up to constant factor) irreducible polynomial $A$ such that
+  $S = S_A$.
+\end{thm}
+
+\begin{myproof}
+  Since $S$ is compact and $\pi : S \to \widehat{\CCC}$ is analytic,
+  item 1 of Proposition~2.24 (Topic 2) shows that the restriction of $\pi$
+  to $S$ takes every value the same number $n$ of times.  Let $D$ be
+  the subset of $\widehat{\CCC}$ defined by
+  $$
+  \widehat{\CCC} - D
+  = \{\pi(e) ~:~ e\in S,\ m_\pi(e) > 1\text{ or }v(e) = \infty\}.
+  $$
+  %%% page 149
+  Thus, if $e \in S$ and $\pi(e) \in D$, then $m_\pi(e) = 1$ and $v(e)
+  \ne \infty$.  Since $S$ is compact, the set of elements $e$ such
+  that $e \in S$ and $m_\pi(e) > 1$ or $e(e) = \infty$ is
+  \emph{finite}.  \emph{A fortiori}, $\widehat{\CCC} - D$ is finite.
+  We now take our clue from the discussion above and define for 
+  $z \in D$, $w \in \CCC$
+  $$
+  A'(z,w) = \prod_{\substack{e\in S\\\pi(e) = z}} (w-v(e)).
+  $$
+  That discussion implies that \emph{if} $S = S_A$ for some $A$, then
+  this must be the formula for $A'(z,w)$ for regular points $z$, since
+  all the regular points must be contained in $D$.  Thus, the
+  uniqueness assertion of the theorem is established.  Moreover, we
+  have an \emph{explicit} formula for $A'$ and we now just have to
+  check various details.
+
+  First, if $z_0 \in D$ then there are exactly $n$ elements $e_1,
+  \cdots, e_n \in S$ with $\pi(e_k) = z_0$, since $\pi$ takes the
+  value $z_0$ $n$ times and $\pi$ must have multiplicity 1 at each
+  $e_k$.  Suppose $e_k = e(P(t), Q_k(t))$, where $P(t) = z_0 + t$ if
+  $z_0 \ne \infty$ and $P(t) = t^{-1}$ if $z_0 = \infty$.  Let
+  $\varphi_k : U(P,Q_k,\Delta) \to \Delta$ be a canonical chart.  For
+  small $t_0$,
+  $$
+  S \cap \pi^{-1}(\{P(t_0)\}) = \{\varphi_1^{-1}(t_0), \cdots, 
+  \varphi_n^{-1}(t_0)\},
+  $$
+  so that
+  $$
+  A'(P(t_0), w) = \prod_{k=1}^n (w - Q_k(t_0))
+  $$
+  since $v(\varphi_k^{-1}(t_0)) = Q_k(t_0)$.  This equation shows that
+  if we expand
+  %%% page 150
+  $$
+  A'(z,w) = w^n + \alpha_1(z) w^{n-1} + \cdots + \alpha_n(z),
+  $$
+  then $\alpha_1, \cdots, \alpha_n$ are holomorphic on $D$.
+
+  Now we examine the behaviour of $\alpha_k$ at the (isolated) points
+  of $\widehat{\CCC} - D$.  Suppose $a \in \widehat{\CCC} - D$.  Let
+  $e(a+t^m, \widetilde{Q}(t))$ be one of the points in $S \cap
+  \pi^{-1}(\{a\})$; in case $a = \infty$ this must be replaced by
+  $e(t^{-m}, \widetilde{Q}(t))$.  Then for $z$ near $a$ but not equal
+  to $a$, there are $m$ points in $S \cap \pi^{-1}(\{z\})$ determined
+  by this one element, namely,
+  $$
+  e(a + (t_k+t)^m, \widetilde{Q}(t_k + t)),\quad\text{where }t_k^m = z-a.
+  $$
+  (We now discuss the case $a\ne \infty$; the case $a = \infty$ is
+  handled entirely similarly.)  The corresponding values of $v(e)$ are
+  $\widetilde{Q}(t_k)$, $1\le k \le m$.  Thus, for some $N$ we have
+  $$
+  |v(e)| \le |t_k|^{-N} = |z-a|^{-N/m}
+  $$
+  for these $m$ points $e\in S\cap \pi^{-1}(z)$.  Treating the other
+  points in $S \cap \pi^{-1}(z)$ in a similar fashion, we obtain for
+  some integer $M$
+  $$
+  |v(e)| \le |z-a|^{-M} \text{ if } e \in S \cap \pi^{-1}(z), \ z
+  \text{ near }a.
+  $$
+  Thus
+  $$
+  |\alpha_k(z)| < \text{const }|z-a|^{-Mk} \text{ if }z\text{ is near
+  }a;
+  $$
+  if $a = \infty$ this estimate should read
+  $$
+  |\alpha_k(z)| \le \text{const }|z|^{Mk}.
+  $$
+  Therefore, $\alpha_k$ is meromorphic on $\widehat{\CCC}$ and thus
+  $\alpha_k$ is \emph{rational}.
+
+  %%% page 151
+  Now that we have produced a polynomial $A$ we must show that $A$ is
+  irreducible and that its Riemann surface is $S$.  This will
+  essentially be done all at once.  Suppose that there exists a
+  factorisation of $A$ in the form $A = BC$, where $B$ and $C$ are
+  polynomials and $B$ is irreducible ... in fact, there is always such
+  a fact with a polynomial $B$ of degree at least one in $w$ (perhaps
+  $C$ is constant).  Then $B$ has a Riemann surface $S_B$ which is a
+  compact analytic configuration.  Let $e$ be an element in $S_B$ such
+  that $m_{\pi}(e) = 1$ and $v(e) \ne \infty$; this includes all but
+  finitely many points in $S_B$.  We also assume $\pi(e) \in D$,
+  eliminating again at most finitely many points.  Then if $\pi(e) =
+  z_0$ we let $P(t) = z_0 + t$ if $z_0 \ne \infty$ and $P(t) = t^{-1}$
+  if $z_0 = \infty$.  Then $e = e(P,Q)$, and $B(P(t), Q(t)) = 0$ for
+  $t$ near 0.  Thus, since $A = BC$ we have
+  $$
+  A'(P(t), Q(t)) = 0 \text{ for } t \text{ near } 0.
+  $$
+  The formula for $A'$ in \eqref{e:A'} implies
+  $$
+  \prod_{k=1}^n (Q(t) - Q_k(t)) = 0
+  \text{ for }t\text{ near }0.
+  $$
+  Since each factor $Q-Q_k$ which is not identically zero can have
+  only isolated zeros, it follows that for some $k$,
+  $$
+  Q = Q_k.
+  $$
+  Thus, $e = e(P,Q_k) = e_k \in S$.  Thus, except for finitely many
+  %% page 152
+  points $S_B \subset S$.  Since $S$ is compact in the Hausdorff space
+  $\overline{M}$, $S$ is closed and thus
+  $$
+  S_B \subset S.
+  $$
+  Since $S_B$ is a component of $\overline{M}$ and since $S$ is
+  connected it follows that $\boxed{S_B = S}$.
+
+  Now it is all done.  For, $\pi$ assumes (when restricted to $S_B$)
+  every value the same number of times, this number being the degree
+  of $B$ as a polynomial in $w$.  But $\pi$ assumes (when restricted
+  to $S$) every value $n$ times.  Thus, $B$ has degree $n$ in $w$.
+  Thus, $C$ has degree 0 in $w$ and thus is just a polynomial in $z$.
+  Therefore, if we discard all the common polynomial factors in $z$
+  from the polynomial $A(z,w)$, we must have $C \equiv$ const.  This
+  shows that $A$ is irreducible, its only possible notrivial factor
+  turning out to be itself.  And $S_A = S_B = S$.
+\end{myproof}
+
+We thus see that on any compact analytic configuration $S$ the two
+meromorphic functions $\pi$ and $v$ are related by an algebraic
+equation.  These two functions of course allow us to construct other
+meromorphic functions on $S$; namely any rational function of $\pi$
+and $v$ is meromorphic on $S$.  The amazing fact is that there are no
+other meromorphic functions on $S$.  In fact, we have
+
+%%% page 153
+\begin{thm}
+  \label{thm:4}
+  Let $S$ be a compact analytic configuration on which $\pi$ assumes
+  every value $n$ times.  Let $f$ be any meromorphic function on $S$.
+  Then there exist unique rational functions $\alpha_0, \cdots,
+  \alpha_{n-1}$ such that
+  $$
+  f = \sum_{j=0}^{n-1} \alpha_j \circ \pi \cdot v^j.
+  $$
+\end{thm}
+
+\begin{myproof}
+  Suppose $z$ is a regular point for $A$, the polynomial is such that
+  $A$ is irreducible, and $S = S_A$.  If the formula for $f$ is to
+  hold, then we must have
+  $$
+  f(e) = \sum_{j=0}^{n-1} \alpha_j(z) v(e)^j \text{ if }e \in S,\ 
+  \pi(e) = z.
+  $$
+  Now $S \cap \pi^{-1}(\{z\}) = \{e_1, \cdots, e_n\}$ has exactly $n$
+  points and the numbers $v(e_k)$ are distinct.  The above equations
+  read
+  $$
+  f(e_k) = \sum_{j=0}^{n-1} \alpha_j(z) v(e_k)^j,\quad 1\le k \le n.
+  $$
+  These are $n$ equations in $n$ ``unknowns'', $\alpha_0(z), \cdots,
+  \alpha_{n-1}(z)$, and the determinant of the system is
+  $$
+  \det
+  \begin{pmatrix}
+    1 & v(e_1) & v(e_1)^2 & \cdots & v(e_1)^{n-1} \\
+    1 & v(e_2) & v(e_2)^2 & \cdots & v(e_2)^{n-1} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    1 & v(e_n) & v(e_n)^2 & \cdots & v(e_n)^{n-1} \\
+  \end{pmatrix}.
+  $$
+  %%% page 154
+  This is a so-called Vandermonde determinant and its value is well
+  known and easily seen to be
+  $$
+  \prod_{1\le \ell < k \le n} (v(e_k) - v(e_\ell)),
+  $$
+  which is not zero.  Thus, $\alpha_0(z), \cdots, \alpha_{n-1}(z)$ are
+  uniquely determined.  It is also clear that these numbers
+  $\alpha_j(z)$ really depend only on $z$ and not on a particular
+  ordering $e_1, \cdots, e_n$ of the points in $\pi^{-1}(\{z\})$.
+  Thus, $\alpha_0, \cdots, \alpha_{n-1}$ are uniquely determined at
+  the regular points for $A$, and thus are unique since they are to
+  be rational functions.
+
+  Knowing what $\alpha_j$ must be, we now prove that they exist.  By
+  Cramer's rule, we can write down a formula for $\alpha_j(z)$ in
+  terms of a determinant involving $f(e_k)$ and $v(e_k)$, divided by
+  the Vandermonde determinant.  Near a fixed regular point we can
+  choose the $e_k$ in terms of charts to be analytic functions and
+  thus $f(e_k)$ and $v(e_k)$ become analytic functions, proving
+  $\alpha_j$ is holomorphic on the set of regular points.  As usual,
+  we now prove that $\alpha_j$ cannot have any essential
+  singularities.  Since we obtain upper bounds for $f(e_k)$ and
+  $v(e_k)$ in the standard manner we are used to by now, it remains to
+  obtain a lower bound for the Vandermonde.
+
+  Suppose then that $a$ is a critical point.  We assume in the
+  following that $a \ne \infty$; the case $a = \infty$ is treated by
+  mere formal changes in the analysis.  The points in $S \cap
+  \pi^{-1}(\{a\})$ have the forms
+  %%% page 155
+  $$
+  e(a + t^{m_j}, Q_j(t)), \quad 1 \le j \le J, \quad 
+  \sum_{j=1}^{J} m_j = n,
+  $$
+  where $Q_j$ is meromorphic near 0.  Let the positive integer $m$ be
+  the least common multiple of the integers $m_j$.  If $z$ is a number
+  sufficiently near $a$ but not equal to $a$, choose an arbitrary $s
+  \in \CCC$ such that
+  $$
+  z - a = s^m.
+  $$
+  Let
+  $$
+  w_j = e^{2\pi i/m_j}.
+  $$
+  Then for $0 \le \ell \le m_j-1$,
+  $$
+  z -a = (w_j^\ell s^{m/m_j})^{m_j},
+  $$
+  and the numbers $w_j^\ell s^{m/m_j}$ are different for $0 \le \ell
+  \le m_j - 1$.  Thus, $S \cap \pi^{-1}(\{z\})$ consists of the points
+  $$
+  e_{j\ell} = e(a + (w_j^\ell s^{m/m_j} + t)^{m_j}, 
+  Q(w_j^\ell s^{m/m_j} + t))
+  $$
+  for $0 \le \ell \le m_j -1$, $1 \le j \le J$.  Thus, $v(e_{j\ell}) =
+  Q_j(w_j^\ell s^{m/m_j})$.  The Vandermonde contains terms of the
+  form
+  $$
+  v(e_{j\ell}) - v(e_{j'\ell'}) 
+  = Q_j(w_j^{\ell} s^{m/m_j}) - Q_{j'}(w_{j'}^{\ell'} s^{m/m_{j'}}),
+  $$
+  which is a \emph{meromorphic function} of $s$, not vanishing for
+  small $s \ne 0$ since $z$ is regular for $a$.  Thus, there exists
+  an integer $N$ such that
+  %%% page 156
+  $$
+  |v(e_{j\ell}) - v(e_{j'\ell'})| \ge |s|^N = |z-a|^{N/m},
+  $$
+  so the Vandermonde has modulus bounded below by
+  $$
+  |z-a|^{\frac{N}{m}\cdot \frac{n(n-1)}{2}}.
+  $$
+
+  Thus, we have proved that each $\alpha_j$ is rational and by
+  definition
+  $$
+  f(e) = \sum_{j=0}^{n-1} \alpha_j(\pi(e)) v(e)^j
+  $$
+  for all but finitely many $e \in S$ (those such that $\pi(e)$ is a
+  critical point for $A$). Thus, these two meromorphic functions on
+  $S$ coincide.
+\end{myproof}
+
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

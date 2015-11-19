@@ -1,0 +1,1094 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{xypic}
+\usepackage{enumerate}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+%\lecturerfalse
+\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\setcounter{topic}{4}
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: Branch Points and Analytic Configurations}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+%%% E.page 85
+Before going to the definitions we give some motivating thoughts.  The
+basic thing we want to do is give up the special role played by the
+independent variable.  So consider $[f]_a$.  This germ of course is
+determined by a meromorphic function $f$ defined near $a$, the
+correspondence being written $z\mapsto f(z)$.  We could also consider
+$z$ as depending on a complex parameter $t$ and write for example $a +
+t \mapsto f(a+t)$ as the correspondence, where now $t$ i near zero.
+But also we could write $a + \sin t \mapsto f(a+sin t)$, or $a +
+e^{3t}-1 \mapsto f(a+e^{3t}-1)$, etc.  All these would be legitimate
+representations of $f$ because the correspondence $t = z$
+indicated in each case is a conformal equivalence of a neighbourhood
+of $t = 0$ onto a neighbourhood of $z = a$.  Thus, in general we could
+consider a \emph{pair} of meromorphic functions
+$$
+P(t) = a + \rho(t),\quad Q(t) = f(a + \rho(t)),
+$$
+where $\rho$ is a conformal equivalence of a neighbourhood of 0 onto a
+neighbourhood of 0.  Thus each small parameter value $t$ corresponds
+uniquely to a value of $z$ ($= P(t)$) near $a$ and the corresponding
+value $Q(t)$ of $f$.  We would not like to allow a representation of
+the form
+%%% E.page 86
+$$
+P(t) = a + t^2,\quad Q(t) = f(a + t^2),
+$$
+however.  The reason is basically because two difference values of $t$
+can give the same value of $P$.  However, the thing that is
+\emph{really} wrong here is that two difference values of $t$ can give
+the same value both of $P$ and of $Q$.  This will be an important
+observation in our preparation for the definition.
+
+Now consider the Riemann surface in $M$ for the function $z^{1/m}$.
+This consists of germs $[f]_a$, $a\ne 0$, such that $f$ is some
+determination of $z^{1/m}$ near $a$.  So we have a representation
+$$
+P(t) = a + t,\quad
+Q(t) = (a+t)^{1/m}\quad \text{(some determination)},
+$$
+for $t$ near 0.  Suppose $Q(0) = \alpha$ so that $\alpha$ is one of
+the $m$\textsuperscript{th} roots of $a$.  The we can introduce a new
+parameter $\tau$ by the equation
+$$
+a + t = (\alpha + \tau)^m.
+$$
+%%% page 87
+In fact, $\frac{dt}{d\tau}(\tau=0) = m\alpha^{m-1} \ne 0$.  Thus, we
+can also represent $[f]_a$ by the pair of functions
+$$
+P_1(\tau) = (\alpha + \tau)^m,\quad
+Q_1(\tau) = \alpha + \tau.
+$$
+In our desire to obtain a representation near the branch point, we
+would like to use a pair $P(t) = t$, $Q(t) = t^{1/m}$.  Of course,
+this is not allowed, but the answer to the dilemma is obtained by just
+formally setting $\alpha = 0$ in the above formulas to obtain the pair
+$$
+P_1(\tau) = \tau^m,\quad
+Q_1(\tau) = \tau.
+$$
+Note how useful such a pair is.  We obtain all the values of $z^{1/m}$
+just by using the $m$ different solutions of $\tau^m = z$.  These
+yield the same value of $P_1$ (regarded as the independent variable)
+for the $m$ different corresponding values of $Q_1$.  Thus in a very
+real sense we have introduced a point corresponding to the branch
+point 0, and it fits in very well with the regular points near 0.  
+%%% page 88
+Of course, we again would allow parameter changes as before, so that
+the pair
+$$
+P(t) = \rho(t)^m,\quad
+Q(t) = \rho(t),
+$$
+is regarded as equivalent to the pair $P_1$, $Q_1$ if $\rho$ is a
+conformal equivalence, with $\rho(0) = 0$.  And as before we do not
+allow a pair such as
+$$
+P(t) = t^{2m},\quad
+Q(t) = t^2,
+$$
+because different values of $t$ can yield the same values for both $P$
+and $Q$.
+
+Finally, we exhibit pairs which we want to imagine as germs at
+$\infty$.  If $f$ is meromorphic in a neighbourhood of $\infty$, then
+we use the parameter $t$ near 0 and let  the independent variable be
+$z = \frac{1}{t}$.  Thus we have
+$$
+P(t) = t^{-1},\quad Q(t) = f(t^{-1}),
+$$
+defined for $t$ near 0.  More generally, we can also
+%%% page 89
+consider $\infty$ as a branch point, yielding for the Riemann surface
+for $z^{1/m}$ the pair of functions
+$$
+P(t) = t^{-m},\quad
+Q(t) = t^{-1}.
+$$
+
+Now we are ready for the formal development.
+
+\begin{defn}
+  \label{def:1}
+  A \emph{parameter change} is a function $\rho$ holomorphic in a
+  neighbourhood of 0 such that
+  $$
+  \rho(0) = 0,\quad
+  \rho'(0) \ne 0.
+  $$
+  Equivalently, we would say that $\rho(0) = 0$ and $\rho$ is
+  one-to-one in a neighbourhood of 0.
+\end{defn}
+
+\begin{defn}
+  \label{def:2}
+  A \emph{pair} is an ordered couple of functions $P$, $Q$ meromorphic
+  in a neighbourhood of 0 such that in a sufficiently small
+  neighbourhood of 0
+  \begin{enumerate}
+  \item $P$ is not constant,
+  \item the mapping $t \mapsto (P(t), Q(t))$ is one-to-one.
+  \end{enumerate}
+\end{defn}
+
+%%% page 90
+Examples of pairs have already been given.  Here are some other
+examples.  First, $(\sin t,\sin t)$ is a pair, although the points $t
+= 0$ and $t = \pi$ give the same value to both $P$ and $Q$.  Second,
+$(t^m, t^n)$ is a pair if and only if $m \ne 0$, and either $n=0$ and
+$m = \pm 1$ or $n\ne 0$ and $m$ and $n$ are relatively prime.  The
+only thing which really needs checking here is that if $m$ and $n$ are
+relatively prime, then $(t^m, t^n)$ is a pair.  This follows because
+the Euclidean algorithm (see Topic 5) shows there exist integers
+$m'$ and $n'$ such that $mm' + nn' = 1$.  Now suppose
+$$
+(t_1^m, t_1^n) = (t_2^m, t_2^n).
+$$
+Then $t_1^{mm'} = t_2^{mm'}$ and $t_1^{nn} = t_2^{nn'}$.  Multiplying,
+we obtain
+$$
+t_1^{mm'+nn'} = t_2^{mm'+nn'};\quad
+t_1 = t_2.
+$$
+
+\begin{defn}
+  \label{def:3}
+  Let $(P,Q)$ and $(P_1,Q_1)$ be pairs.  Then $(P,Q)$ is
+  \emph{equivalent} to $(P_1,Q_1)$ if there exists a parameter change
+  $\rho$ such that the equations
+  $$
+  P_1 = P\circ \rho,\quad
+  Q_1 = Q\circ \rho,
+  $$
+  %%% page 91
+  are valid in a neighbourhood of 0.  If $(P,Q)$ is equivalent to
+  $(P_1, Q_1)$, this will be written $(P,Q) \sim (P_1,Q_1)$.
+\end{defn}
+
+\begin{ques}
+  \label{problem:3}
+  Suppose $(P,Q)$ and $(P_1,Q_1)$ are pairs.  Prove that if there
+  exits a function $\rho$ holomorphic in a neighbourhood of 0 such
+  that $\rho(0) = 0$ and $P_1 = P\circ \rho$, $Q_1 = Q \circ \rho$
+  near 0, then $\rho$ must be a parameter change.  Also, $\rho$ is
+  uniquely determined (near 0) by these equations.
+\end{ques}
+
+\begin{lem}
+  \label{lem:1}
+  $\sim$ is an equivalence relation.
+\end{lem}
+
+\begin{mdframed}
+  \textbf{Proof}:
+  \begin{description}
+  \item[Reflexive:] $(P,Q) \sim (P,Q)$ since $\rho(t) = t$ works.
+  \item[Symmetric:] If $(P,Q) \sim (P_1,Q_1)$ and $\rho$ satisfies
+    $$
+    P_1 = P \circ \rho,\quad Q_1 = Q \circ \rho,
+    $$
+    then also
+    $$
+    P = P_1 \circ \rho^{-1},\quad Q = Q_1 \circ \rho^{-1},
+    $$
+    near 0 and $\rho^{-1}$ is holomorphic, proving $(P_1,Q_1) \sim
+    (P,Q)$.
+    %%% page 92
+  \item[Transitive:] If $(P,Q) \sim (P_1,Q_1)$ and $(P_1,Q_1) \sim
+    (P_2,Q_2)$ and we have parameter changes $\rho$ and $\rho_1$
+    satisfying $P_1 = P\circ \rho$, $P_2 = P_1 \circ \rho_1$, likewise
+    for the $Q$'s, then
+    $$
+    P_2 = P_1 \circ \rho_1 = P\circ \rho \circ \rho_1,\quad
+    Q_2 = Q_1 \circ \rho_1 = Q\circ \rho \circ \rho_1,
+    $$
+    and $\rho\circ \rho_1$ is also a parameter change, showing that
+    $$
+    (P,Q) \sim (P_2,Q_2).
+    $$
+  \end{description}
+\end{mdframed}
+
+\begin{defn}
+  \label{def:4}
+  An equivalence class of pairs is a \emph{meromorphic element}.  The
+  meromorphic element containing a pair $(P,Q)$ is designated
+  $e(P,Q)$.  Thus,
+  $$
+  e(P,Q) = \{(P_1,Q_1) ~:~ (P_1,Q_1)\text{ is a pair and }(P,Q) \sim
+  (P_1, Q_1)\}.
+  $$
+  Define $\overline{M}$ to be the collection of all meromorphic
+  elements.
+\end{defn}
+
+%%% page 93
+\begin{defn}
+  \label{def:5}
+  The two functions $\pi : \overline{M} \to \widehat{\CCC}$, $v :
+  \overline{M} \to \widehat{\CCC}$, are give by the formulas
+  $$
+  \pi(e(P,Q)) = P(0),\quad
+  v(e(P,Q)) = Q(0).
+  $$
+\end{defn}
+We simply remark that $\pi$ and $v$ are well defined since if $(P,Q)
+\sim (P_1,Q_1)$, then clearly $P(0) = P_1(0)$ and $Q(0) = Q_1(0)$.
+The number $\pi(e(P,Q))$ is sometimes called the \emph{centre} of
+$e(P,Q)$, and $v(e(P,Q))$ is called the \emph{value} of $e(P,Q)$.
+
+Another remark which is simple but useful is that if $(P,Q)$ is a pair
+and $\rho$ is a parameter change, then $(P\circ \rho, Q\circ \rho)$ is
+also a pair and is therefore equivalent to $(P,Q)$.
+
+As has been indicated in the motivation for $\overline{M}$, we
+definitely wish to consider $M \subset \overline{M}$ in a natural
+manner.  Of course, the way we do this is to define a function on $M$
+with values in $\overline{M}$ and prove this function is one-to-one.
+This means that each element of $M$ is identified with an element of
+$\overline{M}$ in a one-to-one fashion, and the identification is
+this: to a germ $[f]_a$ we associate the meromorphic element $e(a+t,
+f(a+t))$.  Now we prove this is a one-to-one function.  Suppose
+$[g]_b$ is another germ and that $e(a+t, f(a+t)) = e(b+t, g(b+t))$.
+This means that there exists a parameter change $\rho$ such that
+%%% page 94
+for $t$ near 0
+$$
+a + t = b + \rho(t),\quad
+f(a+t) = g(b+\rho(t)).
+$$
+The first equation implies $a = b$ and $\rho(t) = t$, and then the
+second equation implies $f(a+t) = g(a+t)$ for $t$ near 0.  Thus,
+$[f]_a = [g]_b$.
+
+We now begin to topologise $\overline{M}$, then make $\overline{M}$ a
+surface, then a Riemann surface.  We remakr that as \textbf{sets} the
+inclusion $M \subset \overline{M}$ is an isomorphism of $M$ onto its
+image in $\overline{M}$ (this we have just proved), and we will
+eventually see that as Riemann surfaces this is still true; the
+mapping of $M$ onto its image in $\overline{M}$ will be seen to be an
+analytic equivalence.
+
+Before beginning this program we wish to spell out a notational
+convenience.  Frequently we shall write
+$$
+e(P,Q) = e(P(t),Q(t))
+$$
+to designate a meromorphic element.  We have already used this type of
+notation in the discussion of $M \subset \overline{M}$, where we wrote
+$e(a + t, f(a+t))$.  Of course, this means $e(P,Q)$, where $P(t) =
+a+t$, $Q(t) = f(a+t)$, but it would seem pedantic to be so strict
+with the notation and certainly would be confusing.
+%%% page 95
+We couldn't use notation such as $e(t^2,t)$.  In order to attempt to
+be consistent we shall try to use $t$ or the dummy variable in the
+expression such as the above.  Thus, for example,
+$$
+e(P(t_0 + t), Q(t_0 + t))
+$$
+stands for the meromorphic element $e(P_1,Q_1)$, where for small $t$
+$$
+P_1(t) = P(t_0 + t),\quad Q_1(t) = Q(t_0 + t).
+$$
+
+\begin{defn}
+  \label{def:6}
+  Let $(P,Q)$ be a pair and assume $P$ and $Q$ are both meromorphic on
+  a disk $\Delta$.  Then let $U(P,Q,\Delta)$ be the collection of
+  meromorphic elements according to the formula
+  $$
+  U(P,Q,\Delta) = \{e(P(t_0 + t), Q(t_0 + t)) ~:~ t_0 \in \Delta\}.
+  $$
+  We have assumed $\Delta$ sufficiently small that the mapping $t
+  \mapsto (P(t), Q(t))$ is one-to-one on $\Delta$
+  (cf. Definition~\ref{def:2}).
+\end{defn}
+
+Note that this latter assumption each couple $(P(t_0+t),Q(t_0+t))$ for
+$t_0 \in \Delta$ is indeed a pair, and thus $U(P,Q,\Delta)$ makes
+sense.
+
+%%% page 96
+The sets $U(P,Q,\Delta)$ will form a neighbourhood basis of $e(P,Q)$
+when $\Delta$ is allowed to vary over all sufficiently small disks
+centred at 0.  Since $U(P,Q,\Delta)$ is not defined in terms of the
+equivalence class $e(P,Q)$ but rather in terms of the particular pair
+$(P, Q) \in e(P,Q)$, we shall need a lemma comparing two
+neighbourhoods constructed with different but equivalent pairs.
+
+\begin{lem}
+  \label{lem:2}
+  Suppose $(P,Q) \sim (P_1,Q_1)$.  If $U(P,Q,\Delta)$ is defined, then
+  there exists a disk $\Delta_1$ centred at 0 such that
+  $$
+  U(P_1,Q_1,\Delta_1) \subset U(P,Q,\Delta).
+  $$
+\end{lem}
+
+\begin{mdframed}
+  \textbf{Proof}: By definition there exists a parameter change $\rho$
+  such that $P_1 = P \circ \rho$, $Q_1 = Q\circ \rho$ in a disk
+  $\Delta_1$ centred at 0.  We choose $\Delta_1$ sufficiently small
+  that $\rho'$ never vanishes in $\Delta_1$ and $\rho(\Delta_1)
+  \subset \Delta$, and also that $U(P_1,Q_1, \Delta_1)$ is defined.
+  Now let $e \in U(P_1,Q_1,\Delta_1)$.  Then $e = e(P_1(t_0 + t),
+  Q_1(t_0 + t))$ for some $t_0 \in \Delta_1$.  Now
+  $$
+  P_1(t_0 + t) = P(\rho(t_0 + t)) = P(\rho(t_0) + \rho_1(t)),
+  $$
+  where
+  %%% page 97
+  $$
+  \rho_1(t) = \rho(t_0+t) - \rho(t_0).
+  $$
+  Note that $\rho_1(0) = 0$ and $\rho_1'(0) = \rho'(t_0) \ne 0$ and
+  thus $\rho_1$ is a parameter change.  Since also
+  $$
+  Q_1(t_0 + t) = Q(\rho(t_0) + \rho_1(t)),
+  $$
+  we conclude that $(P_1(t_0 + t), Q_1(t_0 + t)) \sim
+  (P(\rho(t_0) + t), Q(\rho(t_0) + t))$.  Thus,
+  $$
+  e = e(P(t\rho(t_0) + t), Q(t\rho(t_0) + t)) \in U(P,Q,\Delta)
+  $$
+  and this proves the lemma.
+\end{mdframed}
+
+\begin{propn}
+  \label{propn:1}
+  The collection of sets $U(P,Q,\Delta)$ is a system of basic
+  neighbourhoods for a topology on $\overline{M}$.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}:  Clearly any point $e(P,Q)$ in $\overline{M}$
+  belongs to $U(P,Q,\Delta)$ and we have two things to check:
+  \begin{enumerate}
+  \item Suppose there are given $U(P,Q,\Delta)$ and $U(P_1, Q_1,
+    \Delta_1)$, basic sets defined in terms of pairs $(P,Q) \sim (P_1,
+    Q_1)$.  By Lemma~\ref{lem:2} there exists a disk $\Delta_2$
+    centred at 0 such that $\Delta_2 \subset \Delta_1$ and $U(P_1,
+    Q_1, \Delta_2) \subset U(P,Q,\Delta)$.  Thus,
+    %%% page 98
+    $$
+    U(P,Q,\Delta) \cap U(P_1, Q_1, \Delta_1) \supset 
+    U(P_1, Q_1, \Delta_2).
+    $$
+  \item Suppose $e(\widetilde{P},\widetilde{Q}) \in U(P,Q,\Delta)$.
+    Then for a point $t_0 \in \Delta$, $(\widetilde{P},\widetilde{Q})
+    \sim (P(t_0 + t), Q(t_0 + t))$.  If $\Delta'$ is the disk centred
+    at 0 whose radius is the radius of $\Delta$ minus $|t_0|$, then it
+    is clear that
+    $$
+    U(P(t_0+t), Q(t_0 + t), \Delta') \subset U(P,Q,\Delta).
+    $$
+    By Lemma 2 there exists a disk $\widetilde{\Delta}$ centred at 0
+    such that $U(\widetilde{P},\widetilde{Q},\widetilde{\Delta})
+    \subset U(P(t_0 + t), Q(t_0 + t), \Delta')$.  Thus
+    $$
+    U(\widetilde{P},\widetilde{Q},\widetilde{\Delta})
+    \subset U(P,Q,\Delta).
+    $$
+  \end{enumerate}
+\end{mdframed}
+
+Before proving that $\overline{M}$ is a Hausdorff space, we introduce
+some \textbf{normal} representations for meromorphic elements.
+Suppose we consider an element $e(P,Q)$.  Since a particularly simple
+form $P$ has in terms of a judiciously chosen chart for the Riemann
+surface, in the present framework we conclude that there exists a
+parameter change $\rho$ such that near $t=0$
+$$
+P(\rho(t)) = 
+\begin{cases}
+  P(0) + t^m, & \text{if }P(0) \ne \infty,\\
+  t^{-m}, & \text{if }P(0) = \infty.
+\end{cases}
+$$
+Thus, if $Q_1 = Q \circ \rho$, we see that
+%%% page 99
+$$
+e(P,Q) = 
+\begin{cases}
+  e(P(0) + t^m, Q_1), & \text{if }P(0) \ne \infty,\\
+  e(t^{-m}, Q_1), & \text{if }P(0) = \infty.
+\end{cases}
+$$
+Note that the integer $m$ is well defined, being the multiplicity of
+$P$.  For if $P_1$ is derived from $P$ by means of any parameter
+change, then $P_1$ has the same multiplicity $m$.
+
+A point of $\overline{M}$ of the form $e(a+t^m, Q)$ or $e(t^{-m}, Q)$
+is called a \emph{branch point of order $m-1$}.
+
+It should be remarked that the normal form is not unique if $m > 1$.
+In fact, if $w$ is any root of $w^m = 1$, then for example
+$$
+(a + t^m, Q(t)) \sim (a + t^m, Q(wt))
+$$
+as the parameter change $t \to wt$ shows.  Thus, e.g. $e(t^2, t) =
+e(t^2, -t)$.  This the only possible type of ambiguity.
+
+\begin{propn}
+  \label{propn:2}
+  $\overline{M}$ is a Hausdorff space.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}:  The fact that $M$ is Hausdorff is an obvious and
+  immediate consequence of the uniqueness of analytic continuation.
+  The present proof is surprisingly more involved.  Suppose that
+  $e(P,Q)$ and $e(P_1,Q_1)$ are not contained in disjoint
+  neighbourhoods.  We can assume both these elements to be in normal
+  representation, so that
+  %%% page 100
+  $$
+  P(t) = a + t^m \quad \text{or}\quad t^{-m}
+  $$
+  and
+  $$
+  P_1(t) = b + t^n \quad \text{or}\quad t^{-n}.
+  $$
+  Let $\Delta_k$ be the disk centred at 0 with radius $k^{-1}$.  Then
+  for any sufficiently large $k$ the neighbourhoods $U(P,Q,\Delta_k)$
+  and $U(P_1,Q_1,\Delta_k)$ have a common point, say
+  $$
+  e(P(s_k + t), Q(s_k + t)) = e(P_1(t_k + t), Q_1(t_k + t)),
+  $$
+  where $s_k, t-k \in \Delta_k$.  In particularly $\pi$ and $v$ have
+  the same value at these two points, so
+  $$
+  P(s_k) = P_1(t_k),\quad Q(s_k) = Q_k(t_k).
+  $$
+  If ever $s_k = t_k = 0$, then $e(P,Q) = e(P_1, Q_1)$, which i swhat
+  we are trying to prove.  Thus, we can assume $s_k$ or $t_k \ne 0$.
+  Now letting $k \to \infty$ implies first $P(0) = P_1(0)$, so we have
+  either
+  $$
+  P(t) = a + t^m \quad\text{and}\quad P_1(t) = a + t^n,
+  $$
+  %%% page 101
+  or
+  $$
+  P(t) = t^{-m} \quad\text{and}\quad P_1(t) = t^{-n}.
+  $$
+  We shall eventually prove that $m=n$, so then $P=P_1$.  Also, we see
+  immediately that in either case $s_k^m = t_k^n$.
+
+  Choose arbitrary $n$\textsuperscript{th} roots of $s_k$, say
+  $$
+  \sigma_k^n = s_k.
+  $$
+  Then
+  $$
+  \left(\frac{\sigma_k^m}{t_k}\right)^n
+  = \frac{s_k^m}{t_k^n}  = 1.
+  $$
+  Since there are only $n$ choices for each number $\frac{\sigma_k^m}{
+    t_k}$, we can choose a subsequence of $k$'s such that these
+  numbers are all equal to a common $n$\textsuperscript{th} root of 1,
+  say $w^{-1}$.  Renaming this subsequence, it follows that we can
+  assume 
+  $$
+  w \sigma_k^m = t_k.
+  $$
+  Then
+  $$
+  Q(\sigma_k^n) = Q_1(w\sigma_k^m).
+  $$
+  Since this equation is valid for $\sigma_k \to 0$, $\sigma_k \ne 0$,
+  we can now apply the uniqueness of analytic continuation to conclude
+  $$
+  Q(\sigma^n) = Q_1(w\sigma^m),\quad s\text{ small}.
+  $$
+  Thus, note that
+  $$
+  (P(s^n), Q(\sigma^n)) \equiv 
+  (P_1(w\sigma^m), Q_1(w\sigma^m)),\quad s\text{ small}.
+  $$
+  Since the mapping $t \mapsto (P(t), Q(t))$ is one-to-one (small
+  $t$), then the mapping $s \mapsto (P(s^n), Q(s^n))$ is exactly
+  $n$-to-one (small $s$).  Likewise, the mapping $s \mapsto (P_1(w
+  s^m), Q_1(ws^m))$ is exactly $m$-to-one.  Since these mappings are
+  identical, we must have $m = n$!
+
+  Thus, $Q(s^m) \equiv Q_1(ws^m)$ and we conclude
+  $$
+  Q(t) \equiv Q_1(wt).
+  $$
+  Since $P(t) \equiv P_1(wt)$ (as $w^m = 1$), we have
+  $$
+  (P, Q) \sim (P_1, Q_1),
+  $$
+  the parameter change being just $\rho(t) = wt$.  Thus,
+  $$
+  e(P, Q) = e(P_1, Q_1).
+  $$
+\end{mdframed}
+
+
+Now we have certain obvious charts for $\overline{M}$.  Namely, we
+define the mapping
+$$
+\varphi : U(P,Q,\Delta) \to \Delta
+$$
+by the formula
+$$
+\varphi(e(P(t_0 + t), Q(t_0 + t))) = t_0,
+\quad\text{or}\quad
+\varphi^{-1}(t_0) = e(P(t_0 + t), Q(t_0 + t)).
+$$
+The definition of $\varphi^{-1}$ is of course clear enough, but for
+$\varphi$ to be well defined something must be checked.  Namely, if
+two points in $U(P,Q,\Delta)$ are the same, then they correspond to
+the same $t_0$.  Another way of saying this is that $\varphi^{-1}$ is
+one-to-one.  But if $\varphi^{-1}(t_0) = \varphi^{-1}(t_0')$, then
+$\pi(\varphi^{-1}(t_0)) = \pi(\varphi^{-1}(t_0'))$ and
+$v(\varphi^{-1}(t_0)) = v(\varphi^{-1}(t_0'))$, so hat $P(t_0) =
+P(t_0')$ and $Q(t_0) = Q(t_0')$.  Since the mapping $t \mapsto (P(t),
+Q(t))$ is one-to-one for $t \in Delta$, this implies $t_0 = t_0'$.
+This shows that at least $\varphi$ maps $U(P,Q,\Delta)$ to $\Delta$ in
+a bijective fashion (one-to-one and onto).
+
+It is now easy to see that $\varphi$ is a homeomorphism. In fact, if
+$e_0 = e(P(t_0 + t), Q(t_0 + t))$ is any point in $U(P,Q,\Delta)$,
+then a neighbourhood basis for $e_0$ consists
+%%% page 104
+of sets $U(P(t_0 + t), Q(t_0 + t), \Delta') = \{e(P(t_0 + t_1 + t), 
+Q(t_0 + t_1 + t)) ~:~ t_1 \in \Delta'\}$, where $\Delta'$ is a
+sufficiently small disk centred at 0.  The image of a set like this
+under the mapping $\varphi$ is precisely $\{t_0 + t_1 ~:~ t_1 \in
+\Delta'\}$, and these sets form a neighbourhood basis for the point
+$t_0 \in \Delta$.  Thus, $\varphi$ induces a one-to-one correspondence
+between a neighbourhood basis for $e_0$ and a neighbourhood basis for
+$\varphi(e_0)$.  Thus, $\varphi$ is a homeomorphism.  Thus,
+$\overline{M}$ is a surface.
+
+\begin{propn}
+  \label{propn:3}
+  The given charts form an analytic atlas for $\overline{M}$.  Thus,
+  $\overline{M}$ is a Riemann surface.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}: Suppose two neighbourhoods $U(P,Q,\Delta)$ and
+  $U(P_1, Q_1, \Delta_1)$ meet.  Let $\varphi$ and $\varphi_1$ be the
+  respective charts.  Let $e_0$ be a common point in these
+  neighbourhoods and $\varphi(e_0) = t_0$, $\varphi_1(e_0) = t_1$.  We
+  need to check the analyticity of $\varphi_1 \circ \varphi^{-1}$ in a
+  neighbourhood of $t_0$.  Now by definition
+  $$
+  e_0 = e(P(t_0 + t), Q(t_0 + t)) 
+  = e(P_1(t_1 + t), Q_1(t_1 + t)).
+  $$
+  Therefore there exists a parameter change $\rho$ such that for $t$
+  near 0
+  $$
+  P(t_0 + t) = P_1(t_1 + \rho(t)),\quad
+  Q(t_0 + t) = Q_1(t_1 + \rho(t)).
+  $$
+  For $z$ near $t_0$ we have
+  $$
+  \varphi^{-1}(z) = e(P(z+t), Q(z+t)).
+  $$
+  We need to express this in terms of $P_1$ and $Q_1$, rather than $P$
+  and $Q$.  So we compute as follows:
+  $$
+  P(z + t) = P(t_0 + (z-t_0 +t))
+  = P_1(t_1 + \rho(z-t_0 +t))
+  = P_1(t_1 + \rho(z-t_0) + [\rho(z-t_0+t)-\rho(z-t_0)])
+  $$
+  The function
+  $$
+  \rho_1(t) = \rho(z-t_0+t)-\rho(z-t_0)
+  $$
+  satisfies $\rho_1(0) = 0$ and $\rho_1'(0) = \rho'(z-t_0)$.  Thus,
+  $\rho_1'(0) \ne 0$ if $z-t_0$ is sufficiently small, so $\rho_1$ is
+  also a parameter change.  Since the same computation is valid for
+  $Q$ and $Q_1$, we obtain
+  $$
+  \varphi^{-1}(z) = e(P_1(t_1 + \rho(z-t_0) + t),
+  Q_1(t_1 + \rho(z-t_0) + t)).
+  $$
+  Therefore,
+  $$
+  \varphi_1 \circ \varphi^{-1}(z) = t_1 + \rho(z-t_0),
+  $$
+  which holds for all $z$ sufficiently near $t_0$. Since
+  %%% page 106
+  $\rho$ is holomorphic, we have now proved that $\varphi_1 \circ
+  \varphi^{-1}$ is holomorphic near $t_0$.
+\end{mdframed}
+
+Now we list various properties of $\overline{M}$.
+
+\begin{propn}
+  \label{propn:4}
+  $\overline{M} - M$ is a discrete set.  That is, each point of
+  $\overline{M}$ has a neighbourhood consisting only of itself and
+  points of $M$.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}: Suppose $e(P,Q) \in \overline{M}$ and that $\Delta$
+  is a disk centred at 0 such that $U(P,Q,\Delta)$ is defined and for
+  $t \in \Delta - \{0\}$, $P'(t) \ne 0$, $P(t) \ne \infty$.  Then
+  $U(P,Q,\Delta)$ is a neighbourhood of $e(P,Q_)$ having the required
+  properties. Indeed, if $e_0 \in U(P,Q,\Delta)$ but $e_0 \ne e(P,Q)$,
+  then for some $t_0 \in \Delta - \{0\}$
+  $$
+  e_0 = e(P(t_0 + t), Q(t_0 + t)).
+  $$
+  Now $t \to P(t_0 + t)$ is holomorphic and one-to-one near $t = 0$,
+  so
+  $$
+  \rho(t) = P(t_0 + t) - P(t_0)
+  $$
+  is a coordinate change.  Thus, if $a = P(t_0)$
+  $$
+  e_0 = e(P(t_0) + t, Q(t_0 + \rho^{-1}(t)))
+  = [Q(t_0 + \rho^{-1}(z-a)]_a,
+  $$
+  %%% page 107
+  that is, $e_0$ is the germ of the meromorphic function $z \mapsto
+  Q(t_0 + \rho^{-1}(z-a))$ at $a$.  Thus, $e_0 \in M$.
+\end{mdframed}
+
+\begin{ques}
+  \label{problem:4}
+  Prove that $\pi$ and $v$ are meromorphic functions on
+  $\overline{M}$.  Prove that the mapping which identifies $M$ as a
+  subset of $\overline{M}$ is an analytic equivalence of $M$ onto its
+  image in $\overline{M}$.
+\end{ques}
+
+The second half of this problem completely justifies regarding $M$ as
+a subset of $\overline{M}$.  Of course, we previously could only
+consider $M \subset \overline{M}$ as sets, but now also as Riemann
+surfaces.  Also, $M$ is open in $\overline{M}$, as is implied by
+Proposition~\ref{propn:4}.
+
+\begin{propn}
+  \label{propn:5}
+  If $e \in \overline{M}$, then $e$ is a branch point of order $m-1$
+  if and only if $m_\pi(e) = m$.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}: Suppose $e = e(a+t^m, Q)$, and $\varphi : U(a+t^m,
+  Q, \Delta) \to \Delta$ is a related chart.  Then
+  $$
+  \pi \circ \varphi^{-1}(t_0) = a + t_0^m,
+  $$
+  so that the multiplicity of $\pi \circ \varphi^{-1}$ at 0 is $m$.  A
+  similar computation applied if $e = e(t^{-m}, Q)$.
+\end{mdframed}
+
+%%% page 108
+\begin{propn}
+  \label{propn:6}
+  Any two points in the same component of $\overline{M}$ can be joined
+  by a path in $\overline{M}$ every point of which except the initial
+  and terminal points lies in $M$.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}: 
+  This a topological consequence of Proposition~\ref{propn:4}.
+  Suppose $\gamma$ is a path.  Since $\gamma(I)$ is compact and
+  $\overline{M} - M$ is discrete and closed, $\gamma(I) \cap
+  (\overline{M} - M)$ is finite.  Let $e_0$ be a point in this set
+  which is not an initial or terminal point of $\gamma$.  Let $t_0$ be
+  the smallest and $t_1$ the largest numbers $t$ in $(0,1)$ such that
+  $\gamma(t) = e_0$.  Choose a neighbourhood $U$ of $e_0$ and a chart
+  $\varphi : U \to \Delta$, where $\Delta \subset \CCC$ is a disk.
+
+  \begin{center}
+  \begin{minipage}{0.4\textwidth}
+    ~
+    \vspace*{4cm}
+  \end{minipage}%
+  \begin{minipage}{0.5\textwidth}
+    Choose $0 < t_0' < t_0 \le t_1 < t_1' < 1$ such that $\gamma(t_0')
+    \in U$, $\gamma(t_1') \in U$.  Choose a path $\delta$ in $\Delta$
+    joining $\varphi \circ \gamma(t_0')$ and $\varphi \circ
+    \gamma(t_1')$ and missing $\varphi(e_0)$.  Then let
+    $$
+    \gamma_1(t) =
+    \begin{cases}
+      \gamma(t), & 0 \le t \le t_0',\\
+      \varphi^{-1} \circ \delta(\frac{t-t_0'}{t_1'-t_0'}),
+      & t_0' \le t \le t_1',\\
+      \gamma(t), & t_1' \le t \le 1.
+    \end{cases}
+    $$
+  \end{minipage}
+  \end{center}
+  %%% page 109
+  Then $\gamma_1$ is a path in $\overline{M}$ having the same end
+  points as $\gamma$, but $\gamma_1$ does not pass through $e_0$.
+  Since we need to remove only finitely many points like $e_0$, the
+  theorem follows.
+\end{mdframed}
+
+\begin{propn}
+  \label{propn:7}
+  There is a natural one-to-one correspondence between components of
+  $M$ and components of $\overline{M}$.  Namely, if $s$ is a component
+  of $M$, $S$ is contained in a unique component of $\overline{M}$,
+  which is the closure of $S$ in $\overline{M}$; conversely, if
+  $\overline{S}$ is a component of $\overline{M}$, then $\overline{S}$
+  contains a unique component of $M$, which is $\overline{S} \cap M$.
+\end{propn}
+
+\begin{myproof}
+  Let $S$ be a component of $M$.  Certainly $s$ is contained in a
+  unique component $\overline{S}$ of $\overline{M}$.  Since components
+  are closed, $\overline{S}$ contains the closure of $S$.  But also
+  any $e \in \overline{S}$ can be joined to a fixed $e_0 \in S$ by a
+  path $\gamma$ such that $\gamma(0) = e_0$, $\gamma(1) = e$,
+  $\gamma([0,1)) \subset M$, by Proposition~\ref{propn:6}.  Since
+  $\gamma([0,1))$ is connected and $\gamma(0) \in S$, it follows that
+  $\gamma([0,1)) \subset S$ (since $S$ is a component).  Thus $e$ is a
+  limit point of $S$ and thus belongs to the closure of $S$, showing
+  $\overline{S}$ is contained in the closure of $S$.
+
+  Conversely, let $\overline{S}$ be a component of $\overline{M}$.  If
+  a component of $M$ is contained in $\overline{S}$, this component is
+  also contained in $\overline{S} \cap M$.  Thus, it suffices to show 
+  %%% page 110
+  $\overline{S} \cap M$ is a component of $M$.
+  Proposition~\ref{propn:6} shows that $\overline{S} \cap M$ is
+  connected, for if $e$ and $e$ (????) are in $\overline{S} \cap M$,
+  they can be joined by a path in $M$.  Since the end points are in
+  $\overline{S}$, the entire path is in $\overline{S}$ ($\overline{S}$
+  is a \textbf{component}) and thus is in $\overline{S} \cap M$.  And
+  if a point of $M$ can be joined by a path in $M$ to a point in
+  $\overline{S} \cap M$, that point must be in $\overline{S}$ and thus
+  in $\overline{S} \cap M$.  Thus $\overline{S} \cap M$ is a component.
+\end{myproof}
+
+\begin{defn}
+  \label{def:7}
+  A component of $\overline{M}$ is called an \emph{analytic
+    configuration}.  This is a translation of the term ``analytische
+  Gebilde'' used by Weyl.  Another term is \emph{analytic entity}.
+\end{defn}
+
+\begin{defn}
+  \label{def:8}
+  Let $f$ be a meromorphic function in a neighbourhood of a point $a
+  \in \CCC$.  The \emph{Riemann surface of $f$} is the analytic
+  configuration containing $[f]_a$.
+\end{defn}
+
+This definition is finally the complete idea which was begun in
+Definition 3.17 of Topic 3.  We have now included the branch points in
+the surface and nothing else needs to be added.
+
+It is important to observe that the nice analytic continuation or
+lifting properties of $M$ do not hold in $\overline{M}$.  For example,
+Proposition~\ref{propn:2}, the unique lifting theorem, of Topic 3
+would be false if phrased for $\overline{M}$.  Just consider a
+neighbourhood of a branch point to see this.  For example, let
+%%% page 111
+$$
+\widetilde{\gamma}_1(s) = e((s+t)^2, s+t), \quad
+\widetilde{\gamma}_2(s) = e((|s|+t)^2, |s|+t), \quad
+-1 \le s \le 1.
+$$
+Then $\pi \circ \widetilde{\gamma}_1(s) = \pi \circ
+\widetilde{\gamma}_2(s) = s^2$, but
+$$
+\begin{aligned}
+\widetilde{\gamma}_1(s) &= \widetilde{\gamma}_2(s) \quad \text{for } 0
+\le s \le 1,\\
+\widetilde{\gamma}_1(s) &\ne \widetilde{\gamma}_2(s) \quad \text{for } -1
+\le s < 0.
+\end{aligned}
+$$
+We thus are led to a pictorial idea of branch point: two liftings of a
+given path in $\CCC$ which begin at a common point in $\overline{M}$
+must be the same until a branch point is reached.  But then the
+liftings can branch into several different paths in $\overline{M}$.
+
+If $f$ is a meromorphic function which is not one-to-one, it of course
+has no inverse.  But we can easily consider the Riemann surface
+inverse to its Riemann surface, as follows.
+
+\begin{propn}
+  \label{propn:8}
+  Let $S$ be an open connected subset of $\overline{M}$ such that $v$
+  is not constant on $S$.  Then the mapping
+  %%% page 112
+  $$
+  i : S \to \overline{M}\qquad (i\text{ for ``inverse''})
+  $$
+  defined by
+  $$
+  i(e(P,Q)) = e(Q,P)
+  $$
+  is an analytic equivalence of $S$ with $i(S)$.
+\end{propn}
+
+\begin{mdframed}
+  \textbf{Proof}: First, note that $i$ is well defined.  This depends
+  on the obvious fact that if $(P,Q) \sim (P_1, Q_1)$, then $(Q,P)
+  \sim (Q_1, P_1)$.  Now we prove $i$ is analytic.  To do this we
+  introduce charts in the canonical way:
+  $$
+  \varphi : U(P,Q,\Delta) \to \Delta,\quad
+  \psi : U(Q,P,\Delta) \to \Delta,
+  $$
+  where
+  $$
+  \varphi^{-1}(t_0) = e(P(t_0 + t), Q(t_0 + t)),\quad
+  \psi^{-1}(t_0) = e(Q(t_0 + t), P(t_0 + t)).
+  $$
+  Then
+  $$
+  \psi \circ i \circ \varphi^{-1}(t_0)
+  = \psi(e(Q(t_0 + t), P(t_0 + t))) = t_0,
+  $$
+  so that trivially $\psi \circ i \circ \varphi^{-1}$ is analytic.
+  Thus $i$ is analytic.
+
+  %%% page 113
+  Since $i$ is analytic, $i(S)$ is an open connected subset of
+  $\overline{M}$, and $\pi$ is not constant on $i(S)$ since $v$ is not
+  constant on $S$.  Furthermore, $i : i(S) \to S$ is analytic by what
+  we have already proved and $i \circ i = $identity.  Thus, the
+  inverse of $i$ is analytic.
+\end{mdframed}
+
+We now give an interesting and rather surprising application of some
+these ideas.
+
+\begin{defn}
+  \label{def:9}
+  Let $f$ be meromorphic on an open set $D \subset \CCC$ and let $w
+  \in \widehat{\CCC}$.  Then $w$ is an \emph{asymptotic value} of $f$
+  is there exists a path of the form
+  $$
+  \gamma : [0, \sigma) \to D\qquad (\text{where }0 < \sigma \le \infty)
+  $$
+  such that
+  $$
+  \lim_{s \to \sigma} f(\gamma(s)) = w
+  $$
+  and $\gamma \to \p D$, meaning that for every compact set $K \subset
+  D$, there exists $s_0$ such that $\gamma((s_0, \sigma)) \subset D - K$.
+\end{defn}
+
+\begin{thm}
+  \label{thm:1}
+  If $f$ is holomorphic on an open set $D \subset \CCC$, then there
+  exists an asymptotic value of $f$.
+\end{thm}
+
+%%% page 114
+\begin{myproof}
+  Clearly it suffices to treat the case in which $D$ is connected and
+  $f$ is not constant on $D$.  Now define
+  $$
+  S = \{ [f]_a ~:~ a \in D\}.
+  $$
+  Clearly, $S$ is an open subset of the sheaf of germs $M$, and the
+  mapping $\pi : S \to D$ is an analytic equivalence.  Now we
+  complicate the situation by regarding $S \subset \overline{M}$ and
+  letting $T = i(S)$ in the sense of Proposition~\ref{propn:8}.  Then
+  $v : T \to D$ is an analytic equivalence since $v = \pi \circ
+  i^{-1}$.  According to the definition of $M \subset \overline{M}$,
+  we have 
+  $$
+  T = \{e(f(a+t), a+t) ~:~ a \in D\}.
+  $$
+  Thus, $f \circ v = \pi$ on $T$.  That is, we have a commutative
+  diagram
+  $$
+  \xymatrix{
+    & T\ar[d]^{\pi} \ar[dl]_{v} \\
+    D \ar[r]^f & C
+    }
+  $$
+  %%% page 115
+  and $v$ represents the multiple-valued inverse of $f$.  Note that a
+  point $e(f(a+t), a+t)$ is a branch point (order at least 1) iff
+  $f'(a) = 0$, and this holds only for a discrete and thus countable
+  set of points $a \in D$.  Let $E = \{a \in D : f'(a) = 0\}$ and note
+  that $f(E)$ is a countable subset of $\CCC$.  Choose arbitrarily
+  $a_0 \in D - E$.  Since $f(E)$ is countable and there are
+  uncountably many rays from $f(a_0)$ to $\infty$, it follows that
+  there exists a ray from $f(a_0)$ to $\infty$ contains no points of
+  $f(E)$.  Let this ray be represented by a path $\alpha : [0,\infty)
+  \to \CCC$, so that $\alpha(0) = f(a_0)$, $\alpha(s) \notin f(E)$,
+  $\lim_{s\to \infty} \alpha(s) = \infty$.
+
+  Now we consider the process of lifting $\alpha$ to $T$ by the
+  mapping $\pi$.  Note that if $e \in T$ and $\pi (e) \notin f(E)$,
+  then $v(e) \notin E$ and thus $e \in M$.  Thus, lifting $\alpha$ is
+  a problem of lifting to $M$, not merely $\overline{M}$, and the
+  unique lifting theorem obtains.  Let $s_0$ be the supremum of all
+  numbers $s_1$ such that there exists a lifting $\widetilde{\alpha}$
+  on $[0, s_1)$ with $\widetilde{\alpha}(0) = e(f(a_0 + t), a_0 +
+  t)$.  Then there is a unique path $\widetilde{\alpha}$ corresponding
+  to the maximal $s_0$,
+  $$
+  \widetilde{\alpha} : [0, s_0) \to T
+  $$
+  such that $\pi \circ \widetilde{\alpha} = \alpha$ and
+  $\widetilde{\alpha}(0) = e(f(a_0 + t), a_0 + t)$.   Then define
+  $\gamma = v \circ \widetilde{\alpha}$, so that $\gamma$ is a path in
+  $D$ such that
+  %%% path 116
+  $$
+  \lim_{s \to s_0} f(\gamma(s))
+  = \lim_{s \to s_0} f \circ v \circ \widetilde{\alpha}(s)
+  = \lim_{s \to s_0} \pi \circ \widetilde{\alpha}(s)
+  = \lim_{s \to s_0} \alpha(s)
+  = \alpha(s_0).
+  $$
+  Here $\alpha(s_0) = \infty$ if $s_0 = \infty$.  Thus, the theorem
+  follows if we know that $\gamma$ leaves every compact set in $D$.
+  If $s_0 = \infty$ this is perfectly clear since $\lim_{s \to \infty}
+  f(\gamma(s)) = \infty$.  Suppose $s_0 < \infty$, and suppose that
+  for some compact $K \subset D$, $\gamma$ does not eventually leave
+  $K$.  By the Bolzano-Weierstrass Theorem, there exists a point $z_0
+  \in K$ and a sequence $s_1 < s_2 < \cdots$, $s_n \to s_0$, such that
+  $\gamma(s_n) \to z_0$.  Since $v : T \to D$ is a homeomorphism,
+  $\widetilde{\alpha}(s_n) \to v^{-1}(z_0) = e(f(z_0+t), z_0+t)$.
+  Since $\pi$ is continuous, $f(z_0) = \lim \pi \circ
+  \widetilde{\alpha}(s_n) = \lim \alpha(s_n) = \alpha(s_0) \notin
+  f(E)$, so $e_0 = e(f(z_0 + t), z_0 + t) \in T \cap M$.  This
+  contradicts the maximality of $s_0$, for the topology of $M$ implies
+  that a neighbourhood $U$ of $e_0$ is homeomorphic by a homeomorphism
+  $\varphi$ to a disk $\Delta$ centred at $f(z_0)$ and $\varphi$ is
+  just the restriction of $\pi$ to $U$.  Therefore, if $n$ is chosen
+  such that $\alpha(s_n) \in \Delta$, then for sufficiently small
+  $\epsilon > 0$, we can define
+  $$
+  \widetilde{\alpha}(s) = \varphi^{-1} \circ \alpha(s),\quad
+  s_n \le s < s_0 + \epsilon
+  $$
+  and we obtain a lifting of the required sort past the 
+  %%%
+  supposedly maximal $s_0$.  This contradiction shows that $\gamma$
+  leaves every compact set in $D$.
+\end{myproof}
+
+A comprehensive reference to questions of this sort can be found in
+MacLane, G. R., ``Asymptotic values of holomorphic functions,'' Rice
+University Studies 49 (No. 1) 1963, pp. 1--83.  The example we have
+just treated can be found on page 7 of MacLane's monograph.
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

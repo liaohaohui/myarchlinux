@@ -1,0 +1,961 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{textcomp} %\textquotesingle
+\usepackage[
+%sorting=nyt,
+firstinits=true, % render first and middle names as initials
+useprefix=true,
+maxcitenames=3,
+maxbibnames=99,
+style=authoryear,
+dashed=false, % re-print recurring author names in bibliography
+natbib=true,
+url=false
+]{biblatex}
+%%% http://tex.stackexchange.com/questions/12254/biblatex-how-to-remove-the-parentheses-around-the-year-in-authoryear-style
+\usepackage{xpatch}
+\addbibresource{complex.bib} % run: biber topic1
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+\lstset{ 
+  language=[90]Fortran,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  showstringspaces=false, 
+  emphstyle=\color{black}\bfseries, 
+  emph={[2]True, False, None, self}, 
+  emphstyle=[2]\color{key}, 
+  emph={[3]from, import, as},
+  emphstyle=[3]\color{blue}, 
+  upquote=true, 
+  morecomment=[s]{"""}{"""}, 
+  commentstyle=\color{gray}\slshape, 
+  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, 
+  rulesepcolor=\color{blue},
+  numbers=left,
+  stepnumber=1,
+}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary[shadings]
+
+
+%%% Page Layout
+\oddsidemargin=0truecm
+\evensidemargin=0truecm
+\textwidth=160truemm
+\textheight=260truemm
+\leftmargin=0truemm
+\rightmargin=0truemm
+\voffset=-23truemm
+\topmargin=0truemm
+
+\newif\iflecturer
+\lecturerfalse
+%\lecturertrue
+
+\iflecturer
+\usepackage{marginnote} % \marginpar
+%\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{1,0,0}
+\else
+\def\marginpar#1{}
+\fi
+
+\iflecturer
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{blue}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{blue}#1}}
+\newcommand{\Reason}[1]{{\par\color{blue}\par{}Reason: #1}}
+\else
+\newcommand{\Answer}[1]{\dotfill\underline{\mbox{\hspace{1em}\color{white}#1}}}
+\newcommand{\BoxAns}[1]{\fbox{\color{white}#1}}
+\newcommand{\Reason}[1]{{\par\color{white}\par{}Reason: #1}}
+\fi
+
+\newif\ifamsstyle
+\amsstylefalse
+\newcounter{topic}
+\input common
+\input symbol
+\makeatletter
+\newcommand{\Arctan}{{\mathop{\operator@font Arctan}\nolimits}}
+\makeatother
+
+%\parindent=0pt
+\parskip=1pt
+\linespread{1}
+
+
+\setcounter{topic}{2}
+
+\begin{document}
+
+\title{{\sc Rudiments of Riemann Surfaces\\
+    Topic \thetopic{}: Abstract Riemann Surfaces}}
+\author{Author: B. Frank Jones, Jr. (Rice Univ. 1971)\\
+Seminar: Dr Liew How Hui (\url{liewhh@utar.edu.my})}
+\date{}
+
+\maketitle
+
+
+%%% page 24
+In the introduction (Topic 1) we have considered on method of
+constructing Riemann surfaces and have pointed out various properties.
+In the rest of the course several other methods will be given,
+especially the extremely important \emph{sheaf of germs of meromorphic
+  functions} in Topic 3 and its generalisation, the \emph{analytic
+  configuration}, in Topic 4.  Other examples will be considered in
+the present topic.  All of these Riemann surfaces have one feature
+that cries out for attention, so before coming to the concrete
+examples we shall define this characteristic feature and call any
+object which possess it a Riemann surface.
+
+\section{Definition}
+
+\begin{defn}
+  A \emph{surface} is a Hausdorff space $S$ such that $\forall p \in
+  S$ there is an open neighbourhood $U$ of $p$ and an open set $W
+  \subset \CCC$ and a homeomorphism $\varphi : U \to W$. Such a
+  mapping $\varphi$ is called a \emph{chart} or a \emph{coordinate
+    mapping}.
+\end{defn}
+
+\begin{defn}
+  Let $S$ be a surface.  An \emph{atlas} for $S$ is a collection of
+  charts $\{\varphi_\alpha\}$, where $\alpha$ runs through some index
+  set, such that every point of $S$ belongs to the domain of some
+  $\varphi_\alpha$.  If $\varphi_\alpha : U_\alpha \to W_\alpha$, then
+  we are saying that
+  $$
+  S = \bigcup_\alpha U_\alpha
+  $$
+  %%% page 25
+  Note that if $U_\alpha$ and $U_\beta$ meet, then both
+  $\varphi_\alpha$ and $\varphi_\beta$ are defined on the intersection
+  $U_\alpha \cap U_\beta$ and these mappings provide homeomorphisms
+  between this intersection and the open sets $\varphi_\alpha(U_\alpha
+  \cap U_\beta)$ and $\varphi_\beta(U_\alpha \cap U_\beta)$ in $\CCC$,
+  respectively.   Therefore, there is defined 
+  $$
+  \varphi_\alpha \circ \varphi_\beta^{-1} ~:~ \varphi_\beta(U_\alpha
+  \cap U_\beta) \to \varphi_\alpha(U_\alpha \cap U_\beta).
+  $$
+\end{defn}
+
+
+\begin{mdframed}
+  \vspace{4cm}
+\end{mdframed}
+
+For brevity we shall frequently speak of $\varphi_\alpha \circ
+\varphi_\beta^{-1}$ without mentioning that it is defined only on
+$\varphi_\beta(U_\alpha \cap U_\beta)$.  The functions $\varphi_\alpha
+\circ \varphi_\beta^{-1}$ are called \emph{coordinate transition
+  functions} of the atlas, because if $\varphi_\alpha$ and
+$\varphi_\beta$ are thought of as defining coordinates on $U_\alpha
+\cap U_\beta$, the mapping $\varphi_\alpha \circ \varphi_\beta^{-1}$
+determines how to change from one coordinate system to another.
+
+%%% page 26
+\begin{defn}
+  An atlas $\{\varphi_\alpha\}$ is \emph{analytic} if each coordinate
+  transition function $\varphi_\alpha \circ \varphi_\beta^{-1}$ is
+  analytic.
+\end{defn}
+
+Just note that this definition makes good sense, as $\varphi_\alpha
+\circ \varphi_\beta^{-1}$ is a complex-valued function on an open set
+in $\CCC$ and thus the usual meaning of analytic function is what is
+meant.
+
+\begin{defn}
+  Two charts $\varphi_1$ and $\varphi_2$ on a surface $S$ are
+  \emph{compatible} if the functions $\varphi_1 \circ \varphi_2^{-1}$
+  and $\varphi_2\circ \varphi_1^{-1}$ are analytic.  A chart $\varphi$
+  is \emph{compatible with an analytic atlas} $\{\varphi_\alpha\}$ if
+  $\varphi$ and $\varphi_\alpha$ are compatible for all $\alpha$.
+\end{defn}
+
+\begin{defn}
+  \label{def:5}
+  An analytic atlas is \emph{complete} if it contains every chart
+  compatible with it.
+\end{defn}
+
+We are now almost ready to define a Riemann surface as a surface
+together with an analytic atlas.  But there is a slight technical
+problem which must be overcome.  Namely, there is almost never a
+convenient canonical atlas, and we therefore either need to define
+some sort of canonical atlas or need to define an equivalence relation
+between analytic atlases.  Since these approaches are really the same,
+we arbitrarily pick the former possibility.  This is the reason for
+Definition~\ref{def:5}.  Now we give a lemma which actually relates
+these concepts.
+
+%%% page 27
+\begin{lem}
+  \label{lem:1}
+  For any analytic atlas $\{\varphi_\alpha\}$ on a surface $S$, there
+  exists exactly one complete analytic atlas containing it.  This
+  complete analytic atlas is the collection of all charts compatible
+  with $\{\varphi_\alpha\}$.
+\end{lem}
+\begin{myproof}
+  Let $\sA$ be the set of all charts compatible with
+  $\{\varphi_\alpha\}$.  We first prove that $\sA$ is an
+  atlas, then that it is complete.  Suppose then that
+  $\varphi,\varphi' \in \sA$. Thus, $\varphi : U\to W$ and
+  $\varphi' : U' \to W'$ are homeomorphisms from open sets in $S$ to
+  open sets in $\CCC$. 
+  Suppose $U$ and $U'$ meet and let $p_0 \in U\cap U'$.  Since
+  $\{\varphi_\alpha\}$ is an atlas, there exists $\varphi_\alpha :
+  U_\alpha \to W_\alpha$ such that $p_0 \in U_\alpha$.  Then
+  $$
+  \varphi' \circ \varphi^{-1} = (\varphi' \circ \varphi_\alpha^{-1})
+  \circ (\varphi_\alpha \circ \varphi^{-1})
+  $$
+  and $\varphi' \circ \varphi_\alpha^{-1}$ and $\varphi_\alpha \circ
+  \varphi^{-1}$ are both holomorphic since $\varphi, \varphi'$ are
+  compatible with $\varphi_\alpha$.  Thus, $\varphi' \circ
+  \varphi^{-1}$ is holomorphic.  Thus $\sA$ is an analytic
+  atlas.
+
+  To prove that $\sA$ is complete, suppose $\psi$ is compatible with
+  $\sA$.  Since $\sA$ contains $\{\varphi_\alpha\}$ (since
+  $\{\varphi_\alpha\}$ is itself an analytic atlas), $\psi$ is
+  compatible with $\{\varphi_\alpha\}$.  That is, $\psi \in \sA$.
+  Thus, $\sC$ is complete.
+
+  Finally, to prove that $\sA$ is unique, suppose $\sB$ is a complete
+  analytic atlas containing $\{\varphi_\alpha\}$.  If $\varphi \in
+  \sB$, then $\varphi$ is compatible with $\{\varphi_\alpha\}$, and
+  thus $\varphi \in \sA$.  This proves $\sB\subset \sA$.  Now suppose
+  $\varphi \in \sA$.  Let $\psi \in \sB$.  Arguing as above, we find
+  $$
+  \begin{aligned}
+    \varphi \circ \psi^{-1} &= (\varphi \circ \varphi_\alpha^{-1})
+    \circ (\varphi_\alpha \circ \psi^{-1}),\\
+    \psi \circ \varphi^{-1} &= (\psi \circ \varphi_\alpha^{-1})
+    \circ (\varphi_\alpha \circ \varphi^{-1}),
+  \end{aligned}
+  $$
+  and thus $\varphi$ and $\psi$ are compatible.  Thus $\varphi$ is
+  compatible with $\sB$.  As $\sB$ is complete, $\varphi \in \sB$.
+  Thus, $\sA\subset \sB$.  Hence $\sA = \sB$.
+\end{myproof}
+
+
+%%% page 28
+As a result of this lemma, we see that two analytic atlases are
+contained in the same complete analytic atlas if and only if each
+chart from one atlas is compatible with each chart from the other
+atlas, or if and only if the union of the two atlases is itself an
+analytic atlas.
+
+\begin{defn}
+  \label{def:6}
+  A \emph{Riemann surface} is a surface together with a complete
+  analytic atlas.
+\end{defn}
+
+Thus to specify an abstract Riemann surface, we must specify a surface
+\textbf{and} a complete analytic atlas.
+
+%%% page 29
+The effective purpose of Lemma~\ref{lem:1} is to enable us to forget
+about the rather cumbersome completeness assumption.  So when we wish
+to construct a Riemann surface, we will be satisfied to exhibit
+\textbf{one} analytic atlas, keeping in the back of our minds that
+Lemma~\ref{lem:1} implies the existence of a unique larger complete
+analytic atlas.  This is quite helpful, as it will usually be more or
+less obvious what can be chosen to be an analytic atlas.
+
+It is most important for beginners in this subject no to beguiled by
+Definition~\ref{def:6}.   The crux of the theory of Riemann surfaces
+is \textbf{not} this definition.  This definition just gives a
+convenient term in a book-keeping sense to keep track of the structure
+implied in the definition of complete analytic atlas.  Thus, this
+topic has been called ``\emph{abstract} Riemann surfaces''.  It will
+be up to us to verify for the many concrete Riemann surfaces we find
+that the above definition obtains.
+
+\section{Examples}
+
+Now we pass to some examples
+
+\begin{exmp}
+  \begin{enumerate}
+  \item This is by far the most trivial example.  Let $S$ be any open
+    subset of $\CCC$; the atlas consists of the single chart $\varphi$
+    which is the identity mapping on $S$.  In this case, $\varphi$ is
+    obviously a homeomorphism and the only transition function is
+    $\varphi \circ \varphi^{-1}$ = identity on $S$.
+
+    %%% page 30
+  \item A most important example is the \emph{Riemann sphere}.  We
+    take this to be the topological space $\widehat{\CCC} = \CCC \cup
+    \{\infty\}$, where points in $\CCC$ have their usual
+    neighbourhoods and a neighbourhood basis of $\infty$ consists of
+    the sets $\{z ~:~ |z| > a\} \cup \{\infty\}$ for $0 < a <
+    \infty$.  This is clearly a topological space and stereographic
+    projection is a homeomorphism of $\widehat{\CCC}$ onto the unit
+    Euclidean sphere in $\RR^3$.  The atlas we pick will consist of
+    two charts.  Let $U_1 = W_1 = \CCC$ and $\varphi_1 : U_1 \to W_1$
+    be the identity.  Let $U_2 = \widehat{\CCC} - \{0\}$, $W_2 = \CCC$,
+    and $\varphi_2 : U_2 \to W_2$ be given by $\varphi_2(z) = z^{-1}$,
+    $\varphi_2(\infty) = 0$.  These are clearly charts, and $\varphi_2
+    \circ \varphi_1^{-1}(z) = \varphi_2(z) = z^{-1}$, $\varphi_1
+    \circ \varphi_2^{-1}(z) = \varphi_2(z) = z^{-1}$, which shows the
+    coordinate transition functions are holomorphic.
+
+  \item As we mentioned above, $\widehat{\CCC}$ is homeomorphic to the
+    unit sphere in $\RR^3$.  It is a fact that any topological space
+    homeomorphic to a Riemann surfaces can itself be made into a
+    Riemann surface.  To see this, suppose $S$ is a Riemann surfacce
+    with analytic atlas $\{\varphi_\alpha\}$ and that $T$ is a
+    topological space and $\Phi : T \to S$ a homeomorphism.  Then the
+    maps $\{\varphi_\alpha \circ \Phi\}$ form an analytic atlas for
+    $T$ with transition functions
+    $$
+    (\varphi_\alpha \Phi) \circ (\varphi_\beta \circ \Phi)^{-1}
+    = \varphi_\alpha \circ \varphi_\beta^{-1}.
+    $$
+
+    %%% page 31
+  \item All the surfaces constructed in Topic 1 are Riemann
+    surfaces.
+
+  \item Any open subset of a Riemann surface can be made into a
+    Riemann surface in a natural way:  If $T$ is an open set in the
+    Riemann surface $S$, then for a chart $\varphi_\alpha : U_\alpha
+    \to W_\alpha$ on $S$ let the mapping $\psi_\alpha$ be the
+    restriction of $\varphi_\alpha$ to $U_\alpha \cap T$.  Then an
+    analytic atlas $\{\varphi_\alpha\}$ on $S$ gives rise to an
+    analytic atlas $\{\psi_\alpha\}$ on $T$.
+
+  \item The torus. Of course, the examples mentioned in 4 include a
+    Riemann surface homeomorphic to a torus.  Here is another way to
+    make a torus into a Riemann surface.
+
+    \textbf{Problem 1}: Let $\omega_1$ and $\omega_2$ be nonzero
+    complex numbers whose ratio is not real.  Let $\Omega = \{n_1
+    \omega_1 + n_2 \omega_2 ~:~ n_1,n_2 \in \ZZ\}$, and for any $z \in
+    \CCC$ let $[z] = z + \Omega$.  Prove that there is $\delta > 0$
+    such that $|n_1 \omega_1 + n_2 \omega_2 | \ge \delta$ if $n_1,
+    n_2$ are integers which are not both zero.  Let $\CCC/\Omega$ be
+    the set of all $[z]$ for $z \in \CCC$, noting that $[z] = [z']
+    \Leftrightarrow z - z' \in \Omega$.  For any $[z]$ define a
+    neighbourhood basis of $[z]$ to consist of all sets
+    $$
+    U_\epsilon([z]) = \{[z] ~:~ |z-w| < \epsilon\}
+    $$
+    for $\epsilon > 0$.  Prove that $\CCC/\Omega$ becomes a
+    Hausdorff space.  For $\epsilon \le \delta/2$ let $\varphi :
+    U_\epsilon([z]) \to \Delta_\epsilon(0)$ be defined by
+    $\varphi([z]) = w-z$.  Prove that these form charts in an
+    analytic atlas for $\CCC/\Omega$.
+
+    The relation to a torus is that $\CCC/\Omega$ is homeomorphic to a
+    torus in a natural way.  This can perhaps best be seen by
+    considering the set $A = \{t_1 \omega_1 + t_2 \omega_2 ~:~ 0 \le
+    t_1 < 1,\ 0 \le t_2 < 1\} \subset \CCC$, which is obviously in
+    one-to-one correspondence with $\CCC/\Omega$.
+
+    Th topology in $A$ is determined in a natural fashion: a
+    neighbourhood basis of a point $t_1 \omega_1 + t_2 \omega_2$ with
+    $0 < t_1 < 1$, $0 < t_2 < 1$, can be taken to be sufficiently
+    small disks centred at that point.  For a point $p$ as indicated
+    on the ``boundary'' of $A$, a neighbourhood basis can be taken to
+    be sets 
+    $$
+    \{z \in A ~:~ |z-p| < \epsilon\} \cup \{z\in A ~:~
+    |z-p-\omega_1| < \epsilon\}
+    $$
+    for all sufficiently small $\epsilon$.  And a neighbourhood basis
+    of 0 can be described in a similar fashion, corresponding to the
+    four smaller sectors in the figure.  Of course, this topology just
+    corresponds to a gluing in the sense of Topic 1 and one easily
+    sees that now $A$ is homeomorphic to $\CCC/\Omega$, the
+    homeomorphism being the mapping $A \to \CCC/\Omega$ which sends
+    $z$ to $[z]$.  Finally, if one imagines this gluing carried out
+    with a strip of paper the shape of $A$, it becomes clear that $A$
+    is homeomorphic to a torus.
+
+    %%% page 34
+  \item The sheaf of germs of meromorphic functions to be discussed at
+    length in Topic 3 will be a Riemann surface in a natural way.
+  \end{enumerate}
+\end{exmp}
+
+
+
+\section{Connectedness}
+
+\begin{defn}
+  A \emph{path} in a topology space $S$ is a continuous function
+  $\gamma : I\to S$ where $I=[0,1]$.  The \emph{initial point} of
+  $\gamma$ is $\gamma(0)$ and the \emph{terminal point} of $\gamma$ is
+  $\gamma(1)$.  And $\gamma$ is said to be a \emph{path from
+    $\gamma(0)$ to $\gamma(1)$}.
+\end{defn}
+
+\begin{defn}
+  \label{def:8}
+  A topological space $S$ is \emph{disconnected} if there are open
+  sets $A, B \subset S$ such that $S = A \cup B$, $A$ and $B$ are
+  disjoint, and neither $A$ nor $B$ is empty.  A topological space $S$
+  is \emph{connected} if it is not disconnected.
+\end{defn}
+
+\begin{propn}
+  \label{propn:1}
+  A Riemann surface $S$ is connected if and only if for any points
+  $p_0$ and $p_1$ in $S$ there exists a path in $S$ from $p_0$ to
+  $p_1$.
+\end{propn}
+\begin{proof}
+  Suppose $S$ is disconnected, and let $A$ and $B$ be the
+  corresponding sets of Definition~\ref{def:8}. Let $p_0 \in A$ and
+  $p_1 \in B$.  If there is a path $\gamma$ in $S$ from $p_0$ to $p_1$,
+  then $\gamma(I)$ is connected (it is a general result that a
+  continuous image of a connected space is connected).  However, the
+  sets $A_1 = \gamma(I) \cap A$ and $B_1 = \gamma(I) \cap B$ show that
+  in the sense of Definition~\ref{def:8} $\gamma(I)$ is disconnected.
+
+  %%% page 35
+  Conversely, suppose $S$ is connected and let $p_0, p_1 \in S$.  Let
+  $A = \{p \in S ~:~$ there is a path in $S$ from $p_0$ to $p\}$.
+  Then $A$ contains $p_0$ and is thus not empty.  Also, $A$ is open:
+  if $p \in A$ then using an open neighbourhood $U$ of $p$ and a chart
+  $\varphi : U \to \Delta$ from $U$ onto a disk $\Delta$, then $U
+  \subset A$.  For if $p' \in U$ and if $\gamma$ is the part from
+  $p_0$ to $p$, then a path $\gamma_1$ from $p_0$ to $p'$ is
+  $$
+  \gamma_1(t) =
+  \begin{cases}
+    \gamma(2t), & 0 \le t \le \frac{1}{2},\\
+    \varphi^{-1}((2-2t)\varphi(p) + (2t-1)\varphi(p')),
+    & \frac{1}{2} \le t \le 1.
+  \end{cases}
+  $$
+
+  \begin{mdframed}
+    \vspace{4cm}
+  \end{mdframed}
+
+  %%% page 36
+  Thus, $A$ is open.  A similar proof shows that $A$ is closed: if
+  $p'$ is a limit point of $A$, then we can use the same picture as
+  above, except that $U$ is now picked to be a neighbourhood of $p'$
+  homeomorphic to a disk $\Delta$.  Since $p'$ is a limit point of
+  $A$, there is a point $p \in U \cap A$.  Then the same construction
+  as above  shows that there is a path in $S$ from $p_0$ to $p'$;
+  i.e., $p' \in A$.  Thus $A$ contains all its limit points and is
+  therefore a closed set.  Since $A$ is open and closed and nonempty,
+  and $S$ is connected, we have $A = S$.  Thus $p_1 \in A$.
+\end{proof}
+
+\begin{rem}
+  Note that the above proof is entirely topological.  In general
+  topology this theorem states that a connected, locally arcwise
+  connected space is arcwise connected.
+\end{rem}
+
+
+
+\section{Analytic Functions}
+
+No we turn to the important concept of analytic functions.
+
+\begin{defn}
+  \label{def:9}
+  Let $S_1$ and $S_2$ be Riemann surfaces, $U$ an open subset of
+  $S_1$, and $f$ a continuous function from  $U$ to $S_2$. Then $f$ is
+  \emph{analytic} if for every chart $\varphi_1 : U_1 \to W_1$ on
+  $S_1$ and every chart $\varphi_2 : U_2 \to W_2$ on $S_2$, the
+  function $\varphi_2 \circ f \circ \varphi_1^{-1}$ is holomorphic.
+  (Here and elsewhere when we use a phrase like ``every chart
+  $\varphi_1$'' we mean every chart $\varphi_1$ in the complete
+  analytic atlas for $S_1$.)
+\end{defn}
+
+%%% page 37
+\begin{rem}
+  Since the coordinate transition functions are holomorphic, to check
+  the analyticity of $f$ is a neighbourhood of a point $p_0 \in U$ it
+  is sufficient to check the analyticity of $\varphi_2 \circ f \circ
+  \varphi_1^{-1}$ for some chart $\varphi_1$ in a neighbourhood of
+  $p_0$ and some chart $\varphi_2$ in a neighbourhood of $f(p_0)$.
+\end{rem}
+
+This remark also immediately leads to 
+
+\begin{propn}
+  \label{propn:2}
+  In the notation of Definition~\ref{def:9} $f$ is analytic on $U$ if
+  and only if $f$ is analytic in some neighbourhood of each point of
+  $U$.
+\end{propn}
+
+\begin{propn}
+  If $f : S_1 \to S_2$ is analytic and $g : S_2 \to S_3$ is analytic,
+  then $g \circ f : S_1 \to S_3$ is analytic.
+\end{propn}
+
+\begin{myproof}
+  Let $p_0 \in S_1$.  Choose a chart $\varphi_3 : U_3 \to W_3$ in a
+  neighbourhood of $g\circ f(p_0)$.  Choose a chart $\varphi_2 : U_2
+  \to W_2$ in a neighbourhood of $f(p_0)$ such that $g(U_2) \subset
+  U_3$.  Choose a chart $\varphi_1 : U_1 \to W_1$ in a neighbourhood
+  of $p_0$ such that $f(U_1) \subset U_2$.  Then
+  $$
+  \varphi_3 \circ g \circ f \circ \varphi_1^{-1}
+  = (\varphi_3 \circ g \circ \varphi_2^{-1}) \circ
+  (\varphi_2 \circ f \circ \varphi_1^{-1})
+  $$
+  is a composition of holomorphic functions and is thus holomorphic.
+  Thus, $g \circ f$ is analytic in a neighbourhood of $p_0$ and
+  Proposition~\ref{propn:2} shows this suffices.
+\end{myproof}
+
+%%% page 38
+\begin{exmp}
+  \label{eg:22}
+  \begin{enumerate}
+  \item If $S_1$ is an open subset of the Riemann surface $\CCC$ and
+    $S_2 = \CCC$, then $f : S_1 \to \CCC$ is analytic according to
+    Definition~\ref{def:9} iff $f$ is analytic in the usual sense
+    (satisfies the Cauchy-Riemann equation).
+  \item If $S_1 = \widehat{\CCC}$ and $f$ is continuous from a
+    neighbourhood of $\infty$ into $S_2$, then $f$ is analytic in a
+    neighbourhood of $\infty$  iff the function $z \mapsto f(z^{-1})$ 
+    is analytic in a neighbourhood of 0.  This follows because a chart
+    near $\infty$ on $\widehat{\CCC}$ is the mapping $\varphi(z) =
+    z^{-1}$.
+  \item Likewise, if $S_2 = \widehat{\CCC}$ and $f : S_1 \to
+    \widehat{\CCC}$ is continuous in a neighbourhood of $p_0$ and
+    $f(p_0) = \infty$, then $f$ is analytic in a neighbourhood of
+    $p_0$ iff $\frac{1}{f}$ is analytic from a neighbourhood of $p_0$
+    to $\CCC$.
+
+    %%% page 39
+  \item An analytic function from a Riemann surface to $\CCC$ is said
+    to be \emph{holomorphic}; an analytic function from a Riemann
+    surface to $\widehat{\CCC}$ is said to be \emph{meromorphic}.
+  \item Any chart in the complete analytic atlas of a Riemann surface
+    is holomorphic.
+  \item Consider the torus $\CCC / \Omega$.  Let $\pi : \CCC \to
+    \CCC/\Omega$ be the canonical mapping $\pi(z) = [z]$.  Then $\pi$
+    is analytic.  To see this consider $\varphi : U_\epsilon([z]) \to
+    \Delta_\epsilon$.   Then in a neighbourhood of the fixed point $z$
+    we have $\varphi \circ \pi(w) = \varphi([w]) = w-z$, a holomorphic
+    function of $w$.
+  \item Again for the torus $\CCC/\Omega$, we show that if $S$ is a
+    Riemann surface and $f : \CCC/\Omega \to S$, then $f$ is analytic
+    iff there is a function $F : \CCC \to S$ analytic such that
+    $$
+    F = f\circ \pi.
+    $$
+    First, if $f$ is analytic and $F$ is defined in this way, then $F$
+    is a composition of analytic functions and is thus analytic.
+
+    %%% page 40
+    Now suppose $F$ is analytic and $F = f\circ \pi$.  We shall then
+    prove that $f$ is analytic in a neighbourhood of any point $[z]
+    \in \CCC/\Omega$.  Take $\varphi : U_\epsilon([z]) \to
+    \Delta_\epsilon$.  Then for $p \in U_\epsilon([z])$ we can write
+    $p = [z]$, where $|w-z| < \epsilon$ and $\varphi(p) = w-z$.  Thus
+    $$
+    f(p) = f(\pi(w)) = F(w) = F(z + \varphi(p)),
+    $$
+    and we have exhibited $f$ as a composition of analytic functions,
+    so that $f$ is analytic near $p_0 = [z]$.
+
+    This example really indicates the importance of the notion of
+    analytic functions, since we see that there is a natural
+    identification of analytic functions on $\CCC / \Omega$ with
+    analytic functions $F$ on $\CCC$ which are \emph{doubly periodic},
+    i.e., which satisfy
+    $$
+    F(z+w_1) = F(z),\quad F(z+w_2) = F(z).
+    $$
+    When $S = \widehat{\CCC}$ these are the \emph{elliptic} functions.
+
+    %%% page 41
+  \item For a Riemann surface constructed in the introduction (Topic
+    1) there are corresponding analytic functions.   For example,
+    consider the Riemann surface $S$ for $\log(z)$ and the  function
+    $f$ on $S$ corresponding to $\log(z)$.  Then $f$ is holomorphic on
+    $S$.  Likewise, consider the Riemann surface $\widetilde{T}$ for
+    $z^{1/m}$ and the corresponding function $f$.  Then $f$ is
+    meromorphic on $\widetilde{T}$.  This really follows from item 5
+    above since near the branch point 0 the function $f$ is a chart
+    and likewise near the branch point $\infty$, and away from the
+    branch points the verification is obvious.
+  \item The analytic functions from $\widehat{\CCC}$ to
+    $\widehat{\CCC}$ are the rational functions.
+  \item The analytic functions from $\widehat{\CCC}$ to $\CCC$ are the
+    constant functions (Liouville's thereom).
+  \end{enumerate}
+\end{exmp}
+
+
+\section{Properties of Analytic Functions}
+
+Now we shall develop some general properties of analytic functions.
+The main thing to note is the fact that local properties of analytic
+functions of a complex variable usually go over to corresponding
+properties in the general case in an obvious and trivial fashion.  For
+example, we have
+
+%%% page 42
+\begin{propn}
+  \label{propn:4}
+  An analytic function $f : S_1 \to S_2$ which is not constant on
+  any neighbourhood is an open mapping.
+\end{propn}
+\begin{myproof}
+  We must show that if $p_0 \in S_1$ and $U_1$ is a neighbourhood of
+  $p_0$, then $f(U_1)$ contains a neighbourhood of $f(p_0)$.  We can
+  assume $\varphi_1 : U_1 \to W_1$ is a chart for $S_1$ and $\varphi_2
+  : U_2 \to W_2$  a chart for $S_2$ and $f(U_1) \subset U_2$.  Then
+  $\varphi_2 \circ f \circ \varphi_1^{-1}$ is a nonconstant
+  holomorphic function on $W_1$ and by the known property that a
+  holomorphic function of a complex variable is open if not constant
+  we see that $\varphi_2 \circ f \circ \varphi_1^{-1}(w_1)$ contains a
+  neighbourhood $G$ of $\varphi_2 \circ f(p_0)$.  As $\varphi_2$ is a
+  homeomorphism, this implies $f(U_1)$ contains a neighbourhood
+  $\varphi_2^{-1}(G)$ of $f(p_0)$.
+\end{myproof}
+
+Also, global topological properties of Riemann surfaces can be
+combined with local properties of analytic functions in a decisive
+manner.
+
+\begin{propn}
+  \label{propn:5}
+  If $S_1$ is a connected Riemann surface and if
+  $$
+  f : S_1 \to S_2,\quad g : S_1 \to S_2,
+  $$
+  are analytic functions such that $f$ and $g$ coincide on some set
+  which has a limit point in $S_1$, then $f = g$.
+\end{propn}
+%%% page 43
+\begin{myproof}
+  Let $A = \{ p \in S_1 ~:~ f\text{ and }g\text{ coincide in a
+    neighbourhood of }p\}$.  Clearly, $A$ is open by its very
+  definition.  Also, $A \ne \emptyset$, for if $f(p_n) = g(p_n)$ with
+  $p_n \to p_0$ ($p_n \ne p_0$), then $p_0 \in A$; to see this let
+  $\varphi_i : U_i \to W_i$ be charts for $S_i$, $p_0 \in U_1$,
+  $f(p_0) = g(p_0) \in U_2$.  Then $\varphi_2 \circ f \circ
+  \varphi_1^{-1}$ and $\varphi_2 \circ g \circ \varphi_1^{-1}$ are
+  holomorphic in $W_1$ and agree on a sequence in $W_1$ tending to
+  $\varphi_1(p_0) \in W_1$, and thus by the known property for
+  holomorphic functions of a complex variable, $\varphi_2 \circ f
+  \circ \varphi_1^{-1}$ and $\varphi_2 \circ g \circ \varphi_1^{-1}$
+  coincide in a neighbourhood of $\varphi_1(p_0)$, and we see that
+  $p_0 \in A$.  A similar proof shows that $A$ is closed; just use the
+  previous argument with $p_0$ taking the role of a limit point of
+  $A$.  As $S_1$ is connected, $A = S_1$.
+\end{myproof}
+
+\begin{propn}
+  \label{propn:6}
+  If $S$ is a connected Riemann surface and if $f : S \to \CCC$ is
+  holomorphic, then $|f|$ has no relative maximum in $S$ unless $f$ is
+  constant.
+\end{propn}
+%%% page 44
+\begin{myproof}
+  Suppose $|f|$ has a relative maximum at $p_0 ~:~ |f(p)| \le
+  |f(p_0)|$ for $p$ near $p_0$.  Then the maximum principle for
+  holomorphic functions of a complex variable implies $f$ is constant
+  in a neighbourhood of $p_0$.  Proposition~\ref{propn:5} implies $f$
+  is constant on $S$.
+\end{myproof}
+
+\begin{propn}
+  \label{propn:7}
+  If $f$ is a holomorphic function on a Riemann surface minus a point,
+  $S - \{p_0\}$, and if $f$ is bounded in a neighbourhood of $p_0$,
+  then $f$ has a unique extension to a holomorphic function on $S$.
+\end{propn}
+\begin{myproof}
+  Apply the usual theorem on removable singularities to show that if
+  $\varphi : U \to W$ is a chart in a neighbourhood of $p_0$, then
+  there is a holomorphic function $g$ on $W$ such that $f \circ
+  \varphi^{-1} = g$ on $W - \{\varphi(p_0)\}$.  The extension of $f$
+  near $p_0$ is then $g \circ \varphi$.
+\end{myproof}
+
+\begin{propn}
+  \label{propn:8}
+  If $S$ is a compact connected Riemann surface, the only holomorphic
+  functions on $S$ are constants.
+\end{propn}
+%%% page 45
+\begin{myproof}
+  Suppose $f : S \to \CCC$ is analytic.  Since $S$ is compact, the
+  continuous function $|f|$ assumes its maximum at some point of $S$.
+  Since $S$ is connected, Proposition~\ref{propn:6} implies $f$ is
+  constant.
+\end{myproof}
+
+Now let us examine in some detail the local properties of meromorphic
+functions.  Let $f$ be meromorphic in a neighbourhood of $p_0$ in a
+Riemann surface $S$.  If $\varphi : U \to W$ is a chart in the
+complete analytic atlas for $S$ and $U$ is a neighbourhood of $p_0$,
+then a transition of the set $W$  in $\CCC$ allows us to assume
+$\varphi(p_0) = 0$.  Thus $f\circ \varphi^{-1}$ is meromorphic in a
+neighbourhood of 0 in $\CCC$.  Thus, $f\circ \varphi^{-1}$ has a
+Laurent expansion
+$$
+f \circ \varphi^{-1}(z) = \sum_{k=N}^{\infty} a_k z^k,\quad a_N \ne 0.
+$$
+If $\psi : U_1 \to W_1$ is another chart in the complete analytic
+atlas for $S$, $U_1$ a neighbourhood of $p_0$, $\psi(p_0) = 0$, then
+$\varphi \circ \psi^{-1}$ and its inverse are holomorphic and map 0 to
+0, and thus near $w = 0$
+$$
+\varphi \circ \psi^{-1}(w) = \sum_{k=1}^{\infty} c_k w^k,\quad c_1 \ne 0.
+$$
+Therefore,
+%%% page 46
+$$
+f \circ \psi^{-1}(w) = f\circ \varphi^{-1} \circ \varphi \circ
+\psi^{-1}(w) = a_N c_1^N w^N + \cdots,
+$$
+where the additional terms involve higher powers of $w$.  Therefore,
+$$
+f \circ \psi^{-1}(w) = \sum_{k=N}^{\infty} b_kw^k,\quad b_N \ne 0.
+$$
+Thus, the number $N$ does not depend on the particular chart used, but
+depends only on the function $f$.  It is called the \emph{divisor of
+  $f$ at $p_0$} and is written
+$$
+N = \p_f(p_0).
+$$
+
+There is another integer associated with $f$ which is perhaps more
+important.  Suppose $f$ is not constant near $p_0$.  If the divisor
+$N$ of $f$ at $p_0$ is negative, then the \emph{multiplicity} of $f$
+at $p_0$ is said to be $-N$.  Now suppose $\p_f(p_0) \ge 0$.  Then the
+\emph{multiplicity} of $f$ at $p_0$ is the divisor of $f-f(p_0)$ at
+$p_0$.  Thus, we have for $m_f(p_0)$, the \emph{multiplicity of $f$ at
+$p_0$}, the formula
+%%% page 47
+$$
+m_f(p_0) =
+\begin{cases}
+  -\p_f(p_0) & \text{if }\p_f(p_0) < 0,\\
+  \p_{f-f(p_0)}(p_0) & \text{if }\p_f(p_0) \ge 0.
+\end{cases}
+$$
+Thus, $m_f(p_0)$ is a positive integer which is completely determined
+by $f$.
+
+In terms of $m_f(p_0)$ we can obtain a simple representation for $f$
+by choosing an appropriate chart near $p_0$.  Thus, let $m = m_f(p_0)$
+and consider two cases:
+
+\underline{$\p_f(p_0) \ge 0$}.  In this case the Laurent expansion
+appears in the form
+$$
+f \circ \varphi^{-1}(z) = f(p_0) + a_m z^m + \cdots, \quad a_m \ne 0.
+$$
+Let $\alpha$ be one of the $m$\textsuperscript{th} roots of $a_m$ and
+note that
+$$
+a_m z^m + a_{m+1} z^{m+1} + \cdots = \alpha^m z^m (1 +
+\sum_{k=1}^{\infty} \frac{a_k}{a_m} z^k).
+$$
+Let $h(z)$ be the principal $m$\textsuperscript{th} root of $1 +
+\sum_{k=1}^{\infty} \frac{a_k}{a_m} z^k$ near $z=0$, so that
+$$
+f\circ \varphi^{-1}(z) = f(p_0) + (\alpha z h(z))^m.
+$$
+%%% page 48
+Now define a new chart near $p_0$ by the equation
+$$
+\psi(p) = \alpha\varphi(p) h(\varphi(p)),\quad p \text{ near }p_0.
+$$
+Then $\psi$ is a chart in the complete analytic atlas for $S$ since
+the mapping $z \mapsto \alpha z h(z)$ is a conformal equivalence near
+0; and
+$$
+\begin{aligned}
+  f\circ \psi^{-1}(w) 
+  &= f\circ \varphi^{-1} \circ \varphi \circ \psi^{-1}(w) \\
+  &= f(p_0) + (\alpha \varphi \circ \psi^{-1}(w) h(\varphi\circ
+  \psi^{-1}(w)))^m\\
+  &= f(p_0) + (\psi(\psi^{-1}(w))^m
+  = f(p_0) + w^m.  
+\end{aligned}
+$$
+
+\underline{$\p_f(p_0) < 0$}.  Now the Laurent expansion is
+$$
+f\circ \varphi^{-1}(z) 
+= a_{-m}z^{-m} + a_{1-m}z^{1-m} + \cdots
+= a_{-m}z^{-m}( 1 + \frac{a_{1-m}}{a_{-m}} z + \cdots),
+\quad a_{-m} \ne 0.
+$$
+In this case choose $\alpha$ such that $\alpha^{-m} = a_{-m}$ and $h$
+holomorphic near 0 with $h(0) = 1$, $h(z)^{-m} = 1 +
+\frac{a_{1-m}}{a_{-m}} z + \cdots$.  Then
+$$
+f \circ \varphi^{-1}(z) = (\alpha z h(z))^{-m},
+$$
+so a similar argument shows that there is a chart $\psi$ at $p_0$ such
+that
+$$
+f \circ \psi^{-1}(w) = w^{-m}.
+$$
+
+Summarising, if $m = m_f(p_0)$, then there is a chart $\psi$ in a
+neighbourhood of $p_0$ such that
+$$
+f \circ \psi^{-1}(w)
+=
+\begin{cases}
+  f(p_0) + w^m, & \text{if }\p_f(p_0) \ge 0,\\
+  w^{-m}, & \text{if }\p_f(p_0) < 0.
+\end{cases}
+$$
+
+We note that it is easy to prove that
+$$
+m_{g\circ f}(p_0) = m_g(f(p_0)) m_f(p_0).
+$$
+
+\begin{defn}
+  \label{def:10}
+  Two Riemann surfaces $S_1$ and $S_2$ are \emph{equivalent} if there
+  are analytic functions $f : S_1 \to S_2$ and $g : S_2 \to S_1$ such
+  that $f \circ g = id_{S_2}$ and $g \circ f = id_{S_1}$.  Thus, each
+  mapping $f$ and $g$ is bijective, analytic, and has analytic
+  inverse.
+\end{defn}
+
+It is routine to check that we have defined a equivalence relation.
+Note that equivalence Riemann surfaces are homeomorphic.  The converse
+is not valid.  We shall see that among the tori $\CCC/\Omega$, there
+are infinitely many nonequivalent Riemann surfaces.  However, if a
+Riemann surfaces is homeomorphic to $\widehat{\CCC}$, then it is
+equivalence to $\widehat{\CCC}$ with its usual complete analytic
+atlas.  This will be proved in Topic 7.
+
+%%% page 50
+Here is perhaps the simplest example of two homeomorphic nonequivalent
+Riemann surfaces.  Let $S_1$ be $\CCC$ with the usual analytic atlas.
+Let $\Delta = \{ z ~:~ |z| < 1\}$ and define a homeomorphism 
+$$
+\varphi : \CCC \to \CCC,\quad
+z \mapsto \frac{z}{\sqrt{1 + |z|^2}}.
+$$
+Let $\Delta$ have the usual analytic atlas and define $S_2$ to be the
+Riemann surface induced on $\CCC$ by the homeomorphism $\varphi$, as
+in item 3 of Example~\ref{eg:22}. In other words, $S_2$ has an
+analytic atlas consisting of the single chart $\varphi$.  Then $S_1$
+and $S_2$ are not equivalent.  For suppose $f : S_1 \to S_2$ is
+analytic.  Then by definition $\varphi \circ f$ is a holomorphic
+function from $\CCC$ to $\Delta$ and is therefore constant by
+Liouville's theorem.  Thus, $f$ is constant.
+
+%%% page 51
+We wish to consider a final feature of analytic functions.  Suppose
+$S$ and $T$ are Riemann surfaces and that $f : S \to T$ is analytic.
+If $q \in T$ we say that $f$ \emph{takes the value $q$ $n$ times} if
+$f^{-1}(\{q\}) = \{p_1, \cdots, p_\ell\}$ is finite and
+$\ds
+\sum_{k=1}^{\ell} m_f(p_k) = n
+$
+(thus we are counting ``according to multiplicity'').
+If $f^{-1}(\{q\}) = \emptyset$ we have $n = 0$.  If this situation
+occurs, then there are charts $\varphi_k : U_k \to W_k$ in the
+complete analytic atlas for $S$ with $p_k \in U_k$ and a chart
+$\varphi : U \to W$ in the complete analytic atlas for $T$ such that
+the collection of sets $\{U_k\}$ is disjoint and $\varphi \circ f
+\circ \varphi_k^{-1}(z) = z^{m_f(p_k)}$ for $z \in W_k$.  By
+diminishing the sizes of the $U_k$ (if necessary) we can also assume
+that each $U_k$ is contained in a compact set in $S$.  Also, the
+explicit form for $\varphi \circ f \circ \varphi_k^{-1}$ given above
+shows that there exists a neighbourhood $V$ of $q$ such that the
+restriction of $f$ to $U_k$ takes each value in $V$ exactly $m_f(p_k)$
+times.  Therefore, the restriction of $f$ to $\bigcup_{k=1}^\ell U_k$
+takes each value in $V$ exactly $n$ times.  Using this background
+information, we can prove
+
+%%% page 52
+\begin{propn}
+  \label{propn:9}
+  Let $S$ and $T$ be Riemann surfaces and $f : S \to T$ an analytic
+  function which is not constant on any neighbourhood.
+  \begin{enumerate}
+  \item If $S$ is compact and $T$ is connected, then $f$ takes every
+    value in $T$ the same number of times.  Also, it follows that $T$
+    is compact.
+  \item If $f$ takes every value in $T$ the same (finite) number of
+    times, then $f$ is proper.  I.e., $f^{-1}$ of any compact set is
+    compact.  In particular, if also $T$ is compact, then $S$ is
+    compact.
+  \end{enumerate}
+\end{propn}
+
+\begin{myproof}
+  The rest of the proof is just topology.  Assume the hypothesis of
+  1.  Since $f(S)$ is a continuous image of a compact set, $f(S)$ is
+  compact.  Since $T$ is Hausdorff, $f(S)$ is closed.  Proposition
+  \ref{propn:4} implies $f(S)$ is open.  Since $T$ is connected, 
+  $f(S) = T$.  Thus, $T$ is itself compact.  If $f$ takes any value 
+  infinitely often, then since $S$ is compact there is a limit point 
+  in $S$ of the set where $f$ takes this value, and 
+  Proposition~\ref{propn:5} implies $f$ is constant in a neighbourhood 
+  of this limit point. Thus,
+  %%% page 53
+  $f$ takes every value $q$ in $T$ a finite number $N(q)$ times.  Now
+  we use the argument just preceding this proposition with no change
+  in notation.  Since $f$ does not have the value $q$ on the compact
+  set $S - \bigcup_{k=1}^\ell U_k$, there exists a neighbourhood $G$
+  of $q$ such that the compact and thus closed set $f(S -
+  \bigcup_{k=1}^\ell U_k)$ is disjoint from $G$.  Thus, the
+  restriction of $f$ to $\bigcup_{k=1}^\ell U_k$ takes each value in
+  $V \cap G$ exactly $N(q)$ times, and outside $\bigcup_{k=1}^\ell
+  U_k$ $f$ takes no value in $V \cap G$.  Thus, $N(q') \equiv N(q)$
+  for $q' \in V\cap G$.  Thus, the integer-valued function $q \mapsto
+  N(q)$ is continuous on $T$.  Since $T$ is connected, $N$ is constant
+  and part 1 is proved.
+
+  \medskip
+  Now we prove 2.  Let $f$ takes every value in $T$ $n$ times.  If $q
+  \in T$, the analysis preceding the proposition again shows that $f$
+  takes each value in $V$ exactly $n$ times in $\bigcup_{k=1}^\ell
+  U_k$.  Therefore, by hypothesis $f^{-1}(V) \subset
+  \bigcup_{k=1}^\ell U_k$.  Therefore, $f^{-1}(V)$ is contained in a
+  compact set in $S$ since the $U_k$'s are contained in compact sets
+  in $S$.  If $F \subset T$ is compact, then $F \subset
+  \bigcup_{j=1}^m V_j$,where $f^{-1}(V_j)$ is contained in a compact
+  set in $S$.  Thus, $f^{-1}(F)$ is contained in a compact set $S$,
+  and since $f^{-1}(F)$ is closed, it is compact.
+\end{myproof}
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
