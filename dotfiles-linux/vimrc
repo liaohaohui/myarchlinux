@@ -1,0 +1,307 @@
+" When started as "evim", evim.vim will already have done these settings.
+if v:progname =~? "evim"
+  finish
+endif
+
+" Use Vim settings, rather then Vi settings (much better!).
+set nocompatible
+
+set bs=2		" allow backspacing over everything in insert mode
+"set ai			" always set autoindenting on
+set ts=4        " tabstop
+"set nowrap
+"set textwrap=70  " In emacs, auto-fill-mode
+set backup		" keep a backup file
+" ArchLinux change suffix tilde backup to .cache/vim/backup due to
+" https://nvd.nist.gov/vuln/detail/CVE-2017-1000382
+"set backupdir=~/.cache/vim
+"set nowritebackup  "only in case you don't want a backup file while editing
+"set noswapfile     "no swap files
+set viminfo='20,\"50	" read/write a .viminfo file, don't store more
+			" than 50 lines of registers
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+"set linespace=4
+set sm			" bracket matching
+set fileformat=unix
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+"set encoding=euc-cn
+""set termencoding=euc-cn
+""set fileencoding=prc
+"set fileencoding=euc-cn
+"set fileencodings=euc-cn
+
+" For dark background:
+" http://mybrainhurts.com/blog/2005/11/vi-on-dark-background.html
+"set background=dark
+" theme = colour scheme
+if v:progname =~? "gvim"
+  set background=light
+  " https://www.reddit.com/r/vim/comments/9uerhp/disable_insert_paste_mode/
+  set nopaste
+  set clipboard+=unnamed
+  nnoremap p p`]<Esc>
+  set number
+  "http://vim.wikia.com/wiki/Maximize_or_set_initial_window_size
+  set lines=27 columns=85
+  "http://vim.wikia.com/wiki/Hide_toolbar_or_menus_to_see_more_text
+  set guioptions-=T  "remove toolbar; m=menu bar; r=right-scroll-bar, L=left
+  "set guifontset=-monotype-courier\ new-medium-r-normal--14-*-*-*-*-*-*-*,-misc-nsimsun_18030-medium-r-normal--16-*-*-*-*-*-gbk-0
+  let xrootheight = system("xwininfo -root|tail -2|head -1|awk '{print $2}'|cut -dx -f2|cut -d+ -f1")
+  let myos = system("head -1 /etc/os-release |cut -d= -f2")
+  if xrootheight > 900
+    "set guifont=Hack\ 18
+    "if myos =~? "Linux Mint"
+      set guifont=Hack\ 14
+    "endif
+  else
+    set guifont=Hack\ 13
+    if myos =~? "Arch Linux"
+      set guifont=Hack\ 11
+    endif
+    "set guifont=Consolas\ 13 "M$ Vista fonts, currently best?
+  endif
+  "set guifont=Ubuntu\ Mono\ 14
+  "set guifont=Source\ Code\ Pro\ Semibold\ 12 "1l0O all OK
+  "set guifont=DejaVu\ Sans\ Mono\ 14 " Better than Noto, etc. but underscore not working
+  "set guifont=Fira Mono 12 "Jr are ugly
+  "set guifont=Noto\ Mono\ 15 "Lousy 1
+  "set guifont=Inconsolata\ 15 "Lousy 1
+  "set guifont=Droid\ Sans\ Mono\ 12  "O and 0 and difficult to distinguish
+  "set guifont=Anonymous Pro\ 12
+  "set guifont=Courier\ New\ 12
+  "set guifont=Envy\ Code\ R\ 12 "l & 1 are indistingusable
+  "set guifontset=-monotype-courier\ new-medium-r-normal--14-*-*-*-*-*-*-*,-misc-nsimsun_18030-medium-r-normal--16-*-*-*-*-*-*-0
+else
+  colorscheme morning
+endif
+if has("gui_running")
+  "set relativenumber " This is nice for us to go up and down relatively
+                     " compare to goto line (which needs to key in more
+                     " characters when we have >100 lines
+  "colorscheme zellner " Bright theme, OK
+  colorscheme delek  " Bright theme, OK
+  "colorscheme koehler " Dark theme
+  "colorscheme torte   " Dark theme
+endif
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+""" https://www.reddit.com/r/vim/comments/62osxr/how_good_are_the_default_settings_for_vimnvim_do/
+"set noerrorbells visualbell
+"set backspace=indent,eol,start
+"set undofile
+"set undodir=~/.vim/tmp/undo//
+"set nolist listchars=tab:..,trail:.
+
+"set scrolloff=3
+"set showmode  "Show whether it is INSERT mode. Default: ON
+
+filetype plugin on
+set grepprg=grep\ -nH\ $*
+"filetype indent on
+"let g:tex_flavor='latex'
+" this is mostly a matter of taste. but LaTeX looks good with just a bit
+" of indentation.
+set sw=2
+" TIP: if you write your \label's as \label{fig:something}, then if you
+" type in \ref{fig: and press <C-n> you will automatically cycle through
+" all the figure labels. Very useful!
+set iskeyword+=:
+
+" Don't use Ex mode, use Q for formatting
+"map Q gq
+
+"" Only do this part when compiled with support for autocommands.
+"if has("autocmd")
+
+""" AutoCmd (ref: /opt/vim/share/vim/vim70/doc/autocmd.txt)
+
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+  augroup C
+    autocmd BufRead *.c set nocindent
+  augroup END
+  augroup Python
+    autocmd BufRead *.py set expandtab cinkeys=
+  augroup END
+  augroup TeX
+    autocmd BufRead *.tex set expandtab
+  augroup END
+  augroup GAP4
+    autocmd BufRead *.gap set expandtab
+  augroup END
+  augroup GAP4
+    autocmd BufRead *.R set noexpandtab background=light
+  augroup END
+endif
+
+"" http://www.fleiner.com/vim/create.html
+"au BufRead,BufNewFile *.jl set filetype=julia
+"au! Syntax julia source $HOME/.vim/syntax/julia.vim
+
+"au BufReadPre *.xml silent %!xmllint --format "%"
+"au BufRead,BufNewFile pom.xml set syntax=xml.maven
+"au BufRead,BufNewFile pom.xml set filetype=xml.maven
+
+" For all text files set 'textwidth' to 78 characters.
+"autocmd FileType text setlocal textwidth=78
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+"autocmd FileType c,cpp set formatoptions=tcql nocindent comments=sr:/*,mb:*,el:*/,:// ts=4
+autocmd FileType c,cpp set formatoptions=tcql nocindent comments=sr:/*,mb:*,el:*/,://
+autocmd FileType python set expandtab ts=4
+autocmd Syntax python syn keyword pythonConditional if elif else else:
+
+autocmd BufRead *.tips set syntax=asciidoc
+
+"autocmd FileType tex source ~/.vim/auctex.vim
+autocmd BufReadPost *.tex silent %s/\s\+$//e
+
+autocmd FileType scala set expandtab softtabstop=2
+au BufRead,BufNewFile *.scala set filetype=scala
+au! Syntax scala source $HOME/work/Config/SciLinux/programming-java/scala/scala.vim
+
+"https://groups.google.com/forum/#!topic/vim_use/y1bxKDE2yH4
+"Turn off unzip on docx and xlsx: /usr/share/vim/vim74/plugin/zipPlugin.vim
+let g:zipPlugin_ext= '*.zip,*.jar,*.xpi,*.ja,*.war,*.ear,*.celzip,*.oxt,*.kmz,*.wsz,*.xap,*.docm,*.dotx,*.dotm,*.potx,*.potm,*.ppsx,*.ppsm,*.pptx,*.pptm,*.ppam,*.sldx,*.thmx,*.xlam,*.xlsm,*.xlsb,*.xltx,*.xltm,*.xlam,*.crtx,*.vdw,*.glox,*.gcsx,*.gqsx'
+
+" https://www.reddit.com/r/vim/comments/48zclk/i_just_found_a_simple_method_to_read_pdf_doc_odt/autocmd
+autocmd BufReadPre *.doc silent set ro
+autocmd BufReadPost *.doc silent %!antiword "%"
+"exec 'autocmd BufReadPost *.doc %!antiword '.shellescape(expand('%'),' ')
+"" Read-only odt/odp through odt2txt
+" autocmd BufReadPre *.odt,*.odp silent set ro
+" autocmd BufReadPost *.odt,*.odp silent %!odt2txt "%"
+"" Read-only rtf through unrtf
+" autocmd BufReadPre *.rtf silent set ro
+" autocmd BufReadPost *.rtf silent %!unrtf --text
+
+" https://github.com/ralesi/office.vim/blob/master/ftplugin/docx.vim
+autocmd BufReadPre *.docx set ro
+autocmd BufReadPre *.docx set hlsearch!
+autocmd BufReadPre *.docx set wrap
+" https://stackoverflow.com/questions/15394572/escaping-in-vim-when-shelling-out-so-its-not-expanded-to-filename
+exec 'autocmd BufReadPost *.docx silent %!java -jar ~/zTmp/zSrc/zOffice/apache-tika/tika-app-1.24.1.jar -h '.shellescape(expand('%'),' ').' 2>/dev/null | w3m -dump -T text/html'
+"exec 'autocmd BufReadPost *.docx silent %!java -jar ~/zTmp/tika-app-1.14.jar -h '.shellescape(expand('%'),' ').' | w3m -dump -T text/html'
+""" Haskell is bulky shit!
+"exec 'autocmd BufReadPost *.docx silent %!pandoc --from=docx --to=asciidoc --wrap=none --atx-headers '.shellescape(expand('%'),' ')
+" --normalize is default in new pandoc
+
+" Requires catdoc/xls2csv or perl-xls2csv
+autocmd BufReadPre *.xls set ro
+autocmd BufReadPre *.xls set hlsearch!
+"exec 'autocmd BufReadPost *.xls silent %!xls2csv 2>/dev/null '.shellescape(expand('%'),' ')
+exec 'autocmd BufReadPost *.xls silent %!java -jar ~/zTmp/zSrc/zOffice/apache-tika/tika-app-1.24.1.jar -t '.shellescape(expand('%'),' ').' 2>/dev/null'
+
+autocmd BufReadPre *.xlsx set ro
+autocmd BufReadPre *.xlsx set hlsearch!
+exec 'autocmd BufReadPost *.xlsx silent %!java -jar ~/zTmp/zSrc/zOffice/apache-tika/tika-app-1.24.1.jar -t '.shellescape(expand('%'),' ').' 2>/dev/null'
+
+au BufRead,BufNewFile *.lisp set filetype=lisp
+au! Syntax lisp source $HOME/.vim/rainbow.vim
+let g:rainbow_active = 1
+    let g:rainbow_conf = {
+    \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+    \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+    \   'operators': '_,_',
+    \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    \   'separately': {
+    \       '*': {},
+    \       'tex': {
+    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+    \       },
+    \       'lisp': {
+    \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+    \       },
+    \       'vim': {
+    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    \       },
+    \       'html': {
+    \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+    \       },
+    \       'css': 0,
+    \   }
+    \}
+
+"endif " has("autocmd")
+
+"set path+=**   " For recursive :find *files*, can be slow for too many files
+set wildmenu   " Nice menu for displaying `matched' file names
+"set wildmode=list:full
+set wildmode=longest:full
+set cursorline
+"set colorcolumn=+1 textwidth=80
+set colorcolumn=80
+"highlight CursorLine   cterm=NONE ctermbg=darkgreen ctermfg=white guibg=lightgreen guifg=black
+highlight CursorLine   cterm=NONE guibg=lightgreen guifg=black
+" http://stackoverflow.com/questions/4229658/why-some-people-use-if-hasgui-running-in-a-gvimrc
+
+""" Taken from auctex.vim
+"inoremap <buffer><silent> ,,, \begin{equation}<CR>\label{}<CR><CR>\end{equation}<Esc>2k$i
+autocmd BufRead *.tex inoremap <buffer><silent> ,,, \begin{}<CR><space><space><CR>\end{}<Esc>2k$hi
+
+"https://isotope11.com/blog/rebuilding-my-vim-setup-from-scratch
+"Plugin 'bling/vim-airline'     " UI statusbar niceties
+"set laststatus=2               " enable airline even if no splits
+"let g:airline_theme='luna'
+"let g:airline_powerline_fonts=1
+"let g:airline_enable_branch=1
+"let g:airline_enable_syntastic=1
+"let g:airline_powerline_fonts = 1
+"let g:airline_left_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_linecolumn_prefix = '␊ '
+"let g:airline_linecolumn_prefix = '␤ '
+"let g:airline_linecolumn_prefix = '¶ '
+"let g:airline_branch_prefix = '⎇ '
+"let g:airline_paste_symbol = 'ρ'
+"let g:airline_paste_symbol = 'Þ'
+"let g:airline_paste_symbol = '∥'
+"let g:airline#extensions#tabline#enabled = 0
+""let g:airline#extensions#tabline#left_sep = ' '
+""let g:airline#extensions#tabline#left_alt_sep = '|'
+""let g:airline_powerline_fonts = 1
+
+" Joe Editing
+inoremap <c-j> <esc>lDa
+
+""" some extra commands for HTML editing
+"nmap ,mh wbgueyei<<ESC>ea></<ESC>pa><ESC>bba
+"nmap ,h1 _i<h1><ESC>A</h1><ESC>
+"nmap ,h2 _i<h2><ESC>A</h2><ESC>
+"nmap ,h3 _i<h3><ESC>A</h3><ESC>
+"nmap ,h4 _i<h4><ESC>A</h4><ESC>
+"nmap ,h5 _i<h5><ESC>A</h5><ESC>
+"nmap ,h6 _i<h6><ESC>A</h6><ESC>
+"nmap ,hb wbi<b><ESC>ea</b><ESC>bb
+"nmap ,he wbi<em><ESC>ea</em><ESC>bb
+"nmap ,hi wbi<i><ESC>ea</i><ESC>bb
+"nmap ,hu wbi<u><ESC>ea</i><ESC>bb
+"nmap ,hs wbi<strong><ESC>ea</strong><ESC>bb
+"nmap ,ht wbi<tt><ESC>ea</tt><ESC>bb
+"nmap ,hx wbF<df>f<df>
+
+"https://stackoverflow.com/questions/5367760/vim-disabling-the-cursor-arrow-keys-but-only-for-navigation
+"DON'T do stupid undo for me
+"map u <NOP>
+
+nnoremap <F5> :silent exe "!tmux send -t 1 " . shellescape(getline(".")) . " Enter"<CR>:redraw!<CR>
+
+

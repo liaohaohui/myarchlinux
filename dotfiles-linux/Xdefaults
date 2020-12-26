@@ -1,0 +1,31 @@
+Xft.antialias: True
+Xft.hinting: True
+Xft.hintstyle: hintfull
+
+XTerm*utf8: 1
+XTerm*utf8Latin1:     True
+XTerm*utf8Title:      True
+XTerm*faceSize: 9
+XTerm*faceName: Hack
+!XTerm*faceNameDoublesize: WenQuanYi Zen Hei Mono:antialias=True:pixelsize=12
+XTerm*faceNameDoublesize: WenQuanYi Zen Hei Mono:antialias=True
+XTerm*scrollBar: True
+
+URxvt*transparent: True
+URxvt*inheritPixmap: False
+URxvt*depth:32
+URxvt*background: rgba:0000/0000/0000/9999
+URxvt*foreground: #FFFFFF
+!URxvt*foreground: #A8A8A8
+URxvt*color0: rgba:0000/0000/0000/2222
+URxvt*color1: #A80000
+URxvt*color2: #00A800
+URxvt*color3: #A85400
+URxvt*tintColor: white
+URxvt*scrollTtyKeypress: True
+URxvt*scrollTtyOutput: True
+! https://unix.stackexchange.com/questions/294337/rebinding-ctrl-alt-cv-to-ctrl-shift-cv-in-urxvt-9-20
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.font: xft:Hack:autohint=true:size=10,xft:WenQuanYi Zen Hei Mono:antialias=True
+
