@@ -1,1 +1,6 @@
+Xft.antialias: True
+Xft.hinting: True
+Xft.hintstyle: hintfull
+
 xterm*font: xft:DejaVu Sans Mono:size=10
+XTerm*faceNameDoublesize: WenQuanYi Zen Hei Mono:antialias=True
