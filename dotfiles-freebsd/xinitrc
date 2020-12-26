@@ -1,0 +1,7 @@
+ENV=${HOME}/.shrc
+setxkbmap -option terminate:ctrl_alt_bksp
+xset b off
+xset +fp /usr/local/share/fonts/misc/
+xterm&
+exec fvwm
+
