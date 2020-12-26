@@ -1,0 +1,9 @@
+alias ls='ls -F'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+export rm cp mv ls
+
+#EDITOR=emacs
+bind '^[[3~'=delete-char-forward
+

@@ -1,0 +1,16 @@
+startup_message off
+deflogin off
+autodetach on
+ignorecase on
+defutf on
+term screen-256color
+defflow off
+defbce on
+maptimeout 0
+layout new initial
+altscreen on
+defscrollback 5000
+compacthist on
+rendition so=ck
+
+hardstatus alwayslastline '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][ %{= w}%Y/%m/%d %0C%a %{g}]%{W}'

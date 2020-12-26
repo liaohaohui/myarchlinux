@@ -1,0 +1,10 @@
+export ENV=$HOME/.kshrc
+#xrdb ~/.Xdefaults
+xset +fp /usr/local/share/fonts/Hack
+xset +fp /usr/local/share/fonts/wqy
+xterm -geom +0+0 -e screen&
+xterm -geom +0-0&
+xclock -geom 100x100-0+0&
+xload -geom 100x100-0+105&
+
+exec fvwm

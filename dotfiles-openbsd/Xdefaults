@@ -1,0 +1,9 @@
+! $OpenBSD: dot.Xdefaults,v 1.3 2014/07/10 10:22:59 jasper Exp $
+XTerm*faceName: xft:Hack:size=9
+*VT100.Translations: #override \
+               <Key>BackSpace: string(0x7F)\n\
+               <Key>Delete:    string("\033[3~")\n\
+               <Key>Home:      string("\033[1~")\n\
+               <Key>End:       string("\033[4~")
+*ttyModes: erase ^?
+URxvt*font: xft:Hack:size=9
