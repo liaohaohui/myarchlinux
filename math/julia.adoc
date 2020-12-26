@@ -1,0 +1,109 @@
+= Julia
+
+https://github.com/JuliaLang
+http://julialang.org/community/
+http://blog.leahhanson.us/julia-introspects.html
+https://www.youtube.com/user/JuliaLanguage/
+http://juliacon.org/
+https://groups.google.com/forum/#!forum/julia-users
+
+### Getting Help in Julia:
+> apropos("fourier")
+
+### static compile julia
+https://github.com/JuliaLang/julia/pull/8656
+
+https://www.youtube.com/user/JuliaLanguage/
+
+http://chrisvoncsefalvay.com/2014/12/29/documenting-julia-code.html
+https://groups.google.com/forum/#!topic/julia-users/GyH8nhExY9I
+
+Completely agree on the exception handling philosophy (as Stefen has put it). Not only should you not rely on exception handling to make your API reliable, for some reason encouraging exception handling has a way of making folks think very defensively: "Oh, so I should handle every possible scenario from a bug in my code to what to do if I'm recovering from a hard drive crash and OS re-install," which is just wrong, because each unit of code, generally, should worry about its responsibilities and doing its job well.
+
+It also encourages retry-thinking, such as, "If it's broken, reboot/retry an arbitrary number of time," rather than, "If it's broken, figure out why and fix it so it doesn't ever break again."
+
+== Misc
+
+Do not assign values to letters, use Dictionary just like Python
+mydict = ["var1" => "val1", "var2" => "val2"]
+
+== Modules
+
+### http://docs.julialang.org/en/release-0.3/manual/modules/
+
+~/.juliarc.jl: push!(LOAD_PATH, "/Path/To/My/Module/")
+
+### http://stackoverflow.com/questions/25028873/how-do-i-reload-a-module-in-an-active-julia-session-after-an-edit
+
+the new function workspace() clears Main preparing for reloading TstMod
+
+julia> workspace()
+julia> reload("TstMod")
+julia> using TstMod
+julia> f()
+julia> whos()
+
+== Package Management
+
+Pkg.update()
+
+#= ... multiline comment =#
+include("interp-natural.jl") # = source("myscript.jl")
+pwd(), cd("directory")
+workspace()
+
+A = 0 # originally pointing to a few Gig of memory
+gc()  # garbage collection.  Read Julia FAQ
+
+== FFI
+
+http://julia.readthedocs.org/en/latest/manual/calling-c-and-fortran-code/
+
+function getenv(var::String)
+  val = ccall( (:getenv, "libc"),
+              Ptr{Uint8}, (Ptr{Uint8},), var)
+  if val == C_NULL
+    error("getenv: undefined variable: ", var)
+  end
+  bytestring(val)
+end
+
+== Interpolation
+
+# https://github.com/JuliaLang/julia/issues/2557
+# https://groups.google.com/forum/#!topic/julia-users/uir7W0C4aDA
+# https://github.com/timholy/Grid.jl
+# https://github.com/tlycken/Interpolations.jl
+
+# http://bigwww.epfl.ch/publications/thevenaz0002.pdf
+
+# from scipy.interpolate import lagrange
+
+== Econometrics
+
+http://juliaeconomics.com/
+https://github.com/setzler/JuliaEconomics
+
+== Scientific Plotting
+
+https://github.com/nolta/Winston.jl
+
+https://github.com/mbaz/Gaston.jl
+
+1) With Internet
+julia> Pkg.add("Gaston")
+
+2) Without Internet:
+$ wget https://bitbucket.org/mbaz/gaston/downloads/gaston.zip
+$ unzip gaston.zip
+julia> push!(LOAD_PATH,expanduser("~/source/gaston/src"))
+
+julia> using Gaston
+julia> gaston_demo()
+julia> gaston_tests()
+
+== Data Processing
+
+https://github.com/JuliaStats/DataFrames.jl
+
+Pkg.add("DataFrames")
