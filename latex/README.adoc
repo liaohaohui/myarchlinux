@@ -1,0 +1,29 @@
+= Minimal Texlive installation in OpenBSD
+
+----
+$ doas pkg_add texlive_base texlive_texmf-minimal
+----
+
+Install additional LaTeX packages which are required:
+
+----
+$ cd ${HOME}/CTAN
+$ unzip ~/Download/mdframed.zip
+$ (cd mdframed; tex mdframed.ins)
+$ unzip ~/Download/needspace.zip
+$ unzip ~/Download/filecontents.zip
+$ unzip ~/Download/zref.zip
+$ unzip ~/Download/enumitem.zip
+$ unzip ~/Download/ctex.tds.zip
+$ unzip ~/Download/alphalph.zip
+$ tex alphalph.dtx
+$ unzip ~/Download/csquotes.zip
+$ unzip ~/Download/zhnumber.zip
+$ unzip ~/Download/makecell.zip
+$ unzip ~/Download/threeparttable.zip
+$ unzip ~/Download/xecjk.zip
+$ latex xeCJK.ins
+
+export TEXINPUTS=${HOME}/CTAN//::.
+----
+
