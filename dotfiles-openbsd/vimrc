@@ -3,7 +3,13 @@ set enc=utf-8
 if has("gui_running")
 	set guifont=Hack\ 12
 	set guioptions-=T
+	set hlsearch
 endif
 
 "plugin/vimim for Chinese input
 
+syntax on
+
+augroup BEGIN
+  au BufNewFile,BufRead *.tex set textwidth=80
+augroup END

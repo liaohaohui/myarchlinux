@@ -312,9 +312,9 @@ Key F7		A	M	Menu Window-Ops
 Key F8		A	M	WindowList FvwmWinList
 #Key F4		A	M	Iconify
 Key F2		A	M	Move
+Key F3		A	M	Lower
+Key F4		A	M	Raise
 Key F5		A	M	Resize
-Key F3		A	M	CirculateUp
-Key F4		A	M	CirculateDown
 
 #Page Up/Page Down keys are used to scroll by one desktop page
 # in any context, press page up/down + control
