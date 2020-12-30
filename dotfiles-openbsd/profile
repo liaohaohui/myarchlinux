@@ -4,6 +4,9 @@
 
 . ${HOME}/.kshrc
 export LANG=en_GB.UTF-8
+# NetBSD terminfo
+TERM=wsvt25
+# Default TERM=vt220 (no colour)
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
 
