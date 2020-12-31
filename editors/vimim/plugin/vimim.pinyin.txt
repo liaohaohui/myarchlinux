@@ -22451,9 +22451,7 @@ jiahui 佳慧
 jiahuo 假货 家伙
 jiahuo 傢伙
 jiahuoyuren 嫁祸于人
-jiaji 佳绩
-jiaji 夹击
-jiaji 家计
+jiaji 佳绩 夹击 家计
 jiajia 戛戛
 jiajiaai 加加爱
 jiajiahuhu 家家户户
@@ -22464,58 +22462,44 @@ jiajiang 夹江
 jiajianhushuo 家见户说
 jiajiao 家教
 jiajiao 岬角
-jiajie 佳节
-jiajie 假借
-jiajie 嫁接
+jiajie 假借 佳节 嫁接
 jiajiminzu 家给民足
-jiajin 加劲
-jiajin 加紧
-jiajing 嘉靖
-jiajing 家境
-jiajing 家景
+jiajin 加紧 加劲
+jiajing 家境 家景 嘉靖
 jiajinqu 加进去
 jiajirenzu 家给人足
 jiajisuiji 嫁鸡随鸡，嫁狗随狗
 jiajiyewu 家鸡野鹜
-jiaju 傢具
-jiaju 加剧
-jiaju 夹具
-jiaju 家具 家居
+jiaju 家具 加剧 家居 傢具 夹具
 jiajuan 家眷
-jiake 加壳 夹克
-jiake 茄克
+jiake 加壳 夹克 茄克
 jiakong 架空
 jiakou 家口
 jiakuai 加快
 jiakuan 价款
 jialefu 家乐福
 jialei 家累
-jiali 佳丽
-jiali 家里
+jiali 家里 佳丽
 jialianwumei 价廉物美
 jialiao 加料
 jialide 家里的
 jialin 驾临
-jialing 驾凌
-jialing 驾龄
+jialing 驾龄 驾凌
 jialiyuren 假力于人
 jialun 加仑
-jiama 价码
-jiama 加码
+jiama 加码 价码
 jiamao 假冒
 jiamaoweilie 假冒伪劣
 jiamei 假寐
 jiamen 家门
 jiameng 加盟
 jiami 加密
-jiamian 加冕
-jiamian 嘉勉
+jiamian 嘉勉 加冕
 jiamianju 假面具
 jiamijiemi 加密解密
 jiaming 假名
 jiamojiashi 假模假式
-jiamu 价目
-jiamu 家母
+jiamu 价目 家母
 jiamusipaide 佳木斯拍的
 jian 件 见 间 建 简 渐 坚 检 键 肩 监 尖 健 减 剑 舰 箭 兼 艰 剪 奸 鉴 践 荐 捡 歼 贱 拣 牋 溅 煎 間 見 槛 俭 笺 碱 茧 缄 谏 簡 柬 涧 艦 睑 戬 漸 饯 硷 檢 堅 锏 蒹 閒 監 鍵 菅 翦 踐 蹇 僭 淺 戩 腱 犍 囝 減 毽 劍 撿 澗 鰎 艱 裥 殲 鞯 鹼 鲣 鹣 賤 樫 枧 檻 搛 缣 笕 謇 薦 鑒 湔 濺 洊 谮 姦 戋 揃 緘 鞬 鬋 鳒 鶼 儉 暕 襇 谫 趼 劔 繝 鑑 冿 囏 姧 幵 廌 惤 戔 椷 櫼 殱 瀐 瀸 熞 熸 猏 玪 睷 碊 礛 稴 箋 篯 籛 縑 菺 葌 蕑 蕳 虃 譼 豜 豣 鈃 銒 鑯 钘 閚 靬 韀 韉 餰 馢 騝 魐 鰜 鰹 鳽 鵳 麉 㔓 㨵 㳨 㶕 䄯 䅐 䉍 䛳 䟰 䩆 䭠 䮿 䯛 䯡 䵡 䵤 䶠 倹 偂 堿 寋 弿 挸 揀 梘 検 湕 瀽 瑐 瞼 礆 筧 絸 繭 藆 蠒 襺 詃 謭 譾 醎 鋄 錽 鎫 鐗 鐧 鰔 鹸 鹻 㓺 㔋 㣤 㦗 㨴 㯺 㰄 㱯 㵎 㺂 㺝 㽉 䇟 䞼 䟅 䟢 䤔 䥜 䧖 䬻 䭈 䭕 䵖 䵛 侟 俴 剣 剱 劎 劒 徤 擶 旔 栫 楗 榗 瀳 牮 珔 瞷 磵 礀 糋 糮 臶 蔪 螹 襉 覵 覸 諓 諫 譖 賎 趝 踺 釰 釼 鋻 鍳 鏩 鑬 鑳 餞
 jian 几案
@@ -42823,15 +42807,12 @@ shezai 设在
 shezhan 舌战
 shezhang 赊账
 shezheng 摄政
-shezhi 摄制
-shezhi 设置
+shezhi 设置 摄制
 shezhicheng 设置成
 shezhihao 设置好
 shezhimima 设置密码
 shezhimimaderen 设置密码的人
-shezu 涉足
-shezu 畲族
-shezu 蛇足
+shezu 涉足 畲族 蛇足
 shi 是 时 事 什 实 十 使 世 式 始 失 师 视 识 示 市 士 石 史 室 试 诗 势 释 食 适 施 氏 湿 似 侍 拾 尸 饰 逝 驶 誓 時 匙 狮 屎 矢 實 拭 峙 蚀 仕 師 嗜 噬 柿 視 識 恃 虱 轼 試 勢 舐 釋 詩 適 弑 螫 駛 谥 屍 豕 礻 鳀 濕 豉 飾 蓍 碩 獅 鲥 噓 饣 溼 铊 筮 褆 篩 湜 唑 跩 寔 蝕 铈 酾 鰤 鲺 莳 佀 弒 呞 浉 湤 溮 瑡 箷 籭 絁 葹 蒒 蝨 螄 褷 襹 邿 釃 釶 鉇 鯴 鳲 鳾 鶳 鸤 㖷 㫅 㫑 㵓 䂖 䄷 䖨 䦹 䲽 䶡 乭 兙 埘 塒 実 峕 旹 榯 湁 溡 炻 瓧 祏 蒔 遈 鉐 飠 鰣 鼫 鼭 㕜 㶴 㹬 㹷 䂠 䒨 䦠 䶵 乨 兘 宩 笶 鉂 㒾 㔺 㮶 㱁 㳏 㸷 㹝 䁺 䊓 䏡 䑛 䛈 䜴 䜵 䜻 䟗 䤭 䤱 䩃 䭄 䰄 丗 亊 冟 卋 卶 叓 呩 啇 奭 媞 嬕 崼 徥 戠 戺 揓 昰 枾 柹 澨 烒 眂 眎 睗 簭 翨 舓 衋 襫 詍 諟 諡 謚 貰 贳 軾 遾 釈 鈰 鉃 鉽 銴 餙 餝 齛 䈕
 shi1 失 师 诗 施 湿 尸 狮 師 虱 詩 屍 濕 蓍 獅 噓 溼 铊 篩 酾 鰤 鲺 呞 浉 湤 溮 瑡 箷 籭 絁 葹 蒒 蝨 螄 褷 襹 邿 釃 釶 鉇 鯴 鳲 鳾 鶳 鸤
 shi2 时 什 实 十 识 石 食 拾 時 實 蚀 識 碩 鲥 饣 湜 寔 蝕 莳 㖷 㫅 㫑 㵓 䂖 䄷 䖨 䦹 䲽 䶡 乭 兙 埘 塒 実 峕 旹 榯 湁 溡 炻 瓧 祏 蒔 遈 鉐 飠 鰣 鼫 鼭
@@ -43874,9 +43855,7 @@ shuaka 刷卡
 shuala 刷拉
 shualai 耍赖
 shualiumang 耍流氓
-shuan 书案
-shuan 拴 栓 涮 闩 閂 䧠 腨
-shuan 熟谙
+shuan 书案 熟谙 拴 栓 涮 闩 閂 䧠 腨
 shuan1 拴 栓 闩 閂
 shuan4 涮 䧠 腨
 shuanao 耍闹
@@ -43930,8 +43909,7 @@ shuangluzhibing 霜露之病
 shuangluzhigan 霜露之感
 shuangmu 爽目
 shuangpin 双拼
-shuangqi 爽气
-shuangqi 霜期
+shuangqi 霜期 爽气
 shuangqiang 双抢
 shuangqin 双亲
 shuangqiruozi 孀妻弱子
@@ -43943,10 +43921,8 @@ shuangsheng 双生
 shuangshenzi 双身子
 shuangshou 双手
 shuangshu 双数
-shuangshuang 双双
-shuangshuang 爽爽
-shuangshui 双水
-shuangshui 泷水
+shuangshuang 双双 爽爽
+shuangshui 双水 泷水
 shuangsushuangfei 双宿双飞
 shuangtian 霜天
 shuangtongdao 双通道
@@ -43956,12 +43932,9 @@ shuangwei 双隈
 shuangweijianyan 双未检验
 shuangxi 双喜
 shuangxian 双线
-shuangxiang 双向
-shuangxiang 双响
-shuangxin 双薪
-shuangxin 爽心
-shuangxing 双星
-shuangxing 爽性
+shuangxiang 双向 双响
+shuangxin 双薪 爽心
+shuangxing 双星 爽性
 shuangxinyuemu 爽心悦目
 shuangxitong 双系统
 shuangxiuri 双休日
@@ -43997,21 +43970,18 @@ shuaxiao 耍笑
 shuaxin 刷新
 shuaxinyaner 耍心眼儿
 shuaya 刷牙
-shuazi 刷子
-shuazi 耍子
+shuazi 刷子 耍子
 shuazuipizi 耍嘴皮子
 shubai 叔伯
 shubailunhuang 数白论黄
 shubao 书包
-shubei 书背
-shubei 鼠辈
+shubei 鼠辈 书背
 shubeilizhuan 树碑立传
 shuben 书本
 shubi 梳篦
 shubian 戍边
 shubianzi 梳辫子
-shubiao 数表
-shubiao 鼠标
+shubiao 鼠标 数表
 shubiaojianpan 鼠标键盘
 shubiaoqi 鼠标器
 shubiaoshoushi 鼠标手势
@@ -57881,7 +57851,7 @@ youzhunbei 有准备
 youzhuyu 有助于
 youzi 游子 油渍 幼子 油子 游资 犹自 邮资 釉子
 youzuihuashe 油嘴滑舌
-yu 于 与 语 雨 玉 於 预 余 遇 鱼 育 欲 域 宇 愈 予 郁 狱 御 愉 愚 浴 豫 吁 寓 羽 誉 尉 渔 喻 舆 裕 娱 俞 虞 與 馀 谕 蔚 逾 禹 屿 迂 語 瑜 榆 淤 隅 渝 臾 熨 聿 驭 毓 腴 妪 盂 芋 預 揄 峪 禺 谀 觎 餘 魚 钰 欤 昱 煜 妤 圄 龉 萸 獄 庾 瘀 伛 竽 阈 纡 鬻 燠 譽 鹬 輿 蝓 籲 漁 慾 鬱 雩 蜮 阏 舁 瘐 癒 娛 圉 菀 饫 嵛 敔 窳 踰 俣 彧 禦 萮 薁 兪 毹 玗 玙 窬 腧 蕍 覦 諛 嶼 瑀 堉 淯 硲 諭 鹆 峿 扜 毺 盓 穻 箊 紆 虶 迃 㒜 㚥 㤤 㥔 㥚 㥥 㦛 㧕 㪀 㪌 㫹 㬂 㬰 㭌 㳛 㶛 㷒 㺞 㺮 㻀 㼶 㽳 䁩 䂛 䃋 䄏 䄨 䍂 䏸 䐳 䓊 䔡 䗨 䜽 䞕 䢓 䩒 䬔 䰻 䱷 䱾 䲣 亐 伃 唹 堣 堬 娯 媀 嬩 崳 嵎 扵 旟 杅 桙 楡 楰 歈 歟 歶 湡 澞 狳 璵 畬 畭 睮 硢 籅 緰 羭 艅 茰 蘛 螸 衧 褕 謣 轝 邘 鄃 釪 鍝 隃 雓 雽 騟 骬 髃 魣 鮽 鰅 鵌 鷠 鸆 鸒 齵 㑨 㒁 㔱 㙑 㝢 㠘 㡰 㣃 㲾 㺄 㼌 䣁 䥏 䨞 俁 偊 傴 匬 噳 寙 懙 斔 斞 楀 祤 篽 聥 萭 蘌 螤 貐 鄅 酑 铻 齬 羽 㚜 㠨 㤜 㤢 㦽 㧒 㮋 㰲 㳚 㵄 㷉 㹼 㺠 㻰 㽣 䁌 䂊 䆷 䈅 䉛 䋖 䋭 䍞 䎉 䖇 䘘 䘱 䘻 䛎 䛕 䜡 䞝 䢖 䢩 䤋 䧕 䨁 䨒 䫻 䬄 䬛 䮇 䮙 䰥 䳑 䴁 䵥 䵫 俼 叞 喅 喐 喩 噊 圫 嫗 嶎 庽 忬 悆 悇 惐 戫 栯 棛 棜 棫 櫲 欎 欝 欥 淢 滪 澦 灪 焴 燏 爩 獝 琙 瘉 矞 砡 礇 礖 礜 秗 稢 稶 穥 籞 糓 緎 繘 罭 肀 芌 茟 蒮 蓣 蓹 蕷 蜟 衘 袬 谷 軉 輍 逳 遹 醧 鈺 銉 鋊 錥 鐭 閾 隩 霱 飫 饇 馭 驈 鬰 魊 鳿 鴥 鴪 鵒 鷸 黦 龥
+yu 与 于 语 雨 玉 於 预 余 遇 鱼 育 欲 域 宇 愈 予 郁 狱 御 愉 愚 浴 豫 吁 寓 羽 誉 尉 渔 喻 舆 裕 娱 俞 虞 與 馀 谕 蔚 逾 禹 屿 迂 語 瑜 榆 淤 隅 渝 臾 熨 聿 驭 毓 腴 妪 盂 芋 預 揄 峪 禺 谀 觎 餘 魚 钰 欤 昱 煜 妤 圄 龉 萸 獄 庾 瘀 伛 竽 阈 纡 鬻 燠 譽 鹬 輿 蝓 籲 漁 慾 鬱 雩 蜮 阏 舁 瘐 癒 娛 圉 菀 饫 嵛 敔 窳 踰 俣 彧 禦 萮 薁 兪 毹 玗 玙 窬 腧 蕍 覦 諛 嶼 瑀 堉 淯 硲 諭 鹆 峿 扜 毺 盓 穻 箊 紆 虶 迃 㒜 㚥 㤤 㥔 㥚 㥥 㦛 㧕 㪀 㪌 㫹 㬂 㬰 㭌 㳛 㶛 㷒 㺞 㺮 㻀 㼶 㽳 䁩 䂛 䃋 䄏 䄨 䍂 䏸 䐳 䓊 䔡 䗨 䜽 䞕 䢓 䩒 䬔 䰻 䱷 䱾 䲣 亐 伃 唹 堣 堬 娯 媀 嬩 崳 嵎 扵 旟 杅 桙 楡 楰 歈 歟 歶 湡 澞 狳 璵 畬 畭 睮 硢 籅 緰 羭 艅 茰 蘛 螸 衧 褕 謣 轝 邘 鄃 釪 鍝 隃 雓 雽 騟 骬 髃 魣 鮽 鰅 鵌 鷠 鸆 鸒 齵 㑨 㒁 㔱 㙑 㝢 㠘 㡰 㣃 㲾 㺄 㼌 䣁 䥏 䨞 俁 偊 傴 匬 噳 寙 懙 斔 斞 楀 祤 篽 聥 萭 蘌 螤 貐 鄅 酑 铻 齬 羽 㚜 㠨 㤜 㤢 㦽 㧒 㮋 㰲 㳚 㵄 㷉 㹼 㺠 㻰 㽣 䁌 䂊 䆷 䈅 䉛 䋖 䋭 䍞 䎉 䖇 䘘 䘱 䘻 䛎 䛕 䜡 䞝 䢖 䢩 䤋 䧕 䨁 䨒 䫻 䬄 䬛 䮇 䮙 䰥 䳑 䴁 䵥 䵫 俼 叞 喅 喐 喩 噊 圫 嫗 嶎 庽 忬 悆 悇 惐 戫 栯 棛 棜 棫 櫲 欎 欝 欥 淢 滪 澦 灪 焴 燏 爩 獝 琙 瘉 矞 砡 礇 礖 礜 秗 稢 稶 穥 籞 糓 緎 繘 罭 肀 芌 茟 蒮 蓣 蓹 蕷 蜟 衘 袬 谷 軉 輍 逳 遹 醧 鈺 銉 鋊 錥 鐭 閾 隩 霱 飫 饇 馭 驈 鬰 魊 鳿 鴥 鴪 鵒 鷸 黦 龥
 yu1 於 吁 迂 淤 瘀 纡 籲 峿 扜 毺 盓 穻 箊 紆 虶 迃
 yu2 于 余 鱼 愉 愚 渔 舆 娱 俞 虞 馀 逾 瑜 榆 隅 渝 臾 腴 盂 揄 禺 谀 觎 餘 魚 欤 妤 萸 竽 輿 蝓 漁 雩 舁 娛 嵛 踰 兪 毹 玗 玙 窬 腧 蕍 覦 諛 㒜 㚥 㤤 㥔 㥚 㥥 㦛 㧕 㪀 㪌 㫹 㬂 㬰 㭌 㳛 㶛 㷒 㺞 㺮 㻀 㼶 㽳 䁩 䂛 䃋 䄏 䄨 䍂 䏸 䐳 䓊 䔡 䗨 䜽 䞕 䢓 䩒 䬔 䰻 䱷 䱾 䲣 予 亐 伃 唹 堣 堬 娯 媀 嬩 崳 嵎 扵 旟 杅 桙 楡 楰 歈 歟 歶 湡 澞 狳 璵 畬 畭 睮 硢 籅 緰 羭 艅 茰 蘛 螸 衧 褕 謣 轝 邘 鄃 釪 鍝 隃 雓 雽 騟 骬 髃 魣 鮽 鰅 鵌 鷠 鸆 鸒 齵
 yu3 与 语 雨 宇 予 羽 與 禹 屿 語 圄 龉 庾 伛 纡 瘐 圉 敔 窳 俣 嶼 瑀 㑨 㒁 㒜 㔱 㙑 㝢 㠘 㡰 㣃 㤤 㦛 㪌 㲾 㺄 㼌 䄨 䣁 䥏 䨞 伃 俁 偊 傴 匬 噳 寙 懙 斔 斞 楀 祤 篽 聥 萭 蘌 螤 貐 鄅 酑 铻 齬 羽

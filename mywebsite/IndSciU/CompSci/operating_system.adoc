@@ -9,28 +9,32 @@
 * 同步进程 (Concurrent processes)
 * 进程的协调 (Process synchronization)
 * 死锁 (Deadlock) 的检测与恢复
+* 信号与会话管理: BSD vs SysV
 * 进程的调度 (Scheduling), fork bomb
 * 线程 (Threads), 纤程 (Fibres)
+* 进程间通信 (IPC)
 
 2. 中央管理器 CPU 的管理
 * 调度的方法与算法: 与具体的应用场景密切相关
 * 多处理器 (processor) 调度
 
 3. 内存 (Memory) 管理
-* Partitioning
-* Paging and segmentation
-* 虚拟内存 (VM)
-* Page replacement algorithms
+* 分区 (Partitioning)
+* 页面分配 (Paging) and segmentation
+* 虚拟内存 (VM), 交换区 (swap)
+* 页面替换算法 (replacement)
 
 4. 文件系统
 * PATA, SATA, NVME
 * 文件的操作, 权限, 目录
 * 文件的配置 (allocation)
-* 格式: DOS FS, VFAT, ReiserFS, ext2, ext3, ext4 等
+* 格式: DOS FS, VFAT, ReiserFS, ext2, ext3, ext4, FFS, UFS 等
 * 文件系统的优化
 * Btrfs, OpenZFS
+* NFS, RFS
 
-5. 硬件接口 (Hardware Interface)
+5. 设备驱动 / 硬件接口 (Hardware Interface)
+* 键盘与鼠标
 * USB 接口
 * 声卡
 
