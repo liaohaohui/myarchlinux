@@ -1,0 +1,69 @@
+=  UECM3993 Predictive Modelling (Jan 2021)
+
+The course outcomes are
+
+* CO1: Describe the key concept of statistical learning;
+* CO2: Compare statistical models for prediction and estimation through supervised learning;
+* CO3: Identify relationship and structures from unlabelled data through unsupervised learning;
+* CO4: Demonstrate supervised and unsupervised learning with statistical software;
+* CO5: Interpret results from supervised and unsupervised learning.
+
+
+== Announcements
+
+* Week 4: Assignment will be announced.
+* Week 1: Practical starts from Week 1; Tutorial starts from Week 2.
+
+
+== Methods of Assessment
+
+* Quiz (10%, CO4) @ Week 5
+* Assignment (CO4 + CO5: Total: 40%, Report 18%, Program 12%, Oral Presentation 10%)
+* Test (10%, CO1--CO3)
+* Final Assessment (40%, CO1--CO3,CO5.  Each question corresponds to one CO)
+
+
+== Lecture Notes
+
+* Overview of ``Predictive Modelling''
+* kNN
+* Logistic Regression
+* Model Validation
+* Decision Trees
+* Ensemble Methods
+* Generative Classifiers: Naive Bayes, LDA
+* PCA
+* Clustering methods
+* Revision
+
+== Tutorials
+
+* Tutorial 1: Basics of Statistical Learning
+* Tutorial 2: Supervised Learning Model kNN
+* Tutorial 3: Logistic Regression Model
+* Tutorial 4: Model Validation Theory
+* Tutorial 5: Tree Predictive Models
+* Tutorial 6: Naive Bayes and LDA
+* Tutorial 7: PCA
+* Tutorial 8: Clustering
+
+
+== Practicals
+
+* Practical : Introduction to R
+* Practical : kNN
+* Practical : Logistic Regression
+* Practical : Cross Validation
+* Practical : Decision Trees
+* Practical : Ensemble Methods
+* Practical : Generative Models
+* Practical : PCA
+* Practical : Clustering
+* Old YouTube video playlist: https://www.youtube.com/playlist?list=PL4HpvNUygBwfSy4ob-Bt8A6oFXSvSsoYn
+
+
+== Recommendations
+
+* https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS[CORNELL CS4780 "Machine Learning for Intelligent Systems]
+
+

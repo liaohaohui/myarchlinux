@@ -1,0 +1,79 @@
+= 廖浩辉主页
+
+
+== 教学经验
+
+* UECM1703 Introduction to Scientific Computing (Oct 2020, 2019, 2018)
+* https://liaohaohui.github.io/UECM3993/[UECM3993 Predictive Modelling (May 2020, Jan 2020)]
+* MEME19403 Data Analytics and Visualisation (May 2020)
+* UECM1304/UECM1303 Discrete Mathematics with Applications (May 2019)
+* UECM3013 Complex Analysis (May 2019)
+* UECM3033 Numerical Methods (Jan 2019)
+
+
+== 兴趣
+
+* https://liaohaohui.github.io/IndSciU/[独立理科大学]
+* Artificial Intelligence
+** Machine Learning: 学了一点点
+** Logic Programming
+** Character Recognition
+** Speech Processing
+** Smart Home with Recyclable Energy System, Security and Health Monitoring for Parents, 3D Printers and Robots.
+* Numerical Methods and Their Applications
+
+* Numerical Methods and Their Applications
+** Linear Algebra Methods
+** Nonlinear Solvers
+** ODE Solvers
+** Optimisation
+** PDE Solvers
+
+* https://www.python.org/[Python 编程语言]
+
+* Common Lisp
+* D 语言
+* Fortran 语言
+* Physics, Natural Science and Applications
+** John Baez's This Week's Finds.
+*** Amazing Categorical Groups (http://math.ucr.edu/home/baez/week267.html).  I love "symmetry" and this is one nice article introducing the amazing beauty of symmetry.  Picture related to Alhambra tiles are listed in http://math.ucr.edu/home/baez/alhambra
+
+* Health Science
+
+* GNU/Linux System and Applications
+** https://www.archlinux.org/[Arch Linux]
+** https://linuxmint.com/[Linux Mint]: 最好的 Linux 入门. 因为 Cinnamon 复杂，
+所以改用 XFCE
+
+
+
+
+
+== 推荐电脑工具
+
+* GNU Tools: https://www.gnu.org/
+
+* 编辑器
+** https://www.vim.org/[Vim - the ubiquitous text editor]
+*** https://www.youtube.com/watch?v=a6Q8Na575qc[Lecture 3: Editors (vim) (2020)]
+** https://joe-editor.sourceforge.io/[JOE - Joe's Own Editor]: No folding yet
+
+
+* 数学工具
+** http://maxima.sourceforge.net/[Maxima 计算机代数] 
+
+== 我的 Linux / Unix 经验
+
+* https://youtu.be/6WpXsdZJdpw[Trying out OpenBSD as a Linux user]
+* https://www.youtube.com/watch?v=XBbsH-r1C34[My Linux Experience with Python]
+* https://www.youtube.com/watch?v=_aLcgk-wK_8[My Linux Experience: The editors]
+* https://www.youtube.com/watch?v=YRdbfACAnjI[My Linux Experience]
+
+
+== 社会媒体网站
+
+* https://youtube.com
+* https://news.ycombinator.com/
+* https://reddit.com
+* 
+

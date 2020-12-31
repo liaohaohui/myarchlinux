@@ -5080,8 +5080,7 @@ caomangyingxiong 草莽英雄
 caomanlingyu 草满囹圄
 caomao 草帽
 caomaobian 草帽缏
-caomei 草昧
-caomei 草莓
+caomei 草莓 草昧
 caomi 糙米
 caomian 草棉
 caomin 草民
@@ -5097,8 +5096,7 @@ caoqie 操切
 caoqijiying 操奇计赢
 caoqin 操琴
 caoshen 操神
-caoshi 草市
-caoshi 草食
+caoshi 草食 草市
 caoshou 操守
 caoshu 草书
 caoshuaishoubing 草率收兵
@@ -5111,8 +5109,7 @@ caotoutianzi 草头天子
 caotouwang 草头王
 caotu 草图
 caowu 草屋
-caoxie 草写
-caoxie 草鞋
+caoxie 草写 草鞋
 caoxin 操心
 caoxing 操行
 caoxinglusu 草行露宿
@@ -5130,9 +5127,7 @@ caozhangyingfei 草长莺飞
 caozhi 草纸
 caozhiguoji 操之过急
 caozhijing 草质茎
-caozi 槽子
-caozi 艚子
-caozi 草字
+caozi 草字 槽子 艚子
 caozigao 槽子糕
 caozong 操纵
 caozongtai 操纵台
@@ -6267,20 +6262,16 @@ chengpin 成品
 chengpingdouman 秤平斗满
 chengpingshengshi 承平盛世
 chengpu 诚朴
-chengqi 撑起
-chengqi 盛器
-chengqi 称奇
+chengqi 撑起 盛器 称奇
 chengqianbihou 惩前毖后
 chengqianchengwan 成千成万
-chengqiang 城墙
-chengqiang 逞强
+chengqiang 逞强 城墙
 chengqianqihou 承前启后
 chengqianshangwan 成千上万
 chengqibubei 乘其不备
 chengqihou 成气候
 chengqin 成亲
-chengqing 呈请
-chengqing 承情
+chengqing 呈请 承情
 chengquan 成全
 chengque 城阙
 chengqunjiedui 成群结队
@@ -6295,32 +6286,24 @@ chengri 成日
 chengse 成色
 chengshang 称赏
 chengshangqixia 承上启下
-chengshi 乘势
-chengshi 乘时
-chengshi 城市 诚实
-chengshi 程式
+chengshi 城市 诚实 程式 乘势 乘时
 chengshibuzu 成事不足，败事有余
 chengshili 城市里
 chengshipinmin 城市贫民
 chengshiredaoxiaoying 城市热岛效应
 chengshou 承受
-chengshu 成数
-chengshu 成熟
-chengshu 称述
+chengshu 成熟 称述 成数
 chengshufengyun 成熟风韵
 chengshuo 成说
 chengshuo 称说
 chengsi 撑死
-chengsong 呈送
-chengsong 称颂
+chengsong 称颂 呈送
 chengsuanzaixin 成算在心
 chengsuoxu 成所需
 chengtan 称叹
 chengtao 成套
-chengti 成体
-chengti 承题
-chengtian 成天
-chengtian 蛏田
+chengti 成体 承题
+chengtian 成天 蛏田
 chengtianzhiyou 承天之祐
 chengtuo 秤砣
 chenguai 嗔怪
@@ -6332,43 +6315,31 @@ chenguzilanzhima 陈谷子烂芝麻
 chenguziruo 沉痼自若
 chengwang 承望
 chengwangchengba 称王称霸
-chengwei 成为 称为
-chengwei 称谓
+chengwei 成为 称为 称谓
 chengweixingzha 乘伪行诈
-chengwen 呈文
-chengwen 成文
+chengwen 成文 呈文
 chengwenfa 成文法
 chengwu 乘务
 chengwuyuan 乘务员
 chengxi 承袭
-chengxian 呈献
-chengxian 呈现
-chengxian 称羡
-chengxian 程限
-chengxiang 丞相
-chengxiang 城厢
-chengxiang 成想
-chengxiang 承想
+chengxian 呈献 呈现 称羡 程限
+chengxiang 丞相 城厢 成想 承想
 chengxianjianneng 称贤荐能
 chengxianqihou 承先启后
 chengxiazhimeng 城下之盟
 chengxie 称谢
 chengxierru 乘隙而入
-chengxin 成心
-chengxin 诚心 诚信
+chengxin 诚心 诚信 成心
 chengxinchengyi 诚心诚意
 chengxinercuan 秤薪而爨
-chengxing 成型 成性
-chengxing 成形
-chengxing 秤星
+chengxing 成型 成性 成形 秤星
 chengxingerlai 乘兴而来，败兴而归
 chengxingwangwei 逞性妄为
 chengxiong 称雄
 chengxiongdaodi 称兄道弟
 chengxiongsinue 逞凶肆虐
 chengxiu 成宿
-chengxu 称许
-chengxu 程序
+chengxu 程序 称许
 chengxubao 程序包
 chengxudiechu 乘虚迭出
 chengxuduifu 程序对付
@@ -6379,8 +6350,7 @@ chengxuxia 程序下
 chengxuyuan 程序员
 chengyang 称扬
 chengyanhouse 承颜候色
-chengyao 成药
-chengyao 撑腰
+chengyao 撑腰 成药
 chengye 成夜
 chengyexiaohe 成也萧何，败也萧何
 chengyi 成衣
@@ -14076,8 +14046,7 @@ feibiao 飞镖
 feibing 肺病
 feibo 飞播
 feichai 肥差
-feichang 肥肠
-feichang 非常
+feichang 非常 肥肠
 feichangbucuo 非常不错
 feichanghao 非常好
 feichangji 腓肠肌
@@ -14086,19 +14055,16 @@ feichangzhimou 非常之谋
 feiche 飞车
 feicheng 费城
 feichezoubi 飞车走壁
-feichi 废弛
-feichi 飞驰
+feichi 飞驰 废弛
 feichizhongwu 非池中物
-feichu 废除
-feichu 废黜
+feichu 废除 废黜
 feichuan 飞船
 feichufangyao 非处方药
 feichuwansu 飞刍挽粟
 feicu 飞醋
 feicui 翡翠
 feida 肥大
-feidan 非但
-feidan 飞弹
+feidan 非但 飞弹
 feidao 匪盗
 feidaoti 非导体
 feide 非得 飞的
@@ -22942,11 +22908,7 @@ jianlao 监牢
 jianlao 见老
 jianle 瑊玏
 jianlege 捡了个
-jianli 尖利
-jianli 尖厉
-jianli 建立 简历
-jianli 监利
-jianli 见礼
+jianli 建立 简历 尖利 尖厉 监利 见礼
 jianlian 简练
 jianliang 见谅
 jianliang 间量
@@ -22955,10 +22917,7 @@ jianliexinxi 见猎心喜
 jianlisiyi 见利思义
 jianliuliu 尖溜溜
 jianliwangyi 见利忘义
-jianlou 捡漏
-jianlou 简陋
-jianlou 箭楼
-jianlou 谫陋
+jianlou 简陋 捡漏 箭楼 谫陋
 jianlouer 捡漏儿
 jianlu 检录
 jianlue 简略
@@ -22966,20 +22925,16 @@ jianluo 溅落
 jianman 简慢
 jianmaobianse 见貌辨色
 jianmaobianse 鉴貌辨色
-jianmei 健美
-jianmei 剑眉
+jianmei 健美 剑眉
 jianmeiyundong 健美运动
-jianmian 减免
-jianmian 见面
+jianmian 见面 减免
 jianmianli 见面礼
 jianmiao 间苗
-jianmie 剪灭
-jianmie 歼灭
+jianmie 歼灭 剪灭
 jianmiezhan 歼灭战
 jianmin 贱民
 jianmingeyao 简明扼要
-jianmo 建模
-jianmo 缄默
+jianmo 建模 缄默
 jianmoguji 肩摩毂击
 jianmozhongjie 肩摩踵接
 jiannan 艰难
@@ -22996,38 +22951,26 @@ jianongpao 加农炮
 jianpa 键怕
 jianpan 键盘
 jianpanyueqi 键盘乐器
-jianpiao 剪票
-jianpiao 检票
+jianpiao 剪票 检票
 jianpolaner 捡破烂儿
-jianpu 俭朴
-jianpu 简朴
-jianpu 简谱
-jianqi 尖脐
-jianqi 建漆
-jianqi 间期
+jianpu 俭朴 简朴 简谱
+jianqi 间期 尖脐 建漆
 jianqian 捡钱
-jianqiang 坚强
-jianqiang 捡枪
+jianqiang 坚强 捡枪
 jianqiangjiangeng 见墙见羹
 jianqianyankai 见钱眼开
 jianqiao 腱鞘
 jianqie 剪切
-jianqing 减轻
-jianqing 见轻
+jianqing 减轻 见轻
 jianqu 减去
 jianquan 健全
 jianquanshuji 兼权熟计
 jianquezhangluo 见雀张罗
 jianran 渐染
-jianren 兼任
-jianren 简任
-jianren 荐任
-jianren 贱人 坚韧
-jianrenbuba 坚忍不拔
-jianrenbuba 坚韧不拔
+jianren 兼任 贱人 坚韧 简任 荐任
+jianrenbuba 坚韧不拔 坚忍不拔
 jianrenjianzhi 见仁见智
-jianri 舰日
-jianri 间日
+jianri 间日 舰日
 jianrong 兼容
 jianrongbingbao 兼容并包
 jianrongxing 兼容性
@@ -23037,11 +22980,8 @@ jianrujiajing 渐入佳境
 jianruo 减弱
 jianruogongmei 兼弱攻昧
 jianrupanshi 坚如磐石
-jianse 减色
-jianse 艰涩
-jianse 间色
-jianshang 奸商
-jianshang 鉴赏 见上
+jianse 减色 艰涩 间色
+jianshang 奸商 鉴赏 见上
 jianshanglanxing 僭赏滥刑
 jianshao 减少
 jianshaole 减少了
@@ -23051,16 +22991,11 @@ jianshede 建设的
 jianshelu 建设路
 jianshen 艰深
 jianshenfang 健身房
-jiansheng 俭省
-jiansheng 监生
-jiansheng 简省
+jiansheng 俭省 监生 简省
 jianshenka 健身卡
 jianshexing 建设性
 jiansheyinhang 建设银行
-jianshi 捡拾
-jianshi 检视
-jianshi 监事
-jianshi 见识 监视 件事 坚实
+jianshi 见识 监视 件事 坚实 捡拾 检视 监事
 jianshifutu 见豕负涂
 jianshiguo 见识过
 jianshihui 监事会
@@ -23068,86 +23003,59 @@ jianshimian 见世面
 jianshoubingxu 兼收并蓄
 jianshoubuyu 坚守不渝
 jianshouzidao 监守自盗
-jianshu 剑术
-jianshu 建树
-jianshu 检束
+jianshu 剑术 建树 检束
 jianshudaoshan 剑树刀山
 jiansibujiu 见死不救
 jiansiniumao 茧丝牛毛
 jiansu 减速
 jiansuankebo 尖酸刻薄
 jiansun 减损
-jiansuo 减缩
-jiansuo 检索
-jiansuo 简缩
+jiansuo 检索 减缩 简缩
 jiansuoweijian 见所未见
-jianta 见他
-jianta 践踏
+jianta 践踏 见他
 jiantan 健谈
 jiantao 检讨
 jianti 简体
 jiantiao 兼祧
 jiantie 剪贴
-jianting 坚挺
-jianting 监听
-jianting 舰艇
+jianting 坚挺 监听 舰艇
 jiantingzeming 兼听则明，偏信则暗
 jiantizhongwen 简体中文
 jiantizi 简体字
 jiantongguiyu 奸同鬼蜮，行若狐鼠
-jiantou 箭头
-jiantou 肩头
-jiantou 荐头
+jiantou 箭头 肩头 荐头
 jiantouyixue 剑头一吷
-jiantu 奸徒
-jiantu 碱土
-jiantu 简图
+jiantu 奸徒 碱土 简图
 jiantuanyin 尖团音
 jiantufangying 见兔放鹰
 jiantuguquan 见兔顾犬
 jiantui 减退
 jianwai 见外
 jianwaizhixing 监外执行
-jianwang 健忘
-jianwang 健旺
+jianwang 健忘 健旺
 jianwangzhilai 鉴往知来
 jianwei 艰危
 jianweishouming 见危授命
 jianweizhizhu 见微知著
-jianwen 建文
-jianwen 见闻
+jianwen 见闻 建文
 jianwo 肩窝
-jianwu 奸污
-jianwu 渐悟
+jianwu 渐悟 奸污
 jianwubujianren 见物不见人
-jianxi 奸细
-jianxi 湔洗
-jianxi 见习
-jianxi 间隙
+jianxi 奸细 见习 间隙 湔洗
 jianxia 剑侠
-jianxian 奸险
-jianxian 艰险
+jianxian 艰险 奸险
 jianxiansiqi 见贤思齐
-jianxiao 减小
-jianxiao 奸笑
-jianxiao 见效
+jianxiao 减小 见效 奸笑
 jianxiaodafang 见笑大方
-jianxie 奸邪
-jianxie 简写
-jianxie 间歇
+jianxie 间歇 简写 奸邪
 jianxiexing 间歇性
 jianxiexingchoufeng 间歇性抽风
-jianxin 坚信
-jianxin 艰辛
-jianxin 见新
-jianxing 减刑
-jianxing 碱性
-jianxing 饯行
+jianxin 坚信 艰辛 见新
+jianxing 减刑 碱性 饯行
 jianxiong 奸雄
 jianxiu 检修
 jianxuan 拣选
-jianxue 减削
-jianxue 湔雪
+jianxue 减削 湔雪
 jianxun 简讯
 jianya 监押
 jianyan 检验
@@ -23156,74 +23064,44 @@ jianyanjianyiju 检验检疫局
 jianyanju 检验局
 jianyao 简要
 jianye 建业
-jianyi 坚毅
-jianyi 建议 简易 检疫
-jianyin 奸淫
-jianyin 尖音
-jianyin 荐引
-jianying 剪影
-jianying 坚硬
+jianyi 建议 简易 检疫 坚毅
+jianyin 奸淫 尖音 荐引
+jianying 坚硬 剪影
 jianyingduxing 鉴影度形
 jianyisiqian 见异思迁
 jianyiyongwei 见义勇为
-jianyu 监狱
-jianyu 见于
-jianyu 鉴于
-jianyuan 减员
-jianyuan 建元
-jianyue 俭约
-jianyue 检阅
-jianyue 简约
-jianyue 践约
+jianyu 监狱 见于 鉴于
+jianyuan 减员 建元
+jianyue 检阅 俭约 简约 践约
 jianza 间杂
-jianzai 健在
-jianzai 减灾
+jianzai 健在 减灾
 jianzaixianshang 箭在弦上
 jianzao 建造
-jianze 拣择
-jianze 简则
+jianze 拣择 简则
 jianzei 奸贼
 jianzha 奸诈
-jianzhang 简章
-jianzhang 肩章
-jianzhang 见长
+jianzhang 简章 肩章 见长
 jianzhenbuqu 坚贞不屈
-jianzheng 见证
-jianzheng 谏诤
-jianzhi 兼之
-jianzhi 兼职
-jianzhi 剪纸
-jianzhi 建制
-jianzhi 监制
-jianzhi 简直 建置
-jianzhi 舰只
+jianzheng 见证 谏诤
+jianzhi 兼职 简直 建置 兼之 剪纸 建制 监制 舰只
 jianzhibuqu 见之不取，思之千里
 jianzhipian 剪纸片
 jianzhipianer 剪纸片儿
 jianzhishi 简直是
 jianzhouyan 肩周炎
-jianzhu 建筑
-jianzhu 笺注
-jianzhu 箭竹
+jianzhu 建筑 笺注 箭竹
 jianzhuang 简装 健壮
 jianzhuangxing 健壮性
 jianzhui 荐椎
 jianzhuxichuang 剪烛西窗
-jianzi 剪子
-jianzi 尖子
-jianzi 毽子
-jianzi 腱子
-jianzi 茧子
-jianzi 趼子
-jianzi 踺子
+jianzi 剪子 尖子 毽子 腱子 踺子 茧子 趼子
 jianzifa 检字法
 jianzouqu 间奏曲
 jianzu 箭镞
 jianzui 见罪
 jianzuiboshe 尖嘴薄舌
 jianzuihousai 尖嘴猴腮
-jianzuo 践祚
-jianzuo 间作
+jianzuo 间作 践祚
 jiao 叫 交 教 脚 较 角 校 焦 娇 轿 骄 搅 嚼 郊 胶 觉 狡 浇 绞 剿 缴 覺 矫 蕉 饺 椒 礁 蟜 跤 侥 窖 皎 酵 腳 佼 較 姣 蛟 醮 鲛 铰 荞 湫 膠 驕 菽 澆 攪 喬 茭 絞 鹪 嬌 徼 繳 噍 矯 挢 僥 餃 峤 轎 蟭 鮫 撟 敫 蹻 僬 嘄 峧 嶕 憍 憿 燋 穚 膲 艽 芁 茮 虠 蟂 鐎 鱎 鴵 鵁 鷍 鷦 鷮 㩭 㩰 㭂 㳅 㽱 㽲 㿟 䀊 䁶 䘨 䚩 䠛 䢪 䥞 䴛 儌 劋 勦 勪 孂 徺 捁 摷 撹 敽 斆 晈 暞 曒 湬 漅 灚 烄 煍 璬 皦 筊 臫 譑 賋 踋 鉸 㠐 㬭 㰾 㱶 䂃 䆗 䣤 䪒 呌 嘂 嘦 噭 嶠 挍 敎 斠 滘 漖 潐 珓 皭 稁 稾 窌 藠 覐 覚 訆 譥 釂
 jiao1 交 教 焦 娇 骄 郊 胶 浇 矫 蕉 椒 礁 跤 姣 蛟 鲛 荞 湫 膠 驕 菽 澆 喬 茭 鹪 嬌 蟭 鮫 僬 嘄 峧 嶕 憍 憿 燋 穚 膲 艽 芁 茮 虠 蟂 鐎 鱎 鴵 鵁 鷍 鷦 鷮
 jiao2 嚼 矫 矯
@@ -23236,26 +23114,18 @@ jiaoaotoushi 焦熬投石
 jiaoaoziman 骄傲自满
 jiaobai 茭白
 jiaobaijuan 交白卷
-jiaoban 交办
-jiaoban 交班
-jiaoban 叫板
-jiaoban 搅拌
-jiaoban 胶版
-jiaoban 脚板
+jiaoban 交办 交班 叫板 搅拌 胶版 脚板
 jiaobanji 搅拌机
 jiaobao 交保
 jiaobaozhen 绞包针
 jiaobei 脚背
 jiaobeijiu 交杯酒
-jiaoben 教本
-jiaoben 校本
-jiaoben 脚本
+jiaoben 脚本 教本 校本
 jiaobencuowu 脚本错误
 jiaobensheng 脚本生
 jiaobenshi 脚本是
 jiaobi 较比
-jiaobian 教鞭
-jiaobian 狡辩
+jiaobian 狡辩 教鞭
 jiaobilizhi 交臂历指
 jiaobing 交兵
 jiaobingbibai 骄兵必败
@@ -23273,34 +23143,24 @@ jiaocha 交叉
 jiaochaliaoshi 交差了事
 jiaochang 校场
 jiaochang 较长 较场
-jiaoche 绞车
-jiaoche 轿车
+jiaoche 轿车 绞车
 jiaocheng 教程 叫成
 jiaochi 角尺
 jiaochong 娇宠
-jiaochou 校雠
-jiaochou 焦愁
-jiaochu 剿除
-jiaochu 叫出
+jiaochou 焦愁 校雠
+jiaochu 叫出 剿除
 jiaochuang 叫床
 jiaochulai 交出来
 jiaochun 叫春
 jiaoda 较大 交大
-jiaodai 交代
-jiaodai 交待
-jiaodai 胶带
+jiaodai 交代 胶带 交待
 jiaodanruoshui 交淡若水
-jiaodao 教导 交道
-jiaodao 绞刀
+jiaodao 教导 交道 绞刀
 jiaodaoyuan 教导员
 jiaodeng 脚灯
 jiaodengzi 脚蹬子
-jiaodi 交底
-jiaodi 脚底
-jiaodi 较低
-jiaodian 交点
-jiaodian 校点
-jiaodian 焦点
+jiaodi 脚底 交底 较低
+jiaodian 焦点 交点 校点
 jiaodidi 娇滴滴
 jiaoding 校订
 jiaodong 搅动
@@ -23312,137 +23172,83 @@ jiaoduole 较多了
 jiaoer 娇儿
 jiaoer 焦耳
 jiaofan 教范
-jiaofei 窖肥
-jiaofei 缴费
+jiaofei 缴费 窖肥
 jiaofeng 交锋
-jiaofu 交付
-jiaofu 教父
-jiaofu 脚夫
+jiaofu 交付 教父 脚夫
 jiaofuchulai 教妇初来，教儿婴孩
-jiaogai 教改
-jiaogai 校改
+jiaogai 教改 校改
 jiaogang 角钢
 jiaoganshenjing 交感神经
 jiaogao 较高
-jiaoge 交割
-jiaoge 轇轕
+jiaoge 交割 轇轕
 jiaogei 交给
 jiaogeibanzhu 交给版主
-jiaogen 脚根
-jiaogen 脚跟
-jiaogong 交工
-jiaogong 剿共
+jiaogen 脚跟 脚根
+jiaogong 交工 剿共
 jiaogongfanzhang 角弓反张
 jiaogonglou 教工楼
 jiaogou 交媾
-jiaoguan 教官
-jiaoguan 浇灌
-jiaoguan 胶管 娇惯
+jiaoguan 教官 浇灌 胶管 娇惯
 jiaoguguai 脚孤拐
-jiaogui 娇贵
-jiaogui 教规
+jiaogui 教规 娇贵
 jiaoguo 角果
-jiaoguoer 嚼裹儿
-jiaoguoer 缴裹儿
+jiaoguoer 嚼裹儿 缴裹儿
 jiaoguoqian 交过钱
 jiaohan 叫喊
 jiaohandaoshou 郊寒岛瘦
-jiaohang 交行
-jiaohang 脚行
-jiaohao 交好
-jiaohao 叫号
-jiaohao 叫好
-jiaohe 交合
-jiaohe 胶合
+jiaohang 交行 脚行
+jiaohao 叫好 交好 叫号
+jiaohe 胶合 交合
 jiaoheban 胶合板
 jiaohei 焦黑
 jiaoheng 骄横
 jiaohougen 脚后跟
-jiaohu 交互
-jiaohua 教化
-jiaohua 焦化
-jiaohua 狡滑
-jiaohua 狡猾 浇花
+jiaohu 狡猾 浇花 交互 教化 焦化 狡滑
 jiaohuade 狡猾的
-jiaohuan 交换
-jiaohuan 交还
-jiaohuan 叫唤
-jiaohuang 教皇
-jiaohuang 焦黄
+jiaohuan 交换 交还 叫唤
+jiaohuang 焦黄 教皇
 jiaohuanji 交换机
 jiaohuanjiazhi 交换价值
 jiaohuanwenrou 交换温柔
-jiaohuazi 叫化子
-jiaohuazi 叫花子
-jiaohui 交会
-jiaohui 交汇
-jiaohui 教会 教诲
-jiaohun 叫魂
-jiaohun 搅浑
-jiaohun 搅混
-jiaohuo 交火
-jiaohuo 搅和
-jiaohuo 缴获
-jiaoji 交际
-jiaoji 交集 焦急
-jiaoji 叫鸡
-jiaoji 狡计
-jiaoji 脚迹
-jiaojia 叫价
-jiaojia 绞架
-jiaojian 矫健
-jiaojian 脚尖
-jiaojiao 教教 叫叫
-jiaojiao 皎皎
+jiaohuazi 叫化子 叫花子
+jiaohui 交汇 教会 教诲 交会
+jiaohun 叫魂 搅浑 搅混
+jiaohuo 交火 搅和 缴获
+jiaoji 交集 焦急 交际 叫鸡 狡计 脚迹
+jiaojia 叫价 绞架
+jiaojian 矫健 脚尖
+jiaojiao 教教 叫叫 皎皎
 jiaojiaobuqun 矫矫不群
-jiaojie 交接
-jiaojie 交界
-jiaojie 交结
-jiaojie 皎洁
-jiaojie 矫捷
-jiaojie 胶结
-jiaojie 铰接
+jiaojie 交接 交界 交结 皎洁 矫捷 胶结 铰接
 jiaojihua 交际花
-jiaojin 叫劲
-jiaojin 脚劲
-jiaojin 较劲
-jiaojin 骄矜
+jiaojin 叫劲 脚劲 较劲 骄矜
 jiaojing 鵁
 jiaojinnaozhi 绞尽脑汁
 jiaojinshuoshi 焦金烁石
 jiaojinsidi 角巾私第
 jiaojiu 交九
 jiaojiwu 交际舞
-jiaoju 搅局
-jiaoju 教具
-jiaoju 焦距
-jiaojuan 交卷
-jiaojuan 胶卷
+jiaoju 焦距 搅局 教具
+jiaojuan 胶卷 交卷
 jiaokan 校勘
 jiaokanxue 校勘学
-jiaoke 娇客
-jiaoke 焦渴
+jiaoke 焦渴 娇客
 jiaokeshu 教科书
 jiaokou 脚扣
 jiaokouchengyu 交口称誉
-jiaoku 叫苦
-jiaoku 焦枯
+jiaoku 叫苦 焦枯
 jiaokuai 狡狯
 jiaokubudie 叫苦不迭
 jiaokuliantian 叫苦连天
 jiaolai 狡赖
 jiaolei 焦雷
 jiaolengshui 浇冷水
-jiaoli 浇漓
-jiaoli 脚力
-jiaolian 教练
-jiaolian 绞脸
-jiaolian 铰链
+jiaoli 浇漓 脚力
+jiaolian 教练 绞脸 铰链
 jiaoliang 较量
 jiaoliao 脚镣
 jiaoliaoyizhi 鹪鹩一枝
-jiaoling 教令
-jiaoling 教龄
+jiaoling 教令 教龄
 jiaoliu 交流
 jiaoliudian 交流电
 jiaoliuyixia 交流一下
@@ -24532,8 +24338,7 @@ jinchen 浸沉
 jincheng 进程
 jinchengmoshi 进程模式
 jinchengtangchi 金城汤池
-jinchi 矜持
-jinchi 谨饬
+jinchi 矜持 谨饬
 jinchibaihai 金翅擘海
 jinchouguhen 今愁古恨
 jinchu 进出
@@ -35938,8 +35743,7 @@ peihe 配合
 peihu 陪护
 peihua 赔话
 peihuo 配火
-peiji 配给
-peiji 陪祭
+peiji 配给 陪祭
 peijia 陪嫁
 peijian 配件
 peijue 配角
@@ -35989,9 +35793,7 @@ peiyu 培育
 peiyue 配乐
 peizang 陪葬
 peizhang 赔账
-peizhi 培植
-peizhi 配制
-peizhi 配置
+peizhi 配置 配制 培植
 peizhihao 配置好
 peizhili 配置里
 peizhiwenjian 配置文件
@@ -37571,8 +37373,7 @@ qianrenwuzhi 千仞无枝
 qianrenzaishu 前人栽树，后人乘凉
 qianrenzhuodao 倩人捉刀
 qianri 前日
-qianru 潜入
-qianru 迁入 嵌入
+qianru 嵌入 迁入 潜入
 qianrushi 嵌入式
 qianruzheng 迁入证
 qiansan 遣散
@@ -39383,8 +39184,7 @@ quanwuhang 全武行
 quanwuxingan 全无心肝
 quanxi 全息
 quanxia 泉下
-quanxian 全线
-quanxian 权限
+quanxian 权限 全线
 quanxiang 劝降
 quanxin 全新
 quanxinquanyi 全心全意
@@ -39396,35 +39196,29 @@ quanyajiaocuo 犬牙交错
 quanyan 泉眼
 quanyaxiangcuo 犬牙相错
 quanyaxiangzhi 犬牙相制
-quanyi 圈椅
-quanyi 权益
+quanyi 权益 圈椅
 quanyin 全音
 quanyizhiji 权宜之计
 quanyou 劝诱
-quanyu 权舆
-quanyu 痊愈
+quanyu 痊愈 权舆
 quanyuan 泉源
 quanyue 圈阅
 quanzai 全在
 quanzha 权诈
 quanzhan 全站
-quanzhi 全职
-quanzhi 劝止
+quanzhi 全职 劝止
 quanzhiquanneng 全智全能
 quanzhiquanneng 全知全能
 quanzhongguo 全中国
 quanzhongnuosha 拳中掿沙
 quanzhou 全州
-quanzhu 劝住
-quanzhu 诠注
+quanzhu 劝住 诠注
 quanzi 圈子 犬子
-quanzu 全组
-quanzu 劝阻
+quanzu 劝阻 全组
 quba 去吧
 qubao 取保
 qubei 去背
-qubi 曲笔
-qubi 趋避
+qubi 趋避 曲笔
 qubie 区别
 qubieda 区别大
 qubiezhen 曲别针
@@ -39437,14 +39231,9 @@ quce 驱策
 quchangbuduan 取长补短
 quche 驱车
 qucheng 去程 去成
-quchi 曲尺
-quchi 龋齿
+quchi 曲尺 龋齿
 quchong 蛆虫
-quchu 去处
-quchu 取出 去除
-quchu 祛除
-quchu 籧篨
-quchu 驱除
+quchu 取出 驱除 去除 去处 祛除 籧篨
 quchulai 取出来
 quci 取词 屈词 去刺
 qucong 屈从
@@ -39481,16 +39270,14 @@ quefa 缺乏
 quegebo 缺胳膊
 quehan 缺憾
 quehububa 确乎不拔
-queke 缺克
-queke 缺刻
+queke 缺克 缺刻
 quekou 缺口
 queli 确立
 quelou 缺漏
 quelue 缺略
 quemen 缺门
 quepingzhongxuan 雀屏中选
-queqian 缺欠
-queqian 缺钱
+queqian 缺钱 缺欠
 queqiao 鹊桥
 queqie 确切
 queqiebuyi 确切不移
@@ -39501,8 +39288,7 @@ queru 阙如
 quese 缺色
 queshao 缺少
 quesheng 缺省
-queshi 确实 却是
-queshi 缺失
+queshi 确实 却是 缺失
 queshou 确守
 queshuo 却说
 queshuzhizheng 雀鼠之争
@@ -39517,8 +39303,7 @@ quexin 确信
 queyi 阙疑
 queying 雀鹰
 quezaobuyi 确凿不移
-quezhen 确诊
-quezhen 缺阵
+quezhen 确诊 缺阵
 quezheng 确证
 quezhibugong 却之不恭
 quezi 瘸子
@@ -39526,10 +39311,8 @@ quezui 缺嘴
 qufa 取法
 qufen 区分
 qufeng 趋奉
-qufu 屈服
-qufu 趋附
-qugan 躯干
-qugan 驱赶
+qufu 屈服 趋附
+qugan 驱赶 躯干
 qugaohegua 曲高和寡
 qugaojiuxia 屈高就下
 quguangdu 屈光度
@@ -39547,23 +39330,17 @@ qujia 屈驾
 qujian 区间 去见
 qujie 曲解
 qujieruming 屈节辱命
-qujing 取景
-qujing 曲靖 取经
-qujing 鼩鼱
+qujing 取景 曲靖 取经 鼩鼱
 qujingtongyou 曲径通幽
 qujingyonghong 取精用弘
 qujingzeng 曲颈甑
 qujinqimiao 曲尽其妙
-qujiu 去就
-qujiu 屈就
-quju 屈居
-quju 曲剧
-quju 趣剧
+qujiu 屈就 去就
+quju 屈居 曲剧 趣剧
 qujue 取决
 qukan 去看
 qulao 劬劳
-qule 去了
-qule 取乐
+qule 去了 取乐
 quliguanwan 曲里拐弯
 qulu 去路
 qulv 曲率
@@ -39592,8 +39369,7 @@ qunhongxihai 群鸿戏海
 qunhun 群婚
 qunian 去年
 qunide 去你的
-qunji 群集
-qunji 麇集
+qunji 群集 麇集
 qunjishaonian 裙屐少年
 qunju 群居
 qunjuxiaoying 群聚效应
@@ -39733,6 +39509,7 @@ ranbing 染病
 rancangranhuang 染苍染黄
 randian 燃点
 randidushu 然荻读书
+raner 然而
 ranfang 染坊
 ranfang 燃放
 rang 让 嚷 壤 攘 讓 瓤 禳 穰 㚂 䉴 儴 勷 瀼 獽 穣 蘘 蠰 躟 鬤 䑋 壌 爙 懹 譲
@@ -50874,12 +50651,10 @@ xiancai 咸菜
 xiancai 线材
 xiancai 苋菜
 xiance 献策
-xianchang 现场
-xianchang 纤长
+xianchang 现场 纤长
 xianche 闲扯
 xianchen 纤尘
-xiancheng 县城
-xiancheng 线程 现成
+xiancheng 线程 现成 县城
 xianchengfan 现成饭
 xianchenghua 现成话
 xianchenuma 鲜车怒马
@@ -52364,86 +52139,61 @@ xietiao 协调
 xietiao 谐调
 xietie 谢帖
 xietinglanyu 谢庭兰玉
-xietong 偕同
-xietong 协同
+xietong 协同 偕同
 xietui 歇腿
 xiewan 写完
 xiewang 鞋网
 xiewei 些微
 xiewen 斜纹
 xiewenbu 斜纹布
-xiexi 歇息
-xiexi 谐戏
-xiexia 写下
-xiexia 歇夏
-xiexian 挟嫌
-xiexian 歇闲
+xiexi 歇息 谐戏
+xiexia 写下 歇夏
+xiexian 挟嫌 歇闲
 xiexiangyaner 斜象眼儿
-xiexiao 些小
-xiexiao 谢孝
+xiexiao 些小 谢孝
 xiexiaqu 写下去
 xiexie 谢谢
 xiexiekuajiang 谢谢夸奖
 xiexiezhezhe 蝎蝎螫螫
-xiexin 写信
-xiexin 歇心
-xiexin 邪心
+xiexin 写信 歇心 邪心
 xiexing 邪行
 xiexingwenzi 楔形文字
-xiexu 些许
-xiexu 些须
+xiexu 些许 些须
 xiexue 谐谑
 xieyalong 谢亚龙
 xieyan 斜眼
 xieyang 斜阳
 xieyao 泻药
 xieye 歇业
-xieyi 写意
-xieyi 协议
-xieyi 谢意
-xieyin 歇阴
-xieyin 谐音
+xieyi 协议 写意 谢意
+xieyin 谐音 歇阴
 xieyou 鞋油
 xieyue 协约
 xieyueguo 协约国
 xieyun 血晕
-xiezai 卸傤
-xiezai 卸载 写在
+xiezai 卸载 写在 卸傤
 xieze 卸责
 xiezhao 写照
 xiezhe 写着
-xiezhen 写真
-xiezhen 谐振
-xiezhi 卸职
-xiezhi 挟制
-xiezhi 歇枝
-xiezhi 獬豸
+xiezhen 写真 谐振
+xiezhi 卸职 挟制 歇枝 獬豸
 xiezhiqiang 泄殖腔
 xiezhu 协助
-xiezhuang 卸妆
-xiezhuang 卸装
-xiezi 些子
-xiezi 写字 鞋子
-xiezi 楔子
-xiezi 蝎子
+xiezhuang 卸妆 卸装
+xiezi 写字 鞋子 蝎子 楔子 些子
 xieziban 写字板
 xiezijian 写字间
 xiezilou 写字楼
 xiezitai 写字台
 xiezouqu 协奏曲
 xiezui 谢罪
-xiezuo 写作
-xiezuo 协作
-xifa 戏法
-xifa 细发
-xifa 西法
+xiezuo 写作 协作
+xifa 戏法 细发 西法
 xifan 稀饭
-xifang 细纺
-xifang 西方
+xifang 西方 细纺
 xifanlian 西番莲
 xifashui 洗发水
-xifei 矽肺
-xifei 西非
+xifei 西非 矽肺
 xifeichengshi 习非成是
 xifener 戏份儿
 xifeng 隙缝
@@ -52451,20 +52201,14 @@ xifengbuying 系风捕影
 xifengjiu 西凤酒
 xifengluhou 席丰履厚
 xifengyinlu 吸风饮露
-xifu 吸附
-xifu 媳妇
-xifu 惜福
-xifu 系缚
-xifu 西服
+xifu 吸附 媳妇 惜福 系缚 西服
 xifuer 媳妇儿
 xigai 膝盖
 xigaigu 膝盖骨
 xigang 矽钢
 xigaotiaoer 细高挑儿
 xige 戏歌
-xigong 细工
-xigong 西宫
-xigong 铣工
+xigong 细工 西宫 铣工
 xigouqiuban 洗垢求瘢
 xigua 西瓜
 xiguan 习惯
@@ -52474,37 +52218,25 @@ xiguang 西光
 xiguanxing 习惯性
 xigui 蠵龟
 xiguo 喜果
-xihan 希罕
-xihan 稀罕 吸汗
-xihan 西汉
-xihao 习好
-xihao 喜好
-xihe 溪壑
-xihe 熙和
+xihan 稀罕 吸汗 西汉 希罕
+xihao 喜好 习好
+xihe 熙和 溪壑
 xihongshi 西红柿
 xihu 潟湖
-xihua 系花 细化
-xihua 西化
-xihua 西画
+xihua 西化 细化 西画 系花
 xihuan 喜欢
 xihuang 恓惶
 xihuangshangren 羲皇上人
 xihulu 西葫芦
-xihuo 熄火
-xihuo 细活
+xihuo 熄火 细活
 xiji 希冀
-xijian 习见
-xijian 息肩
-xijian 洗碱
-xijian 溪涧
+xijian 习见 息肩 洗碱 溪涧
 xijiang 锡匠
 xijiao 洗脚
 xijiaozhuguai 犀角烛怪
-xijie 洗劫
-xijie 细节
+xijie 细节 洗劫
 xijin 西晋
-xijiu 喜酒
-xijiu 细究
+xijiu 喜酒 细究
 xiju 戏剧 喜剧 析居 锡剧
 xijuanertao 席卷而逃
 xijuantianxia 席卷天下
@@ -52524,16 +52256,8 @@ xilanhua 西蓝花
 xilaolianpin 惜老怜贫
 xilazimu 希腊字母
 xile 喜乐
-xili 吸力
-xili 洗礼
-xili 淅沥
-xili 犀利
-xili 西历
-xilian 喜联
-xilian 洗炼
-xilian 洗练
-xilian 洗脸
-xilian 系恋
+xili 吸力 洗礼 淅沥 犀利 西历
+xilian 洗脸 洗炼 洗练 喜联 系恋
 xiliang 细粮
 xilianshuaya 洗脸刷牙
 xiliao 稀料
@@ -52541,16 +52265,12 @@ xilie 系列
 xilihuala 稀里哗啦
 xilihutu 稀里糊涂
 xilimahu 稀里马虎
-xiliu 吸溜
-xiliu 溪流
+xiliu 溪流 吸溜
 xiliuliu 稀溜溜
 xilou 西楼
-xilu 戏路
-xilu 潟卤
-xilu 舄卤
+xilu 戏路 潟卤 舄卤
 xiluo 奚落
-xima 戏码
-xima 枲麻
+xima 戏码 枲麻
 ximao 细毛
 ximei 洗煤
 ximeixiaoyan 喜眉笑眼
@@ -52558,16 +52278,12 @@ ximen 西门
 ximengsi 席梦思
 ximenkou 西门口
 ximenzi 西门子
-ximi 戏迷
-ximi 细密
-ximi 菥蓂
+ximi 戏迷 细密 菥蓂
 ximian 席面
-ximie 席篾
-ximie 熄灭
+ximie 熄灭 席篾
 ximorujin 惜墨如金
 ximozhi 吸墨纸
-ximu 戏目
-ximu 细目
+ximu 戏目 细目
 xin 信 心 新 欣 辛 馨 薪 芯 衅 莘 尋 昕 鑫 锌 忻 歆 忄 囟 舋 訢 釁 伈 伩 俽 兟 噷 妡 嬜 廞 惞 炘 盺 邤 鈊 鋅 㚯 㜦 㻸 䰼 寻 攳 杺 桪 樳 襑 鄩 鐔 镡 㐰 㛛 㩪 㭄 㭡 㹷 䎣 䒖 䚱 䛨 䜗 䪿 卂 孞 焮 煡 脪 膷 訫 軐 阠 顖 馸
 xin1 心 新 欣 辛 馨 薪 芯 莘 昕 鑫 锌 忻 歆 忄 訢 俽 兟 噷 妡 嬜 廞 惞 炘 盺 邤 鈊 鋅
 xin2 尋 㚯 㜦 㻸 䰼 寻 攳 杺 桪 樳 襑 鄩 鐔 镡
@@ -52581,11 +52297,9 @@ xinandaxue 西南大学
 xinanfei 西南非
 xinanlide 心安理得
 xinannongyedaxue 西南农业大学
-xinao 嬉闹
-xinao 洗脑
+xinao 洗脑 嬉闹
 xinba 新吧
-xinban 新版
-xinban 锌版
+xinban 新版 锌版
 xinbanben 新版本
 xinbangfufei 心谤腹非
 xinbao 心包

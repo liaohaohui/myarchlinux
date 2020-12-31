@@ -1,0 +1,54 @@
+= 独立理工大学
+
+从前要建立一间大学是很困难的事情。然而，随着网络资源的丰富，这已经不是
+一件不可能的任务了。对我而言，利用开源软件建立一个学习平台是建立公平教育
+的基础。
+
+
+== 数学科学
+
+* https://www.youtube.com/watch?v=fo-alw2q-BU[How to learn pure mathematics on your own: a complete self-study guide]
+** Stephen Abbott, Understanding Analysis: 有 Henstock 积分的介绍
+** http://www.math.toronto.edu/~alfonso/137/137.html
+** https://www.youtube.com/channel/UCLzpR8AiHx9h_-yt2fAxd_A[MAT137]
+** /home/liaohaohui/zStudy/math-Matrix/inDataArchive08/Sheldon_Axler_Linear_Algebra_Done_Right__2004.pdf
+** https://www.youtube.com/watch?v=lkx2BJcnyxk&list=PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw
+** IIT Topology: https://www.youtube.com/playlist?list=PLbMVogVj5nJRR7zYZifYopb52zjoScx1d
+** https://www.youtube.com/playlist?list=PL41FDABC6AA085E78[Algebraic Topology: a beginner's course - N J Wildberger]
+** http://www.math.toronto.edu/ivan/mat327/?resources
+** DavidBachman-AGeometricApproachToDifferentialForms2e-BirkhäuserBasel2012.pdf
+** https://www.youtube.com/watch?v=RW5lJiKZHd8&list=PLxBAVPVHJPcrNrcEBKbqC_ykiVqfxZgNl
+
+
+== 电脑科学
+
+* 软件的历程？
+** https://www.youtube.com/watch?v=g3jOJfrOknA[The Thompson and Ritchie Story]
+** https://www.youtube.com/watch?v=boahlBmc-NY[T-Dose 2016, From UNIX to Linux, a time lapse of 45 years, Hendrik Jan Thomassen]
+
+** https://www.youtube.com/watch?v=EY6q5dv_B-o[VCF East 2019 -- Brian Kernighan interviews Ken Thompson]
+** https://www.youtube.com/watch?v=Sg4U4r_AgJU[Computer Science - Brian Kernighan on successful language design]
+** https://www.youtube.com/watch?v=O9upVbGSBFo[Brian Kernighan: UNIX, C, AWK, AMPL, and Go Programming | Lex Fridman Podcast #109]
+** https://www.youtube.com/watch?v=IT__Nrr3PNI[James Gosling: Java, JVM, Emacs, and the Early Days of Computing | Lex Fridman Podcast #126]
+** https://www.youtube.com/watch?v=2BdBfsXbST8[Donald Knuth: Algorithms, Complexity, and The Art of Computer Programming | Lex Fridman Podcast #62]
+
+** https://www.youtube.com/watch?v=xnCgoEyz31M[Unix50 - Unix Today and Tomorrow: The Languages]
+
+** https://www.youtube.com/watch?v=VJSlvoUFkBA[FOSDEM 2006 plan9]
+
+** https://www.youtube.com/watch?v=FvmTSpJU-Xc[Alan Kay - Normal Considered Harmful]
+
+== 物理
+
+== 化学
+
+== 机械工程
+
+== 电气工程
+
+== 数字影视与电脑游戏
+
+* https://www.youtube.com/watch?v=7wtq18wHaSA[废土地球被巨兽占据，吸收人类进化，绝对视觉震撼！]
+
+== 历史
+

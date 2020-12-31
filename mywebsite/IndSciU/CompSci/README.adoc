@@ -1,0 +1,11 @@
+= 电脑与软件工程
+
+== 网上的指针
+
+* https://csgordon.github.io/books.html
+
+
+== 基础课程
+
+* link:operating_system.html[操作系统]
+

@@ -1,0 +1,75 @@
+== 操作系统 Operating Systems
+
+认识电脑最基本的软件，即操作系统，可以帮助我们设置智能家居，而非由大品牌公司所垄断。
+
+=== 大纲
+
+1. 进程管理 Process Management
+* 概念：进程是"运行中的程序"
+* 同步进程 (Concurrent processes)
+* 进程的协调 (Process synchronization)
+* 死锁 (Deadlock) 的检测与恢复
+* 进程的调度 (Scheduling), fork bomb
+* 线程 (Threads), 纤程 (Fibres)
+
+2. 中央管理器 CPU 的管理
+* 调度的方法与算法: 与具体的应用场景密切相关
+* 多处理器 (processor) 调度
+
+3. 内存 (Memory) 管理
+* Partitioning
+* Paging and segmentation
+* 虚拟内存 (VM)
+* Page replacement algorithms
+
+4. 文件系统
+* PATA, SATA, NVME
+* 文件的操作, 权限, 目录
+* 文件的配置 (allocation)
+* 格式: DOS FS, VFAT, ReiserFS, ext2, ext3, ext4 等
+* 文件系统的优化
+* Btrfs, OpenZFS
+
+5. 硬件接口 (Hardware Interface)
+* USB 接口
+* 声卡
+
+6. 网络与系统的保安
+* 网卡
+* 网络服务
+* 网络攻击与安全
+* 网络权限与架构
+
+7. 嵌入式系统 (Embedded system)
+
+8. 操作系统的实现
+* Minix
+* Linux
+* FreeBSD, OpenBSD, NetBSD, DragonflyBSD
+* OpenSolaris
+* Plan 9
+
+
+=== 网络与视频资源
+
+* https://www.bilibili.com/video/BV1GE41157Hc?p=1
+** https://github.com/rcore-os/rCore
+** https://github.com/chyyuu/os_kernel_lab
+** https://github.com/chyyuu/ucore_os_docs
+** https://github.com/chyyuu/ucorebook_code
+** https://github.com/kiukotsu/ucore
+
+* https://www.youtube.com/watch?v=ktkAlbcoz7o[Exploring xv6 - Introduction]
+* https://www.youtube.com/channel/UCLH1aUiStr9_1PsgQJPHSFw[Neil Rhodes]
+** https://www.youtube.com/watch?v=RxpIyP6C-gg[CS 134 OS—6: xv6 First Process]
+** https://www.youtube.com/watch?v=S1158OShz44[CS 134 OS—13: xv6 Filesystem]
+
+
+=== 参考文献
+
+. Marshal Kirk McKusick, Keith Bostic, Michael J. Karels, John S. Quarterman,
+The Design and Implementation of the 4.4BSD Operating System
+. Tanenbaum, A. S. (2014). Modern operating systems. (4th ed.). Pearson.
+. Stallings, W. (2014). Operating systems: Internals and design principles. (8th ed.). Pearson.
+. D. Comer. (2015). Operating System Design - The Xinu Approach. (2nd ed.). CRC Press.
+

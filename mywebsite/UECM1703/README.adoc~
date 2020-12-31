@@ -1,0 +1,46 @@
+= UECM1703 Introduction to Scientific Computing (Oct 2020)
+
+Previous: Oct 2019, Oct 2018
+
+== Methods of Assessment
+
+* Test (20%) covering Topics 1--3 (lecture slides 1 and 2).
+* Assignment (20%) covering Topic 4
+* Lab Quizzes (20%) covering Topics 5 and 6
+* Final Assessment (40%).
+
+
+== Lecture Slides
+
+Note: Change of arrangement
+
+* Week 1: link:s01_basic.pdf[Lecture Slide 1: Basic Python Programming]
+
+* Week 2: link:s02_array.pdf[Lecture Slide 2: Array Programming]
+
+* Week 3 Mon: Complete link:s02_array.pdf[Lecture Slide 2: Array Programming]
+
+* Week 3 Tue: Dr Goh's class will start.  Lecture notes:
+https://gohyk.bitbucket.io/UECM1703/
+
+* Week 4: Continue lecture and work on your assignment.
+
+* Week 5 Mon (8am--11am): Take Test covering Slide 1 and 2.
+
+* A sample of past year test: link:UECM1703-test.pdf[Test from Year 2019]
+
+
+== Practical Slides
+
+* Week 1: link:p01_basic.pdf[Practical Slide 1: Basic Python Programming]
+
+* Week 2: link:p02_array.pdf[Practical Slide 2: Array Programming]
+** In this practical, we will start with simple middle-school matrix
+and then proceed to simple image processing in Numpy array.  It is hope 
+that through this practical one will appreciate the complexity of image
+processing.
+
+* Week 3: link:p03_adv.pdf[Practical Slide 3: Advanced Programming]
+** In this practical, you will learn to relate for loop and array programming
+
+
