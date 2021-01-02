@@ -5,6 +5,12 @@ for thesize in 16x32 12x24 8x16; do
 done
 
 # then: install the spleen-*.psfu to /usr/share/kbd/consolefonts
-# then: /etc/vconsole.conf
+# In Artix Linux with OpenRC
+# Edit /etc/conf.d/consolefont
+# consolefont="spleen-12x24"
+# Then rc-update add consolefont boot
+# OpenRC consolefont does not work consistantly.  On one machine, the default font is loaded.
+
+# In Arch Linux?: /etc/vconsole.conf
 # FONT=spleen-12x24
 # FONT_MAP=8859-1
