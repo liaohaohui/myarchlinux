@@ -24,7 +24,7 @@ The course outcomes are
 
 == Lecture Notes
 
-* Overview of ``Predictive Modelling''
+* link:s01_intro.pdf[Overview of ``Predictive Modelling'']
 * kNN
 * Logistic Regression
 * Model Validation
@@ -49,7 +49,7 @@ The course outcomes are
 
 == Practicals
 
-* Practical : Introduction to R
+* link:p01_intro.R[Practical 1: Introduction to R]
 * Practical : kNN
 * Practical : Logistic Regression
 * Practical : Cross Validation

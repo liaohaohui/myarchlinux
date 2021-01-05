@@ -1,0 +1,7 @@
+= 博客文与视频记录
+
+* link:blogunix.html[这些年用 Linux 及其它 Unix 的心得]
+
+* link:blog2011.html[2011 年的博客文字]
+* link:blog2010.html[2010 年的博客文字]
+

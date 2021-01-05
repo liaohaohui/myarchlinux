@@ -1,0 +1,17 @@
+= Unix 下的编辑器
+
+== 2020 年 12 月
+
+* Vim 和 Neovim 是 Unix 下最佳的编辑器，因为我只需要安装 Vimim
+的插件就可以用。但我们必需注意，Ctrl-_ 与 Ctrl-^ 只在 8.1 或之前的
+版本可以用，在 8.2 或更新的版本中，因为 Ctrl-号码或 Ctrl-Shift-号码
+不再可用，我们被逼要用 Ctrl-d 来切换中英输入。
+
+* Unix 下支持中文显示且轻量的编辑器并不太多，Plan 9 的 Sam 与 Acme
+只要加入中文字体就可以显示中文了。
+** https://github.com/deadpixi/sam[Sam Editor]: 要用这个软件需要
+对 ed 编辑器有一点的认识，另外，要与其它 X11 软件交流，需要用 
+snarf 与 exch 来实现。因为不支持 XIM, 所以无法输入中文。
+** http://c9x.me/edit/[Vi+Acme Editor]: 这个软件可以用来阅读中文，
+但不可以用来编辑中文。
+

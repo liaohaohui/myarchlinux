@@ -4,19 +4,22 @@
 
 === 大纲
 
-1. 进程管理 Process Management
-* 概念：进程是"运行中的程序"
+1. 进程管理
+* 概念：进程 (Process) 是"运行中的程序"
 * 同步进程 (Concurrent processes)
 * 进程的协调 (Process synchronization)
 * 死锁 (Deadlock) 的检测与恢复
 * 信号与会话管理: BSD vs SysV
 * 进程的调度 (Scheduling), fork bomb
 * 线程 (Threads), 纤程 (Fibres)
-* 进程间通信 (IPC)
+* 进程间通信 (IPC): RPC?, Java RMI?
 
 2. 中央管理器 CPU 的管理
 * 调度的方法与算法: 与具体的应用场景密切相关
 * 多处理器 (processor) 调度
+* 单 CPU 算法: First-come-first-served, shortest-job-first, priority scheduling,
+round-robin, multilevel queue, multilevel feedback queue
+* 多 CPU 算法
 
 3. 内存 (Memory) 管理
 * 分区 (Partitioning)
@@ -25,7 +28,7 @@
 * 页面替换算法 (replacement)
 
 4. 文件系统
-* PATA, SATA, NVME
+* PATA, SATA HDD, SATA SDD, PCIe4, NVME
 * 文件的操作, 权限, 目录
 * 文件的配置 (allocation)
 * 格式: DOS FS, VFAT, ReiserFS, ext2, ext3, ext4, FFS, UFS 等
@@ -33,7 +36,7 @@
 * Btrfs, OpenZFS
 * NFS, RFS
 
-5. 设备驱动 / 硬件接口 (Hardware Interface)
+5. 设备驱动 / 硬件接口 (Hardware Interface) / I/O
 * 键盘与鼠标
 * USB 接口
 * 声卡
@@ -43,6 +46,7 @@
 * 网络服务
 * 网络攻击与安全
 * 网络权限与架构
+* Unix Assess matrix, SELinux (ACL), PAM
 
 7. 嵌入式系统 (Embedded system)
 
@@ -73,6 +77,8 @@
 
 . Marshal Kirk McKusick, Keith Bostic, Michael J. Karels, John S. Quarterman,
 The Design and Implementation of the 4.4BSD Operating System
+. Abraham Silberschatz, Peter Baer Galvin, Greg Gagne (2003). Operating
+System Concepts (6th ed.). John Wiley & Sons, Inc.
 . Tanenbaum, A. S. (2014). Modern operating systems. (4th ed.). Pearson.
 . Stallings, W. (2014). Operating systems: Internals and design principles. (8th ed.). Pearson.
 . D. Comer. (2015). Operating System Design - The Xinu Approach. (2nd ed.). CRC Press.

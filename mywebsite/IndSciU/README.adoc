@@ -7,6 +7,10 @@
 
 == 数学科学
 
+* https://www.youtube.com/watch?v=RoqErc0NKmE[a nice limit.]
+* https://www.youtube.com/watch?v=lov2nhJdPqw[Calculus: Arnold's limit]
+* https://www.youtube.com/watch?v=1lGM5DEdMaw[Stokes' Theorem on Manifolds]
+
 * https://www.youtube.com/watch?v=fo-alw2q-BU[How to learn pure mathematics on your own: a complete self-study guide]
 ** Stephen Abbott, Understanding Analysis: 有 Henstock 积分的介绍
 ** http://www.math.toronto.edu/~alfonso/137/137.html

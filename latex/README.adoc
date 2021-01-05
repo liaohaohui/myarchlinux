@@ -10,9 +10,9 @@ Install additional LaTeX packages which are required:
 $ cd ${HOME}/CTAN
 $ unzip ~/Download/mdframed.zip
 $ (cd mdframed; tex mdframed.ins)
-$ unzip ~/Download/needspace.zip
-$ unzip ~/Download/filecontents.zip
 $ unzip ~/Download/zref.zip
+$ unzip ~/Download/filecontents.zip
+$ unzip ~/Download/needspace.zip  # depends on filecontents
 $ unzip ~/Download/enumitem.zip
 $ unzip ~/Download/ctex.tds.zip
 $ unzip ~/Download/alphalph.zip
