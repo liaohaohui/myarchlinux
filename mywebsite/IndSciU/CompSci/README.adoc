@@ -2,6 +2,7 @@
 
 == 网上的指针
 
+* https://laconicml.com/computer-science-curriculum-youtube-videos/
 * https://csgordon.github.io/books.html
 
 

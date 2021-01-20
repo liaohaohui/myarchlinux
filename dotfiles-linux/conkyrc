@@ -1,0 +1,205 @@
+-- https://wiki.archlinux.org/index.php/conky#Configuration
+-- https://github.com/xyphanajay/conky/blob/master/.conkyrc
+
+conky.config = {
+	--  set to yes if you want Conky to be forked in the background
+	background = false,
+
+	--  X font when Xft is disabled, you can pick one with program xfontsel
+	-- font 5x7
+	-- font 6x10
+	-- font 7x13
+	-- font 8x13
+	-- font 9x15
+	-- font *mintsmild.se*
+	-- font -*-*-*-*-*-*-34-*-*-*-*-*-*-*
+
+	--  Xft font when Xft is enabled
+	-- xftfont Bitstream Vera Sans Mono:size=8
+	-- xftfont = "Terminus:size=10"
+	-- xftfont = "DejaVu Sans Mono:size=8",
+	use_xft = true,
+	font = "Hack:style=Regular:size=8",
+
+	--  Text alpha when using Xft
+	xftalpha = 0.8,
+
+	--  Print everything to console?
+	-- out_to_console = false
+
+	--  mail spool
+	-- mail_spool $MAIL
+
+	--  Update interval in seconds
+	update_interval = 1.0,
+
+	--  This is the number of times Conky will update before quitting.
+	--  Set to zero to run forever.
+	total_run_times = 0,
+
+	--  Create own window instead of using desktop (required in nautilus)
+	own_window = true,
+
+	--  window class
+	--  own_window_type desktop
+	-- own_window_type panel # affecting FVWM!
+	own_window_type = "desktop",  -- "dock"
+
+	--  window hints
+	own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
+	-- own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
+
+	--  Use double buffering (reduces flicker, may not work for everyone)
+	double_buffer = true,
+
+	--  Minimum size of text area
+	-- minimum_size 1000 5
+
+	maximum_width = 180,
+	-- minimum_size 330 10
+
+	--  Draw shades?
+	draw_shades = true,
+
+	--  Draw outlines?
+	draw_outline = false,
+
+	--  Draw borders around text
+	draw_borders = false,
+
+	--  Stippled borders?
+	stippled_borders = 8,
+
+	--  border margins
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+
+	--  border width
+	border_width = 0,
+
+	--  Default colours and also border colours
+	default_color = "white",
+	default_shade_color = "black",
+	default_outline_color = "white",
+
+	--  Text alignment, other possible values are commented
+	-- alignment top_left
+	alignment = 'top_right',
+	-- alignment bottom_left
+	-- alignment bottom_right
+
+	--  Gap between borders of screen and text
+	--  same thing as passing -x at command line
+	-- gap_x 5
+	-- gap_y 10
+	gap_x = 3,
+	gap_y = 3,
+
+	--  Subtract file system buffers from used memory?
+	no_buffers = true,
+
+	--  set to yes if you want all text to be in uppercase
+	uppercase = false,
+
+	--  number of cpu samples to average
+	--  set to 1 to disable averaging
+	cpu_avg_samples = 2,
+
+	--  number of net samples to average
+	--  set to 1 to disable averaging
+	net_avg_samples = 2,
+
+	--  Force UTF8? note that UTF8 support required XFT
+	override_utf8_locale = true,
+
+	--  Add spaces to keep things from moving about?  This only affects certain objects.
+	--  left, right, or none
+	use_spacer = 'none',
+
+	if_up_strictness = 'address'
+
+}
+
+--  stuff after 'TEXT' will be formatted on screen
+
+--  ${alignc}${color slate grey}${time %Z,}${color}${time %H:%M:%S}
+conky.text = [[
+${alignc}${color slate grey}${kernel}
+${alignc}${color slate grey}${time %a,}${color}${time %e %B %G}
+${alignc}${color slate grey}${time %Z, }${color}${time %I:%M:%S %p}
+${alignc}${color slate grey}UpTime: ${color}$uptime
+${color #333333}${hr}${color}
+${alignc}${color slate grey}Power
+${color slate grey}AC Power: ${color}${acpiacadapter ACAD}
+## https://bbs.archlinux.org/viewtopic.php?id=52818
+${if_existing  /sys/class/power_supply/BAT1/status}${color slate grey}Battery: ${color}${battery_percent BAT1}% ${battery_bar BAT1}$endif
+# ${if_match ${battery_percent BAT1} <= 20}
+# ${exec xmessage "Warning: Low Battery!"}
+# #${exec gxmessage "Low Battery Warning"}
+# #${exec zenity --warning --text "Low Battery Warning"}
+# #${exec yad (gtk3) --warning --text "Low Battery Warning"}
+# #${exec "Low Battery Warning"}
+# $endif
+
+${color #333333}${hr}${color}
+${alignc}${color slate grey}CPU
+${color slate grey}Freq:${alignr}${color}${freq} MHz
+${color slate grey}Usage:${alignr}${color}${cpu}%
+## https://bbs.archlinux.org/viewtopic.php?id=117336
+${color slate grey}Temp:${alignr}${color}${acpitemp}°C
+# ${color slate grey}Temp:${alignr}${color}${platform coretemp.0 temp 2}°C
+${alignc}${cpugraph 20,160 4d8e00 feed01 80}
+${color #333333}${hr}${color}
+${alignc}${color slate grey}Processes
+${color slate grey}#: ${color}$processes  
+${color slate grey}Running: ${color}$running_processes
+${color slate grey}Load: ${color}$loadavg
+${color slate grey}CPU++:
+${color #ddaa00} ${top name 1}${top_mem cpu 1}
+${color lightgrey} ${top name 2}${top cpu 2}
+${color lightgrey} ${top name 3}${top cpu 3}
+# ${color lightgrey} ${top name 4}${top cpu 4}
+${color slate grey}MEM++:
+${color #ddaa00} ${top_mem name 1}${top_mem mem 1}
+${color lightgrey} ${top_mem name 2}${top_mem mem 2}
+${color lightgrey} ${top_mem name 3}${top_mem mem 3}
+# ${color lightgrey} ${top_mem name 4}${top_mem mem 4}
+${color #333333}${hr}${color}
+${alignc}${color slate grey}MEM/SWAP
+${color slate grey}MEM: ${alignr}${color}$memperc% $mem/$memmax
+${alignc}${membar 3,160}
+${color slate grey}SWAP: ${alignr}${color}$swapperc% $swap/$swapmax
+${alignc}${swapbar 3,160}
+${color #333333}${hr}${color}
+${alignc}${color slate grey}Disks${color}
+${color slate grey}I/O:${color}${alignr}${diskio} 
+# ${alignc}${diskiograph log 20,160}
+${alignc}${diskiograph 20,160}
+# ${alignc}${color slate grey}File Systems${color}
+# ${color slate grey}/: ${alignr}${color}${fs_free /}/${fs_size /}
+# ${alignc}${fs_bar 3,160 /}
+# ${color slate grey}/home: ${alignr}${color}${fs_free /home}/${fs_size /home}
+# ${alignc}${fs_bar 3,160 /home}
+${color #333333}${hr}${color}
+${alignc}${color slate grey}Network
+${color slate grey}enp4s0f1 
+${color slate grey}IP:${color}${alignr}${addrs enp4s0f1}
+${color #555555}D: ${color}${downspeed enp4s0f1}${color #AAAAAA}${alignr}U: ${color}${upspeed enp4s0f1}
+${color #555555}${downspeedgraph enp4s0f1 20,75 -t}   ${color #AAAAAA}${upspeedgraph enp4s0f1 20,75}
+# ${color #555555}${downspeedgraph log enp4s0f1 20,75}   ${color #AAAAAA}${upspeedgraph log enp4s0f1 20,75}
+${color slate grey}wlp2s0
+${color slate grey}IP:${color}${alignr}${addrs wlp2s0}
+${color slate grey}ESSID:${color}${alignr}${wireless_essid wlp2s0}
+${color slate grey}Link:${color}${alignr}${wireless_link_qual_perc wlp2s0}%
+${color #555555}D: ${color}${downspeed wlp2s0}${color #AAAAAA}${alignr}U: ${color}${upspeed wlp2s0}
+## http://inciner.blogspot.com/2012/05/conky-various-graph-scale-parameter.html
+${color #555555}${downspeedgraph wlp2s0 20,75 888888 FF8C8C} ${color #AAAAAA}${upspeedgraph wlp2s0 20,75 0000ff ff0000}
+# ${color slate grey}tun0 
+# ${color slate grey}IP:${color}${alignr}${addrs tun0}
+# ${color #555555}D: ${color}${downspeed tun0}${color #AAAAAA}${alignr}U: ${color}${upspeed tun0}
+# ${color #555555}${downspeedgraph log tun0 20,75}   ${color #AAAAAA}${upspeedgraph log tun0 20,75}
+# ${color #333333}${hr}${color}
+# ${alignc}${color slate grey}News
+# ${rss https://planet.archlinux.org/rss20.xml 1 item_titles 10 }
+]]
+

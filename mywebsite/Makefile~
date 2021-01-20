@@ -8,7 +8,7 @@ all:
 	#-cp UECM1703-test.pdf ${WEBROOT}/UECM1703/
 	#-cp ${WEBROOT}/UECM1703/
 	asciidoctor UECM3993/README.adoc -o ${WEBROOT}/UECM3993/index.html
-	asciidoctor IndSciU/README.adoc -o ${WEBROOT}/IndU/index.html
-	asciidoctor IndSciU/CompSci/README.adoc -o ${WEBROOT}/IndU/CompSci/index.html
-	asciidoctor IndSciU/CompSci/README.adoc -o ${WEBROOT}/IndU/CompSci/operating_system.html
+	asciidoctor IndSciU/README.adoc -o ${WEBROOT}/IndSciU/index.html
+	asciidoctor IndSciU/CompSci/README.adoc -o ${WEBROOT}/IndSciU/CompSci/index.html
+	asciidoctor IndSciU/CompSci/operating_system.adoc -o ${WEBROOT}/IndSciU/CompSci/operating_system.html
 

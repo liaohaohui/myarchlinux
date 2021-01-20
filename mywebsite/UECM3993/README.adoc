@@ -12,7 +12,10 @@ The course outcomes are
 == Announcements
 
 * Week 4: Assignment will be announced.
-* Week 1: Practical starts from Week 1; Tutorial starts from Week 2.
+* Week 2: Submission of the assignment group name and member names, student id, etc.
+* Week 1: Form assignment groups
+* Week 1: Practical and Tutorial start from Week 1; Week 2 Thursday is 
+Thaipusam, so no Tutorial in Week 2.
 
 
 == Methods of Assessment
@@ -25,40 +28,40 @@ The course outcomes are
 == Lecture Notes
 
 * link:s01_intro.pdf[Overview of ``Predictive Modelling'']
-* kNN
-* Logistic Regression
-* Model Validation
-* Decision Trees
-* Ensemble Methods
-* Generative Classifiers: Naive Bayes, LDA
-* PCA
-* Clustering methods
+* link:s02_knn.pdf[kNN]
+* Logistic Regression (in preparation)
+* Model Validation (in preparation)
+* Decision Trees (in preparation)
+* Ensemble Methods (in preparation)
+* Generative Classifiers: Naive Bayes, LDA (in preparation)
+* PCA (in preparation)
+* Clustering methods (in preparation)
 * Revision
 
 == Tutorials
 
-* Tutorial 1: Basics of Statistical Learning
-* Tutorial 2: Supervised Learning Model kNN
-* Tutorial 3: Logistic Regression Model
-* Tutorial 4: Model Validation Theory
-* Tutorial 5: Tree Predictive Models
-* Tutorial 6: Naive Bayes and LDA
-* Tutorial 7: PCA
-* Tutorial 8: Clustering
+* link:tut01s.pdf[Tutorial 1: Basics of Statistical Learning]
+* link:tut02s.pdf[Tutorial 2: Supervised Learning Model kNN]
+* link:tut03s.pdf[Tutorial 3: Logistic Regression Model]
+* link:tut04s.pdf[Tutorial 4: Model Validation Theory]
+* link:tut05s.pdf[Tutorial 5: Tree Predictive Models]
+* Tutorial 6: Naive Bayes and LDA (in preparation)
+* Tutorial 7: PCA (in preparation)
+* Tutorial 8: Clustering (in preparation)
+* https://sites.google.com/site/liewhowhui/predmodel/tutorials[Older tutorials]
 
 
 == Practicals
 
+* Some data are available from https://sites.google.com/site/liewhowhui/predmodel/practical/data[here]
 * link:p01_intro.R[Practical 1: Introduction to R]
-* Practical : kNN
-* Practical : Logistic Regression
-* Practical : Cross Validation
-* Practical : Decision Trees
-* Practical : Ensemble Methods
-* Practical : Generative Models
-* Practical : PCA
-* Practical : Clustering
-* Old YouTube video playlist: https://www.youtube.com/playlist?list=PL4HpvNUygBwfSy4ob-Bt8A6oFXSvSsoYn
+* link:p02_knn.R[Practical 2: kNN]
+* Practical 3: Logistic Regression (in preparation)
+* Practical 4: Cross Validation (in preparation)
+* Practical 5: Decision Trees + Ensemble Methods (in preparation)
+* Practical 6: Generative Models (in preparation)
+* Practical 7: PCA + Clustering (in preparation)
+* https://www.youtube.com/playlist?list=PL4HpvNUygBwfSy4ob-Bt8A6oFXSvSsoYn[Old YouTube video playlist]
 
 
 == Recommendations
