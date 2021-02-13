@@ -1,0 +1,6 @@
+= FreeBSD Configuration
+
+* Configure for laptop: Make sure CPU does not overheat
+** https://forums.freebsd.org/threads/freebsd-12-system-temperature-too-high-shutting-down-soon.71709/
+** https://forums.freebsd.org/threads/laptop-too-hot-and-turns-off.64664/
+

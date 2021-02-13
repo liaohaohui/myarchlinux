@@ -124,7 +124,7 @@ if_up_strictness address
 # stuff after 'TEXT' will be formatted on screen
 
 TEXT
-${alignc}${color slate grey}OpenBSD ${kernel}
+${alignc}${color slate grey}FreeBSD-${kernel}
 ${alignc}${color slate grey}${time %a,}${color}${time %e %B %G}
 # ${alignc}${color slate grey}${time %Z,}${color}${time %H:%M:%S}
 ${alignc}${color slate grey}${time %Z, }${color}${time %I:%M:%S %p}
@@ -132,11 +132,13 @@ ${alignc}${color slate grey}UpTime: ${color}$uptime
 ${color slate grey}BAT: ${apm_battery_life}
 ${color #333333}${hr}${color}
 ${alignc}${color slate grey}CPU
+# **** sysctl hw.cpu.0.freq.
 ${color slate grey}Freq:${alignr}${color}${freq_g} MHz
 ${color slate grey}Usage:${alignr}${color}${cpu}%
 # CPU: $freq_g GHz USED: ${cpu cpu0}%
 ### https://bbs.archlinux.org/viewtopic.php?id=117336
 #${color slate grey}Temp:${alignr}${color}${acpitemp}C
+# **** sysctl hw.cpu.0.temperature (kldload coretemp)
 ${color slate grey}Temp:${alignr}${color}${execi 10 sysctl -n hw.acpi.thermal.tz0.temperature ${alignr} | cut -d . -f 1}^C
 ${alignc}${cpugraph 20,160 4d8e00 feed01 80}
 ${color #333333}${hr}${color}

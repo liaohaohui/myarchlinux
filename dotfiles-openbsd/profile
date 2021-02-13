@@ -9,6 +9,9 @@ TERM=wsvt25
 # Default TERM=vt220 (no colour)
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
+GOPATH=/home/liaohaohui/Golang
+export GOPATH
+PATH=$PATH:/home/liaohaohui/go/bin
 
 PLAN9=/home/liaohaohui/plan9port export PLAN9
 PATH=$PATH:$PLAN9/bin

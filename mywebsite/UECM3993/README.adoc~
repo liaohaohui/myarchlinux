@@ -11,7 +11,10 @@ The course outcomes are
 
 == Announcements
 
-* Week 4: Assignment will be announced.
+* Week 4: link:assgroups.pdf[The list of Assignment Groups]: Email me to update the list if there is anything not up-to-date.
+* Week 3: Submission of choice of data for each assignment group.
+* Week 3: Tutorial class resumes.
+* Week 2: link:assignq.pdf[Assignment is ready].  Feel free to feedback to me in class.
 * Week 2: Submission of the assignment group name and member names, student id, etc.
 * Week 1: Form assignment groups
 * Week 1: Practical and Tutorial start from Week 1; Week 2 Thursday is 
@@ -29,8 +32,9 @@ Thaipusam, so no Tutorial in Week 2.
 
 * link:s01_intro.pdf[Overview of ``Predictive Modelling'']
 * link:s02_knn.pdf[kNN]
-* Logistic Regression (in preparation)
-* Model Validation (in preparation)
+* link:s03_logreg.pdf[Logistic Regression]
+* link:s09_regressions.pdf[GLM and GLMNET]
+* link:s04_theory.pdf[Model Validation]
 * Decision Trees (in preparation)
 * Ensemble Methods (in preparation)
 * Generative Classifiers: Naive Bayes, LDA (in preparation)
@@ -53,13 +57,18 @@ Thaipusam, so no Tutorial in Week 2.
 
 == Practicals
 
+* Some data are available from https://sites.google.com/site/liewhowhui/predmodel/practical/data[here]
 * link:p01_intro.R[Practical 1: Introduction to R]
 * link:p02_knn.R[Practical 2: kNN]
-* Practical 3: Logistic Regression (in preparation)
-* Practical 4: Cross Validation (in preparation)
-* Practical 5: Decision Trees + Ensemble Methods (in preparation)
-* Practical 6: Generative Models (in preparation)
-* Practical 7: PCA + Clustering (in preparation)
+* link:p03_logreg.R[Practical 3: Logistic Regression]
+* Practical 3 Extra: GLM & SVM???
+* link:p04_clstree.R[Practical 4a: Classification Trees]
+* link:p04_regtree.R[Practical 4b: Regression Trees]
+* link:p04_ensemble.R[Practical 4c: Ensembles of Decision Trees]
+* link:p05_naiveb.R[Practical 5a: Generative Model: Naive Bayes]
+* link:p05_lda.R[Practical 5b: Generative Model: LDA]
+* link:p06_pca.R[Practical 6: PCA]
+* link:p07_cluster.R[Practical 7: Clustering]
 * https://www.youtube.com/playlist?list=PL4HpvNUygBwfSy4ob-Bt8A6oFXSvSsoYn[Old YouTube video playlist]
 
 

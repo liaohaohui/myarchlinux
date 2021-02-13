@@ -2,9 +2,12 @@ alias ls='ls -F'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias sbcl='rlwrap sbcl'
 alias python=python3
 export rm cp mv ls python
 
-#EDITOR=emacs
+EDITOR=emacs
 bind '^[[3~'=delete-char-forward
+HISTSIZE=10000
+HISTFILE=${HOME}/ksh_history
 

@@ -46454,6 +46454,7 @@ tianyurengui 天与人归
 tianzairenhuo 天灾人祸
 tianzang 天葬
 tianzaodishe 天造地设
+tianzhen 天真
 tianzhenlanman 天真烂漫
 tianzhi 添置 天职
 tianzhidao 天知道
@@ -56586,10 +56587,7 @@ yitanhutu 一谈糊涂
 yitansishui 一潭死水
 yitanzhiqing 一弹指顷
 yitao 一套
-yiti 一提
-yiti 异体
-yiti 议题
-yiti 遗体
+yiti 议题 遗体 异体 一提
 yitian 一天
 yitiandaowan 一天到晚
 yitiantian 一天天
@@ -56607,15 +56605,13 @@ yitie 一帖
 yiting 一听
 yitingkouzhong 以莛叩钟
 yitizi 异体字
-yitong 一同
-yitong 一通 异同
+yitong 一通 异同 一同
 yitongtianxia 一统天下
 yitou 一头
 yitouerchen 一头儿沉
 yitouludang 依头缕当
 yitouwushui 一头雾水
-yitu 意图
-yitu 艺徒
+yitu 意图 艺徒
 yituan 一团
 yituanheqi 一团和气
 yituanmoshi 疑团莫释
@@ -56625,12 +56621,10 @@ yitui 一腿
 yituiliangsang 一推两搡
 yituiliuerwu 一退六二五
 yituiweijin 以退为进
-yituo 一拖
-yituo 依托
+yituo 依托 一拖
 yiwai 以外 意外
 yiwan 一碗 亿万 一万 一晚
-yiwang 已往
-yiwang 遗忘
+yiwang 遗忘 已往
 yiwangdajin 一网打尽
 yiwangjianlai 以往鉴来
 yiwangle 遗忘了
@@ -56641,31 +56635,22 @@ yiwangwuyin 一望无垠
 yiwanshang 一晚上
 yiwanshuiduanping 一碗水端平
 yiwansinian 亿万斯年
-yiwei 以为 一位 意味 一味 异味
-yiwei 依偎
+yiwei 以为 一位 意味 一味 异味 依偎
 yiweiliangke 依违两可
 yiweishenchang 意味深长
 yiweizhe 意味着
-yiwen 疑问 一问
-yiwen 译文
-yiwen 逸闻
-yiwen 遗闻
+yiwen 疑问 译文 逸闻 遗闻 一问
 yiwenbuming 一文不名
 yiwenhuiyou 以文会友
 yiwenju 疑问句
 yiwensanbuzhi 一问三不知
 yiwenzhi 艺文志
 yiwofeng 一窝蜂
-yiwu 义务 异物
-yiwu 咿唔
-yiwu 衣物
-yiwu 贻误
-yiwu 遗物
+yiwu 义务 衣物 贻误 遗物 异物 咿唔
 yiwubing 义务兵
 yiwubingyizhi 义务兵役制
 yiwuchangwu 一无长物
-yiwufangu 义无反顾
-yiwufangu 义无返顾
+yiwufangu 义无反顾 义无返顾
 yiwujiaoyu 义务教育
 yiwukequ 一无可取
 yiwushi 医务室
@@ -56678,28 +56663,16 @@ yiwusuozhi 一无所知
 yiwuxiangyiwu 一物降一物
 yiwuyishi 一五一十
 yiwuzaiwu 一误再误
-yixi 依稀 乙烯
-yixi 噫嘻
-yixi 议席
+yixi 依稀 乙烯 噫嘻 议席
 yixia 一下 以下
 yixiaa 一下啊
 yixiae 一下呃
 yixialai 一下来
-yixian 一线
-yixian 胰腺
-yixian 黟县
-yixiang 一项 一向 一想 臆想 异乡
-yixiang 义项
-yixiang 异香
-yixiang 忆想
-yixiang 意向
-yixiang 意想
-yixiang 意象
-yixiang 遗像
+yixian 一线 胰腺 黟县
+yixiang 一项 一向 一想 意向 意想 意象 异乡 义项 臆想 异香 忆想 遗像
 yixiangbinying 衣香鬓影
 yixiangdao 一想到
-yixiangqingyuan 一厢情愿
-yixiangqingyuan 一相情愿
+yixiangqingyuan 一厢情愿 一相情愿
 yixiangshu 意向书
 yixiangtiankai 异想天开
 yixiantian 一线天
@@ -56722,10 +56695,7 @@ yixilie 一系列
 yixin 异心
 yixinbing 疑心病
 yixincanban 疑信参半
-yixing 异型
-yixing 异姓
-yixing 异性
-yixing 意兴
+yixing 异姓 异性 意兴 异型
 yixingbandian 一星半点
 yixingbandianer 一星半点儿
 yixinger 一星儿
@@ -56741,24 +56711,18 @@ yixishangcun 一息尚存
 yixiu 一宿
 yixiuzhouxing 衣绣昼行
 yixizhidi 一席之地
-yixue 义学
-yixue 医学 一学
+yixue 医学 一学 义学
 yixuebu 医学部
 yixuekuidi 蚁穴溃堤
 yixueyidong 易学易懂
 yixueyuan 医学院
-yixun 依循
-yixun 遗训
+yixun 依循 遗训
 yixunyiyou 一薰一莸
 yiya 咿呀
-yiyan 一眼
-yiyan 义演
-yiyan 异言
-yiyan 遗言
+yiyan 义演 遗言 一眼 异言
 yiyanbanyu 一言半语
 yiyanbian 一眼便
-yiyang 一样 异样 以样
-yiyang 颐养
+yiyang 一样 异样 颐养 以样
 yiyangde 一样的
 yiyangduncuo 抑扬顿挫
 yiyanghuahulu 依样画葫芦
@@ -56774,10 +56738,7 @@ yiyanweiding 一言为定
 yiyanyibizhi 一言以蔽之
 yiyanzhi 易言之
 yiyao 医药
-yiye 一页
-yiye 肄业
-yiye 胰液
-yiye 遗业
+yiye 一页 肄业 胰液 遗业
 yiyebimu 一叶蔽目
 yiyeqing 一夜情
 yiyezhangmu 一叶障目，不见泰山
@@ -56785,7 +56746,6 @@ yiyezhiqiu 一叶知秋
 yiyi 意义 意译 一一 异议 一…一… 熠熠 仡仡 移易 移译 觺觺 訑訑 迻译 鶂鶂
 yiyibushe 依依不舍
 yiyichiwan 以一持万
-yiyidailao 以夷伐夷
 yiyidailao 以逸待劳
 yiyidaishui 一衣带水
 yiyidangshi 以一当十
@@ -56823,27 +56783,18 @@ yiyupodi 一语破的
 yiyusanfan 一隅三反
 yiyuyanbiao 溢于言表
 yiyuzhijian 一隅之见
-yizai 一…再…
-yizai 一再
+yizai 一再 一…再…
 yizaibixian 意在笔先
 yizaiyanwai 意在言外
 yizanting 已暂停
-yizao 一早
-yizao 臆造
+yizao 一早 臆造
 yize 一则
 yizeng 遗赠
 yizeyixi 一则以喜，一则以惧
-yizhan 义战
-yizhan 驿站
-yizhang 一张 一章
-yizhang 仪仗
-yizhang 依仗
-yizhang 倚仗
-yizhang 姨丈
-yizhang 议长
+yizhan 驿站 义战
+yizhang 一张 一章 仪仗 依仗 倚仗 议长 姨丈
 yizhangdui 仪仗队
-yizhangyichi 一张一吃
-yizhangyichi 一张一弛
+yizhangyichi 一张一弛 一张一吃
 yizhanquzhan 以战去战
 yizhao 依照 一招 遗照 遗诏
 yizhaobushen 一着不慎，满盘皆输
@@ -56879,9 +56830,7 @@ yizhiqishi 颐指气使
 yizhishuo 一直说
 yizhiweishen 一之谓甚
 yizhizhiqi 一枝之栖
-yizhong 一种
-yizhong 义冢
-yizhong 倚重
+yizhong 一种 倚重 义冢
 yizhonglizi 乙种粒子
 yizhongren 意中人
 yizhongshexian 乙种射线
