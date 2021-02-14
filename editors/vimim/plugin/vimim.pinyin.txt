@@ -2065,13 +2065,12 @@ beiyang 北洋
 beiyangjunfa 北洋军阀
 beiye 悲咽
 beiyeshu 贝叶树
-beiyin 碑阴
-beiyin 背阴
+beiyesi 贝叶斯
+beiyin 碑阴 背阴
 beiying 背影
 beiyong 备用
 beiyuanshichu 北辕适楚
-beiyue 北约
-beiyue 背约
+beiyue 背约 北约
 beiyun 背运
 beizeng 倍增
 beizhai 背债
@@ -2617,11 +2616,8 @@ biaoqing 膘情
 biaoqing 表情
 biaoshang 标上
 biaosheng 飙升
-biaoshi 标石
-biaoshi 标示
-biaoshi 表示 标识
-biaoshu 标书
-biaoshu 表述
+biaoshi 表示 标识 标石 标示
+biaoshu 表述 标书
 biaoshuai 表率
 biaotai 表态
 biaoti 标题
@@ -2630,8 +2626,7 @@ biaotilan 标题栏
 biaotixinwen 标题新闻
 biaotiyinyue 标题音乐
 biaotongfayi 标同伐异
-biaotu 标图
-biaotu 表土
+biaotu 标图 表土
 biaoxian 表现
 biaoxianchu 表现出
 biaoxiang 表象
@@ -2644,14 +2639,11 @@ biaoyang 表扬
 biaoyansai 表演赛
 biaoyinwenzi 表音文字
 biaoyiwenzi 表意文字
-biaoyu 标语
-biaoyu 表语
+biaoyu 标语 表语
 biaozhang 表彰
 biaozhen 表针
 biaozheng 表征
-biaozhi 标志
-biaozhi 标致
-biaozhi 表侄
+biaozhi 标志 标致 表侄
 biaozhinv 表侄女
 biaozhu 标注
 biaozhuangburulizhuang 表壮不如里壮
@@ -2665,40 +2657,32 @@ biaozhunshi 标准时
 biaozhunshiqu 标准时区
 biaozhunyin 标准音
 biaozhunyu 标准语
-biaozi 婊子
-biaozi 表字
+biaozi 婊子 表字
 bibang 臂膀
 bibao 壁报
 bibaomohan 笔饱墨酣
 bibei 必备
 bibijieshi 比比皆是
 bibing 弊病
-bibo 碧波
-bibo 臂膊
-bibo 荜拨
-bibo 鄙薄
-bibo 馝馞
+bibo 碧波 臂膊 荜拨 鄙薄 馝馞
 bibushang 比不上
 bichangbujing 匕鬯不惊
 bichangcihe 彼倡此和
 bicheleima 弊车羸马
 bicheng 鄙称
 bichier 鼻翅儿
-bichu 壁橱
-bichu 笔触
+bichu 笔触 壁橱
 bida 笔答
 bidaruchuan 笔大如椽
 bide 比的
 bideng 壁灯
 bidiao 笔调
-biding 吡啶
-biding 必定
+biding 必定 吡啶
 bidishenghua 笔底生花
 bidixia 笔底下
 bidou 鼻窦
 bidu 必读
-biduan 弊端
-biduan 笔端
+biduan 弊端 笔端
 bidui 比对
 bie 别 憋 別 瘪 蹩 鳖 癟 彆 徶 虌 鱉 鼈 龞 㓖 㜩 㱸 㲢 䇷 䠥 䭱 咇 莂 蟞 襒 㿜 蛂 㢼 䉲 䋢 䏟 縪
 bie1 憋 瘪 鳖 癟 虌 鱉 鼈 龞
@@ -6160,19 +6144,14 @@ chenghuanxixia 承欢膝下
 chenghuo 成活
 chenghuqihou 瞠乎其后
 chenghusheshu 城狐社鼠
-chengji 乘机
-chengji 乘积
-chengji 成绩
-chengji 承继
+chengji 乘机 成绩 乘积 承继
 chengjialiyie 成家立业
-chengjian 城建
-chengjian 承建
+chengjian 承建 城建
 chengjiancefei 乘坚策肥
 chengjiangrulian 澄江如练
 chengjiao 城郊
 chengjichengwu 成己成物
-chengjie 惩戒
-chengjie 承接
+chengjie 承接 惩戒
 chengjifeiran 成绩斐然
 chengjing 乘警
 chengjinzhuliang 秤斤注两
@@ -6182,14 +6161,11 @@ chengju 成句
 chengke 乘客
 chengken 诚恳
 chengkong 程控
-chenglan 呈览
-chenglan 承揽
-chengli 成例
-chengli 成立
+chenglan 呈览 承揽
+chengli 成立 成例
 chenglian 成殓
 chengliang 乘凉
-chengliu 承霤
-chengliu 柽柳
+chengliu 承霤 柽柳
 chenglongkuaixu 乘龙快婿
 chenglongpeitao 成龙配套
 chenglou 城楼
@@ -6873,20 +6849,16 @@ chongdong 冲动
 chongdu 重读
 chongduner 冲盹儿
 chongdutianri 重睹天日
-chonger 宠儿
-chonger 虫儿
+chonger 宠儿 虫儿
 chongerbuwen 充耳不闻
 chongfa 重发
 chongfan 冲犯
 chongfen 充分
 chongfenbubiyao 充分不必要
-chongfeng 冲锋
-chongfeng 崇奉
-chongfeng 重逢
+chongfeng 重逢 崇奉 冲锋
 chongfengqiang 冲锋枪
 chongfengxianzhen 冲锋陷阵
-chongfu 冲服
-chongfu 重复
+chongfu 重复 冲服
 chongfulunzi 重复轮子
 chonggang 重钢
 chonggao 崇高
@@ -6898,9 +6870,7 @@ chonghe 重合
 chonghedu 重合度
 chonghun 重婚
 chonghuntounao 冲昏头脑
-chongji 冲击
-chongji 冲剂
-chongji 冲积
+chongji 冲击 冲剂 冲积
 chongjian 重建
 chongjian 重趼
 chongjiantianri 重见天日
@@ -7172,17 +7142,12 @@ chouxinzhifei 抽薪止沸
 chouxiong 抽雄
 chouxu 愁绪
 chouya 抽芽
-chouyan 抽烟
-chouyan 抽验
-chouyang 丑样
-chouyang 抽样
-chouyang 臭氧
+chouyan 抽烟 抽验
+chouyang 抽样 臭氧 丑样
 chouyangceng 臭氧层
 chouyangdong 臭氧洞
-chouye 抽咽
-chouye 抽噎
+chouye 抽咽 抽噎
 chouyi 抽绎
-chouyi 绎
 chouyin 抽印
 chouying 酬应
 chouyuan 仇冤
@@ -9980,29 +9945,24 @@ daosang 倒嗓
 daoshanhuohai 刀山火海
 daoshanjianshu 刀山剑树
 daosheng 道生
-daoshi 倒是 到时 导师
-daoshi 道士
+daoshi 倒是 到时 导师 道士
 daoshihou 到时候
 daoshijian 到时间
 daoshitong 导世通
 daoshiyanshi 到实验室
 daoshiyou 到是有
-daoshou 倒手
-daoshou 到手
-daoshu 倒数
+daoshou 到手 倒手
+daoshu 导数 倒数
 daoshui 倒水
 daosuan 倒算
 daota 倒塌
 daotai 倒台
-daoteng 倒腾
-daoteng 捣腾
-daoti 倒替
-daoti 导体
+daoteng 捣腾 倒腾
+daoti 导体 倒替
 daotie 倒贴
 daotingtushuo 道听途说
 daotong 道统
-daotou 倒头
-daotou 到头
+daotou 到头 倒头
 daotoulai 到头来
 daotoutianmi 刀头舔蜜
 daotui 倒退
@@ -10018,8 +9978,7 @@ daoxianzai 到现在
 daoxiao 到小 刀削
 daoxiaomian 刀削面
 daoxiayige 到下一个
-daoxie 到写
-daoxie 道谢
+daoxie 道谢 到写
 daoxifuzhe 蹈袭覆辙
 daoxingnishi 倒行逆施
 daoxinshitu 悼心失图
@@ -11261,7 +11220,7 @@ dingju 定局 定居
 dingjudian 定居点
 dingjunmei 丁俊美
 dingkejiating 丁克家庭
-dingli 鼎力 订立 定例 定礼
+dingli 定理 鼎力 订立 定例 定礼
 dingliang 定量
 dingliangfenxi 定量分析
 dingliangzhu 顶梁柱
@@ -11275,11 +11234,8 @@ dinglv 定律
 dingmao 钉帽
 dingmener 顶门儿
 dingmiao 定苗
-dingming 定名
-dingming 顶命
-dingning 丁宁
-dingning 叮咛
-dingning 耵聍
+dingming 定名 顶命
+dingning 丁宁 叮咛 耵聍
 dingniuer 顶牛儿
 dingpa 钉耙
 dingpan 顶盘
@@ -11292,8 +11248,7 @@ dingqian 定钱
 dingqin 定亲
 dingran 定然
 dingshang 顶上 定上
-dingshao 盯梢
-dingshao 钉梢
+dingshao 盯梢 钉梢
 dingshen 定神
 dingshi 定时 定式 顶事
 dingshiding 丁是丁，卯是卯 钉是钉，铆是铆
@@ -12550,6 +12505,7 @@ duoxian 剁先
 duoxian 多嫌
 duoxiancheng 多线程
 duoxiang 多想
+duoxiangshi 多项式
 duoxie 多谢 多些
 duoxiedajiataiai 多谢大家抬爱
 duoxin 多心
@@ -12558,8 +12514,7 @@ duoxingbuyibizibi 多行不义必自毙
 duoxingqiti 惰性气体
 duoxushaoyu 多许少与
 duoyang 多样
-duoyi 多亿
-duoyi 多疑
+duoyi 多疑 多亿
 duoyiban 多一半
 duoyici 多义词
 duoyige 多一个
@@ -13323,32 +13278,26 @@ fangbu 放步
 fangbu 方步
 fangbushengfang 防不胜防
 fangbuxia 放不下
-fangcai 方才
-fangcai 方材
+fangcai 方才 方材
 fangcang 房舱
 fangcha 方差
 fangchangxiandiaodayu 放长线钓大鱼
 fangchanzheng 房产证
 fangchanzhu 房产主
 fangchao 防潮
-fangche 房车
-fangche 纺车
+fangche 房车 纺车
+fangcheng 方程
 fangchengshisaiche 方程式赛车
 fangchi 方尺
 fangchou 纺绸
-fangchu 放出
-fangchu 放黜
-fangchu 防除
+fangchu 放出 放黜 防除
 fangchui 纺锤
 fangcunyiluan 方寸已乱
-fangda 放大
-fangda 放达
+fangda 放大 放达
 fangdai 放贷
 fangdajing 放大镜
 fangdan 仿单
-fangdan 放胆
-fangdan 放诞
-fangdan 防弹
+fangdan 放胆 放诞 防弹
 fangdangbuji 放荡不羁
 fangdao 放到
 fangdaqi 放大器
@@ -13357,15 +13306,12 @@ fangdesafendesa 方的萨芬的萨
 fangdi 防地
 fangdian 放点 放电
 fangdiao 放刁
-fangding 放定
-fangding 纺锭
+fangding 放定 纺锭
 fangdiyuangai 方底圆盖
-fangdong 房东
-fangdong 防冻
+fangdong 房东 防冻
 fangdongxi 放东西
 fangdou 防抖
-fangdu 放毒
-fangdu 防毒
+fangdu 防毒 放毒
 fangdui 方队
 fangdumianju 防毒面具
 fangeer 翻个儿
@@ -13383,11 +13329,7 @@ fangfei 放飞
 fangfei 芳菲
 fangfeng 放风
 fangfenglin 防风林
-fangfu 仿佛
-fangfu 彷佛
-fangfu 防腐
-fangfu 髣髴
-fangfu 鲂鮄
+fangfu 仿佛 彷佛 防腐 髣髴 鲂鮄
 fanggai 房改
 fangge 放歌
 fanggen 方根
@@ -13395,8 +13337,7 @@ fanggepi 访个屁
 fanggezi 放鸽子
 fanggong 放工
 fanggonghaineng 妨功害能
-fanggu 仿古
-fanggu 访古
+fanggu 仿古 访古
 fangguan 房管
 fangguo 放过
 fanghai 妨害
@@ -13414,33 +13355,26 @@ fanghuofangdaofang 防火防盗防
 fanghuoqi 防火期
 fanghuoqiang 防火墙
 fanghuziwei 放虎自卫
-fangji 房基
-fangji 方剂
-fangji 方技
+fangji 房基 方剂 方技
 fangjia 放假 房价
 fangjiaaini 房价爱你
-fangjian 坊间
-fangjian 房间
+fangjian 房间 坊间
 fangjiang 方将
 fangjiayitian 放假一天
-fangjin 放进
-fangjin 方今
+fangjin 放进 方今
 fangjinqi 方巾气
 fangjinqu 放进去
 fangjiu 访旧
 fangkai 放开
-fangke 房客
-fangke 放课
-fangkong 放空
-fangkong 防空
+fangke 房客 放课
+fangkong 防空 放空
 fangkongdong 防空洞
 fangkonghao 防空壕
 fangkongpao 放空炮
 fangkongqi 放空气
 fangkuai 方块
 fangkuaizi 方块字
-fangkuan 房款
-fangkuan 放款
+fangkuan 房款 放款
 fangkuang 放旷
 fangkuangtu 方框图
 fangkuohao 〔〕
@@ -13457,8 +13391,7 @@ fanglian 方脸 方连
 fangliang 放量
 fangliao 放疗
 fanglin 芳邻
-fangling 芳龄
-fangling 防凌
+fangling 芳龄 防凌
 fanglingjubu 方领矩步
 fanglue 方略
 fangman 放慢
@@ -13470,11 +13403,7 @@ fangminzhikou 防民之口，甚于防川
 fangmu 放牧
 fangmuma 防木马
 fangniuguima 放牛归马
-fangong 反攻
-fangong 梵宫
-fangong 翻供
-fangong 翻工
-fangong 返工
+fangong 反攻 梵宫 翻供 翻工 返工
 fangongdaosuan 反攻倒算
 fangongziwen 反躬自问
 fangongzixing 反躬自省
@@ -17720,25 +17649,17 @@ gucao 谷草
 guchan 估产
 guchenniezi 孤臣孽子
 guchufushu 孤雏腐鼠
-guci 固辞
-guci 故此
-guci 骨刺
+guci 故此 骨刺 固辞
 gucishengzhi 孤雌生殖
 gucishibi 顾此失彼
+guda 固打
 gudai 古代
-gudan 固氮
-gudan 孤单
-gudan 孤胆
-gudao 孤岛 鼓捣
-gudao 故道
+gudan 孤单 固氮 孤胆
+gudao 孤岛 鼓捣 故道
 gudaorechang 古道热肠
 gude 骨的
-gudi 故地
-gudi 谷地
-gudi 谷底
-gudi 鹄的
-gudian 古典
-gudian 鼓点
+gudi 谷底 故地 谷地 鹄的
+gudian 古典 鼓点
 gudianwenxue 古典文学
 gudianzhuyi 古典主义
 gudiaobutan 古调不弹
@@ -17749,21 +17670,13 @@ gudinghuilv 固定汇率
 gudingjiage 固定价格
 gudingzichan 固定资产
 gudingzijin 固定资金
-gudong 古董 股东
-gudong 咕咚
-gudong 骨董
-gudong 鼓动
+gudong 鼓动 古董 股东 咕咚 骨董
 gudongjizi 古董机子
-gudu 古都
-gudu 咕嘟
-gudu 孤独
-gudu 故都
+gudu 孤独 古都 咕嘟 故都
 guduchuru 孤犊触乳
 guduguangua 孤独矜寡
 guduier 估堆儿
-guduo 榾柮
-guduo 馉饳
-guduo 骨朵
+guduo 榾柮 馉饳 骨朵
 guduoer 骨朵儿
 guer 故而 孤儿
 guerbangjie 古尔邦节
@@ -17774,45 +17687,36 @@ gufang 谷坊
 gufangzishang 孤芳自赏
 gufei 股匪
 gufeijinshou 古肥今瘠
-gufen 股份
-gufen 股分
+gufen 股份 股分
 gufene 股份额
-gufeng 古风
-gufeng 谷风
+gufeng 古风 谷风
 gufengji 鼓风机
 gufenglu 鼓风炉
 gufengongsi 股份公司
 gufenzhi 股份制
-gufu 姑夫
-gufu 姑父
-gufu 孤负
+gufu 孤负 姑夫 姑父
 gufuzhien 顾复之恩
 guganwang 骨干网
 gugao 孤高
-guge 谷歌
-guge 骨骼
+guge 谷歌 骨骼
 gugengzaihou 骨鲠在喉
 gugengzhichen 骨鲠之臣
 gugeo 谷歌哦
 gugong 故宫
 gugong 雇工
 gugongheshu 故宫禾黍
-gugu 姑姑
-gugu 汩汩
-gugu 股骨
+gugu 姑姑 汩汩 股骨
 gugua 孤寡
 guguai 孤拐
 gugunangnang 鼓鼓囊囊
-guguo 古国
-guguo 故国
+guguo 故国 古国
 guguzhuidi 呱呱坠地
 guhai 股海
 guhanmaoshu 骨寒毛竖
 guhou 骨骺
 guhua 古话
 guhui 骨灰
-guhuo 蛊惑
-guhuo 鼓惑
+guhuo 蛊惑 鼓惑
 guhuorenxin 蛊惑人心
 gui 规 归 鬼 贵 跪 桂 柜 轨 瑰 龟 诡 闺 桧 圭 刽 硅 傀 皈 歸 匮 規 櫃 癸 貴 鲑 詭 晷 軌 鮭 炔 刿 鳜 璝 宄 簋 龜 姽 庋 袿 閨 鬶 氿 亀 妫 媯 嫢 嬀 帰 摫 敮 椝 槣 槻 槼 溈 潙 珪 瓌 窐 胿 膭 邽 郌 鬹 鴂 㔳 㧪 㨳 㩻 㲹 㸵 䁛 䃽 䍯 䞈 䞨 䣀 䤥 佹 匦 匭 厬 垝 庪 恑 攱 祪 蛫 蟡 觤 陒 㙺 㪈 㱦 䇈 䌆 䍷 䐴 䖯 䙆 䝿 䠩 䯣 䰎 䳏 劊 劌 嶡 巜 攰 昋 暩 楿 檜 溎 炅 猤 瞆 筀 蓕 襘 鞼 鱖 鱥
 gui1 规 归 瑰 龟 闺 圭 硅 傀 皈 歸 規 鲑 鮭 璝 龜 袿 閨 鬶 亀 妫 媯 嫢 嬀 帰 摫 敮 椝 槣 槻 槼 溈 潙 珪 瓌 窐 胿 膭 邽 郌 鬹 鴂
@@ -17832,8 +17736,7 @@ guibugui 贵不贵
 guicai 鬼才
 guicheng 归程
 guicheng 规程
-guichu 归除
-guichu 柜橱
+guichu 归除 柜橱
 guichudianru 鬼出电入
 guichuideng 鬼吹灯
 guichuidengquanji 鬼吹灯全集
@@ -25354,8 +25257,7 @@ jixi 即席
 jixi 积习
 jixia 几下 记下
 jixialai 记下来
-jixian 基线
-jixian 极限
+jixian 极限 基线
 jixianduneng 嫉贤妒能
 jixianfeng 急先锋
 jixiang 机箱 迹象 吉祥
@@ -25771,6 +25673,7 @@ juju 聚居
 jujuduxing 踽踽独行
 jujue 拒绝 咀嚼
 julebu 俱乐部
+julei 聚类
 juli 距离 举例 拘礼
 julian 聚敛
 juliang 局量
@@ -29887,6 +29790,7 @@ lirong 立绒
 liru 例如
 lirui 李瑞
 lirun 利润
+lisan 离散
 lisanshuxue 离散数学
 lise 栗色
 lishandaihe 砺山带河
@@ -33374,37 +33278,26 @@ moweiyishen 莫为已甚
 moxi 妺喜
 moxia 抹下
 moxian 墨线
-moxiao 摹效
-moxiao 模效
-moxie 摹写
-moxie 模写
-moxie 默写
-moxing 墨刑
-moxing 模型
+moxiao 摹效 模效
+moxie 摹写 模写 默写
+moxing 模型 墨刑
 moxini 抹稀泥
 moxu 默许
 moxuefushou 末学肤受
 moxuyou 莫须有
-moya 墨鸦
-moya 摩崖
-moya 模压
-moya 磨牙
+moya 墨鸦 摩崖 模压 磨牙
 moyang 模样
 moyanggong 磨洋工
-moye 末叶
-moye 莫邪
-moye 镆铘
+moye 末叶 莫邪 镆铘
 moyibizihui 抹一鼻子灰
 moyin 摹印
 moying 摸营
-moyu 墨鱼
-moyu 魔芋
+moyu 墨鱼 魔芋
 moyuduye 莫予毒也
 moyuduye 莫余毒也
 moyuepifeng 抹月秕风
 mozhang 魔掌
-mozhang 魔杖
-mozhang 魔障
+mozhang 魔杖 魔障
 mozhao 魔爪
 mozhe 磨折
 mozheng 魔怔
@@ -33413,9 +33306,7 @@ mozhong 莫衷
 mozhongyishi 莫衷一是
 mozhuanchengjing 磨砖成镜
 mozhuang 摹状
-mozi 抹子
-mozi 末子
-mozi 沫子
+mozi 抹子 末子 沫子
 moziqisi 墨子泣丝
 mozou 莫走
 mozui 磨嘴
@@ -47162,20 +47053,17 @@ tonghuazhong 通话中
 tonghuazuoyong 同化作用
 tonghui 痛悔
 tonghun 通婚
-tonghuo 同伙
-tonghuo 统货
-tonghuo 通货
-tonghuo 铜活
+tonghuo 同伙 统货 通货 铜活
 tonghuojinsuo 通货紧缩
 tonghuopengzhang 通货膨胀
-tongji 统计
-tongji 通缉
+tongji 统计 通缉
 tongjia 通假
 tongjian 通奸
 tongjiang 铜匠
 tongjiazhihao 通家之好
 tongjie 通解
 tongjijiashe 统计假设
+tongjiliang 统计量
 tongjinbogu 通今博古
 tongjing 痛经
 tongjintiegu 铜筋铁骨
@@ -47186,8 +47074,7 @@ tongju 同居
 tongjue 痛觉
 tongkao 统考
 tongkong 瞳孔
-tongku 痛苦
-tongku 筒裤
+tongku 痛苦 筒裤
 tongkuai 痛快
 tongkuliuti 痛哭流涕
 tongkuzhong 痛苦中
@@ -47195,15 +47082,11 @@ tonglan 通栏
 tongle 同乐
 tonglei 同类
 tongli 通例
-tonglian 通联
-tonglian 通连
-tongliang 通亮
-tongliang 铜梁
+tonglian 通联 通连
+tongliang 通亮 铜梁
 tongliao 同僚
 tonglihezuo 通力合作
-tongling 同龄
-tongling 统领
-tongling 通令
+tongling 同龄 统领 通令
 tongliuhewu 同流合污
 tonglong 曈昽
 tonglouzi 捅娄子
@@ -47961,26 +47844,21 @@ tuoniao 鸵鸟
 tuoniaozhengce 鸵鸟政策
 tuonidaishui 拖泥带水
 tuopan 托盘
-tuopi 脱坯
-tuopi 脱皮
+tuopi 脱皮 脱坯
 tuopin 脱贫
 tuopo 脱坡
+tuopu 拓扑
 tuopuxue 拓扑学
-tuoqi 唾弃
-tuoqi 脱期
+tuoqi 唾弃 脱期
 tuoqian 拖欠
-tuoqiang 托腔
-tuoqiang 拖腔
+tuoqiang 托腔 拖腔
 tuoren 托人
 tuorenqing 托人情
 tuorenxiashui 拖人下水
 tuorong 驼绒
-tuose 脱涩
-tuose 脱色
-tuose 驼色
+tuose 脱色 脱涩 驼色
 tuoshan 妥善
-tuoshen 托身
-tuoshen 脱身
+tuoshen 脱身 托身
 tuosheng 托生
 tuoshi 妥实
 tuoshou 脱手
@@ -47999,20 +47877,15 @@ tuowei 脱位
 tuowu 脱误
 tuoxian 脱险
 tuoxiao 脱销
-tuoxie 妥协
-tuoxie 拖鞋
-tuoxie 脱卸
+tuoxie 妥协 拖鞋 脱卸
 tuoxuan 拖选
-tuoyan 拖延
-tuoyan 脱盐
+tuoyan 拖延 脱盐
 tuoyang 脱氧
 tuoyanghetanghesuan 脱氧核糖核酸
-tuoye 唾液
-tuoye 拖曳
+tuoye 唾液 拖曳
 tuoyexian 唾液腺
 tuoyingerchu 脱颖而出
-tuoyu 唾余
-tuoyu 脱羽
+tuoyu 唾余 脱羽
 tuoyuan 椭圆
 tuoyuanti 椭圆体
 tuoyun 托运
@@ -48020,9 +47893,7 @@ tuozhe 拖着
 tuozhi 脱脂
 tuozhimian 脱脂棉
 tuozhuai 拖拽
-tuozi 坨子
-tuozi 托子
-tuozi 砣子
+tuozi 坨子 托子 砣子
 tupainiao 图排尿
 tupi 土坯
 tupian 图片
@@ -48868,21 +48739,17 @@ weideng 桅灯
 weidian 位点
 weidiannao 微电脑
 weidiao 微雕
-weiding 未定
-weiding 桅顶
+weiding 未定 桅顶
 weidingzhitian 未定之天
-weidu 危笃
-weidu 唯独 未读
-weidu 惟独
-weidu 纬度
+weidu 唯独 未读 危笃 惟独 纬度
 weidun 委顿
 weie 巍峨 为呃
 weifa 违法
 weifaluanji 违法乱纪
-weifan 违反
-weifan 违犯
+weifan 违反 违犯
 weifang 危房
 weifeizuodai 为非作歹
+weifen 微分
 weifeng 威风 微风
 weifenglinlin 威风凛凛
 weifengxianglin 威风祥麟
@@ -48893,9 +48760,7 @@ weigan 桅杆
 weige 伟哥
 weigong 围攻 为公
 weigu 尾骨
-weiguan 围观
-weiguan 尉官
-weiguan 微观
+weiguan 微观 围观 尉官
 weiguanjingjixue 微观经济学
 weiguanlizi 微观粒子
 weiguanshijie 微观世界
@@ -52461,23 +52326,16 @@ xingzhenggongshu 行政公署
 xingzhengjuliu 行政拘留
 xingzhengqu 行政区
 xingzhengzhuli 行政助理
-xingzhi 婞直
-xingzhi 形制
-xingzhi 性质 兴致 性之
-xingzhi 行止
+xingzhi 性质 兴致 形制 行止 性之 婞直
 xingzhibobo 兴致勃勃
 xingzhihengao 兴致很高
 xingzhisuoran 兴致索然
 xingzhiyingdan 形只影单
 xingzhiyouxiao 行之有效
 xingzhong 刑种
-xingzhuang 形状 性状
-xingzhuang 行状
-xingzhuang 行装
+xingzhuang 形状 性状 行状 行装
 xingzhuangjiyihejin 形状记忆合金
-xingzi 性子
-xingzi 星子
-xingzi 杏子
+xingzi 性子 星子 杏子
 xingzong 行踪
 xingzuo 星座
 xinhaigeming 辛亥革命
@@ -52504,28 +52362,18 @@ xinhunyaner 新婚燕尔
 xinhuo 心火
 xinhuomianruan 心活面软
 xini 细腻
-xinian 昔年
-xinian 系念
+xinian 昔年 系念
 xiniuwangyue 犀牛望月
-xinji 心悸
-xinji 心肌 心急 心计
-xinji 心迹
-xinji 薪给
-xinjian 信笺
-xinjian 心尖
-xinjian 心间
-xinjian 新建 信件
+xinji 心肌 心急 心计 心悸 心迹 薪给
+xinjian 新建 信件 信笺 心尖 心间
 xinjiang 新疆
 xinjianshichuan 心坚石穿
 xinjianyigewenjian 新建一个文件
-xinjiao 心焦
-xinjiao 新交
+xinjiao 心焦 新交
 xinjiapo 新加坡
 xinjie 心结
 xinjihuoliao 心急火燎
-xinjin 心劲
-xinjin 新近
-xinjin 薪金
+xinjin 新近 薪金 心劲
 xinjing 心经
 xinjingbutong 心境不同
 xinjingdanzhan 心惊胆战
@@ -52537,8 +52385,7 @@ xinjitunyu 信及豚鱼
 xinjiu 新旧
 xinjiyuan 新纪元
 xinjizi 新机子
-xinju 信据
-xinju 新居
+xinju 新居 信据
 xinka 新卡
 xinkai 新开
 xinkan 心坎
@@ -60409,7 +60256,7 @@ zhezhongzhuyi 折衷主义
 zhezhou 折皱 褶皱
 zhezi 褶子
 zhezixi 折子戏
-zhi 之 知 只 直 指 至 制 治 支 质 置 志 止 致 值 执 纸 织 职 智 址 枝 旨 植 殖 芝 秩 脂 吱 稚 汁 肢 滞 侄 徵 掷 挚 帜 峙 窒 趾 蜘 芷 識 痣 炙 咫 祉 痔 栀 桎 質 祗 栉 雉 執 紙 隻 製 職 郦 織 踯 郅 陟 贽 鸷 骘 卮 枳 胝 帙 蛭 豸 誌 擲 酯 摭 踬 彘 緻 姪 滯 跖 黹 幟 忮 摯 轾 埴 絷 畤 虒 袠 觯 鴲 擿 恉 扺 轵 稺 躓 倁 巵 搘 梔 椥 榰 氏 汥 泜 祬 秓 秖 秪 綕 胑 衹 衼 馶 鳷 鼅 㙷 㜼 㥁 㨁 㯰 䐈 䟈 䱥 䵂 値 儨 坧 墌 妷 嬂 慹 懫 柣 樴 漐 犆 瓆 瓡 禃 秷 稙 縶 聀 膱 蘵 蟙 褁 蹠 蹢 躑 軄 釞 馽 㡳 㡶 㧻 㫑 㮹 㲛 䂡 䅩 䇛 䌤 䎺 䛗 䤠 䳅 劧 厎 坁 夂 帋 抧 晊 栺 沚 洔 淽 疻 砋 藢 襧 訨 軹 阯 㕄 㗌 㗧 㘉 㛿 㜱 㝂 㣥 㨖 㫼 㬪 㴛 㾅 㿃 䀸 䄺 䆈 䇽 䉅 䉜 䏄 䏑 䏯 䐭 䑇 䑭 䓌 䕌 䘭 䚇 䚦 䚳 䜠 䝰 䝷 䞃 䞇 䠦 䡹 䥍 䦛 䦯 䧝 䩢 䪒 䫕 䬹 䭁 䰴 䱃 䱨 䲀 䶡 乿 偫 劕 厔 垁 娡 寘 崻 庢 庤 徏 徝 憄 懥 挃 搱 旘 梽 櫍 櫛 洷 淛 滍 潌 熫 狾 猘 璏 疐 瘈 礩 祑 秲 穉 筫 紩 翐 胵 膣 臸 芖 螲 袟 覟 觗 觢 觶 识 豑 豒 貭 贄 跱 輊 迣 遰 銍 鋕 鑕 铚 锧 陦 隲 駤 騭 騺 驇 鯯 鴙 鴩 鷙
+zhi 之 知 只 直 指 至 制 值 治 支 质 置 志 止 致 执 纸 织 职 智 址 枝 旨 植 殖 芝 秩 脂 吱 稚 汁 肢 滞 侄 徵 掷 挚 帜 峙 窒 趾 蜘 芷 識 痣 炙 咫 祉 痔 栀 桎 質 祗 栉 雉 執 紙 隻 製 職 郦 織 踯 郅 陟 贽 鸷 骘 卮 枳 胝 帙 蛭 豸 誌 擲 酯 摭 踬 彘 緻 姪 滯 跖 黹 幟 忮 摯 轾 埴 絷 畤 虒 袠 觯 鴲 擿 恉 扺 轵 稺 躓 倁 巵 搘 梔 椥 榰 氏 汥 泜 祬 秓 秖 秪 綕 胑 衹 衼 馶 鳷 鼅 㙷 㜼 㥁 㨁 㯰 䐈 䟈 䱥 䵂 値 儨 坧 墌 妷 嬂 慹 懫 柣 樴 漐 犆 瓆 瓡 禃 秷 稙 縶 聀 膱 蘵 蟙 褁 蹠 蹢 躑 軄 釞 馽 㡳 㡶 㧻 㫑 㮹 㲛 䂡 䅩 䇛 䌤 䎺 䛗 䤠 䳅 劧 厎 坁 夂 帋 抧 晊 栺 沚 洔 淽 疻 砋 藢 襧 訨 軹 阯 㕄 㗌 㗧 㘉 㛿 㜱 㝂 㣥 㨖 㫼 㬪 㴛 㾅 㿃 䀸 䄺 䆈 䇽 䉅 䉜 䏄 䏑 䏯 䐭 䑇 䑭 䓌 䕌 䘭 䚇 䚦 䚳 䜠 䝰 䝷 䞃 䞇 䠦 䡹 䥍 䦛 䦯 䧝 䩢 䪒 䫕 䬹 䭁 䰴 䱃 䱨 䲀 䶡 乿 偫 劕 厔 垁 娡 寘 崻 庢 庤 徏 徝 憄 懥 挃 搱 旘 梽 櫍 櫛 洷 淛 滍 潌 熫 狾 猘 璏 疐 瘈 礩 祑 秲 穉 筫 紩 翐 胵 膣 臸 芖 螲 袟 覟 觗 觢 觶 识 豑 豒 貭 贄 跱 輊 迣 遰 銍 鋕 鑕 铚 锧 陦 隲 駤 騭 騺 驇 鯯 鴙 鴩 鷙
 zhi1 之 知 只 支 织 枝 芝 脂 吱 汁 肢 掷 蜘 栀 祗 隻 織 卮 枳 胝 觯 鴲 倁 巵 搘 梔 椥 榰 氏 汥 泜 祬 秓 秖 秪 綕 胑 衹 衼 馶 鳷 鼅
 zhi2 直 值 执 职 植 殖 侄 掷 桎 執 職 郦 踯 摭 姪 跖 埴 絷 擿 㙷 㜼 㥁 㨁 㯰 䐈 䟈 䱥 䵂 値 儨 坧 墌 妷 嬂 慹 懫 柣 樴 漐 犆 瓆 瓡 禃 秷 稙 縶 聀 膱 蘵 蟙 褁 蹠 蹢 躑 軄 釞 馽
 zhi3 只 指 止 纸 址 旨 徵 趾 芷 咫 祉 紙 枳 酯 黹 恉 扺 轵 㡳 㡶 㧻 㫑 㮹 㲛 䂡 䅩 䇛 䌤 䎺 䛗 䤠 䳅 劧 厎 坁 夂 帋 抧 晊 栺 沚 洔 淽 疻 砋 藢 襧 訨 軹 阯
@@ -60833,33 +60680,27 @@ zhixingzi 直性子
 zhixinyaner 直心眼儿
 zhixiongshouci 知雄守雌
 zhixiqinshu 直系亲属
-zhixu 只需
-zhixu 秩序
+zhixu 秩序 只需
 zhixuan 直选
 zhixue 治学
 zhixun 质询
 zhixuyao 只需要
 zhixuzhouguanfanghuo 只许州官放火，不许百姓点灯
-zhiya 枝丫
-zhiya 枝桠
-zhiyan 之言 直言
-zhiyan 纸烟
+zhiya 枝丫 枝桠
+zhiyan 之言 直言 纸烟
 zhiyanbuhui 直言不讳
-zhiyang 之痒
-zhiyang 纸样
+zhiyang 纸样 之痒
 zhiyanguhuo 直言贾祸
 zhiyanpianyu 只言片语
 zhiyanweigeng 指雁为羹
-zhiyao 只要
-zhiyao 纸鹞
+zhiyao 只要 纸鹞
 zhiyaogongfushen 只要功夫深，铁杵磨成针
 zhiyaoshi 只要是
 zhiye 职业 执业 值夜 枝叶 汁液
 zhiyebing 职业病
 zhiyegaozhong 职业高中
 zhiyezi 纸叶子
-zhiyi 之一 直译 质疑 执意 致以
-zhiyi 旨意 致意
+zhiyi 之一 直译 质疑 执意 致以 旨意 致意
 zhiyin 指引 知音 之音 指印 治印 直音
 zhiying 支应
 zhiyinshu 质因数
@@ -60868,20 +60709,10 @@ zhiyiwennan 质疑问难
 zhiyixingnan 知易行难
 zhiyong 只用 之用
 zhiyongshuangquan 智勇双全
-zhiyou 只有 之友
-zhiyou 执友
-zhiyou 挚友
-zhiyou 知友
-zhiyou 脂油
+zhiyou 只有 之友 执友 挚友 知友 脂油
 zhiyouge 只有个
-zhiyu 值遇
-zhiyu 智育
-zhiyu 知遇
-zhiyu 至于
-zhiyuan 志愿
-zhiyuan 支援
-zhiyuan 纸鸢
-zhiyuan 职员
+zhiyu 值遇 智育 知遇 至于
+zhiyuan 志愿 支援 纸鸢 职员
 zhiyuanbing 志愿兵
 zhiyuanbingzhi 志愿兵制
 zhiyuanjun 志愿军
@@ -60890,33 +60721,20 @@ zhiyue 制约
 zhiyuzhishan 止于至善
 zhizai 只在 之灾
 zhizaisifang 志在四方
-zhizao 制造
-zhizao 织造
+zhizao 制造 织造
 zhizaoshang 制造商
-zhize 指责
-zhize 职责
+zhize 指责 职责
 zhizhai 指摘
-zhizhang 执掌
-zhizhang 扺掌
-zhizhang 指仗
-zhizhang 滞胀
-zhizhang 纸张
-zhizhang 职掌
+zhizhang 执掌 扺掌 指仗 滞胀 纸张 职掌
 zhizhanyuan 指战员
-zhizhao 执照
-zhizhao 知照
-zhizhaoer 支招儿
-zhizhaoer 支着儿
+zhizhao 执照 知照
+zhizhaoer 支招儿 支着儿
 zhizhe 执着 指着
 zhizhen 指针
-zhizheng 执政
-zhizheng 指正
-zhizheng 指证
-zhizheng 质证
+zhizheng 执政 指正 指证 质证
 zhizhengzhaoxi 只争朝夕
 zhizheqianlu 智者千虑，必有一失
-zhizhi 制止
-zhizhi 只值
+zhizhi 制止 只值
 zhizhibuli 置之不理
 zhizhidao 只知道
 zhizhiduwai 置之度外
@@ -60928,23 +60746,11 @@ zhizhong 之中
 zhizhongyishanbuzhongren 只重衣衫不重人
 zhizhou 知州
 zhizhouwanwu 智周万物
-zhizhu 之主
-zhizhu 支柱
-zhizhu 植株
-zhizhu 至嘱
-zhizhu 蜘蛛
-zhizhu 踯躅
-zhizhu 蹢躅
+zhizhu 之主 支柱 植株 至嘱 蜘蛛 踯躅 蹢躅
 zhizhuang 治装
 zhizhugaoge 置诸高阁
 zhizhuo 执著
-zhizi 侄子
-zhizi 只字
-zhizi 志子
-zhizi 支子
-zhizi 枝子
-zhizi 栀子
-zhizi 质子
+zhizi 侄子 只字 志子 支子 枝子 栀子 质子
 zhizibuti 只字不提
 zhizimoruofu 知子莫若父
 zhizizhishou 执子之手
@@ -60961,14 +60767,10 @@ zhong4 重 种 众 中 仲 種 眾 緟 㐺 㲴 䱰 䳋 乑 偅 堹 妕 媑 尰 �
 zhongai 钟爱
 zhongba 中吧
 zhongbai 钟摆
-zhongban 中班
-zhongban 重办
-zhongbao 中保
-zhongbao 中饱
+zhongban 重办 中班
+zhongbao 中饱 中保
 zhongbi 重臂
-zhongbiao 中标
-zhongbiao 中表
-zhongbiao 钟表
+zhongbiao 中标 中表 钟表
 zhongbing 重兵
 zhongbo 中波
 zhongbuliuer 中不溜儿
@@ -60978,10 +60780,7 @@ zhongcan 中餐
 zhongce 中策
 zhongceng 中层
 zhongcha 种差
-zhongchang 中场
-zhongchang 中常
-zhongchang 终场
-zhongchang 衷肠
+zhongchang 中场 中常 终场 衷肠
 zhongchanjieji 中产阶级
 zhongchen 忠臣
 zhongcheng 忠诚
@@ -60991,40 +60790,29 @@ zhongchun 仲春
 zhongchuo 中辍
 zhongci 中词
 zhongda 重大
-zhongdan 种蛋
-zhongdan 重担
+zhongdan 重担 种蛋
 zhongdang 中档
-zhongdao 中稻
-zhongdao 中道
+zhongdao 中稻 中道
 zhongde 中的
 zhongdeng 中等
 zhongdengjiaoyu 中等教育
-zhongdi 种地
-zhongdi 重地
-zhongdian 终点
-zhongdian 重点
+zhongdi 种地 重地
+zhongdian 终点 重点
 zhongdiangong 钟点工
 zhongdingwen 钟鼎文
-zhongdong 中东
-zhongdong 仲冬
+zhongdong 中东 仲冬
 zhongdou 种痘
-zhongdu 中毒
-zhongdu 重读
+zhongdu 中毒 重读
 zhongduan 终端 中断
 zhongduanbo 中短波
 zhongdui 中队
 zhongduo 众多
 zhonger 中耳
 zhongfa 重罚
-zhongfan 中幡
-zhongfan 中饭
+zhongfan 中幡 中饭
 zhongfan 重犯
-zhongfeng 中缝
-zhongfeng 中锋
-zhongfeng 中风
-zhongfu 中伏
-zhongfu 终伏
-zhongfu 重覆
+zhongfeng 中风 中缝 中锋
+zhongfu 中伏 终伏
 zhonggao 忠告
 zhonggeng 中耕
 zhonggongye 重工业
@@ -61069,37 +60857,27 @@ zhongheshizho 中河失舟，一壶千金
 zhonghou 忠厚
 zhonghoulaoshi 忠厚老实
 zhonghoulaoshiren 忠厚老实人
-zhonghua 中华
-zhonghua 种花
-zhonghua 重话
+zhonghua 中华 种花 重话
 zhonghuaminzu 中华民族
 zhonghuarenmingongheguo 中华人民共和国
 zhonghuo 重活
-zhongji 中级
-zhongji 终极
-zhongjia 仲家
-zhongjia 重价
-zhongjian 中坚
-zhongjian 中间 中键 中建
+zhongji 终极 中级
+zhongjia 仲家 重价
+zhongjian 中坚 中间 中键 中建
 zhongjianer 中间儿
-zhongjiang 中奖
-zhongjiang 中将
-zhongjiang 重奖
+zhongjiang 中奖 中将 重奖
 zhongjianpai 中间派
 zhongjianren 中间人
 zhongjiao 中焦
-zhongjie 中介
-zhongjie 终结
+zhongjie 中介 终结
 zhongjifangxian 终极防线
 zhongjiguanqiang 重机关枪
 zhongjin 重金
 zhongjinshu 重金属
-zhongjiu 终久
-zhongjiu 终究
+zhongjiu 终究 终久
 zhongjixian 中继线
 zhongjizhan 中继站
-zhongju 中局
-zhongju 终局
+zhongju 终局 中局
 zhongjuezhoujian 踵决肘见
 zhongkai 中楷
 zhongkan 中看
@@ -61117,9 +60895,7 @@ zhongkuiyouxu 中馈犹虚
 zhonglan 中栏
 zhonglao 终老
 zhonglei 种类
-zhongli 重利
-zhongli 钟丽 中立 重力
-zhongli 钟离
+zhongli 重利 钟丽 中立 重力 钟离
 zhongliang 忠良
 zhongliang 重量
 zhongliao 终了
@@ -61155,22 +60931,18 @@ zhongpao 中跑
 zhongpao 重炮
 zhongpianxiaoshuo 中篇小说
 zhongpin 中频
-zhongqi 中期 中企
-zhongqi 中气
+zhongqi 中期 中企 中气
 zhongqian 中签
 zhongqin 种禽
-zhongqing 衷情
-zhongqing 重氢
+zhongqing 衷情 重氢
 zhongqingyiju 众擎易举
 zhongqingzhongyi 重情重义
-zhongqiu 中秋
-zhongqiu 仲秋
+zhongqiu 中秋 仲秋
 zhongqiujie 中秋节
 zhongqiukuaile 中秋快乐
 zhongqu 衷曲
 zhongqun 种群
-zhongren 种仁
-zhongren 重任
+zhongren 重任 种仁
 zhongrenguoshi 众人国士
 zhongrenshichaihuoyangao 众人拾柴火焰高
 zhongrihan 中日韩
@@ -61187,17 +60959,13 @@ zhongshendashi 终身大事
 zhongsheng 终生
 zhongshengxiang 众生相
 zhongshenzi 重身子
-zhongshi 中士
-zhongshi 中式
-zhongshi 忠实 重视
+zhongshi 忠实 重视 中士 中式
 zhongshiji 中世纪
 zhongshiqishidai 中石器时代
 zhongshiyou 中石油
 zhongshizenghua 踵事增华
 zhongshizhidi 众矢之的
-zhongshu 中暑
-zhongshu 中枢
-zhongshu 柊树
+zhongshu 中暑 中枢 柊树
 zhongshuang 终霜
 zhongshui 中水
 zhongshun 忠顺
@@ -61210,21 +60978,16 @@ zhongtang 中堂
 zhongtian 种田
 zhongtianzhihen 终天之恨
 zhongtiao 种条
-zhongting 中听
-zhongting 重听
+zhongting 重听 中听
 zhongtiqin 中提琴
-zhongtou 重头
-zhongtou 钟头
+zhongtou 重头 钟头
 zhongtouxi 重头戏
 zhongtu 中途
 zhongtuo 重托
 zhongwangsuogui 众望所归
-zhongwei 中卫
-zhongwei 中尉
-zhongwei 众位
+zhongwei 中卫 中尉 众位
 zhongwen 中文
 zhongwenban 中文版
-zhongwene 中文哦
 zhongwenhuanjing 中文环境
 zhongwenjiemian 中文界面
 zhongwenming 中文名
@@ -61232,28 +60995,21 @@ zhongwenwang 中文网
 zhongwenwenjian 中文文件
 zhongwenxinxichuli 中文信息处理
 zhongwenyuming 中文域名
-zhongwu 中午
-zhongwu 踵武
+zhongwu 中午 踵武
 zhongwufan 中午饭
 zhongwuqi 重武器
 zhongxi 种系
 zhongxia 仲夏
 zhongxian 中线
-zhongxiao 中校
-zhongxiao 重孝
+zhongxiao 中校 重孝
 zhongxin 中心 衷心 重心
 zhongxinchidan 忠心赤胆
-zhongxing 中兴
-zhongxing 中型
-zhongxing 中性
-zhongxing 种姓
-zhongxing 重型
+zhongxing 中兴 重型 中型 中性 种姓
 zhongxingenggeng 忠心耿耿
 zhongxingpengyue 众星捧月
 zhongxiu 中休
 zhongxu 中需
-zhongxue 中学
-zhongxue 中雪
+zhongxue 中学 中雪
 zhongxuedaodaxue 中学到大学
 zhongxuelaoshi 中学老师
 zhongxuesheng 中学生
@@ -61337,8 +61093,7 @@ zhougong 周公
 zhougun 纣棍
 zhouhai 州还
 zhouhu 周乎
-zhouji 周济
-zhouji 舟楫
+zhouji 周济 舟楫
 zhoujiao 周角
 zhoujidaodan 洲际导弹
 zhoujin 酎金
