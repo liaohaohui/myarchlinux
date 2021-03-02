@@ -1,0 +1,86 @@
+= 复分析
+
+* 相比起微积分，复分析的可微函数具有非常特别的性质，即幂级数收敛, 曲线积分在全纯区域为零等特性等。
+* https://www.youtube.com/watch?v=qXWRL6NHlWc[Complex analysis: Introduction]
+
+
+== 预备知识
+
+微积分
+
+
+== 课程大纲
+
+1. 复数域
+* 代数结构
+** https://www.youtube.com/watch?v=BFAAaOo2BMo[Borcherds 教授的课]
+* 极形式，几何解释，幂与求根
+** https://www.youtube.com/watch?v=JcatDvcV-fU[Borcherds 教授的课]
+* Triangle inequality 
+* 复平面上的区域及其拓扑结构
+
+2. 复函数
+* Transformation w = z2 
+* Limit and continuity 
+* Complex exponential function
+* Complex Logarithm
+* Extended complex plane, Riemann sphere 
+* Holomorphic functions, Cauchy-Riemann equations
+ 
+3. 复积分
+* Arcs, contours, curves 
+* Integrals, antiderivatives 
+* Cauchy-Goursat Theorem 
+* Cauchy integral formula on a disk 
+* Simple Connectivity 
+* General Cauchy Integral Formula 
+
+4. 解析的性质
+
+* 全纯 (Holomorphicity) 与解析
+* 孤立零点原则
+* 解析延拓
+* 最大模原理
+* Liouville ‘s 定理与代数基本定理
+
+5. 留数定理
+* Singular points, natural boundary 
+* Laurent series 
+* Classification of isolated singularities 
+* Residue Theorem and its computation 
+* 计算例子
+
+6. Harmonic Function
+* Definition, operator and  
+* Relations with holomorphic functions 
+* Harmonic conjugate 
+* Mean value property
+
+7. Further Topic in Geometry
+· Transformation w = 1/z as first example 
+· General Möbius transformation on extended complex plane 
+· Other transformations : w = sin z1/2 
+
+8. 共形 (Conformal) 映照
+* Preservation of angles and directions 
+* Transformations of boundary conditions 
+
+9. 位势论
+* Electrostatic Field
+* Use of Conformal Mapping
+* Heat problems
+* Fluid Flow
+* Poisson’s Integral Formula
+* Application in physics, e.g. steady  temperatures problem, steady fluid flow problem 
+
+
+== 参考文献
+
+1. Ahlfors, L. V. 1979. Complex analysis: an Introduction to the theory of analytic functions of one complex variable. 3rd ed. Auckland: McGraw Hill  
+
+2. Churchill, R. V., and Brown, J. W. 2008. Complex variables and applications. 8th ed. Boston: McGraw Hill Higher Education. 
+
+3. Rudin, W. 1987. Real and complex analysis. 2nd ed. New York: McGraw-Hill.  
+
+4. Saff, E. B., and Snider, A. D. 2003. Fundamentals of complex analysis with applications to engineering and science. 3rd ed. Upper Saddle River, N. J.: Pearson/Prentice Hall.
+

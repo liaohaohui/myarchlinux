@@ -4,8 +4,8 @@
 
 === 大纲
 
-1. 进程管理
-* 概念：进程 (Process) 是"运行中的程序"
+1. 进程 (Process) 管理
+* 概念：进程是"运行中的程序"
 * 同步进程 (Concurrent processes)
 * 进程的协调 (Process synchronization)
 * 死锁 (Deadlock) 的检测与恢复
@@ -49,13 +49,20 @@ round-robin, multilevel queue, multilevel feedback queue
 * Unix Assess matrix, SELinux (ACL), PAM
 
 7. 嵌入式系统 (Embedded system)
+* https://www.freertos.org/[FreeRTOS]
+** https://github.com/FreeRTOS/FreeRTOS-Kernel
 
 8. 操作系统的实现
-* Minix
-* Linux
+* https://www.freedos.org/[FreeDOS]
+** https://www.youtube.com/c/FreeDOSProject/featured
+* https://www.minix3.org/[Minix 3]
+* https://github.com/SerenityOS/serenity[SerenityOS]
+** https://www.youtube.com/watch?v=X6s3XBWe2XU[OS hacking: Making some kernel memory read-only after booting finishes]
+* http://9front.org/[Plan 9]
+** https://www.youtube.com/watch?v=6m3GuoaxRNM[Plan 9: Not dead, Just Resting, by Ori Bernstein]
 * FreeBSD, OpenBSD, NetBSD, DragonflyBSD
+* https://www.kernel.org/[Linux]
 * OpenSolaris
-* Plan 9
 
 
 === 网络与视频资源
@@ -72,13 +79,16 @@ round-robin, multilevel queue, multilevel feedback queue
 ** https://www.youtube.com/watch?v=RxpIyP6C-gg[CS 134 OS—6: xv6 First Process]
 ** https://www.youtube.com/watch?v=S1158OShz44[CS 134 OS—13: xv6 Filesystem]
 
+* https://www.youtube.com/watch?v=b9LB_Dq9TJw[Commute talk: Why I use Ubuntu / Thoughts on Windows and macOS]
+* https://www.youtube.com/watch?v=ouXw-ZSJt6M[Commute talk: Learning C before C++?]
+
+
 
 === 参考文献
 
 . Marshal Kirk McKusick, Keith Bostic, Michael J. Karels, John S. Quarterman,
 The Design and Implementation of the 4.4BSD Operating System
-. Abraham Silberschatz, Peter Baer Galvin, Greg Gagne (2003). Operating
-System Concepts (6th ed.). John Wiley & Sons, Inc.
+. Abraham Silberschatz, Peter Baer Galvin, Greg Gagne (2003). Operating System Concepts (6th ed.). John Wiley & Sons, Inc.
 . Tanenbaum, A. S. (2014). Modern operating systems. (4th ed.). Pearson.
 . Stallings, W. (2014). Operating systems: Internals and design principles. (8th ed.). Pearson.
 . D. Comer. (2015). Operating System Design - The Xinu Approach. (2nd ed.). CRC Press.

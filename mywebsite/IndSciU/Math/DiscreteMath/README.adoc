@@ -1,0 +1,86 @@
+= 离散数学
+
+根据 Donald Knuth 
+
+
+== 课程大纲
+
+1. 命题逻辑与谓词逻辑
+* 命题, logical form 逻辑关联and logical connectives
+* 真值表
+* 逻辑等价
+* De Morgan’s laws
+* Tautologies and contradictions
+* Conditional statements
+* The negation, contrapositive, converse and inverse of conditional statements
+* If and only if and the biconditional necessary and sufficient conditions
+* 谓词
+* Universal and existential statements
+* Translating between formal and informal language
+* Universal conditional statements
+* Equivalent forms of universal and existential statements
+* Implicit quantification
+* Negations of universal and existential statements
+* Negations of universal conditional statements
+* Statements containing multiple quantifiers
+* Tarski’s world (Computer Programme)
+
+
+2. 证明论与初等数论
+* Arguments
+* Argument forms and validity
+* Modus ponens and modus tollens
+* Converse and inverse error
+* Validity or invalidity of an argument
+* Contradiction rule
+* Application to solving logical puzzles
+* Valid argument forms and argument with quantified statements
+* Rule of universal instantiation
+* Universal Modus ponens and universal modus tollens
+* Proving validity
+* Using diagrams to test for validity 
+* Converse and inverse errors for arguments with quantified statements.
+* Definitions of even, odd, prime, composite, rational and irrational numbers
+* Method of Direct Proof: Directions for writing proofs of universal statements
+* Disproof by counterexample
+* Definition of divisibility
+* Proving properties of divisibility
+* Unique Factorization Theorem and standard factored form
+* The Quotient-Remainder Theorem
+* Definition of div and mod
+* Definition of floor and ceiling
+* Disprove properties of floor and ceiling
+* Proving properties of floor and ceiling
+* Modular Arithmetic with Applications to Cryptography
+* Method of proof by contrapositive form
+* Method of proof by contradiction
+* Two classical theorems: Irrationality of ; infinitude of primes
+* Mathematical induction
+
+3. 集合与关系
+* https://zh.wikipedia.org/wiki/%E5%85%B3%E7%B3%BB_(%E6%95%B0%E5%AD%A6)[关系]
+* 关系的性质: 自反, 对称, asymmetric, 反对称以及传递
+* 矩阵表示与有向图 (digraphs) 表示
+* Closure of relation
+* Warshall's algorithm
+* Equivalence relation
+* Equivalence classes and partitions
+* Partial order relations
+* Lexicographic order
+* Hasse diagram
+* Partially and totally ordered sets
+* Topological sorting
+
+4. 线性与树状结构
+
+5. 图结构
+
+
+== 参考文献
+
+1. Epp, S.S., 2011. Discrete Mathematics with Applications. 4th ed. Boston, MA: Brooks/Cole Cengage Learning.
+
+2. Rosen, K.H., 2013. Discrete Mathematics and its Applications. 7th ed. New York: McGraw-Hill. 
+
+3. Scheinerman, E.R., 2013. Mathematics – A Discrete Introduction. 3rd ed. Boston, Mass.: Brooks/Cole.
+

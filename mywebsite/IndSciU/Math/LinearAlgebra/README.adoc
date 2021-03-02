@@ -1,0 +1,75 @@
+= 线性代数
+
+This course serves as an introduction to the most basic concepts in linear algebra. The vector spaces within which the general ideas are developed are all real vector spaces, Rn. Formal proofs will be presented if they are necessary for a proper understanding of the fundamental concepts and techniques. The course will develop basic skills in computing with vectors and matrices. The topics to be discussed in this unit are vectors, matrices, determinants, eigenvalues and eigenvectors, vector spaces, linear transformations and orthogonality.
+
+
+== 课程大纲
+
+1. 一般向量空间
+* Definition and example of vector spaces and subspaces
+* Linear independence of vectors
+* Span of vectors
+* Basis for a vector space and its dimension
+* Vector spaces and subspaces 
+* Linear independence, basis and dimension, change of basis
+* Introduction to the geometry and algebra of vectors, length and angle, the dot product of vectors, lines, planes and the cross product of vectors. 
+* Projections and the Euclidean n-space
+
+2. 线性变换
+* Linear transformation on general vector spaces
+* Kernel and range for a linear transformation
+* Rank and Nullity of a linear transformation
+* Rank-nullity theorem and its applications
+* Matrix representation of linear transformation
+* Isomorphism
+* A review of eigenvalues and eigenvectors for a matrix
+* Eigenvalues and eigenvectors for a linear transformation
+* Criteria for a linear transformation to be diagonalizable
+* Application of linear transformation to geometry
+
+3. 矩阵与线性方程
+* The theory of linear equations 
+* Algebra of matrices 
+* Special types of matrices, echelon form 
+* The inverse of a matrix 
+* Systems of linear equations, homogeneous systems and linear independence 
+* The LU factorization and LDU factorization, finding the inverse of a matrix 
+
+4. 行列式, 特征值，特征向量
+* The determinant of a matrix 
+* Properties of determinants and geometric applications of determinants 
+* Eigenvalues and eigenvectors of a matrix 
+* Similarity and diagonalization
+
+5. Diagonalization and its Application
+* Solve systems of difference or differential equations in which the underlying matrix is diagonalizable.
+* Find the transition matrix, state vectors and steady state vector for a  Markov chain.
+
+6. 正交与内积空间
+* Inner products and norms
+* Orthogonality in Rn, orthogonal complements and orthogonal productions 
+* The Gram-Schmidt Process and the QR Factorization 
+* Orthogonal diagonalization of symmetric matrices 
+* Least squares approximations 
+* Orthonormal bases
+* The Gram-Schmidt orthogonalization process
+* Orthogonal Complements
+* Applications of least squares method.
+
+7. https://en.wikipedia.org/wiki/Matrix_decomposition[矩阵分解]
+
+
+== 参考文献
+
+1. Werner Greub, 1981, Linear Algebra, Springer-Verlag
+
+2. Friedberg, S.H., Insel, A.J. and Spence, L.E., 2008. Elementary linear algebra: a matrix approach. 2nd ed. Upper Saddle River, N.J.: Prentice Hall/Pearson Education. 
+
+3. Poole, D., 2015. Linear algebra a modern introduction. 4th ed. USA: Cengage Learning.
+4. Strang, G., 2006. Linear algebra and its applications. 4th ed. New York: Thomson.
+5. DeFranza, J. and Gagliardi, D., 2008. Introduction to linear algebra with applications. New York: McGraw-Hill.
+
+6. Anton, H. and Busby, R., 2003. Contemporary linear algebra. Hoboken, N. J. : John Wiley & Sons
+7. Farlow, J., Hall, J., McDill, J. and West, B., 2007. Differential equations and linear algebra. 2nd ed. Harlow: Prentice-Hall/Pearson.
+
+

@@ -3,12 +3,12 @@
 
 == 教学经验
 
-* https://liaohaohui.github.io/UECM3993/[UECM3993 Predictive Modelling (May 2020, Jan 2020)]
+* https://liaohaohui.github.io/UECM3993/[UECM3993 Predictive Modelling (Jan 2021, May 2020, Jan 2020)]
+* UECM1304/UECM1303 Discrete Mathematics with Applications (May 2021, May 2019)
 * https://liaohaohui.github.io/UECM1703/[UECM1703 Introduction to Scientific Computing (Oct 2020, 2019, 2018)]
-* MEME19403 Data Analytics and Visualisation (May 2020)
-* UECM1304/UECM1303 Discrete Mathematics with Applications (May 2019)
 * UECM3013 Complex Analysis (May 2019)
 * UECM3033 Numerical Methods (Jan 2019)
+* MEME19403 Data Analytics and Visualisation (May 2021, May 2020)
 
 
 == 兴趣
@@ -73,7 +73,13 @@
 == 社会媒体网站
 
 * https://youtube.com
+* https://lemmy.ml/
 * https://news.ycombinator.com/
 * https://reddit.com
-* 
+
+
+== 历史点滴
+
+* https://www.youtube.com/watch?v=hD14lKeOyrQ[加拿大污蔑中国种族灭绝？联合国人权事务高级专员：应调查加拿大种族灭绝原住民问题、谈谈加拿大原住民悲惨的过去和现在]
+
 

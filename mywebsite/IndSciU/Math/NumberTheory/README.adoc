@@ -1,0 +1,105 @@
+= 数论
+
+The objectives of this course are to: 
+1. Study the classical results in number theory.
+2. Be literate in the language and notations of number theory.
+3. Provide a theoretical background to further results in cryptology.
+
+This course uses elementary methods such as arithmetic, basic algebra and geometry to solve equations with integer or rational solutions. We begin from the basic principles of integers and congruences to more advanced techniques such as multiplicative functions and primitive roots. Then one of the most important theory in number theory, the quadratic residue theorem is discussed. Finally, we study simple nonlinear Diophantine equations or Gaussian integers.
+
+https://www.youtube.com/watch?v=cYTuaiYHw_4[Theory of numbers: Introduction]
+
+
+== 预备知识
+
+* 中学数学
+* 离散数学
+
+== 大纲
+
+1. 整数的性质
+* The well Ordering Principle
+* https://www.youtube.com/watch?v=8sYo06AWlOk&list=PL8yHsr3EFj52Qf7lc3HHvHRdIysxEcj1H&index=2[Borcherds 教授: 欧几里德定理]
+* GCD and Euclidean Algorithm 
+** https://www.youtube.com/watch?v=JSf29MJb2r0[Borcherds 教授的课]
+* The Fundamental Theorem of Arithmetic 
+** https://www.youtube.com/watch?v=4CTZezAAfWM[Borcherds 教授的课]
+* The Distribution of Primes 
+* Factorization Methods 
+* Linear Diophantine Equations
+** https://www.youtube.com/watch?v=oVA5HkpYYOA[Borcherds 教授的课]
+
+2. Congruences and Applications 
+* Introduction to Congruences
+** https://www.youtube.com/watch?v=ZjaqNevrraM[Borcherds 教授的课]
+* Linear Congruences
+* The Chinese Remainder Theorem 
+** https://www.youtube.com/watch?v=f1oO9dEkqso[Borcherds 教授的课]
+* Solving Polynomial Congruences
+* Systems of Linear Congruences
+* Factoring Using the Pollard Rho Method 
+* Divisibility Tests 
+* Hashing Functions 
+* Wilson’s Theorem  
+** https://www.youtube.com/watch?v=hYCp7ACy9RE[Borcherds 教授的课]
+* Fermat’s Little Theorem  
+** https://www.youtube.com/watch?v=CXqNKmTOb3c[Borcherds 教授的课]
+* Pseudoprime
+* Euler’s Theorem: latexmath:[a^{\varphi(m)} \equiv 1 \pmod m, (a,m)=1]
+** https://www.youtube.com/watch?v=pCMfXLrNWJw[Borcherds 教授的课]
+
+3. Multiplicative Functions
+* https://www.youtube.com/watch?v=wgsHfMIQGSs[Multiplicative functions]
+** Arithmetic functions are functions from positive numbers to integers 
+or reals.  Multiplicative functions are arithmetic functions s.t. 
+f(mn) = f(m)f(n) where (m,n)=1.
+* https://www.youtube.com/watch?v=dTQw2zt2YVw[Dirichlet series]
+* The Euler Phi-Function 
+* The Sum and Number of Divisors 
+* Perfect Numbers and Mersenne Primes 
+* Mobius Inversion
+
+4. Primitive Roots 
+* The order of an Integers and Primitive Roots 
+** https://www.youtube.com/watch?v=a_BiEDdJrR0[Borcherds 教授的课]
+* Primitive Roots for Primes 
+* The Existence of Primitive Roots 
+* Index Arithmetic 
+* Primality Tests using Orders of integers and Primitive roots 
+** https://www.youtube.com/watch?v=9XyuyN-FOG4[Borcherds 教授的课]
+* Universal Exponents
+* Pseudorandom Numbers
+* https://www.youtube.com/watch?v=AECvBJ5AwBk[Borcherds 教授: RSA cryptography]
+
+5. 二次剩余
+* https://www.youtube.com/watch?v=9r85EvSSwSM[Borcherds 教授: Chevalley-Warning theorem]
+* 二次剩余与非剩余
+** https://www.youtube.com/watch?v=X_kiAeijeK8[Borcherds 教授的课]
+* https://www.youtube.com/watch?v=PKaDv0_63lE[Borcherds 教授: Gauss's lemma]
+* The Law of Quadratic Reciprocity
+** https://www.youtube.com/watch?v=Bg0BVGqOhFY[Borcherds 教授的课]
+* Jacobi 符号
+** https://www.youtube.com/watch?v=QUXaO90vaYA[Borcherds 教授的课]
+* Euler Pseudoprimes
+* Zero-Knowledge Proofs
+
+6. Nonlinear Diophantine Equations 
+* Pythagorean Triples  
+* Fermat’s Last Theorem 
+* Sum of Squares 
+* Pell’s Equation
+
+7. 高斯整数
+* Gaussian Integers and Gaussian Primes 
+* Greatest Common Divisors and Unique Factorization 
+* Gaussian Integers and Sums of Squares
+
+
+
+== 参考文献
+
+1. David, M.B., 2010. Elementary Number Theory. 7th ed. New York: McGraw-Hill.
+2. Kenneth, H.R., 2010. Elementary Number Theory.6th ed. Boston: Pearson.
+3. George, E.A., 1971. Number Theory. W.B. Saunders Company.
+4. Underwood, D., 2008. Elementary Number Theory. 2nd ed. Dover Books.
+

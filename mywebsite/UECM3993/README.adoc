@@ -11,6 +11,8 @@ The course outcomes are
 
 == Announcements
 
+* Week 7: Answer for the Quiz is available for link:Quiz_MarkingGuide.pdf[download].
+* Week 6: Quiz. 20 MCQs. Friday 2:30pm--4:00pm
 * Week 4: link:assgroups.pdf[The list of Assignment Groups]: Email me to update the list if there is anything not up-to-date.
 * Week 3: Submission of choice of data for each assignment group.
 * Week 3: Tutorial class resumes.
@@ -23,7 +25,7 @@ Thaipusam, so no Tutorial in Week 2.
 
 == Methods of Assessment
 
-* Quiz (12%, CO4) @ Week 5 ???
+* Quiz (12%, CO4) @ Week 6
 * Assignment (CO4 + CO5: Total: 48%, Report 24%, Program 12%, Oral Presentation 12%)
 * Final Assessment (40%, CO1--CO3,CO5.  Each question corresponds to one CO)
 
@@ -35,12 +37,18 @@ Thaipusam, so no Tutorial in Week 2.
 * link:s03_logreg.pdf[Logistic Regression]
 * link:s09_regressions.pdf[GLM and GLMNET]
 * link:s04_theory.pdf[Model Validation]
-* Decision Trees (in preparation)
-* Ensemble Methods (in preparation)
-* Generative Classifiers: Naive Bayes, LDA (in preparation)
+** Machine learning on Big Data really requires "big computers".  Watch the videos below to see how "big computers" look like.
+*** https://www.youtube.com/watch?v=80aK2_iwMOs[Microsoft reveals its MASSIVE data center (Full Tour)]
+*** https://www.youtube.com/watch?v=XZmGGAbHqa0[Inside a Google data center]
+*** https://www.youtube.com/watch?v=zDAYZU4A3w0[Google Data Center 360° Tour]
+*** https://www.youtube.com/watch?v=g7JaN3rTK2A[Inside The World's Largest Data Center]
+* link:s05_tree.pdf[Decision Trees]
+* link:s08_nb_lda.pdf[Generative Classifiers: Naive Bayes, LDA]
+* Ensemble Methods (in preparation, do we have time?)
 * PCA (in preparation)
 * Clustering methods (in preparation)
-* Revision
+* Revision ???
+
 
 == Tutorials
 

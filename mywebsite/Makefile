@@ -11,4 +11,10 @@ all:
 	asciidoctor IndSciU/README.adoc -o ${WEBROOT}/IndSciU/index.html
 	asciidoctor IndSciU/CompSci/README.adoc -o ${WEBROOT}/IndSciU/CompSci/index.html
 	asciidoctor IndSciU/CompSci/operating_system.adoc -o ${WEBROOT}/IndSciU/CompSci/operating_system.html
-
+	asciidoctor IndSciU/Math/README.adoc -o ${WEBROOT}/IndSciU/Math/index.html
+	asciidoctor IndSciU/Math/Calculus/README.adoc -o ${WEBROOT}/IndSciU/Math/Calculus/index.html
+	asciidoctor IndSciU/Math/ComplexAnal/README.adoc -o ${WEBROOT}/IndSciU/Math/ComplexAnal/index.html
+	asciidoctor IndSciU/Math/DiscreteMath/README.adoc -o ${WEBROOT}/IndSciU/Math/DiscreteMath/index.html
+	asciidoctor IndSciU/Math/LinearAlgebra/README.adoc -o ${WEBROOT}/IndSciU/Math/LinearAlgebra/index.html
+	asciidoctor IndSciU/Math/NumberTheory/README.adoc -o ${WEBROOT}/IndSciU/Math/NumberTheory/index.html
+	asciidoctor IndSciU/Math/ProbStat/README.adoc -o ${WEBROOT}/IndSciU/Math/ProbStat/index.html

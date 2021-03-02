@@ -14819,37 +14819,27 @@ fudu 服毒
 fue 腐恶
 fuer 附耳
 fuershitian 伏而咶天
-fufa 伏法
-fufa 复发
+fufa 复发 伏法
 fufalv 负法律
-fufan 复返
-fufan 浮泛
-fufan 肤泛
-fufang 付方
-fufang 复方
-fufei 付费
-fufei 腹诽
+fufan 复返 浮泛 肤泛
+fufang 复方 付方
+fufei 付费 腹诽
 fufeixinbang 腹非心谤
 fufen 福分
 fufenhelang 傅粉何郎
 fufenjie 复分解
+fufenxi 复分析
 fufenshizhu 傅粉施朱
-fufu 俯伏
-fufu 夫妇
-fufu 拂拂
-fufu 馥馥
+fufu 俯伏 夫妇 拂拂 馥馥
 fufuluomao 附肤落毛
 fufuyin 复辅音
 fugai 覆盖
 fugaimian 覆盖面
 fugang 复岗
-fugao 腹稿
-fugao 讣告
-fugao 附睾
+fugao 腹稿 讣告 附睾
 fugong 复工
 fugongziwen 抚躬自问
-fugu 复古
-fugu 跗骨
+fugu 复古 跗骨
 fuguachenli 浮瓜沉李
 fuguan 副官
 fuguanglueying 浮光掠影
@@ -14870,64 +14860,46 @@ fuhan 伏旱
 fuhao 符号 富豪
 fuhaolun 符号论
 fuhaoluoji 符号逻辑
-fuhe 复核
-fuhe 符合 附合 负荷 复合
+fuhe 符合 附合 负荷 复合 复核
 fuhecailiao 复合材料
 fuheci 复合词
 fuheliangci 复合量词
 fuheyuanyin 复合元音
 fuhong 副虹
-fuhua 孵化
-fuhua 浮华
-fuhua 浮滑
+fuhua 孵化 浮华 浮滑
 fuhualangrui 浮花浪蕊
 fuhuaqi 孵化器
-fuhui 傅会
-fuhui 复会
+fuhui 傅会 复会
 fuhuishuangxiu 福慧双修
 fuhun 复婚
-fuhuo 俘获
-fuhuo 复活
+fuhuo 复活 俘获
 fuhuojie 复活节
-fuji 伏击
-fuji 复机
-fuji 扶乩
-fuji 扶箕
-fuji 浮记
-fuji 负极
+fuji 负极 伏击 复机 扶乩 扶箕 浮记
 fujia 附加
 fujiafanzhai 浮家泛宅
 fujian 附件 福建
 fujiang 福将
 fujiankanlai 附件看来
-fujiao 俯角
-fujiao 复交
+fujiao 俯角 复交
 fujiaoganshenjing 副交感神经
 fujiaoshou 副教授
 fujiaruanjian 附加软件
 fujiaxing 附加刑
 fujie 符节
 fujimingzhang 附骥名彰
-fujin 福晋
-fujin 附近
+fujin 附近 福晋
 fujing 副净
 fujinghexi 凫胫鹤膝
 fujingqingzui 负荆请罪
 fujinzhuixi 抚今追昔
 fujipanhong 附骥攀鸿
-fujiu 俯就
-fujiu 腐旧
-fujiu 负疚
+fujiu 腐旧 俯就 负疚
 fuju 复句
 fujue 肤觉
 fujuli 负距离
 fuka 附卡
-fukan 俯瞰
-fukan 副刊
-fukan 复刊
-fuke 副科
-fuke 复课
-fuke 妇科
+fukan 副刊 俯瞰 复刊
+fuke 副科 复课 妇科
 fukebai 傅科摆
 fukebing 妇科病
 fukediguo 富可敌国
@@ -14938,92 +14910,63 @@ fukuan 付款
 fukuang 富矿
 fukuo 肤廓
 fulan 腐烂
-fulao 服老
-fulao 父老
+fulao 父老 服老
 fulaoxieyou 扶老携幼
 fuleni 服了你
-fuli 佛戾
-fuli 复利
-fuli 浮力
-fuli 福利
-fuli 附丽
+fuli 福利 佛戾 复利 浮力 附丽
 fuliang 氟利昂
-fuliao 敷料
-fuliao 辅料
+fuliao 敷料 辅料
 fulicaipiao 福利彩票
 fulier 浮礼儿
 fulietaobai 富埒陶白
 fulilv 负利率
-fuling 涪陵
-fuling 茯苓
+fuling 涪陵 茯苓
 fulitanghuang 富丽堂皇
 fulizi 负离子
-fulu 俘虏
-fulu 符箓
-fulu 辅路
-fulu 附录
+fulu 附录 俘虏 符箓 辅路
 fuluan 扶鸾
 fulvwan 氟氯烷
 fuma 驸马
 fuman 服满
-fumian 幅面
-fumian 浮面
-fumian 腹面
-fumian 负面
-fumian 跗面
+fumian 负面 幅面 浮面 腹面 跗面
 fumianbaicheng 富面百城
 fumiao 扶苗
-fuming 复命
-fuming 复明
-fuming 浮名
+fuming 复命 复明 浮名
 fumingshu 复名数
-fumo 抚摩
-fumo 抚摸
-fumo 腹膜
+fumo 抚摸 抚摩 腹膜
 fumu 父母
 fumuenqin 父母恩勤
 fumuguan 父母官
 fumulu 父目录
 fumuqin 父母亲
 fumuzhibang 父母之邦
-funan 呋喃
-funan 赴难
+funan 赴难 呋喃
 funanxilin 呋喃西林
-funi 拂逆
-funi 附逆
+funi 拂逆 附逆
 funian 俯念
 funong 富农
 funuqianqu 负驽前驱
 funv 妇女
 funvbing 妇女病
 funvjie 妇女节
-fupai 付排
-fupai 复牌
+fupai 复牌 付排
 fupenzhiyuan 覆盆之冤
 fupian 负片
 fupiao 浮漂
 fupiliaocao 浮皮潦草
 fupiliaocao 肤皮潦草
-fupin 副品
-fupin 扶贫
+fupin 副品 扶贫
 fuping 浮萍 抚平
-fuqi 付讫
-fuqi 福气 夫妻
-fuqi 腹鳍
-fuqian 付钱
-fuqian 浮浅
-fuqian 浮签
-fuqian 肤浅
+fuqi 福气 夫妻 付讫 腹鳍
+fuqian 付钱 浮浅 浮签 肤浅
 fuqiang 腹腔
 fuqiao 浮桥
 fuqibu 服气不
 fuqidian 夫妻店
 fuqidouhen 负气斗狠
-fuqin 抚琴
-fuqin 父亲
+fuqin 父亲 抚琴
 fuqing 付清
-fuqu 服去
-fuqu 芙蕖
+fuqu 服去 芙蕖
 fuquan 夫权
 fuquanzhi 父权制
 fuquhanyuan 负屈含冤
@@ -15036,45 +14979,23 @@ furenzhiren 妇人之仁
 furong 芙蓉
 furongjiejie 芙蓉姐姐
 furongqigui 夫荣妻贵
-furu 妇孺
-furu 腐乳
-furu 腐儒
+furu 妇孺 腐乳 腐儒
 furuan 服软
 furudonghai 福如东海
 furuoyiqiang 扶弱抑强
 fusai 复赛
-fusang 扶桑
-fusang 服丧
-fusang 榑桑
-fuse 服色
-fuse 肤色
-fushang 富商
-fushang 府上
-fushang 附上 负伤
+fusang 扶桑 服丧 榑桑
+fuse 服色 肤色
+fushang 富商 府上 附上 负伤
 fushanhuoyin 福善祸淫
-fushe 敷设
-fushe 辐射
-fushe 附设
-fushen 副肾
-fushen 复审
+fushe 敷设 辐射 附设
+fushen 副肾 复审
 fusheng 腐生
 fushengqiexiang 浮生切响
 fushengruomeng 浮生若梦
 fushenjing 副神经
 fusheshishou 蝮蛇螫手，壮士解腕
-fushi 伏侍
-fushi 俯视
-fushi 副食
-fushi 复市
-fushi 复试
-fushi 富实
-fushi 拂拭
-fushi 服事
-fushi 服侍
-fushi 服式
-fushi 服饰
-fushi 浮尸
-fushi 腐蚀
+fushi 腐蚀 服侍 服式 服饰 伏侍 俯视 副食 复市 复试 富实 拂拭 服事 浮尸
 fushidijie 俯拾地芥
 fushiji 腐蚀剂
 fushijieshi 俯拾皆是
@@ -15086,25 +15007,12 @@ fushou 扶手
 fushoutieer 俯首帖耳
 fushoutingming 俯首听命
 fushouzhisu 肤受之诉
-fushu 伏暑
-fushu 伏输
-fushu 复数
-fushu 复述
-fushu 富庶
-fushu 扶疏
-fushu 服输
-fushu 腐熟
-fushu 负数
-fushu 附属
+fushu 负数 复数 服输 复述 附属 伏输 伏暑 富庶 扶疏 腐熟
 fushufengya 附属风雅
 fushuguo 附属国
-fushui 洑水
-fushui 浮水
-fushui 腹水
-fushui 赋税
+fushui 赋税 洑水 浮水 腹水
 fushuinanshou 覆水难收
-fusi 罘罳
-fusi 罦罳
+fusi 罘罳 罦罳
 fusong 附送
 fusu 复苏
 fusuiwanfang 抚绥万方
@@ -15114,28 +15022,18 @@ futangdaohuo 赴汤蹈火
 fute 伏特
 futeji 伏特计
 futejia 伏特加
-futi 副题
-futi 扶梯
+futi 副题 扶梯
 futian 伏天
 futianlise 服田力穑
 futiao 辐条
-futie 伏帖
-futie 伏贴
-futie 服帖
+futie 服帖 伏帖 伏贴
 futong 浮筒
-futou 幞头
-futou 斧头
-futou 浮头
+futou 斧头 幞头 浮头
 futouer 浮头儿
-futu 浮图
-futu 浮土
-futu 浮屠
-futu 附图
+futu 附图 浮图 浮土 浮屠
 futuo 付托
 fuwang 覆亡
-fuwei 复位
-fuwei 复胃
-fuwei 抚慰
+fuwei 复位 复胃 抚慰
 fuweijikun 扶危济困
 fuwen 讣闻
 fuweng 富翁
@@ -15154,50 +15052,27 @@ fuwutai 服务台
 fuwuxiaojie 服务小姐
 fuwuye 服务业
 fuwuyuan 服务员
-fuxi 复习
-fuxi 父系
-fuxian 付现
-fuxian 伏线
-fuxian 复线
-fuxian 浮现
-fuxian 赋闲
+fuxi 复习 父系
+fuxian 赋闲 付现 伏线 复线 浮现
 fuxianglianpian 浮想联翩
-fuxiao 拂晓
-fuxiao 附小
-fuxie 复写
-fuxie 腹泻
+fuxiao 拂晓 附小
+fuxie 腹泻 复写
 fuxiezhi 复写纸
-fuxin 复信
-fuxin 负心
-fuxing 付型
-fuxing 复兴
-fuxing 复姓
-fuxing 服刑
-fuxing 浮性
-fuxing 福幸
-fuxing 赋性
+fuxin 负心 复信
+fuxing 复兴 服刑 付型 复姓 浮性 福幸 赋性
 fuxingzheng 副性征
 fuxinjiuhuo 负薪救火
 fuxinzhiji 腹心之疾
 fuxinzhiyou 负薪之忧
 fuxinziwen 抚心自问
 fuxiong 父兄
-fuxiu 副修
-fuxiu 腐朽
-fuxiu 辅修
+fuxiu 腐朽 副修 辅修
 fuxiuerqu 拂袖而去
-fuxu 夫婿
-fuxu 抚恤
-fuxu 拂煦
-fuxue 复学
-fuxue 斧削
+fuxu 夫婿 抚恤 拂煦
+fuxue 复学 斧削
 fuxun 伏汛
-fuyan 复眼
-fuyan 敷演
-fuyan 敷衍
-fuyan 浮艳
-fuyang 扶养
-fuyang 抚养
+fuyan 敷衍 复眼 敷演 浮艳
+fuyang 抚养 扶养
 fuyangwukui 俯仰无愧
 fuyangyouren 俯仰由人
 fuyangzhijian 俯仰之间
@@ -15205,22 +15080,10 @@ fuyanliaoshi 敷衍了事
 fuyanseze 敷衍塞责
 fuyao 服药
 fuyaozhishang 扶摇直上
-fuye 副业
-fuye 复业
-fuye 扶掖
-fuyi 复议
-fuyi 夫役
-fuyi 拂意
-fuyi 服役
-fuyi 腹议
-fuyi 芣苢
-fuyi 赋役
-fuyi 赙仪
-fuyi 附议
+fuye 副业 复业 扶掖
+fuyi 服役 复议 夫役 拂意 腹议 芣苢 赋役 赙仪 附议
 fuyidabai 浮一大白
-fuyin 付印
-fuyin 复音
-fuyin 辅音 福音
+fuyin 付印 复音 辅音 福音
 fuyinci 复音词
 fuying 拊膺
 fuyingyanghua 富营养化
@@ -15228,36 +15091,16 @@ fuyinji 复印机
 fuyinjian 复印件
 fuyinshu 福音书
 fuyongfengya 附庸风雅
-fuyou 付邮
-fuyou 妇幼
-fuyou 富有
-fuyou 浮游
-fuyou 蜉蝣
-fuyou 赋有
+fuyou 富有 付邮 妇幼 浮游 蜉蝣 赋有
 fuyoulinjia 腹有鳞甲
 fuyoushengwu 浮游生物
 fuyouxiang 副油箱
-fuyu 付与
-fuyu 孵育
-fuyu 富余
-fuyu 抚育
-fuyu 负嵎
-fuyu 赋予 富裕
-fuyu 馥郁
-fuyu 鳆鱼
-fuyuan 复元
-fuyuan 复原
-fuyuan 复员
-fuyuan 复圆
-fuyuan 富源
-fuyuan 幅员
-fuyuan 浮员
+fuyu 赋予 富裕 付与 孵育 富余 抚育 负嵎 馥郁 鳆鱼
+fuyuan 复原 复元 复员 复圆 富源 幅员 浮员
 fuyuanai 福原爱
-fuyue 负约
-fuyue 赴约
+fuyue 赴约 负约
 fuyufanyun 覆雨翻云
-fuyun 俯允
-fuyun 浮云
+fuyun 浮云 俯允
 fuyunbiri 浮云蔽日
 fuyunzhaolu 浮云朝露
 fuyuwankang 负隅顽抗
@@ -15265,33 +15108,21 @@ fuyuxuci 浮语虚辞
 fuyuzhongnong 富裕中农
 fuza 复杂
 fuzahua 复杂化
-fuzai 负载
-fuzai 附载
+fuzai 负载 附载
 fuzaiwuche 腹载五车
 fuzalaodong 复杂劳动
-fuzao 斧凿
-fuzao 浮躁
+fuzao 浮躁 斧凿
 fuzaxing 复杂性
-fuze 负责
-fuze 附则
+fuze 负责 附则
 fuzeng 赙赠
 fuzengzhang 负增长
 fuzeren 负责人
 fuzhai 负债
-fuzhang 付账
-fuzhang 拊掌
+fuzhang 付账 拊掌
 fuzhangdaxiao 抚掌大笑
 fuzhen 复诊
-fuzheng 扶正
-fuzheng 斧正
-fuzhi 副职
-fuzhi 复制 赋值
-fuzhi 复职
-fuzhi 扶植
-fuzhi 斧锧
-fuzhi 父执
-fuzhi 跗跖
-fuzhi 附识
+fuzheng 扶正 斧正
+fuzhi 副职 复制 赋值 复职 扶植 斧锧 父执 跗跖 附识
 fuzhibingding 付之丙丁
 fuzhidongliu 付之东流
 fuzhiniantie 复制粘贴
@@ -15299,21 +15130,14 @@ fuzhixinling 福至心灵
 fuzhiyiju 付之一炬
 fuzhiyixiao 付之一笑
 fuzhizhi 腐殖质
-fuzhong 复种
-fuzhong 浮肿
-fuzhong 负重 附中
+fuzhong 浮肿 负重 附中 复种
 fuzhongshengyu 釜中生鱼
 fuzhongyouyu 釜中游鱼
 fuzhongzhiyuan 负重致远
 fuzhou 符咒
 fuzhouxi 福州戏
-fuzhu 伏诛
-fuzhu 扶助
-fuzhu 腐竹
-fuzhu 辅助
-fuzhu 附注
-fuzhuang 复壮
-fuzhuang 服装
+fuzhu 辅助 伏诛 扶助 腐竹 附注
+fuzhuang 服装 复壮
 fuzhubian 副主编
 fuzhudanwei 辅助单位
 fuzhudongliu 付诸东流
@@ -15321,19 +15145,12 @@ fuzhuhongqiao 付诸洪乔
 fuzhuhuobi 辅助货币
 fuzhuixuanyou 附赘悬疣
 fuzhuo 附着
-fuzi 付梓
-fuzi 斧子
-fuzi 桴子
-fuzi 浮子
-fuzi 父子
-fuzi 麸子
+fuzi 父子 付梓 斧子 桴子 浮子 麸子
 fuzibing 父子兵
 fuzizidao 夫子自道
 fuzu 富足
-fuzui 伏罪
-fuzui 服罪
-fuzuo 趺坐
-fuzuo 辅佐
+fuzui 服罪 伏罪
+fuzuo 辅佐 趺坐
 fuzuoyong 副作用
 g 国 个 工 过 高 关 各 公 给 果 革 官 干 共 改 光 管 根 更 观 广 该 规 告 格 古 感 够 哥 跟 故 功 供 固 姑 归 敢 刚 构 赶 怪 钢 贵 搞 歌 攻 鼓 馆 顾 骨 概 港 盖 狗 挂 隔 杆 谷 惯 股 稿 瓜 贯 耕 宫 贡 鬼 甘 冠 滚 灌 割 沟 孤 巩 购 钢 阁 缸 锅 肝 轨 棍 恭 岗 估 桂 糕 柜 龟 竿 弓 葛 刮 罐 勾 搁 躬 秆 概 溉 钩 鸽 跪 杠 冈 膏 胳 裹 扛 拐 乖 辜 雇 戈 硅 郭 钙 拱 诡 丐 寡 逛 棺 瑰 咕 闺 苟 梗 耿 汞 褂 箍 咖 羔 柑
 ga 尬 嘎 咖 伽 呷 轧 噶 旮 尕 軋 嘠 钆 尜 釓 錷 玍
@@ -16089,16 +15906,15 @@ gaoshanzu 高山族
 gaoshao 高烧
 gaoshejiguanqiang 高射机关枪
 gaoshen 高深
-gaosheng 高升
-gaosheng 高声
+gaosheng 高升 高声
 gaoshenme 搞什么
 gaoshenmoce 高深莫测
 gaoshepao 高射炮
-gaoshi 高士
-gaoshi 高师
+gaoshi 高士 高师
 gaoshikuobu 高视阔步
 gaoshou 高手 高寿
 gaoshuiping 高水平
+gaosi 高斯
 gaosong 告送 高耸
 gaosu 告诉 高速 缟素
 gaosudu 高速度
@@ -17964,13 +17780,8 @@ gulao 孤老
 gulaolao 姑姥姥
 gulaoye 姑老爷
 guleizuowu 谷类作物
-guli 故里
-guli 股利
-guli 骨力
-guli 鼓励
-gulian 顾怜
-gulian 顾恋
-gulian 顾脸
+guli 孤立 鼓励 故里 股利 骨力
+gulian 顾怜 顾恋 顾脸
 guliang 估量
 gulimu 孤立木
 guling 骨龄
@@ -17978,30 +17789,21 @@ gulingling 孤零零
 guliwuyuan 孤立无援
 guliyu 孤立语
 gulong 咕隆
-gulou 固陋
-gulou 锢露
-gulou 鼓楼
+gulou 固陋 锢露 鼓楼
 gulouguawen 孤陋寡闻
-gulu 毂辘
-gulu 轱轳
-gulu 轱辘
-gulu 骨碌
+gulu 毂辘 轱轳 轱辘 骨碌
 guluanguahu 孤鸾寡鹄
 gulugulu 咕噜咕噜
-gululu 咕噜噜
-gululu 骨碌碌
+gululu 咕噜噜 骨碌碌
 gulv 顾虑
 guma 姑妈
 gumaoguxin 古貌古心
 gumin 股民
 gumingdiaoyu 沽名钓誉
 gumingsiyi 顾名思义
-gumo 汩没
-gumo 骨膜
-gumo 鼓膜
+gumo 汩没 骨膜 鼓膜
 gumozhao 估摸着
-gumu 姑母
-gumu 钴鉧
+gumu 姑母 钴鉧
 gun 滚 棍 衮 滾 鲧 袞 辊 磙 绲 裩 㙥 㨰 㫎 㯻 䃂 䎾 䙛 䜇 丨 掍 緄 蓘 蔉 輥 鮌 鯀 㔳 䵪 璭 睴 謴
 gun1 裩
 gun3 滚 衮 滾 鲧 袞 辊 磙 绲 㙥 㨰 㫎 㯻 䃂 䎾 䙛 䜇 丨 掍 緄 蓘 蔉 輥 鮌 鯀
@@ -23138,23 +22940,18 @@ jiaoshi 礁石
 jiaoshijie 教师节
 jiaoshimanwu 矫时慢物
 jiaoshizu 教师组
-jiaoshou 交手
-jiaoshou 教授
-jiaoshou 绞手
+jiaoshou 教授 交手 绞手
 jiaoshoujia 脚手架
 jiaoshu 教书
-jiaoshui 缴税
-jiaoshui 胶水
+jiaoshui 缴税 胶水
 jiaoshujiang 教书匠
 jiaosudu 角速度
-jiaosuo 教唆
-jiaosuo 绞索
+jiaosuo 教唆 绞索
 jiaota 叫他 教他
 jiaotache 脚踏车
 jiaotai 角台
 jiaotaliangzhichuan 脚踏两只船
-jiaotan 交谈
-jiaotan 焦炭
+jiaotan 交谈 焦炭
 jiaotang 教堂
 jiaotashidi 脚踏实地
 jiaoti 交替
@@ -24916,7 +24713,7 @@ jishiyu 及时雨
 jishou 寄售
 jishou 棘手
 jishoucue 疾首蹙额
-jishu 技术 计数 记述 基数 奇数 疾书
+jishu 技术 级数 计数 记述 基数 奇数 疾书
 jishuban 技术版
 jishugeming 技术革命
 jishugexin 技术革新
@@ -25858,15 +25655,13 @@ juwairen 局外人
 juwan 巨万
 juwangcuozhi 举枉措直
 juweijiyou 据为己有
-juwen 具文
-juwen 据闻
+juwen 据闻 具文
 juwenchenglei 聚蚊成雷
 juwo 据我
 juwu 剧务
 juwuba 巨无霸
 juwuyice 举无遗策
-juxi 巨细
-juxi 据悉
+juxi 巨细 据悉
 juxian 局限
 juxiang 巨响
 juxianshineng 举贤使能
@@ -25883,14 +25678,9 @@ juyi 拘役
 juyifansan 举一反三
 juyifeibai 举一废百
 juyiqi 居移气，养移体
-juyou 具有
-juyou 拘囿
-juyou 焗油
-juyu 居于
-juyu 鉏铻
-juyu 龃龉
-juyuan 剧院
-juyuan 枸橼
+juyou 具有 拘囿 焗油
+juyu 居于 鉏铻 龃龉
+juyuan 剧院 枸橼
 juyue 矩矱
 juyuwang 局域网
 juzai 拒载
@@ -25901,21 +25691,12 @@ juzhen 矩阵
 juzhenban 聚珍版
 juzheng 举证
 juzhenzizhuo 句斟字酌
-juzhi 举止
-juzhi 拘执
+juzhi 举止 拘执
 juzhibuyi 居之不疑
 juzhicuowang 举直措枉
-juzhong 举重
-juzhong 剧种
-juzhong 居中
-juzhong 聚众
-juzhu 居住
-juzhu 巨著
-juzi 句子 橘子 局子
-juzi 巨子
-juzi 锔子
-juzi 锯子
-juzi 驹子
+juzhong 举重 剧种 居中 聚众
+juzhu 居住 巨著
+juzi 句子 橘子 局子 巨子 锔子 锯子 驹子
 juzichengfen 句子成分
 juzuqingzhong 举足轻重
 k 可 看 开 口 快 科 空 克 况 苦 块 刻 客 孔 款 靠 宽 抗 矿 考 肯 困 哭 恐 课 卡 控 扩 括 糠 康 库 壳 亏 刊 狂 颗 阔 扣 昆 愧 凯 棵 跨 枯 坑 恳 堪 垦 酷 砍 框 裤 夸 炕 渴 捆 烤 垮 筐 旷 寇 葵 挎 勘 溃 坎 筷 磕 魁 廓 眶 揩 窟
@@ -26524,6 +26305,7 @@ kechu 科处
 kechuan 客串
 keda 磕打
 kedai 苛待
+kedao 可导
 kede 可得
 kedi 科第
 kedian 客店
@@ -26531,8 +26313,7 @@ keding 可定
 kedingkemao 可丁可卯
 kedizhisheng 克敌制胜
 kedou 蝌蚪
-kedu 刻度
-kedu 刻毒
+kedu 刻度 刻毒
 keduanzhutie 可锻铸铁
 kedui 客队
 keduxing 可读性
@@ -26540,14 +26321,11 @@ keennage 科恩那个
 keer 棵儿
 keerjuejing 渴而掘井
 keerkezizu 柯尔克孜族
-kefan 客贩
-kefan 客饭
+kefan 客贩 客饭
 kefang 客房
 kefayijue 可发一噱
 kefou 可否
-kefu 克复
-kefu 克服
-kefu 客服
+kefu 克服 克复 客服
 kefumima 客服密码
 kegebo 克格勃
 kegei 可给
@@ -26742,7 +26520,7 @@ kewai 课外
 kewan 可玩
 kewang 渴望
 kewangebukeji 可望而不可即
-kewei 可谓
+kewei 可谓 可微
 kewen 课文
 kewu 可恶
 kexi 可惜 可喜 苛细
@@ -29323,32 +29101,19 @@ liji 痢疾
 liji 立即 利己
 liji 里脊
 lijia 例假
-lijian 力荐
-lijian 离间
-lijian 里间
+lijian 力荐 离间 里间
 lijiang 丽江
 lijiao 立脚
 lijiaodian 立脚点
 lijiaoqiao 立交桥
-lijie 力戒
-lijie 历届
-lijie 理解
-lijie 礼节
-lijie 离解
+lijie 理解 礼节 历届 力戒 离解
 lijiele 理解了
 lijieli 理解力
 lijieshengsi 力竭声嘶
 lijiezhe 理解这
 lijihouzhong 里急后重
-lijin 例禁
-lijin 利金
-lijin 历尽
-lijin 厘金
-lijin 礼金
-lijin 黎锦
-lijing 历经
-lijing 犁镜
-lijing 立井
+lijin 利金 历尽 厘金 礼金 黎锦 例禁
+lijing 历经 犁镜 立井
 lijingbianzhi 离经辨志
 lijinggengshi 励精更始
 lijingpandao 离经叛道
@@ -29628,8 +29393,7 @@ lingyige 另一个
 lingyishan 另一扇
 lingyongqian 零用钱
 lingyou 领有
-lingyu 囹圉
-lingyu 领域
+lingyu 领域 囹圉
 lingyuan 陵园
 lingyue 灵月
 lingzamiyan 凌杂米盐
@@ -30001,15 +29765,10 @@ liushang 流觞
 liushen 留神
 liushengji 留声机
 liushenwuzhu 六神无主
-liushi 流势
-liushi 流失
-liushi 流矢
-liushi 流逝
-liushi 流食
-liushi 遛食
+liushi 流失 流势 流矢 流逝 流食 遛食
 liushisheng 流失生
 liushou 留守
-liushu 六书
+liushu 留数 六书
 liushui 流水
 liushuibufu 流水不腐，户枢不蠹
 liushuichaozong 流水朝宗
@@ -30021,9 +29780,7 @@ liushuizhang 流水账
 liushuizuoye 流水作业
 liushushangzhaodao 柳树上着刀，桑树上出血
 liusi 柳丝
-liusu 流苏
-liusu 流速
-liusu 留宿
+liusu 留宿 流速 流苏
 liusuan 硫酸
 liusuola 刘索拉
 liutang 流淌
@@ -32512,19 +32269,16 @@ mihuntang 迷魂汤
 mihunzhen 迷魂阵
 mihuo 迷惑
 mihuoshiting 迷惑视听
-miji 密级
-miji 密集
-miji 秘籍
-mijian 密件
-mijian 蜜饯
+miji 密级 密集 秘籍
+mijian 密件 蜜饯
+mijishu 幂级数
 mijin 迷津
 mijiu 米酒
 mijue 秘诀
 mikang 米糠
 milan 糜烂
 mile 弥勒
-mili 米粒
-mili 靡丽
+mili 米粒 靡丽
 miliang 蜜俍
 miliangchuan 米粮川
 milianhaigu 迷恋骸骨
@@ -32535,25 +32289,17 @@ miling 密令
 milipushuo 迷离扑朔
 militiaoyou 蜜里调油
 miliuzhiji 弥留之际
-milu 迷路
-milu 麋鹿
+milu 迷路 麋鹿
 miluan 弭乱
 miluojiang 汨罗江
 miluojingu 密锣紧鼓
 mima 密码
-miman 弥漫
-miman 瀰漫
-miman 迷漫
+miman 弥漫 瀰漫 迷漫
 mimang 迷茫
 mimaxiang 密码箱
-mimeng 弥蒙
-mimeng 瀰濛
-mimeng 迷梦
-mimeng 迷濛
-mimi 咪咪
-mimi 秘密
-mimian 米面
-mimian 谜面
+mimeng 弥蒙 瀰濛 迷梦 迷濛
+mimi 秘密 咪咪
+mimian 米面 谜面
 mimicengceng 密密层层
 mimicongcong 密密丛丛
 mimihuhu 迷迷糊糊
@@ -40555,10 +40301,8 @@ sanfanwuci 三番五次
 sanfei 三废
 sanfendingzu 三分鼎足
 sanfenwudian 三坟五典
-sanfu 三伏
-sanfu 三副
+sanfu 三伏 三副
 sanfusiyan 三复斯言
-sang
 sang 桑 丧 嗓 搡 喪 颡 磉 桒 䡦 䫙 褬 鎟 顙 䘮
 sang1 桑 丧 喪 桒
 sang3 嗓 搡 颡 磉 䡦 䫙 褬 鎟 顙
@@ -40590,13 +40334,11 @@ sangou 丧偶
 sangpizhi 桑皮纸
 sangquanruguo 丧权辱国
 sangrener 桑葚儿
-sangshen 桑椹
-sangshen 桑葚
+sangshen 桑椹 桑葚
 sangsheng 丧生
 sangshenshijie 丧身失节
 sangshenzi 桑葚子
-sangshi 丧事
-sangshi 丧失
+sangshi 丧失 丧事
 sangshuwengyou 桑枢瓮牖
 sangtande 桑坦德
 sanguang 散光
@@ -40626,14 +40368,12 @@ sanhuofan 散伙饭
 sanhuwangqin 三户亡秦
 saniao 撒尿
 saniaobu 撒尿不
-sanji 散剂
-sanji 散记
+sanji 散剂 散记
 sanjia 三甲
 sanjia 散架
 sanjianke 三剑客
 sanjianqikou 三缄其口
-sanjiao 三焦
-sanjiao 三角
+sanjiao 三角 三焦
 sanjiaoban 三角板
 sanjiaodai 三角带
 sanjiaohanshu 三角函数
@@ -44376,21 +44116,18 @@ shuxun 殊勋
 shuyang 输氧
 shuyao 枢要
 shuyaquejiao 鼠牙雀角
-shuye 术业 书页
-shuye 输液
+shuye 术业 书页 输液
 shuyeyouzhuangong 树叶有专攻
 shuyi 鼠疫
-shuyin 树荫
-shuyin 树阴
-shuying 书影
-shuying 输赢 舒英
+shuyin 树荫 树阴
+shuying 输赢 舒英 书影
 shuyingting 舒英亭
 shuyinlianger 树荫凉儿
 shuyinlianger 树阴凉儿
 shuyishuer 数一数二
 shuyou 癙忧
 shuyouguan 输油管
-shuyu 属于 术语 熟语 疏虞 薯蓣
+shuyu 属于 数域 术语 熟语 疏虞 薯蓣
 shuyuan 疏远 书院 属员
 shuyujingerfengbuzhi 树欲静而风不止
 shuyunqinghuo 束缊请火
@@ -46070,8 +45807,9 @@ teyizhi 特异质
 teyou 特有
 teyue 特约
 tezheng 特征
-tezhi 特制
-tezhi 特质
+tezhengzhi 特征值
+tezhengxiangliang 特征向量
+tezhi 特制 特质
 tezhong 特种
 tezhongbing 特种兵
 tezhonggongyi 特种工艺
@@ -47010,26 +46748,18 @@ tongfang 同房
 tongfen 通分
 tongfengbaoxin 通风报信
 tonggaiqianfei 痛改前非
-tonggan 同感
-tonggan 痛感
+tonggan 同感 痛感
 tonggangongku 同甘共苦
-tonggao 通告
-tonggao 通稿
+tonggao 通告 通稿
 tonggeng 同庚
-tonggong 童工
-tonggong 统共
-tonggong 通共
+tonggong 童工 统共 通共
 tonggongtongchou 同工同酬
 tonggongyiqu 同工异曲
 tonggongyishi 通功易事
 tonggongyiti 同功一体
-tonggou 统购
-tonggu 捅咕
-tonggu 铜鼓
-tongguan 潼关
-tongguan 统管
-tongguan 通关
-tongguan 通观
+tonggou 同构 统购
+tonggu 捅咕 铜鼓
+tongguan 潼关 统管 通关 通观
 tongguanzaibao 恫瘝在抱
 tongguishutu 同归殊途
 tongguiyujin 同归于尽
@@ -47037,11 +46767,8 @@ tongguo 通过
 tongguoguo 通过过
 tongguolv 通过率
 tonggusi 通古斯
-tonghang 同行
-tonghang 通航
-tonghao 同好
-tonghao 茼蒿
-tonghao 通好
+tonghang 同行 通航
+tonghao 同好 茼蒿 通好
 tonghe 统合
 tonghen 痛恨
 tonghong 通红
@@ -48720,22 +48447,15 @@ weichengfengqi 蔚成风气
 weichengnianren 未成年人
 weichi 维持
 weichuan 洧川
-weici 为此
-weici 微词
-weici 微辞
-weici 猥词
-weici 猥辞
-weici 谓词
+weici 为此 谓词 微词 微辞 猥词 猥辞
 weicongquque 为丛驱雀
 weicui 猥獕
 weida 伟大
 weidabudiao 尾大不掉
 weidai 危殆
 weidang 苇荡
-weidao 卫道
-weidao 味道 未到
-weideng 尾灯
-weideng 桅灯
+weidao 味道 未到 卫道
+weideng 尾灯 桅灯
 weidian 位点
 weidiannao 微电脑
 weidiao 微雕
@@ -48934,53 +48654,30 @@ weishengzhixin 尾生之信
 weishenme 为什么
 weishenmeneng 为什么能
 weishenmezhemeduo 为什么这么多
-weishi 为时
-weishi 卫视 卫士
-weishi 喂食
-weishi 委实
-weishi 威势
-weishi 未始
-weishi 未时
+weishi 位势 为时 卫视 卫士 喂食 委实 威势 未始 未时
 weishiji 威士忌
 weishou 为首
 weishoweiwei 畏首畏尾
-weishu 为数
-weishu 伪书
-weishu 卫戍
-weishu 尾数
-weishu 纬书
-weishu 维数
+weishu 为数 维数 伪书 卫戍 尾数 纬书
 weisi 维斯
 weisuan 胃酸
-weisui 尾随
-weisui 未遂
-weisuo 委琐
-weisuo 微缩
-weisuo 猥琐 萎缩
+weisui 尾随 未遂
+weisuo 微缩 猥琐 萎缩 委琐
 weisuobuqian 畏缩不前
 weisuonan 猥琐男
 weisuoyuwei 为所欲为
 weita 为它
 weitaming 维他命
-weitang 苇塘
-weiteng 胃疼
+weitang 胃疼 苇塘
 weitian 圩田
 weitiao 微调
 weitongjiaocu 味同嚼蜡
-weituo 伪托
-weituo 委托
+weituo 委托 伪托
 weituomairu 委托买入
-weiwan 委婉
-weiwan 委宛
-weiwang 危亡
-weiwang 威望
+weiwan 委婉 委宛
+weiwang 威望 危亡
 weiwangren 未亡人
-weiwei 亹亹
-weiwei 崴嵬
-weiwei 嵬嵬
-weiwei 巍巍
-weiwei 微微
-weiwei 硙硙
+weiwei 亹亹 崴嵬 嵬嵬 巍巍 微微 硙硙
 weiweidaguan 蔚为大观
 weiweidongting 娓娓动听
 weiweiertan 娓娓而谈
@@ -48993,9 +48690,7 @@ weiwenshendi 微文深诋
 weiwo 为我
 weiwoduzun 唯我独尊
 weiwoduzun 惟我独尊
-weiwu 威武
-weiwu 违忤
-weiwu 违误
+weiwu 威武 违忤 违误
 weiwubianzhengfa 唯物辩证法
 weiwubuqu 威武不屈
 weiwuerzu 维吾尔族
@@ -49003,27 +48698,17 @@ weiwujingwen 纬武经文
 weiwulun 唯物论
 weiwushiguan 唯物史观
 weiwuzhuyi 唯物主义
-weixi 微细
-weixi 维系
-weixian 危险
-weixian 纬线
-weixian 胃腺
-weixian 蔚县
-weixian 违宪
+weixi 维系 微细
+weixian 危险 纬线 胃腺 蔚县 违宪
 weixiang 未详
 weixianzhipei 韦弦之佩
-weixiao 微小
-weixiao 微笑
+weixiao 微小 微笑
 weixiaobao 韦小宝
 weixiaofuwu 微笑服务
 weixibuqian 畏葸不前
-weixie 威胁
-weixie 猥亵
-weixie 萎谢
-weixie 诿卸
+weixie 威胁 猥亵 萎谢 诿卸
 weixieliyou 威胁利诱
-weixing 微型 微星 卫星
-weixing 微行
+weixing 微型 微星 卫星 微行
 weixingcheng 卫星城
 weixingdianshi 卫星电视
 weixingtongxin 卫星通信
@@ -49038,32 +48723,22 @@ weixiudan 维修单
 weixiudian 维修点
 weixiufei 维修费
 weixueguan 微血管
-weiyan 威严
-weiyan 慰唁
+weiyan 威严 慰唁
 weiyandayi 微言大义
 weiyang 喂养
 weiyansongting 危言耸听
 weiyanweixing 危言危行
 weiyao 胃药
-weiye 伟业
-weiye 胃液
-weiyi 位移
-weiyi 偎依
-weiyi 唯一
-weiyi 惟一
+weiye 伟业 胃液
+weiyi 唯一 位移 偎依 惟一
 weiyide 唯一的
 weiyin 尾音
 weiyingeji 畏影恶迹
 weiyinqi 微音器
 weiyituishi 逶迤退食
-weiyou 唯有
-weiyou 尾蚴
-weiyou 惟有
-weiyou 畏友
-weiyu 位于
-weiyu 谓语
-weiyuan 圩垸
-weiyuan 委员
+weiyou 唯有 尾蚴 惟有 畏友
+weiyu 位于 谓语
+weiyuan 委员 圩垸
 weiyuankou 湋源口
 weiyuanquyu 为渊驱鱼
 weiyuanquyuweicongquque 为渊驱鱼，为丛驱雀
@@ -49073,8 +48748,7 @@ weiyue 违约
 weizaidanxi 危在旦夕
 weizao 伪造
 weizhang 违章
-weizhe 为着
-weizhe 围着
+weizhe 围着 为着
 weizheng 伪证 为正
 weizhi 位置 为止 未知
 weizhiqianjin 遗之千金
@@ -49085,16 +48759,9 @@ weizhu 为主 围住
 weizhuang 伪装
 weizhui 尾追
 weizhuo 围桌
-weizi 位子
-weizi 围子
-weizi 圩子
-weizi 尾子
-weizi 帷子
-weizi 苇子
-weizu 伪足
-weizu 维族
-weizui 委罪
-weizui 诿罪
+weizi 位子 围子 圩子 尾子 帷子 苇子
+weizu 伪足 维族
+weizui 委罪 诿罪
 weizuier 围嘴儿
 weizuizisha 畏罪自杀
 weizuo 伪作
@@ -49103,8 +48770,7 @@ wen1 温 瘟 溫 瑥 輼 塭 昷 殟 瞃 緼 缊 蕰 豱 轀 辒 馧 鰛 鰮 鳁
 wen2 文 闻 纹 蚊 雯 聞 紋 玟 璺 阌 䎹 䎽 䘇 䰚 彣 炆 珳 琝 瘒 芠 蚉 螡 蟁 閺 閿 闅 闦 馼 駇 魰 鳼 鴍 鴖 鼤
 wen3 稳 吻 紊 穩 刎 呡 煴 㒚 㖧 㗃 㝧 㟩 㳷 㵮 䦤 䦷 桽 穏 肳 脗
 wen4 问 汶 問 闻 聞 紋 揾 璺 㡈 㼂 䎽 䘇 妏 抆 搵 渂 熓 莬
-wenan 问安
-wenan 问案
+wenan 问安 问案
 wenbao 温饱
 wenben 文本
 wenbenbianjiqi 文本编辑器
@@ -49117,8 +48783,7 @@ wenbing 瘟病
 wenbuduiti 文不对题
 wenbujiadian 文不加点
 wenbuqianjin 稳步前进
-wencai 文才
-wencai 文采
+wencai 文采 文才
 wencao 蕰草
 wencaoshengquan 稳操胜券
 wencha 温差
@@ -50403,9 +50068,7 @@ xiangbanfa 想办法
 xiangbang 相帮
 xiangbei 详备
 xiangbeixiangwang 项背相望
-xiangbi 响鼻
-xiangbi 想必
-xiangbi 相比
+xiangbi 相比 想必 响鼻
 xiangbiao 降表
 xiangbinjiu 香槟酒
 xiangbixugou 向壁虚构
@@ -50915,58 +50578,31 @@ xianweizhiwu 纤维植物
 xianwozhuobian 先我着鞭
 xianwu 嫌恶
 xianwuxueyuan 仙武学院
-xianxi 嫌隙
-xianxi 崄巇
-xianxi 纤细
-xianxi 险巇
-xianxia 现下
-xianxia 闲暇
-xianxian 先贤
-xianxian 显现
-xianxian 现…现…
-xianxian 纤纤
-xianxiang 现象
-xianxiang 线香
-xianxiang 险象
+xianxi 嫌隙 崄巇 纤细 险巇
+xianxia 闲暇 现下
+xianxian 显现 先贤 纤纤 现…现…
+xianxiang 现象 线香 险象
 xianxiangguan 显像管
-xianxiao 显效
-xianxiao 纤小
+xianxiao 纤小 显效
 xianxiashouweiqiang 先下手为强
 xianxibao 腺细胞
 xianxie 险些
 xianxin 闲心
-xianxing 先行
-xianxing 显形
-xianxing 显性 现行
-xianxing 现形
+xianxing 线性 显形 显性 现行 现形 先行
 xianxingdongwu 线形动物
 xianxingfa 现行法
 xianxingfan 现行犯
 xianxingguan 先行官
 xianxingzhe 先行者
 xianxiwuyi 纤悉无遗
-xianxue 显学
-xianxue 献血
-xianxue 鲜血
-xianya 娴雅
-xianya 闲雅
-xianyan 咸盐
-xianyan 显眼
-xianyan 现眼
-xianyan 鲜妍
-xianyan 鲜艳
-xianyang 显扬
-xianyang 现洋
-xianyang 限养
+xianxue 鲜血 显学 献血
+xianya 娴雅 闲雅
+xianyan 鲜艳 显眼 现眼 鲜妍 咸盐
+xianyang 显扬 现洋 限养
 xianyanlun 先验论
 xianyansuiyu 闲言碎语
-xianyao 显耀
-xianyao 显要
-xianyao 险要
-xianyi 嫌疑
-xianyi 献艺
-xianyi 现役
-xianyi 线衣
+xianyao 显耀 显要 险要
+xianyi 嫌疑 献艺 现役 线衣
 xianyichengzhi 先意承志
 xianying 显影
 xianyinqin 献殷勤
@@ -53875,33 +53511,21 @@ yanchaomushang 燕巢幕上
 yanchen 烟尘
 yancheng 郾城
 yanchengbudai 严惩不贷
-yanchi 妍媸
-yanchi 延迟
-yanchi 盐池
-yanchi 眼眵
-yanchi 砚池
+yanchi 延迟 盐池 眼眵 砚池 妍媸
 yanchu 演出
 yanchuan 言传
 yanchuanshenjiao 言传身教
 yanchufasui 言出法随
-yanci 严词
-yanci 言词
-yanci 言辞
+yanci 严词 言词 言辞
 yancong 烟囱
 yanda 严打
-yandai 烟袋
-yandai 眼袋
+yandai 烟袋 眼袋
 yandang 延宕
-yandi 炎帝
-yandi 烟蒂
-yandi 眼底
-yandi 砚滴
-yandian 唁电
-yandian 眼点
+yandi 炎帝 烟蒂 眼底 砚滴
+yandian 唁电 眼点
 yanding 赝鼎
 yandixia 眼底下
-yandong 严冬
-yandong 岩洞
+yandong 严冬 岩洞
 yandou 烟斗
 yandousi 烟斗丝
 yandu 研读
@@ -53915,11 +53539,9 @@ yanerxinhun 燕尔新婚
 yaneryouxin 言而有信
 yanfa 研发
 yanfan 厌烦
-yanfang 严防
-yanfang 验方
+yanfang 严防 验方
 yanfen 盐分
-yanfu 眼福
-yanfu 艳福
+yanfu 眼福 艳福
 yang 样 阳 央 洋 养 杨 扬 仰 羊 痒 氧 樣 漾 佯 鸯 鞅 恙 殃 秧 陽 怏 泱 徉 烊 養 飏 揚 疡 楊 炀 旸 颺 癢 鴦 駚 佒 咉 坱 姎 柍 眏 紻 胦 鉠 雵 㟅 㦹 㬕 䁑 䖹 䬗 劷 垟 婸 崵 敭 昜 暘 煬 玚 珜 瑒 瘍 眻 禓 羏 蛘 諹 輰 鍚 鐊 阦 霷 鰑 鸉 㔦 䇦 䍩 䑆 䒋 䞁 䬬 傟 卬 岟 慃 懩 抰 攁 氱 炴 羪 蝆 飬 㨾 㺊 㿮 䬺 䭐 䭥 䵮 様 瀁 羕 詇
 yang1 央 鸯 鞅 殃 秧 泱 鴦 佒 咉 坱 姎 柍 眏 紻 胦 鉠 雵
 yang2 阳 洋 杨 扬 羊 佯 陽 徉 烊 飏 揚 疡 楊 炀 旸 颺 㟅 㦹 㬕 䁑 䖹 䬗 劷 垟 婸 崵 敭 昜 暘 煬 玚 珜 瑒 瘍 眻 禓 羏 蛘 諹 輰 鍚 鐊 阦 霷 鰑 鸉
@@ -54394,11 +54016,9 @@ yantiao 眼跳
 yantiaoer 沿条儿
 yantingjicong 言听计从
 yantong 烟筒
-yantou 咽头
-yantou 烟头
-yantu 沿途
-yantu 烟土
-yantu 盐土
+yantou 烟头 咽头
+yantu 沿途 烟土 盐土
+yantuo 延拓
 yantuozi 盐坨子
 yanwaizhiyi 言外之意
 yanwang 阎王
@@ -54406,12 +54026,8 @@ yanwangzhang 阎王账
 yanweifu 燕尾服
 yanweixinsheng 言为心声
 yanwen 衍文
-yanwo 燕窝
-yanwo 眼窝
-yanwu 厌恶
-yanwu 延误
-yanwu 演武
-yanwu 烟雾
+yanwo 燕窝 眼窝
+yanwu 厌恶 延误 演武 烟雾
 yanwubujin 言无不尽
 yanwudan 烟雾弹
 yanwudang 烟雾当
@@ -55047,24 +54663,19 @@ yi1 一 衣 依 医 伊 揖 噫 漪 咿 壹 醫 铱 衤 猗 欹 祎 繄 黟 㘈 
 yi2 疑 移 遗 宜 仪 姨 怡 夷 颐 咦 贻 彝 迤 沂 遺 胰 儀 痍 饴 笫 荑 誼 诒 圯 眙 乁 訑 匜 宧 嶷 衪 迻 㐌 㔭 㚦 㝖 㞔 㥴 㦾 㰘 㹑 㹫 㺿 㼢 䄬 䇵 䐅 䐖 䔟 䕥 䖊 䞅 䣡 䤭 䧅 䧝 䩟 䬁 䬮 䮊 䱌 䲑 䴊 侇 冝 宐 寲 峓 巸 弬 彛 彜 彞 恞 悘 扅 搋 暆 杝 柂 栘 桋 椸 歋 沶 洟 焈 熪 珆 瓵 眤 眱 箷 簃 羠 苐 萓 虵 蛦 螔 袘 袲 觺 詒 謻 讉 貤 貽 跠 迆 酏 釶 鈶 鉇 銕 頉 頤 頥 顊 飴 鮧 鴺 鸃
 yi3 以 已 椅 倚 矣 乙 蚁 旖 迤 齮 铱 钇 苡 蟻 扆 胣 锜 㕈 㕥 㠖 㠯 㩘 㫊 㰝 㰻 㱯 㾨 䇣 䔇 䚷 䝝 䧇 䧧 䭲 䰙 偯 叕 崺 庡 扡 掜 攺 旑 晲 檥 硪 礒 笖 肔 舣 艤 苢 螘 踦 輢 轙 迆 逘 釔 鈘 鉯 陭 顗 鳦
 yi4 意 义 议 易 异 忆 艺 译 益 亦 亿 翼 役 抑 谊 溢 毅 逸 绎 裔 驿 疫 義 翌 臆 熠 奕 異 邑 呓 屹 議 羿 诣 轶 弋 懿 譯 缢 弈 佚 憶 蜴 悒 翳 藝 肄 癔 挹 刈 翊 億 誼 薏 佾 镒 埸 怿 繹 乂 仡 劓 囈 殪 瘗 绁 阝 棭 槷 讛 镱 驛 鷁 㐹 㑊 㑜 㑥 㓷 㔎 㔕 㔴 㖂 㘁 㘊 㙠 㙪 㙯 㚤 㛕 㛳 㜋 㜒 㝣 㞾 㡫 㡼 㢞 㣂 㣇 㣻 㥷 㦉 㦤 㱅 㱲 㲲 㲼 㳑 㴁 㴒 㴔 㵝 㵩 㵫 㶠 㸣 㹓 㹭 㽈 䁆 䂽 䃞 䄁 䄩 䄿 䆿 䇩 䇼 䉨 䋚 䋵 䌻 䎈 䏌 䐙 䑄 䑛 䓃 䓈 䓹 䔬 䕍 䖁 䖊 䖌 䗑 䗟 䗷 䘝 䘸 䚷 䛖 䝘 䝯 䢃 䣧 䣱 䦴 䬥 䭂 䭇 䭞 䭿 䯆 䰯 䱈 䱒 䳬 䴬 䵝 亄 伇 伿 俋 兿 劮 勚 勩 呭 呹 唈 嗌 圛 垼 埶 墿 妷 嫕 嬑 嬟 寱 峄 嶧 帟 帠 幆 廙 怈 悥 懌 抴 捙 撎 敡 斁 晹 曀 曎 杙 枍 枻 栧 榏 槸 檍 欭 歝 殔 殹 泆 洂 浂 浥 浳 湙 潩 澺 瀷 炈 焲 熤 熼 燡 燱 獈 玴 痬 瘞 瘱 瞖 秇 穓 竩 糦 緆 縊 繶 羛 肊 膉 艗 艾 芅 苅 蓺 藙 蘙 虉 蛡 螠 衣 袣 裛 褹 襼 訲 訳 詣 誒 謚 豙 豛 豷 跇 踦 軼 醳 醷 釴 鈠 鎰 鐿 阣 隿 霬 靾 鞥 顡 饎 饐 駅 骮 鯣 鶃 鷧 鷾 鹝 鹢 黓 齸 益 逸
-yian 疑案
-yian 议案
+yian 疑案 议案
 yiba 一把
 yibai 一百 衣摆
 yibairushui 一败如水
 yibaitudi 一败涂地
 yibaiyi 一百一
 yibajin 一把劲
-yiban 一…半…
-yiban 一般 一半
+yiban 一般 一半 一…半…
 yibanban 一般般
 yibanchengxuyuan 一般程序员
 yibande 一般的
 yibandecha 一般的差
-yibang 一棒 一帮
-yibang 依傍
-yibang 倚傍
-yibang 异邦
+yibang 一棒 一帮 依傍 倚傍 异邦
 yibangren 一帮人
 yibangyitiaohen 一棒一条痕
 yibanjianshi 一般见识
@@ -59841,32 +59452,23 @@ zhengmang 正忙
 zhengmaodiuniu 争猫丢牛
 zhengmen 正门
 zhengmian 正面
-zhengming 挣命
-zhengming 证明
+zhengming 证明 挣命
 zhengmu 征募
 zhengneng 郑能
-zhengning 狰狞
-zhengning 鬇鬡
-zhengpai 政派
-zhengpai 正牌
+zhengning 狰狞 鬇鬡
+zhengpai 正牌 政派
 zhengpian 正片
 zhengpianer 正片儿
-zhengpin 征聘
-zhengpin 正品
-zhengqi 争气
-zhengqi 整齐
-zhengqi 正气
-zhengqi 蒸汽
+zhengpin 征聘 正品
+zhengqi 争气 整齐 正气 蒸汽
 zhengqian 挣钱
-zhengqiao 正巧
-zhengqiao 正桥
+zhengqiao 正巧 正桥
 zhengqichui 蒸汽锤
 zhengqie 正切
 zhengqiji 蒸汽机
 zhengqitian 蒸气田
 zhengqiu 征求
-zhengqu 争取
-zhengqu 正取
+zhengqu 争取 正取
 zhengquan 证券 政权
 zhengquanduoli 争权夺利
 zhengquanhao 证券好
@@ -60138,31 +59740,20 @@ zhenzangshifan 真赃实犯
 zhenzhang 镇长
 zhenzhanger 真章儿
 zhenzhao 朕兆
-zhenzhen 榛榛
-zhenzhen 蓁蓁
+zhenzhen 榛榛 蓁蓁
 zhenzheng 真正
 zhenzhenqieqie 真真切切
 zhenzhenyouci 振振有词
 zhenzhenyouci 振振有辞
-zhenzhi 真挚
-zhenzhi 诊治
-zhenzhi 针黹
-zhenzhi 镇纸
+zhenzhi 真挚 诊治 真值 针黹 镇纸
 zhenzhipin 针织品
 zhenzhizhuojian 真知灼见
-zhenzhong 振中
-zhenzhong 珍重
-zhenzhong 震中
-zhenzhu 珍珠
-zhenzhu 真主
-zhenzhu 真珠
+zhenzhong 振中 珍重 震中
+zhenzhu 珍珠 真主 真珠
 zhenzhubei 珍珠贝
 zhenzhumi 珍珠米
 zhenzhuo 斟酌
-zhenzi 榛子
-zhenzi 疹子
-zhenzi 砧子
-zhenzi 镇子
+zhenzi 榛子 疹子 砧子 镇子
 zhenzuo 振作
 zhepan 这盘
 zhepi 这批

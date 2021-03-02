@@ -6,7 +6,7 @@
 * https://csgordon.github.io/books.html
 
 
-== 基础课程
+== 基础课程内容
 
 * link:operating_system.html[操作系统]
 

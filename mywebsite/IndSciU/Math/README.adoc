@@ -1,0 +1,15 @@
+= 数学
+
+
+== 基础课程内容
+
+* link:DiscreteMath/index.html[离散数学]
+* link:LinearAlgebra/index.html[线性代数]
+* link:Calculus/index.html[微积分]
+* link:ProbStat/index.html[概率与统计]
+
+== 特别兴趣课程
+
+* link:NumberTheory/index.html[数论]
+* link:ComplexAnal/index.html[复分析]
+

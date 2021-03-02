@@ -1,0 +1,157 @@
+= 概率与统计
+
+== 摘要
+
+从公理概率论到统计分析： .... joint distributions for both the discrete and continuous types, including the probability distribution of function of random variables and the methods of finding point estimators.  Subsequently, substantial emphasis is given to the hypothesis testing for one and two populations. Finally, chi-squared tests and ANOVA are introduced.
+
+== 大纲
+
+1. 观测数据
+
+* 原始数据与结构数据
+* 整体数据 (Population), 样本, 数据来源
+* 随机变量与抽样方法：简单抽样，分层 (stratified) 抽样，聚类，固打 (quota) 抽样
+
+2. 数据的图形表拟合
+
+* Bar graphs, pie charts, dot plot, stem-and-leaf plot, box plot
+* Frequency distribution, histogram, frequency polygon, ogives.
+
+3. 数值统计量
+
+* 位置统计量: 平均, 中值 (median), 众数 (mode)
+
+* 分散统计量: range, variance, 标准差, interquartile range, percentile range, mean absolute deviation, quartile
+
+* skewness 统计量, coefficient of variation.
+
+* exploratory data analysis (EDA).
+	
+
+4. 概率
+
+* 公理
+* 样本空间, 事件, 概率
+* Equally likely outcome; Combinatorics
+* Conditional probability; Independence
+* Methods of enumeration. 
+* Sample spaces and events: Mutually Exclusive Events, Independence Events. 
+* Rules of probability: The General Addition Rule, Multiplicative Rule. Marginal
+* binomial, Poisson and normal distributions
+* 条件概率
+* 贝叶斯定理
+
+
+
+5. 离散概率
+
+* Random variables, discrete probability densities, cumulative distribution. 
+* Expected value of a function of a random variable.
+* Moments and moment generation functions. 
+* Binomial, Poisson, Geometric, Negative Binomial, and Hypergeometric distribution.
+* Poisson approximation to Binomial distribution.
+* Probability generating functions.
+* Chebyshev’s Theorem.
+* Distribution of a random variable
+* Distribution of a random vector
+* Expectation and variance
+* Families of discrete distributions
+
+6. 连续概率
+
+* Continuous densities. 
+* Cumulative distribution. 
+* Expected value of a function of a random variable.
+* Mixed probability distributions.
+* Moment generating function. 
+* Uniform, Exponential, Gamma, Chi-Square, Beta, Pareto, Normal and Lognormal distributions.
+* Normal probability rule, Chebyshev's inequality. 
+* Normal approximation to Binomial and Poisson distribution. 
+* Probability density
+* Families of continuous distributions
+
+
+7. 统计推断 (Inference)
+* 参数估计
+* Confidence intervals
+* 假设检验
+* Bayesian estimation
+
+8. 联合分布
+* Joint distributions for discrete and continuous variables.
+* Marginal distributions.
+* The Expected Value and Variance of Linear Functions of Random Variables.
+* Covariance and correlation.
+* Conditional densities. Conditional expectation.
+* Joint Moment Generating Functions.
+* Multinomial probability distribution.
+* Bivariate normal distribution.
+
+9. 随机变量的分布函数
+* Finding probability distribution of function of random variables by methods of distribution functions, transformations, moment-generating functions and bivariate transformation using Jacobians.
+* Order statistics.
+* Normal approximation for sum of random variables.
+
+10. 分布的均值的统计推断
+* 中心极限定理 (CLT)
+* Confidence interval for the mean (known and unknown variance).
+* Element of a hypothesis test, Type I and Type II errors, power of the test, p-value.
+* Hypothesis tests on the mean.
+* Draw inferences by using statistical software.
+
+11. Inference on Proportions
+* Sample size.
+* Confidence interval for proportion.
+* Hypothesis tests on proportion.
+
+12. 比较两组变量的均值与 Proportions
+* Inferences about the difference between two population means for large and independence samples.
+* Inferences about the difference between two population means for small and independence samples (equal variance, unequal variance, and paired data): 置信区间, 假设检验 (t-检验？)
+* Inferences about the difference between two population proportions for large and independence samples.
+* Making comparisons via statistical software.
+
+13. The Analysis of Variance
+* The analysis of variance procedure.
+* Comparison of more than two means: Analysis of variance for a one-way layout.
+* Analysis of variance table for a one-way layout.
+* Statistical model for the one-way layout.
+* ANOVA 的统计软件
+
+14. 凯方检验
+* Chi-squared goodness of fit test.
+* Tests for independence.
+* Tests for homogeneity.
+* Use statistical software to perform chi-square tests.
+
+15. 统计应用
+* 回归 (Regression):
+** Least squares estimation
+** Analysis of variance, prediction, and further inference
+* 质量管理: p 图, R 图
+* 故障分析: Reliability of parallel and serial system
+
+
+
+== 参考文献
+
+. Savage, L. J., The Foundations of Statistics, Dover 1972.
+
+. Alfred Renyi, Foundations of Probability, Holden-Day 1970
+
+. Phillip I. Good, Resampling Methods: A Practical Guide to Data Analysis 3e, Birkhäuser Boston 2005
+
+. Sharon L. Lohr, Sampling: Design and Analysis, Duxbury Press 1999
+
+. Montgomery, D.C. and Runger, G.C., 2011. Applied statistics & probability for engineers. 5th ed. Hoboken, NJ: John Wiley & Sons.
+
+. Baron, M., 2013. Probability and Statistics for Computer Scientists. 2nd ed. Chapman and Hall/CRC.
+
+. Mann, P.S., 2012. Introductory statistics. 8th ed. New Jersey: John Wiley & Sons.
+
+. Hogg, R.V. and Tanis, E.A., 2010. Probability and statistical inference. 8th ed. Upper Saddle River, New Jersey: Prentice Hall.
+
+. Wackerly, D.D., Mendenhall III, W. and Scheaffer, R.L., 2008. Mathematical statistics with applications. 7th ed. California: Duxbury/Thomson Learning.
+
+. Milton, J.S., Liu, K.I. and Arnold, J.C.,2013. Probability and statistics. Boston: McGraw-Hill.
+
+

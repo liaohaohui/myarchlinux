@@ -1,0 +1,163 @@
+= 微积分
+
+This course provides a standard introduction to differential and integral calculus. It covers the following topics: functions, limits, derivatives, integrals and related applications, improper integrals, power series, differential equations and multivariable calculus. 
+
+
+== 大纲
+
+1. 实数的几种模型
+* 标准模型
+* Well-ordering property of natural numbers
+* 数列: Completeness Axiom and Monotonic Sequence 定理, Squeeze 定理
+* 完备有序Real numbers as a complete ordered fields
+* 直觉主义模型？
+* 非标准模型
+* Supremum, infimum, 
+* Archimedean property 
+
+2. 实数模型的拓扑性
+* Open sets, closed sets
+* Interior, closure, boundary
+* Accumulation points
+* Compactness
+* Heine-Borel 定理
+
+3. 序列与级数
+* 序列的极限
+* Monotone Convergence 定理
+* Bolzano-Weierstrass 定理
+* 柯西序列
+* Series
+
+
+4. 极限与连续性
+* 函数的极限
+* Non-existence criterion for limits
+* 函数的连续性
+* 连续函数
+* Discontinuity criterion 
+* 介值定理 (IVT)
+* Preservation  of compactness
+* Uniform continuity 
+* Infinite limits, limits at infinity, infinite limits at infinity 
+* Tangents, velocities and other rates of change
+
+5. 导数
+* The derivatives of a function, the second derivative 
+* Differentiation rules 
+* Derivatives of polynomials and exponential functions, the product and quotient rules, derivatives of trigonometric functions and inverse trigonometric functions
+* The chain rule
+* Logarithmic differentiation
+* 均值定理
+* L'Hospital's rule
+* Taylor 定理
+
+
+6. 微分的应用
+* Maximum and minimum values, the 极值定理
+* Fermat's 定理, Rolle's 定理, Mean Value 定理
+* Increasing and decreasing functions, concavity, graph sketching
+* L'Hospital Rule
+* Optimization problems 
+* Linear approximations
+* Antiderivatives
+
+7. 偏微分
+* Functions of several variables
+* Concepts of limits and continuity for multivariable functions
+* Partial derivatives
+* Tangent plane and linear approximations
+* The chain rule; implicit differentiation
+* Directional derivatives and gradient vectors
+* Multivariable Taylor series and approximations
+* Maximum and minimum values 
+* Lagrange multipliers
+
+8. 积分, 瑕积分
+* Definition of definite integral using Riemann sum, evaluating integrals using definition, properties of the definite integral
+* The fundamental 定理 of Calculus, the substitution rule, integrals of symmetric functions, integration by parts
+* Trigonometric integrals, trigonometric substitution, partial fraction, 
+* Applications of integration: Area and Volume
+* 瑕积分的类型
+* 收敛性分析
+
+9. Lebesgue 积分
+* Integrable functions
+* Properties of integrals
+* Numerical computation of integrals
+
+10. 多重积分
+* 区域与坐标系统
+* 外积
+* Jacobian 与坐标/变量变换
+
+11. 函数列与 Power Series
+* Power Series, Taylor and Maclaurin series: Taylor's 定理
+* Review of convergence tests on series of numbers
+* Pointwise convergence of sequences of functions
+* Cauchy condition for uniform convergence
+* Weierstrass M-Test for uniform convergence of series of functions
+* Term-by-term differentiation and integration
+* Power series
+* Applications of Taylor and Maclaurin series in approximation.
+
+12. 微分方程
+
+* Formation and classification of differential equations.
+* Solution of first order differential equations: separable, homogeneous and linear equations.
+* Second order linear equations with constant coefficients.
+
+13. Parametric and Polar Curves
+* Introduction to parametric and polar curves
+* Calculus with parametric  curves
+* Areas  and lengths of parametric and polar  curves
+* Arc lengths and areas of smooth curves
+* Conic sections in polar coordinates  
+
+
+14. 向量函数
+* Vector Functions 
+* Derivatives and Integrals of Vector Functions
+* The TNB Frame and  Curvature
+* Motion in Space
+
+15. 向量演算与微分几何
+* Cartesian, Cylindrical and Spherical Coordinates
+* Review of Triple Integrals in Cartesian Coordinates
+* Triple Integrals involving Cylindrical and Spherical Coordinates
+* Vector Fields
+* Line Integrals 
+* The Fundamental 定理 for Line Integrals 
+* Green's 定理
+* Divergence and Curl: Vector Forms of Green's 定理
+* Parametric Surfaces and Surface Integrals
+* Stokes' 定理 
+* The Divergence 定理
+* Orthogonal Curvilinear Coordinates
+* Applications of Vector Calculus
+
+
+
+=== 参考文献
+
+. Stewart, J., 2015. Calculus. 8th ed. Belmont, CA: Thomson-Brooks/Cole.
+
+. Adams, R.A., 2013. Calculus, a complete course. 8th ed. Toronto: Addison-Wesley/Longman.
+
+. Bittinger, M.L. and Ellenbogen, D.J., 2015. Calculus and its applications. 11th ed. Boston: Pearson/Addison-Wesley.
+
+. Anton, H., Bivens, I. and Davis, S., 2012. Calculus. 10th ed. Hoboken NJ: John Wiley & Sons.
+
+. Wade, W.R., 2009. An introduction to analysis. 4th ed. Upper Saddle River, NJ: Pearson/Prentice Hall.
+
+. Bartle, R.G. and Sherbert, D.R., 2011. Introduction to real analysis. 4th ed. New York: John   Wiley.
+
+. Rudin, W., 1976. Principles of mathematical analysis. 3rd ed. New York: McGraw-Hill.
+
+. Wade, W.R., 2009. An Introduction to Analysis. 4th ed. Upper Saddle River, N.J.: Prentice Hall.
+
+. Kosmala, W., 2004. A Friendly Introduction to Analysis: Single and Multivariable. 2nd ed. Upper Saddle River, N.J.: Prentice Hall.
+
+. Lay, S.R., 2013. Analysis – with an introduction to proof. 5th ed. Upper Saddle River, N.J.: Prentice Hall.
+
+
