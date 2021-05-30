@@ -44,9 +44,9 @@ Thaipusam, so no Tutorial in Week 2.
 *** https://www.youtube.com/watch?v=g7JaN3rTK2A[Inside The World's Largest Data Center]
 * link:s05_tree.pdf[Decision Trees]
 * link:s08_nb_lda.pdf[Generative Classifiers: Naive Bayes, LDA]
-* Ensemble Methods (in preparation, do we have time?)
-* PCA (in preparation)
-* Clustering methods (in preparation)
+* link:s09_pca.pdf[PCA]
+* link:s10_clust.pdf[Clustering methods]
+* Ensemble Methods (no time for discussion)
 * Revision ???
 
 
@@ -57,9 +57,9 @@ Thaipusam, so no Tutorial in Week 2.
 * link:tut03s.pdf[Tutorial 3: Logistic Regression Model]
 * link:tut04s.pdf[Tutorial 4: Model Validation Theory]
 * link:tut05s.pdf[Tutorial 5: Tree Predictive Models]
-* Tutorial 6: Naive Bayes and LDA (in preparation)
-* Tutorial 7: PCA (in preparation)
-* Tutorial 8: Clustering (in preparation)
+* link:tut06s.pdf[Tutorial 6: Naive Bayes and LDA]
+* link:tut07s.pdf[Tutorial 7: PCA]
+* link:tut08s.pdf[Tutorial 8: Clustering]
 * https://sites.google.com/site/liewhowhui/predmodel/tutorials[Older tutorials]
 
 

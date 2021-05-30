@@ -24,10 +24,12 @@ This course provides a standard introduction to differential and integral calcul
 
 3. 序列与级数
 * 序列的极限
+** YouTube: https://www.youtube.com/watch?v=FoNLQvf4NUs[Calculus 2 Lecture 9.1: Convergence and Divergence of Sequences]
 * Monotone Convergence 定理
 * Bolzano-Weierstrass 定理
 * 柯西序列
 * Series
+** YouTube: https://www.youtube.com/watch?v=DGcWMdW-72M[Calculus 2 Lecture 9.2: Series, Geometric Series, Harmonic Series, and Divergence Test]
 
 
 4. 极限与连续性
@@ -66,6 +68,7 @@ This course provides a standard introduction to differential and integral calcul
 * Functions of several variables
 * Concepts of limits and continuity for multivariable functions
 * Partial derivatives
+** YouTube: https://www.youtube.com/watch?v=JAf_aSIJryg[Partial Derivatives - Multivariable Calculus]
 * Tangent plane and linear approximations
 * The chain rule; implicit differentiation
 * Directional derivatives and gradient vectors
@@ -79,6 +82,8 @@ This course provides a standard introduction to differential and integral calcul
 * Trigonometric integrals, trigonometric substitution, partial fraction, 
 * Applications of integration: Area and Volume
 * 瑕积分的类型
+** YouTube: https://www.youtube.com/watch?v=g-M8FHslgdk[Calculus 2 Lecture 7.6: Improper Integrals]
+** YouTube: https://www.youtube.com/watch?v=NqxwJ2D-Ckc&list=PLlwePzQY_wW-OVbBuwbFDl8RB5kt2Tngo[MAT137: 12.1 Improper integrals: Definition and Example 1]
 * 收敛性分析
 
 9. Lebesgue 积分
@@ -90,9 +95,11 @@ This course provides a standard introduction to differential and integral calcul
 * 区域与坐标系统
 * 外积
 * Jacobian 与坐标/变量变换
+** YouTube: https://www.youtube.com/watch?v=UubU3U2C8WM[Double and Triple Integrals]
 
-11. 函数列与 Power Series
+11. 函数列与幂级数
 * Power Series, Taylor and Maclaurin series: Taylor's 定理
+** YouTube: https://www.youtube.com/watch?v=TGD-TP1c7i4&list=PLDesaqWTN6EQ2J4vgsN1HyBeRADEh4Cw-&index=20[Calculus 2 Lecture 9.7: Power Series, Calculus of Power Series, Ratio Test for Int. of Convergence]
 * Review of convergence tests on series of numbers
 * Pointwise convergence of sequences of functions
 * Cauchy condition for uniform convergence

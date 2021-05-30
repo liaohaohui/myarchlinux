@@ -20,58 +20,64 @@
 * 复平面上的区域及其拓扑结构
 
 2. 复函数
-* Transformation w = z2 
-* Limit and continuity 
-* Complex exponential function
-* Complex Logarithm
-* Extended complex plane, Riemann sphere 
-* Holomorphic functions, Cauchy-Riemann equations
+* 复多项式函数
+* 极限与连续性
+* https://www.youtube.com/watch?v=Ed1NpQAztbE[Borcherds 教授的课: 复指数函数, 复对数函数等]
+* https://en.wikipedia.org/wiki/Lambert_W_function[兰伯 W 函数]
+* 扩展复平面与黎曼球
+* https://www.youtube.com/watch?v=i_7Y52pXMnw[Borcherds 教授的课: 全纯函数, 柯西－黎曼方程]
  
 3. 复积分
 * Arcs, contours, curves 
-* Integrals, antiderivatives 
-* Cauchy-Goursat Theorem 
-* Cauchy integral formula on a disk 
-* Simple Connectivity 
-* General Cauchy Integral Formula 
+* https://www.youtube.com/watch?v=4y7DVRkPeZo[Borcherds 教授的课: 积分]
+* https://www.youtube.com/watch?v=2aGYAjjob9E[Borcherds 教授的课: 柯西定理]
+* Cauchy-Goursat 定理 
+* 单连通
+* 柯西积分公式
+** https://www.youtube.com/watch?v=Qn1pUWWy8NY[Borcherds 教授的课]
 
 4. 解析的性质
-
 * 全纯 (Holomorphicity) 与解析
 * 孤立零点原则
-* 解析延拓
-* 最大模原理
-* Liouville ‘s 定理与代数基本定理
+* https://www.youtube.com/watch?v=Oh-IG_igGag[Borcherds 教授的课: 解析延拓]
+* https://www.youtube.com/watch?v=bPT30hv8Zt4[Borcherds 教授的课: 局部一致收敛]
+* https://www.youtube.com/watch?v=2Q_BQfcLWd8[Borcherds 教授的课: 最大模原理]
+// https://www.maths.tcd.ie/~richardt/414/414-ch3.pdf
+* 刘维尔定理与代数基本定理
 
 5. 留数定理
-* Singular points, natural boundary 
-* Laurent series 
-* Classification of isolated singularities 
-* Residue Theorem and its computation 
-* 计算例子
+* https://www.youtube.com/watch?v=MbPOKnwgL-8[Borcherds 教授的课: 奇点与自然边界]
+* 罗郎级数, 孤立奇点的分类
+* https://www.youtube.com/watch?v=GFHR2ThSSSY[Borcherds 教授的课: 留数定理及其计算]
+* https://www.youtube.com/watch?v=SgVH9YlChCc[Borcherds 教授的课: 无穷级数的计算例子]
 
-6. Harmonic Function
-* Definition, operator and  
-* Relations with holomorphic functions 
-* Harmonic conjugate 
+6. 特殊函数
+* https://www.youtube.com/watch?v=SgVH9YlChCc[Borcherds 教授的课: 半实线积分与 Zeta 函数的泛函方程]
+* https://www.youtube.com/watch?v=tgD1Bznt5wo[Borcherds 教授的课: Gamma 函数]
+* https://www.youtube.com/watch?v=H1OPPH5bpQQ[Borcherds 教授的课: 椭圆函数 (Borcherds 教授认为这是复分析最重要的课题之一)]
+* https://www.youtube.com/watch?v=p1dts9PrDtI[Borcherds 教授的课: Weiestrass 椭圆函数]: Mittag-Leffler series
+* https://www.youtube.com/watch?v=tg8XZHOlGIE[Borcherds 教授的课: 椭圆函数的分类]
+
+7. 调和函数
+* https://www.youtube.com/watch?v=NQFAxV6kdB8[Borcherds 教授的课]
+* 拉普拉斯方程
+* 共轭调和函数及其与调和函数, de Rham 上同调的关系
 * Mean value property
 
-7. Further Topic in Geometry
-· Transformation w = 1/z as first example 
-· General Möbius transformation on extended complex plane 
-· Other transformations : w = sin z1/2 
-
-8. 共形 (Conformal) 映照
+8. 共形 (Conformal) 映照与几何学
 * Preservation of angles and directions 
 * Transformations of boundary conditions 
+* Transformation w = 1/z as first example 
+* General Möbius transformation on extended complex plane 
+* Other transformations : w = sin z1/2 
 
 9. 位势论
 * Electrostatic Field
-* Use of Conformal Mapping
 * Heat problems
 * Fluid Flow
-* Poisson’s Integral Formula
-* Application in physics, e.g. steady  temperatures problem, steady fluid flow problem 
+* Poisson 积分公式
+* 物理中的应用如平温问题与平流问题 (steady fluid flow problem)
+
 
 
 == 参考文献

@@ -129,7 +129,9 @@ ${alignc}${color slate grey}${time %a,}${color}${time %e %B %G}
 # ${alignc}${color slate grey}${time %Z,}${color}${time %H:%M:%S}
 ${alignc}${color slate grey}${time %Z, }${color}${time %I:%M:%S %p}
 ${alignc}${color slate grey}UpTime: ${color}$uptime
-${color slate grey}BAT: ${apm_battery_life}
+#${color slate grey}BAT: ${apm_battery_life}
+### https://gist.github.com/Luiji/48cbfa9e9af9e2d024b0
+${alignc}${color slate grey}Battery: ${exec sysctl -n hw.acpi.battery.life}
 ${color #333333}${hr}${color}
 ${alignc}${color slate grey}CPU
 # **** sysctl hw.cpu.0.freq.

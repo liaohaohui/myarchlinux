@@ -11,11 +11,29 @@ So I switch to Artix with OpenRC as well as OpenBSD (and FreeBSD).
 
 == OpenBSD
 
-OpenBSD is slow on a slow machine.  So I have to explore how to do
-screencasting:
+* 2021.05.30: Using USB image alone, it is impossible to install OpenBSD
+because it is not able to find base.tar.gz.  However, using Internet,
+it is able to download all the installation files and the installation is
+successful.  Grub2 chainloading is a bit difficult because I didn't
+read the reddit message properly.  Grub2 requires all the names to be
+in small letters.
+
+* 2020.12: OpenBSD 6.8 is slow on a slow machine.  So I have to explore 
+how to do screencasting below.  However, all attempts failed because 
+the processor is not able to mix both video and audio into the media
+container.  The audio skipping is so serious that the screencasting is
+a total disaster.
 
 1. ffmpeg -f x11grab -framerate 12 -codec:v libx264rgb -crf 0 -preset -ultrafast video.mkv
 2. aucat -o audio.wav
+
+
+== OpenBSD
+
+* 2021.05.30: Attempted to install NetBSD 9.2 using USB image.  It is able
+to detect ext4 as ext2 and remove it and replace it with FFSv2.  However,
+the installation failed because the installer is not able to find base.tar.gz
+which should be on the USB image.
 
 
 == Artix Linux
