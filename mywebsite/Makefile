@@ -2,6 +2,8 @@ WEBROOT=../../liaohaohui.github.io
 
 all:
 	asciidoctor index.adoc -o ${WEBROOT}/index.html
+	#asciidoctor UECM3584.adoc -o ${WEBROOT}/UECM3584/index.html
+	#asciidoctor UECM3594.adoc -o ${WEBROOT}/UECM3594/index.html
 	##asciidoctor UECM1703/README.adoc -o ${WEBROOT}/UECM1703/index.html
 	##-cp s01_basic.pdf p01_basic.pdf ${WEBROOT}/UECM1703/
 	##-cp s02_array.pdf p02_array.pdf p03_adv.pdf ${WEBROOT}/UECM1703/

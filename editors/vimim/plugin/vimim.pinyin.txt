@@ -10029,13 +10029,10 @@ dashirenwang 大失人望
 dashisuoqu 大势所趋
 dashisuowang 大失所望
 dashiyiqu 大势已去
-dashou 打手
-dashou 搭手
+dashou 打手 搭手
 dashoubi 大手笔
 dashoudajiao 大手大脚
-dashu 大暑
-dashu 大树 大叔
-dashu 答数
+dashu 大树 大叔 答数 大暑
 dashuai 大率
 dashuaige 大帅哥
 dashubu 大树不
@@ -10050,8 +10047,7 @@ databu 大踏步
 datai 打胎
 dataiyang 大太阳
 datan 打探
-datang 大唐
-datang 大堂
+datang 大唐 大堂
 date 大…特…
 dati 答题 大体
 datian 大田
@@ -10068,15 +10064,12 @@ datongguan 打通关
 datongnage 打通那个
 datongxiang 大同乡
 datongxiaoyi 大同小异
-datou 大头
-datou 打头
-datou 搭头
+datou 大头 打头 搭头
 datoucai 大头菜
 datoufeng 打头风
 datoushu 大头书
 datoutie 大头贴
-datouzhen 大头针
-datouzhen 打头阵
+datouzhen 大头针 打头阵
 datu 大图
 datuanjie 大团结
 datuanyuan 大团圆
@@ -10088,11 +10081,8 @@ dawan 大腕
 dawan 打完
 dawanpai 打完牌
 dawanshang 大晚上
-dawei 大为
-dawei 大尉
-dawei 打围
-dawen 打问
-dawen 答问
+dawei 大为 大尉 打围
+dawen 答问 打问
 dawenhao 打问号
 dawenhe 大汶河
 dawenjian 大文件
@@ -10103,8 +10093,7 @@ dawoerzu 达斡尔族
 dawujin 大五金
 dawulong 大乌龙
 dawuwei 大无畏
-daxi 大戏
-daxi 达奚
+daxi 大戏 达奚
 daxia 大侠 大虾 打下
 daxiale 打下了
 daxiamen 大侠们
@@ -10116,18 +10105,13 @@ daxiangjingting 大相径庭
 daxiangpian 大相片
 daxianshenshou 大显身手
 daxianshentong 大显神通
-daxiao 大小
-daxiao 大校
-daxiao 打消
+daxiao 大小 打消 大校
 daxiaoxie 大小写
 daxiashou 打下手
-daxie 大写
-daxie 打斜
-daxie 答谢
+daxie 大写 答谢 打斜
 daxiguowang 大喜过望
 daxihuan 大喜欢
-daxing 大型
-daxing 大姓
+daxing 大型 大姓
 daxingqiye 大型企业
 daxingtumu 大兴土木
 daxingxing 大猩猩
@@ -10143,40 +10127,28 @@ daxuebiye 大学毕业
 daxuesheng 大学生
 daxuezhang 打雪仗
 daxunhuan 大循环
-daya 大牙 大雅
-daya 打压
+daya 打压 大牙 大雅
 dayafanzui 打牙犯嘴
 dayaji 打牙祭
 dayajingyuanyang 打鸭惊鸳鸯
 dayami 打哑谜
-dayan 大烟
-dayan 大盐
-dayan 大雁
-dayan 打眼
-dayan 答言
+dayan 大烟 大盐 大雁 打眼 答言
 dayanbucan 大言不惭
-dayang 大洋 大羊
-dayang 打样
-dayang 打烊
+dayang 大洋 大羊 打样 打烊
 dayanger 打佯儿
 dayanhu 打掩护
 dayanjing 大眼睛
-dayao 大要
-dayao 打药
-dayao 搭腰
+dayao 大要 打药 搭腰
 dayaodabai 大摇大摆
 dayazishangjia 打鸭子上架
 daye 大爷
 dayedama 大爷大妈
 dayewai 打野外
 dayezuo 打夜作
-dayi 大一 答疑 大义 大意
-dayi 大姨
-dayi 大衣
+dayi 大一 答疑 大义 大意 大姨 大衣
 dayilinran 大义凛然
 dayimieqin 大义灭亲
-dayin 打印
-dayin 达因
+dayin 打印 达因
 dayindao 打印到
 dayindian 打印店
 daying 答应
@@ -10184,8 +10156,7 @@ dayingde 答应的
 dayinji 打印机
 dayintai 打印台
 dayizi 大姨子
-dayou 大油
-dayou 打油
+dayou 打油 大油
 dayouji 打游击
 dayoujingting 大有径庭
 dayoukeguan 大有可观
@@ -10194,31 +10165,24 @@ dayourenzai 大有人在
 dayoushi 打油诗
 dayouxi 打游戏
 dayouzuowei 大有作为
-dayu 大雨 大鱼
-dayu ＞
-dayuan 大员
-dayuan 大圆
+dayu 大于 大雨 大鱼 ＞
+dayuan 大员 大圆
 dayuanchang 打圆场
 dayuchixiaoyu 大鱼吃小鱼
 dayudarou 大鱼大肉
 dayudengyu ≥
-dayue 大月
-dayue 大约 答曰
+dayue 大约 答曰 大月
 dayuemo 大约摸
 dayuezaidongji 大约在冬季
 daza 打杂
 dazaer 打杂儿
 dazahui 大杂烩
 dazai 大灾
-dazao 大灶
-dazao 打造
+dazao 打造 大灶
 dazayuaner 大杂院儿
 dazeng 大增
 dazexiangqiyi 大泽乡起义
-dazhan 大战
-dazhan 大站
-dazhan 打战
-dazhan 打颤
+dazhan 大战 打战 打颤 大站
 dazhang 大涨 打仗
 dazhangfu 大丈夫
 dazhangqigu 大张旗鼓
@@ -10230,10 +10194,7 @@ dazhekou 打折扣
 dazhen 打针
 dazheng 大政
 dazheng 打整
-dazhi 大指
-dazhi 大旨
-dazhi 大治
-dazhi 大致
+dazhi 大致 大指 大旨 大治
 dazhihui 大智慧
 dazhiruoyu 大智若愚
 dazhong 大众
@@ -10242,35 +10203,29 @@ dazhonglianchongpangzi 打肿脸充胖子
 dazhou 打皱
 dazhouzi 大轴子
 dazhu 打住 大竹
-dazhuan 大专
-dazhuan 大篆
-dazhuan 打转
+dazhuan 大专 大篆 打转
 dazhuang 打桩
 dazhuangjia 大庄稼
 dazhuanwan 大转弯
 dazhujiao 大主教
 dazhutou 大猪头
 dazhuyi 打主意
-dazi 打字
-dazi 沓子
+dazi 打字 沓子
 daziji 打字机
 daziran 大自然
 daziyuan 打字员
 dazonger 打总儿
 dazongjie 大总结
 dazu 大族
-dazui 大嘴
-dazui 打嘴
+dazui 打嘴 大嘴
 dazuizhang 打嘴仗
-dazuo 大作
-dazuo 打坐
+dazuo 打坐 大作
 de 的 得 地 德 嘚 锝 徳 㝵 㝶 㤫 㥀 㥁 㯖 䙷 䙸 恴 悳 惪 棏 淂 鍀
 de1 嘚
 de2 得 德 嘚 锝 徳 㝵 㝶 㤫 㥀 㥁 㯖 䙷 䙸 恴 悳 惪 棏 淂 鍀
 de5 的 地 得 䙸
 deangzu 德昂族
-debian 得便
-debian 的变
+debian 得便 的变
 debing 得病
 debo 嘚啵
 debonengxian 得薄能鲜
@@ -10285,8 +10240,7 @@ decunjinchi 得寸进尺
 dedang 得当
 dedao 得到
 dedaoduozhu 得道多助，失道寡助
-dede 嘚嘚
-dede 的的
+dede 的的 嘚嘚
 dedi 的第
 dedui 得对 的对
 deepuhuo 灯蛾扑火
@@ -10330,8 +10284,7 @@ dengdao 等到
 dengde 等的
 dengdeng 等等
 dengdengni 等等你
-dengdi 登第
-dengdi 等第
+dengdi 登第 等第
 dengerxiazhi 等而下之
 dengexuanju 等额选举
 dengfen 等份
@@ -10349,9 +10302,7 @@ denghua 灯花
 denghui 灯会
 denghuo 灯火
 denghuohuihuang 灯火辉煌
-dengji 登基
-dengji 登极
-dengji 等级 登记 登机
+dengji 等级 登记 登机 登基 登极
 dengjia 等价
 dengjiangni 澄浆泥
 dengjiawu 等价物
@@ -10390,16 +10341,10 @@ dengshang 等上 登上 凳上
 dengshanlinshui 登山临水
 dengshanxiaolu 登山小鲁
 dengshanyundong 登山运动
-dengshi 灯饰
-dengshi 登市
-dengshi 登时
-dengshi 等式
-dengsi 灯丝
-dengsi 等死
-dengta 灯塔
-dengta 等她
-dengtai 灯台
-dengtai 登台
+dengshi 等式 灯饰 登市 登时
+dengsi 等死 灯丝
+dengta 灯塔 等她
+dengtai 灯台 登台
 dengtanbaijiang 登坛拜将
 dengtangrushi 登堂入室
 dengtong 等同
@@ -10410,24 +10355,20 @@ dengwo 等我
 dengxiang 灯箱
 dengxianshizhi 等闲视之
 dengxiaopinglilun 邓小平理论
-dengxin 灯心
-dengxin 灯芯
+dengxin 灯芯 灯心
 dengxincao 灯心草
 dengxinrong 灯心绒
 dengyao 等腰
 dengyaosanjiaoxing 等腰三角形
 dengyinfengci 等因奉此
 dengyou 灯油
-dengyu 灯语
-dengyu 等于
+dengyu 等于 灯语
 dengyuling 等于零
 dengzai 登载
 dengzhan 灯盏
 dengzhao 灯罩
 dengzhe 等着
-dengzi 凳子
-dengzi 戥子
-dengzi 镫子
+dengzi 凳子 戥子 镫子
 deo 的哦
 deou 的偶
 deqi 得起
@@ -10437,8 +10378,7 @@ derener 得人儿
 dese 得瑟
 deshenfen 的身份
 deshenghuichao 得胜回朝
-deshi 得势
-deshi 得时
+deshi 得势 得时
 deshou 得手
 deshu 得数
 detianduhou 得天独厚
@@ -10450,16 +10390,13 @@ dexing 德行 德性
 dexinyingshou 得心应手
 deyanger 得样儿
 deyao 的要 得要
-deyi 得以
-deyi 得宜
-deyi 得意
+deyi 得以 得宜 得意
 deyinmowei 德音莫违
 deyiwangxing 得意忘形
 deyiwangyan 得意忘言
 deyiyangyang 得意洋洋
 deyong 得用
-deyu 德育
-deyu 德语
+deyu 德语 德育
 deyuban 德语班
 deyuwangquan 得鱼忘筌
 dezheng 德政
@@ -10490,11 +10427,8 @@ dianbi 电笔
 dianbiao 电表
 dianbinggui 电冰柜
 dianbingxiang 电冰箱
-dianbo 点拨
-dianbo 电波 点播
-dianbo 颠簸
-dianbu 垫补
-dianbu 点补
+dianbo 电波 点播 颠簸 点拨
+dianbu 垫补 点补
 dianchan 电铲
 dianchang 电场
 dianchangji 电唱机
@@ -10502,8 +10436,7 @@ dianchangtou 电唱头
 dianche 电车
 dianchen 电陈
 dianchi 电池 滇池
-dianchuan 点穿
-dianchuan 电船
+dianchuan 点穿 电船
 dianchuifeng 电吹风
 dianchula 点出啦
 dianci 电磁 电瓷
@@ -10528,16 +10461,11 @@ diandengpao 电灯泡
 diandi 垫底
 diandian 点点
 diandier 垫底儿
-dianding 奠定
-dianding 碘酊
-diandong 佃东
-diandong 店东
-diandong 电动
+dianding 奠定 碘酊
+diandong 佃东 店东 电动
 diandongji 电动机
 diandongshi 电动势
-diandu 奠都
-diandu 点厾
-diandu 电镀
+diandu 电镀 奠都 点厾
 diandui 掂对
 dianduo 掂掇
 dianfan 典范
@@ -10546,11 +10474,9 @@ dianfanguo 电饭锅
 dianfei 电费
 dianfen 淀粉
 dianfengshan 电风扇
-dianfu 垫付
-dianfu 颠覆
+dianfu 颠覆 垫付
 diangan 电杆
-diangao 电告
-diangao 电镐
+diangao 电告 电镐
 diangong 电工
 diangonglv 电功率
 diangongxue 电工学
@@ -10647,8 +10573,7 @@ dianpubupo 颠扑不破
 dianqi 电器 电气
 dianqihua 电气化
 dianqing 靛青
-dianquan 佃权
-dianquan 垫圈
+dianquan 垫圈 佃权
 dianran 点燃 点染
 dianre 电热
 dianrong 电容
@@ -10780,8 +10705,7 @@ diaohan 刁悍 调函
 diaohanlouge 雕蚶镂蛤
 diaohao 调号
 diaohongqi 雕红漆
-diaohua 刁滑
-diaohua 雕花
+diaohua 刁滑 雕花
 diaohuan 吊环 掉换 调换
 diaohulishan 调虎离山
 diaoji 吊祭 调集
@@ -10823,8 +10747,7 @@ diaosiwenji 吊死问疾
 diaosu 雕塑
 diaotianjuedi 刁天决地
 diaotong 吊桶
-diaotou 掉头
-diaotou 调头
+diaotou 掉头 调头
 diaowadai 吊袜带
 diaowan 刁顽
 diaoweikou 吊胃口
@@ -22062,8 +21985,7 @@ jiandanshangpinshengchan 简单商品生产
 jiandanwenti 简单问题
 jiandanyidong 简单易懂
 jiandanzaishengchan 简单再生产
-jiandao 尖刀
-jiandao 见到
+jiandao 剪刀 捡到 见到 尖刀
 jiandaocha 剪刀差
 jiande 见得
 jiandi 碱地
@@ -40627,30 +40549,22 @@ shangdeng 上等
 shangdengbing 上等兵
 shangdi 上帝
 shangdian 商店
-shangdiao 上吊
-shangdiao 上调
+shangdiao 上吊 上调
 shangding 商定
-shangdong 上东
-shangdong 上冻
+shangdong 上东 上冻
 shangduan 上端
 shangdui 商兑
-shange 上颚
-shange 山歌
+shange 山歌 上颚
 shangen 山根
 shangfa 上发
 shangfafenming 赏罚分明
 shangfan 商贩
 shangfan 晌饭
-shangfang 上房
-shangfang 上方
-shangfang 上访
-shangfangbaojian 上方宝剑
-shangfangbaojian 尚方宝剑
+shangfang 上房 上方 上访
+shangfangbaojian 尚方宝剑 上方宝剑
 shangfangbuzu 上方不足，下比有余
 shangfen 上坟
-shangfeng 上峰
-shangfeng 上风
-shangfeng 赏封
+shangfeng 上峰 上风 赏封
 shangfengbaisu 伤风败俗
 shangfu 上浮
 shanggan 伤感
@@ -40658,51 +40572,34 @@ shanggang 上岗
 shanggangshangxian 上纲上线
 shanggao 上告
 shangge 赏格
-shanggong 上供
-shanggong 上工
-shanggong 上攻
+shanggong 上供 上工 上攻
 shanggongzhiniao 伤弓之鸟
-shanggu 上古
-shanggu 商贾
+shanggu 上古 商贾
 shangguan 上官
 shangguang 赏光
 shangguidao 上轨道
 shangguo 上过
-shanghai 上海 伤害
-shanghai 商海
+shanghai 伤害 上海 商海
 shanghaibeier 上海贝尔
 shanghaihua 上海话
 shanghairen 上海人
 shanghan 伤寒
 shanghang 商行
-shanghao 伤号
-shanghao 伤耗
-shanghao 商号
+shanghao 伤号 伤耗 商号
 shanghaoxiashen 上好下甚
 shanghe 上颌
 shanghen 伤痕
 shanghui 商会
 shanghuo 上火
 shanghuxidao 上呼吸道
-shangji 上级
-shangji 商机
-shangji 商计
-shangjia 上佳
-shangjia 商家
-shangjian 商检
-shangjian 赏鉴
-shangjiang 上将
-shangjiang 上江
-shangjiang 上浆
-shangjiao 上焦
-shangjiao 上缴
-shangjiao 晌觉
+shangji 商机 上级 商计
+shangjia 商家 上佳
+shangjian 赏鉴 商检
+shangjiang 上将 上江 上浆
+shangjiao 上焦 上缴 晌觉
 shangjiaobuchan 上交不谄
-shangjie 上界
-shangjie 商界
-shangjin 上劲
-shangjin 上紧
-shangjin 上进
+shangjie 商界 上界
+shangjin 上进 上劲 上紧
 shangjindonggu 伤筋动骨
 shangjing 上镜
 shangju 上句
@@ -40713,13 +40610,10 @@ shangkou 伤口
 shangkouzi 上口字
 shangkuan 上款
 shangla 上啦
-shanglai 上来
-shanglai 赏赉
+shanglai 上来 赏赉
 shanglaide 上来的
 shanglaiti 商籁体
-shanglian 上联
-shanglian 上脸
-shanglian 赏脸
+shanglian 上联 上脸 赏脸
 shangliang 商量
 shangliangbuzhengxialiangwai 上梁不正下梁歪
 shanglie 上列
@@ -42087,8 +41981,7 @@ shibabanwuyi 十八般武艺
 shibai 失败
 shibaiweichenggongzhimu 失败为成功之母
 shibaluohan 十八罗汉
-shiban 石板
-shiban 石版
+shiban 石板 石版
 shibaner 使绊儿
 shibangongbei 事半功倍
 shibao 施暴
@@ -42096,29 +41989,22 @@ shibaomateng 士饱马腾
 shibaoshixiao 实报实销
 shibeigongban 事倍功半
 shiben 蚀本
-shibi 世弊
-shibi 势必
-shibi 石笔
-shibi 试笔
+shibi 世弊 势必 石笔 试笔
 shibian 世变
 shibianlaoxin 食辨劳薪
-shibiao 师表
-shibiao 试表
+shibiao 师表 试表
 shibichuci 实逼处此
 shibie 识别
 shibiesanri 士别三日，当刮目相待
 shibigongqin 事必躬亲
-shibing 士兵
-shibing 柿饼
+shibing 士兵 柿饼
 shibingjiutong 十病九痛
 shibingtujin 士兵突进
 shibishizhi 使臂使指
 shibo 世博
 shibo 试播
 shiboqi 示波器
-shibu 史部
-shibu 市布
-shibu 食补
+shibu 史部 市布 食补
 shibuchongwei 食不重味
 shibude 使不得
 shibufangcao 十步芳草
@@ -42145,9 +42031,7 @@ shibuzailai 时不再来
 shicai 适才
 shicaiaowu 恃才傲物
 shicao 蓍草
-shice 史册
-shice 失策
-shice 实测
+shice 史册 失策 实测
 shicha 失察 视察 时差 视差
 shichaguchui 诗肠鼓吹
 shichan 试产
@@ -42163,8 +42047,7 @@ shichao 史抄
 shiche 试车
 shichen 时辰
 shichendahai 石沉大海
-shicheng 实诚
-shicheng 师承
+shicheng 实诚 师承
 shichengqihu 势成骑虎
 shichong 失宠
 shichou 世仇
@@ -42176,26 +42059,17 @@ shichukunzhong 虱处裈中
 shichuwuming 师出无名
 shichuyouming 师出有名
 shichuyouyin 事出有因
-shici 实词
-shici 誓词
-shici 诗词
-shici 饰词
-shicong 侍从
-shicong 失聪
+shici 实词 誓词 诗词 饰词
+shicong 侍从 失聪
 shida 十大 师大
 shidafu 士大夫
 shidai 时代 世代
 shidaijiaoti 世代交替
-shidan 失单
-shidan 石担
-shidang 失当
-shidang 适当
+shidan 失单 石担
+shidang 适当 失当
 shidangfangkuan 适当放宽
 shidanrulu 视丹如绿
-shidao 世道
-shidao 失盗
-shidao 市道
-shidao 食道
+shidao 世道 失盗 市道 食道
 shidaoguazhu 失道寡助
 shidaorenxin 世道人心
 shidaozunyan 师道尊严
@@ -42203,22 +42077,12 @@ shidashi 实打实
 shidawuran 十大污染
 shide 使得 是的 似的
 shideqifan 适得其反
-shidi 失地
-shidi 湿地 实地
-shidian 事典
-shidian 市电
-shidian 时点
-shidian 视点
-shidian 试点
-shidian 释典
+shidi 失地 湿地 实地
+shidian 事典 市电 时点 视点 试点 释典
 shidianbi 试电笔
-shidiao 失掉
-shidiao 时调
-shidiao 石雕
+shidiao 失掉 时调 石雕
 shidonglayue 十冬腊月
-shidu 湿度
-shidu 适度
-shidu 释读
+shidu 湿度 适度 释读
 shiduan 时段
 shidui 石碓
 shiduo 拾掇
@@ -42226,8 +42090,7 @@ shiduobuyang 虱多不痒
 shiduqingshen 舐犊情深
 shiebushe 十恶不赦
 shiege 是俄格
-shier 时而
-shier 食饵
+shier 时而 食饵
 shierbuhua 食而不化
 shierbujian 视而不见
 shierfen 十二分
@@ -42236,21 +42099,14 @@ shierrenyuan 室迩人远
 shierwuerbuzhishi 识二五而不知十
 shierzhichang 十二指肠
 shifa 师法
-shifan 失范
-shifan 师范 示范
-shifan 是凡
+shifan 示范 师范 失范 是凡
 shifandaxue 师范大学
-shifang 十方
-shifang 市房
-shifang 施放
-shifang 石方
-shifang 释放
+shifang 十方 市房 施放 石方 释放
 shifanxuexiao 师范学校
 shifanyoutu 实繁有徒
 shifanyuanxiao 师范院校
 shifanyue 十番乐
-shifei 施肥
-shifei 试飞
+shifei 施肥 试飞
 shifeiquzhi 是非曲直
 shifeiwo 是非窝
 shifen 十分 时分 食分
@@ -46501,8 +46357,7 @@ tongchuang 同窗
 tongchuangyimeng 同床异梦
 tongchuyizhe 同出一辙
 tongda 痛打
-tongdao 痛悼
-tongdao 通道
+tongdao 通道 痛悼
 tongdatianxia 通达天下
 tongdeng 同等
 tongdengxueli 同等学力
@@ -46588,24 +46443,18 @@ tongliuhewu 同流合污
 tonglong 曈昽
 tonglouzi 捅娄子
 tonglu 通路
-tonglun 通论
+tonglun 同伦 通论
 tongluzi 通路子
 tonglv 铜绿
 tongmafengwo 捅马蜂窝
-tongmeng 同盟
-tongmeng 朣朦
-tongmeng 童蒙
+tongmeng 同盟 朣朦 童蒙
 tongmengguo 同盟国
 tongmenghui 同盟会
 tongmengjun 同盟军
 tongmenyihu 同门异户
-tongming 同名
-tongming 通名
-tongming 通明
+tongming 同名 通名 通明
 tongmu 铜模
-tongnian 同年
-tongnian 童年
-tongnian 通年
+tongnian 同年 童年 通年
 tongniujiaoma 童牛角马
 tongnv 童女
 tongpai 铜牌
@@ -46616,10 +46465,8 @@ tongpatieban 铜琶铁板
 tongpei 同配
 tongpeifu 通配符
 tongpiao 通票
-tongpu 童仆
-tongpu 通铺
-tongqi 同期
-tongqi 通气
+tongpu 童仆 通铺
+tongqi 同期 通气
 tongqian 铜钱
 tongqiangtiebi 铜墙铁壁
 tongqiao 通窍
@@ -46630,9 +46477,7 @@ tongqishidai 铜器时代
 tongqu 通衢
 tongquandabian 通权达变
 tongqun 筒裙
-tongren 同人
-tongren 瞳人
-tongren 瞳仁
+tongren 同人 瞳人 瞳仁
 tongrong 通融
 tongshang 同上
 tongshang 通商
@@ -46642,14 +46487,10 @@ tongshen 通身
 tongsheng 童声
 tongsheng 童生
 tongshengxiangying 同声相应，同气相求
-tongshi 同时 同事 同室 痛失 通史
-tongshi 通事
-tongshi 通式
+tongshi 同时 同事 同室 痛失 通史 通事 通式
 tongshisaoge 同室操戈
-tongshu 统属
-tongshu 通书
-tongshuai 统帅
-tongshuai 统率
+tongshu 统属 通书
+tongshuai 统帅 统率
 tongshun 通顺
 tongsu 通俗
 tongsugequ 通俗歌曲
@@ -46658,13 +46499,10 @@ tongsuo 通缩
 tongti 通体
 tongtiao 通条
 tongtiaogongguan 同条共贯
-tongtong 曈曈
-tongtong 统统
-tongtong 通统
+tongtong 曈曈 统统 通统
 tongtoutiee 铜头铁额
 tongtu 通途
-tongtuo 通侻
-tongtuo 通脱
+tongtuo 通脱 通侻
 tongtuojingji 铜驼荆棘
 tongwa 筒瓦
 tongweisu 同位素
@@ -46673,8 +46511,7 @@ tongwen 同文
 tongwengonggui 同文共轨
 tongwentang 同文汤
 tongwu 痛恶
-tongxi 同喜
-tongxi 痛惜
+tongxi 痛惜 同喜
 tongxia 统辖
 tongxiang 同乡 同享
 tongxiao 通宵 通晓 统销
@@ -46718,8 +46555,7 @@ tongyangxiangguan 痛痒相关
 tongyangzhen 烔炀镇
 tongyanhefa 童颜鹤发
 tongyao 童谣
-tongye 同业
-tongye 通夜
+tongye 同业 通夜
 tongyegonghui 同业公会
 tongyi 同意 统一 同一 通译
 tongyici 同义词
@@ -46735,11 +46571,9 @@ tongyiti 统一体
 tongyizhanxian 统一战线
 tongyong 通用
 tongyongming 通用名
-tongyou 桐油
-tongyou 通邮
+tongyou 桐油 通邮
 tongyu 峂峪
-tongyuan 铜元
-tongyuan 铜圆
+tongyuan 铜元 铜圆
 tongyunmibu 彤云密布
 tongzai 同在
 tongze 通则
@@ -51684,14 +51518,8 @@ xingxiang 形象 星相 星象
 xingxiangsiwei 形象思维
 xingxiao 行销
 xingxiaoguli 形销骨立
-xingxin 型心
-xingxin 型新
-xingxing 性行
-xingxing 悻悻
-xingxing 猩猩
-xingxing 行刑
-xingxing 行星
-xingxing 醒醒 星星
+xingxin 型心 型新
+xingxing 星星 猩猩 行刑 行星 醒醒 悻悻 性行
 xingxingdianzheng 星行电征
 xingxingsese 形形色色
 xingxingxiangxi 惺惺相惜
@@ -56577,23 +56405,14 @@ youpiao 有票
 youpiao 邮票
 youpin 邮品
 youpuer 有谱儿
-youqi 尤其
-youqi 幽期
-youqi 忧戚
-youqi 油气
-youqi 油漆
-youqi 游憩
+youqi 尤其 幽期 忧戚 油气 油漆 游憩
 youqian 有钱
 youqianghuadiao 油腔滑调
 youqiannengshiguituimo 有钱能使鬼推磨
 youqianren 有钱人
 youqifubiyouqizi 有其父必有其子
 youqin 游禽
-youqing 友情
-youqing 右倾
-youqing 幽情
-youqing 有请
-youqing 有顷
+youqing 友情 右倾 幽情 有请 有顷
 youqingjihuizhuyi 右倾机会主义
 youqitian 油气田
 youqituxing 有期徒刑
@@ -56601,14 +56420,12 @@ youqiu 幽囚
 youqiubiying 有求必应
 youqiwuli 有气无力
 youqixianshi 油气显示
-youqu 又去 有趣
-youqu 幽趣
+youqu 又去 有趣 幽趣
 youquedian 优缺点
 youran 犹然
 youranersheng 油然而生
 youranzide 悠然自得
-youren 有人 诱人 友人
-youren 游人
+youren 有人 诱人 友人 游人
 yourenhe 有任何
 yourenjiaer 有人家儿
 yourenni 有人你
@@ -56617,15 +56434,13 @@ yourenyouyu 游刃有余
 yourizi 有日子
 yourong 优容
 yourouguaduan 优柔寡断
-youru 有如
-youru 犹如 又如 有辱
+youru 有如 犹如 又如 有辱
 youruoyige 又弱一个
 yourutian 有辱天
 yousejinshu 有色金属
 youserenzhong 有色人种
 youseyanjing 有色眼镜
-yousha 有啥
-yousha 诱杀
+yousha 有啥 诱杀
 youshan 友善
 youshang 忧伤
 youshangdang 有上当
@@ -56644,10 +56459,7 @@ youshengzhinian 有生之年
 youshenlun 有神论
 youshenme 有什么
 youshenzi 有身子
-youshi 优势 有时 又是 有事
-youshi 油石
-youshi 油饰
-youshi 酉时
+youshi 优势 有时 又是 有事 油石 油饰 酉时
 youshige 又是个
 youshihou 有时候
 youshijian 有时间
@@ -56656,19 +56468,13 @@ youshiwukong 有恃无恐
 youshiwuzhong 有始无终
 youshiyilai 有史以来
 youshiyouzhong 有始有终
-youshou 右手
-youshou 右首
+youshou 右手 右首
 youshoubian 右手边
 youshouhaoxian 游手好闲
 youshouhuayuan 右手画圆，左手画方
-youshui 有谁 有水
-youshui 油水
-youshui 游水
-youshui 游说
+youshui 有谁 有水 油水 游水 游说
 youshuo 又说
-yousi 幽思
-yousi 有司
-yousi 游丝
+yousi 幽思 有司 游丝
 yousifenlie 有丝分裂
 yousiwuer 有死无二
 yousong 有娀
@@ -56684,8 +56490,7 @@ youtianbanshengqi 油田伴生气
 youtianmeiri 有天没日
 youtiao 油条
 youtiaobuwen 有条不紊
-youting 游艇
-youting 邮亭
+youting 游艇 邮亭
 youtong 邮筒
 youtou 由头
 youtoufenmian 油头粉面
@@ -56693,17 +56498,14 @@ youtouhuanao 油头滑脑
 youtouwuwei 有头无尾
 youtouyoulian 有头有脸
 youtouyouwei 有头有尾
-youwan 幽婉
-youwan 游玩
+youwan 游玩 幽婉
 youwang 有望
 youwangwang 油汪汪
-youwei 尤为 有违 有位
-youwei 幽微
+youwei 有为 尤为 有违 有位 幽微
 youwenbilu 有闻必录
 youwenti 有问题
 youwo 优渥
-youwu 有…无…
-youwu 油污
+youwu 有…无… 油污
 youwufa 又无法
 youxi 游戏 有戏 有喜
 youxia 游侠

@@ -47,13 +47,31 @@
 ** http://maxima.sourceforge.net/[Maxima 计算机代数] 
 
 
-== 编程语言兴趣
+== 电脑与编程语言
+
+* GNU/Linux System and Applications
+** https://www.archlinux.org/[Arch Linux]
+** https://linuxmint.com/[Linux Mint]: 最好的 Linux 入门. 因为 Cinnamon 复杂，所以改用 XFCE
 
 * https://racket-lang.org/[Racket 语言]
 * https://www.python.org/[Python 编程语言]
-* Common Lisp
+* https://common-lisp.net/[Common Lisp]
 * D 语言
 * Fortran 语言
+
+* 我的 Linux / Unix 经验
+** https://youtu.be/6WpXsdZJdpw[Trying out OpenBSD as a Linux user]
+** https://www.youtube.com/watch?v=XBbsH-r1C34[My Linux Experience with Python]
+** https://www.youtube.com/watch?v=_aLcgk-wK_8[My Linux Experience: The editors]
+** https://www.youtube.com/watch?v=YRdbfACAnjI[My Linux Experience]
+
+
+== 科学知识
+
+* 中学物理
+** https://www.youtube.com/watch?v=nIKdhs2muLU[如何快速测量近视度数？快来给自己检查一下！]
+
+* https://www.youtube.com/watch?v=R7FAAfK78_M[A Skeptical Look at Climate Science]
 
 * https://liaohaohui.github.io/IndSciU/[独立理科大学]
 * Artificial Intelligence
@@ -63,28 +81,11 @@
 ** Speech Processing
 ** Smart Home with Recyclable Energy System, Security and Health Monitoring for Parents, 3D Printers and Robots.
 
-
-* Physics, Natural Science and Applications
-** John Baez's This Week's Finds.
-*** Amazing Categorical Groups (http://math.ucr.edu/home/baez/week267.html).  I love "symmetry" and this is one nice article introducing the amazing beauty of symmetry.  Picture related to Alhambra tiles are listed in http://math.ucr.edu/home/baez/alhambra
+* John Baez's This Week's Finds.
+** Amazing Categorical Groups (http://math.ucr.edu/home/baez/week267.html).  I love "symmetry" and this is one nice article introducing the amazing beauty of symmetry.  Picture related to Alhambra tiles are listed in http://math.ucr.edu/home/baez/alhambra
 
 * Health Science
 
-* GNU/Linux System and Applications
-** https://www.archlinux.org/[Arch Linux]
-** https://linuxmint.com/[Linux Mint]: 最好的 Linux 入门. 因为 Cinnamon 复杂，
-所以改用 XFCE
-
-
-
-
-
-== 我的 Linux / Unix 经验
-
-* https://youtu.be/6WpXsdZJdpw[Trying out OpenBSD as a Linux user]
-* https://www.youtube.com/watch?v=XBbsH-r1C34[My Linux Experience with Python]
-* https://www.youtube.com/watch?v=_aLcgk-wK_8[My Linux Experience: The editors]
-* https://www.youtube.com/watch?v=YRdbfACAnjI[My Linux Experience]
 
 
 == 社会媒体网站
